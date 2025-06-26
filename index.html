@@ -159,93 +159,6 @@
             margin-right: auto;
         }
         
-        /*.metric-card {
-            background: white;
-            padding: 24px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            border: 1px solid #e5e7eb;
-            position: relative;
-            overflow: hidden;
-        }*/
-        
-        ./*metric-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--accent-color);
-        }*/
-        
-        /*.metric-card:nth-child(1) {
-            --accent-color: #3b82f6;
-        }
-        
-        .metric-card:nth-child(2) {
-            --accent-color: #ef4444;
-        }
-        
-        .metric-card:nth-child(3) {
-            --accent-color: #10b981;
-        }
-        
-        .metric-card:nth-child(4) {
-            --accent-color: #8b5cf6;
-        }*/
-        
-        /*.metric-label {
-            font-size: 12px;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        
-        .metric-value {
-            font-size: 32px;
-            font-weight: 700;
-            color: #1a202c;
-            margin: 4px 0;
-            line-height: 1;
-        }
-        
-        .metric-detail {
-            font-size: 13px;
-            color: #9ca3af;
-            font-weight: 500;
-        }*/
-        
-        /*.sankey-container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-            margin-bottom: 30px;
-            border: 1px solid #e5e7eb;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .sankey-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        #sankey-chart {
-            width: 100%;
-            height: 700px;
-            /*overflow-x: auto;*/
-            /*overflow-y: hidden;*/
-        }*/
-        
         .node rect {
             fill-opacity: .9;
             shape-rendering: crispEdges;
@@ -265,75 +178,6 @@
             stroke-opacity: .25;
         }
         
-        /*.legend {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: #6b7280;
-            font-weight: 500;
-        }
-        
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 4px;
-        }
-        
-        .notes-section {
-            background: white;
-            padding: 36px;
-            margin-top: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-            border: 1px solid #e5e7eb;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .notes-title {
-            font-size: 22px;
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 24px;
-        }
-        
-        .notes-list {
-            list-style: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-        
-        .notes-list li {
-            padding: 16px;
-            background: #f9fafb;
-            border-radius: 12px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .notes-list strong {
-            color: #1a202c;
-            display: block;
-            margin-bottom: 4px;
-            font-size: 14px;
-        }
-        
-        .notes-list li p {
-            color: #6b7280;
-            font-size: 13px;
-            line-height: 1.5;
-        }*/
         
         @media (max-width: 768px) {
             .title {
@@ -347,14 +191,6 @@
             .notes-list {
                 grid-template-columns: 1fr;
             }
-            
-            /*.sankey-container {
-                padding: 24px 16px;
-            }
-            
-            #sankey-chart {
-                height: 500px;
-            }*/
         }
     </style>
     <style>
@@ -1176,12 +1012,6 @@
             height: 400px;
         }
         
-        /*#sankey {
-            height: 800px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-lg);
-        }*/
         
         .unit-economics-card {
             background: #f8f9fa;
@@ -1986,14 +1816,6 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
-        /*#sankey {
-            background: white;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            min-height: 800px;
-        }*/
         
         .metric-item {
             display: flex;
@@ -2172,25 +1994,6 @@
             font-size: 14px;
         }
         
-        /* Tooltip */
-        /*.sankey-tooltip {
-            position: absolute;
-            padding: 12px 16px;
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            border-radius: 8px;
-            font-size: 13px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-            line-height: 1.4;
-        }
-        
-        .sankey-tooltip strong {
-            color: #64B5F6;
-        }*/
         
         @media (max-width: 768px) {
             .canvas {
@@ -2779,51 +2582,6 @@
             border-color: var(--primary-color);
             box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
         }
-
-        /*#sankey {
-            min-height: 600px;
-            position: relative;
-        }
-
-        .sankey-link {
-            fill: none;
-            stroke-opacity: 0.4;
-            transition: stroke-opacity 0.3s ease;
-        }
-
-        .sankey-link:hover {
-            stroke-opacity: 0.7;
-        }
-
-        .sankey-node rect {
-            cursor: pointer;
-            stroke: #fff;
-            stroke-width: 2px;
-            transition: opacity 0.3s ease;
-        }
-
-        .sankey-node:hover rect {
-            opacity: 0.8;
-        }
-
-        .sankey-node text {
-            font-size: 14px;
-            font-weight: 600;
-            fill: #2c3e50;
-        }
-
-        .sankey-tooltip {
-            position: absolute;
-            padding: 12px 16px;
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            border-radius: 6px;
-            font-size: 14px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-        }*/
 
         .legend-container {
             display: flex;
@@ -4239,51 +3997,6 @@
             box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
         }
 
-        /*#sankey {
-            min-height: 600px;
-            position: relative;
-        }
-
-        .sankey-link {
-            fill: none;
-            stroke-opacity: 0.4;
-            transition: stroke-opacity 0.3s ease;
-        }
-
-        .sankey-link:hover {
-            stroke-opacity: 0.7;
-        }
-
-        .sankey-node rect {
-            cursor: pointer;
-            stroke: #fff;
-            stroke-width: 2px;
-            transition: opacity 0.3s ease;
-        }
-
-        .sankey-node:hover rect {
-            opacity: 0.8;
-        }
-
-        .sankey-node text {
-            font-size: 14px;
-            font-weight: 600;
-            fill: #2c3e50;
-        }
-
-        .sankey-tooltip {
-            position: absolute;
-            padding: 12px 16px;
-            background: rgba(0, 0, 0, 0.9);
-            color: white;
-            border-radius: 6px;
-            font-size: 14px;
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-        }*/
-
         .legend-container {
             display: flex;
             justify-content: center;
@@ -4956,47 +4669,6 @@
             --bg-accent: #f0fdf4;
             --border: #e5e7eb;
         }
-            /* Base Styles */
-            /** {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            
-            body {
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-                background-color: #f8f9fa;
-                color: #333;
-                line-height: 1.6;
-            }*/
-
-            /* Container Styles */
-            /*.container {
-                max-width: 1600px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-            
-            h1 {
-                color: #1a1a1a;
-                text-align: center;
-                font-size: 42px;
-                margin-bottom: 10px;
-            }
-            
-            h2 {
-                color: #333;
-                text-align: center;
-                font-size: 32px;
-                margin-top: 60px;
-                margin-bottom: 20px;
-            }
-
-            h3 {
-                color: #333;
-                font-size: 24px;
-                margin-bottom: 15px;
-            }*/
             
             .subtitle {
                 text-align: center;
@@ -5573,14 +5245,6 @@
     </style>
 
     <style>
-        /*body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f8f9fa;
-            color: #2c3e50;
-        }*/
         
         .container {
             background: white;
@@ -6243,52 +5907,6 @@
             border: none;
         }
 
-        /** {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .main-section {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }*/
-
-        /*.section-header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 40px;
-            text-align: center;
-        }
-
-        .section-header h1 {
-            color: white;
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-        }
-
-        .section-header p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 18px;
-            font-weight: 400;
-        }*/
-
         .content-area {
             padding: 60px 40px;
         }
@@ -6538,1358 +6156,6 @@
           }
     </script>
 
-    <!-- Add JavaScript for bubble generation and interactions -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Only initialize if we're on the AI Matrix tab
-            if (document.getElementById('matrix-chart')) {
-                initializeAIMatrix();
-            }
-        });
-
-        function initializeAIMatrix() {
-            const chartElement = document.getElementById('matrix-chart');
-            if (!chartElement) return;
-            const tooltip = document.getElementById('matrix-tooltip');
-            
-            const matrixData = [
-                // Low Risk, High Reward – Optimal Zone
-                {
-            name: "Cloud\nProviders",
-            category: "cloud",
-            risk: 2.2,
-            reward: 9.4,
-            value: 3300,
-            trend: "up",
-            details: {
-                title: "Cloud Infrastructure Leaders",
-                companies: "AWS, Microsoft Azure, Google Cloud",
-                marketSize: "$330B (2024)",
-                growth: "GenAI driving 50% of growth",
-                keyPlayers: "AWS (30%), Azure (21%), GCP (12%)",
-                risks: "Massive capex requirements",
-                opportunities: "AI workloads, integrated services"
-            }
-        },
-        {
-            name: "Data Centers\n& AI Clouds",
-            category: "datacenter",
-            risk: 2.5,
-            reward: 9.1,
-            value: 200,
-            trend: "up",
-            details: {
-                title: "AI-Optimized Data Centers",
-                companies: "Equinix, Digital Realty, CoreWeave",
-                marketSize: "$200B+ market",
-                growth: "AI-specific facilities growing 40%+ YoY",
-                keyPlayers: "Hyperscale and edge facilities",
-                risks: "Power constraints, cooling requirements",
-                opportunities: "Critical AI infrastructure demand"
-            }
-        },
-        // High Performers
-        {
-            name: "NVIDIA",
-            category: "semiconductor",
-            risk: 3.5,
-            reward: 9.2,
-            value: 2900,
-            trend: "up",
-            isCompany: true,
-            details: {
-                title: "NVIDIA Corporation",
-                companies: "GPU market leader",
-                marketSize: "$2.9T market cap",
-                growth: "93% YoY data center growth",
-                keyPlayers: "80-90% discrete GPU share",
-                risks: "Competition from AMD",
-                opportunities: "Blackwell chips, AI dominance"
-            }
-        },
-        // {
-        //     name: "OpenAI",
-        //     category: "model-dev",
-        //     risk: 7.8,
-        //     reward: 9.6,
-        //     value: 300,
-        //     trend: "up",
-        //     isCompany: true,
-        //     details: {
-        //         title: "OpenAI",
-        //         companies: "ChatGPT, GPT-4.5",
-        //         marketSize: "$300B valuation",
-        //         growth: "$11.6B projected 2025 revenue",
-        //         keyPlayers: "17% global market share",
-        //         risks: "Regulatory scrutiny",
-        //         opportunities: "$125B revenue by 2029"
-        //     }
-        // },
-        // {
-        //     name: "Microsoft",
-        //     category: "app-dev",
-        //     risk: 2.8,
-        //     reward: 8.8,
-        //     value: 3000,
-        //     trend: "up",
-        //     isCompany: true,
-        //     details: {
-        //         title: "Microsoft AI",
-        //         companies: "Azure AI, Copilot",
-        //         marketSize: "$3T+ market cap",
-        //         growth: "$13B AI annualized revenue",
-        //         keyPlayers: "AI contributing 16pp to Azure",
-        //         risks: "OpenAI dependency",
-        //         opportunities: "Enterprise AI integration"
-        //     }
-        // },
-        {
-            name: "Model\nDevelopers",
-            category: "model-dev",
-            risk: 6.5,
-            reward: 8.9,
-            value: 150,
-            trend: "up",
-            details: {
-                title: "Foundation Model Developers",
-                companies: "Anthropic, Google DeepMind, Meta",
-                marketSize: "Anthropic: $61.5B valuation",
-                growth: "30% MoM growth",
-                keyPlayers: "Google: 39% platform share",
-                risks: "High capex, regulatory",
-                opportunities: "Enterprise adoption"
-            }
-        },
-        // Semiconductor and Hardware
-        {
-            name: "Semiconductor\nMfrs",
-            category: "semiconductor",
-            risk: 5.0,
-            reward: 8.4,
-            value: 1000,
-            trend: "up",
-            details: {
-                title: "AI Chip Manufacturers",
-                companies: "TSMC, AMD, Intel, Broadcom",
-                marketSize: "$56.4B → $232.9B by 2033",
-                growth: "TSMC 64.9% foundry share",
-                keyPlayers: "AMD MI300X gaining traction",
-                risks: "Supply chain concentration",
-                opportunities: "Advanced node leadership"
-            }
-        },
-        // {
-        //     name: "SK Hynix",
-        //     category: "memory",
-        //     risk: 4.0,
-        //     reward: 8.5,
-        //     value: 120,
-        //     trend: "up",
-        //     isCompany: true,
-        //     details: {
-        //         title: "SK Hynix",
-        //         companies: "HBM market leader",
-        //         marketSize: "$120B market cap",
-        //         growth: "50-53% HBM market share",
-        //         keyPlayers: "Key NVIDIA supplier",
-        //         risks: "Technical barriers",
-        //         opportunities: "HBM3E demand surge"
-        //     }
-        // },
-        {
-            name: "Memory\nProviders",
-            category: "memory",
-            risk: 5.2,
-            reward: 7.4,
-            value: 56,
-            details: {
-                title: "AI Memory Manufacturers",
-                companies: "Samsung, Micron",
-                marketSize: "$56B HBM market",
-                growth: "Explosive AI demand",
-                keyPlayers: "Samsung: 38-40% share",
-                risks: "Manufacturing complexity",
-                opportunities: "Critical AI component"
-            }
-        },
-        // Applications and Services
-        // {
-        //     name: "Healthcare\nAI",
-        //     category: "ai-users",
-        //     risk: 3.2,
-        //     reward: 8.2,
-        //     value: 39.25,
-        //     trend: "up",
-        //     details: {
-        //         title: "Healthcare AI Adoption",
-        //         companies: "Hospitals, pharma, diagnostics",
-        //         marketSize: "$39.25B market",
-        //         growth: "79% adoption rate",
-        //         keyPlayers: "Drug discovery leaders",
-        //         risks: "Regulatory approval",
-        //         opportunities: "Life-saving applications"
-        //     }
-        // },
-        // {
-        //     name: "Edge AI",
-        //     category: "edge",
-        //     risk: 6.8,
-        //     reward: 8.3,
-        //     value: 16.45,
-        //     trend: "up",
-        //     details: {
-        //         title: "Edge Computing & AI",
-        //         companies: "Qualcomm, Intel, ARM",
-        //         marketSize: "$16.45B → $155.9B by 2030",
-        //         growth: "36.9% CAGR",
-        //         keyPlayers: "Fragmented market",
-        //         risks: "Technical complexity",
-        //         opportunities: "IoT, autonomous systems"
-        //     }
-        // },
-        // {
-        //     name: "Databricks",
-        //     category: "data-provider",
-        //     risk: 5.5,
-        //     reward: 7.8,
-        //     value: 62,
-        //     trend: "up",
-        //     isCompany: true,
-        //     details: {
-        //         title: "Databricks",
-        //         companies: "Unified analytics platform",
-        //         marketSize: "$62B valuation",
-        //         growth: "$3.8B projected 2025 revenue",
-        //         keyPlayers: "Highest valued data platform",
-        //         risks: "Cloud provider competition",
-        //         opportunities: "IPO potential"
-        //     }
-        // },
-        // Financial and Enterprise
-        {
-            name: "Financial\nServices",
-            category: "ai-users",
-            risk: 2.5,
-            reward: 7.5,
-            value: 35,
-            trend: "up",
-            details: {
-                title: "Financial Services AI",
-                companies: "Banks, insurance, trading",
-                marketSize: "$35B → $97B by 2027",
-                growth: "29% CAGR",
-                keyPlayers: "Risk assessment, fraud",
-                risks: "Regulatory compliance",
-                opportunities: "Operational efficiency"
-            }
-        },
-        {
-            name: "Enterprise\nUsers",
-            category: "ai-users",
-            risk: 1.8,
-            reward: 7.0,
-            value: 350,
-            details: {
-                title: "Enterprise AI Adoption",
-                companies: "All major industries",
-                marketSize: "$350B+ combined spending",
-                growth: "72% adoption rate",
-                keyPlayers: "Fortune 500 companies",
-                risks: "ROI measurement",
-                opportunities: "Proven productivity gains"
-            }
-        },
-        // {
-        //     name: "App\nDevelopers",
-        //     category: "app-dev",
-        //     risk: 4.3,
-        //     reward: 7.5,
-        //     value: 80,
-        //     details: {
-        //         title: "Enterprise AI Applications",
-        //         companies: "Salesforce, ServiceNow, Adobe",
-        //         marketSize: "35% of global AI revenue",
-        //         growth: "ServiceNow targeting $1B",
-        //         keyPlayers: "Salesforce: 80B predictions/day",
-        //         risks: "Integration complexity",
-        //         opportunities: "Workflow automation"
-        //     }
-        // },
-        // Data and Infrastructure
-        {
-            name: "Data & MLOps",
-            category: "data-provider",
-            risk: 4.8,
-            reward: 6.8,
-            value: 40,
-            details: {
-                title: "Data & ML Infrastructure",
-                companies: "Scale AI, Hugging Face, Appen",
-                marketSize: "$18.6B → $49.2B by 2033",
-                growth: "Scale AI: $870M → $2B",
-                keyPlayers: "Hugging Face: 1M+ models",
-                risks: "Competitive fragmentation",
-                opportunities: "Enterprise MLOps"
-            }
-        },
-        {
-            name: "Vector DB",
-            category: "data-provider",
-            risk: 6.5,
-            reward: 6.5,
-            value: 2.2,
-            trend: "up",
-            details: {
-                title: "Vector Databases",
-                companies: "Pinecone, Weaviate, Qdrant",
-                marketSize: "$2.2B → $15B by 2030",
-                growth: "Essential for LLMs",
-                keyPlayers: "Pinecone: $750M valuation",
-                risks: "Early stage market",
-                opportunities: "RAG adoption"
-            }
-        },
-        // Middle Tier
-        {
-            name: "Chinese AI",
-            category: "model-dev",
-            risk: 7.5,
-            reward: 6.6,
-            value: 50,
-            details: {
-                title: "Chinese Model Developers",
-                companies: "Baidu, Alibaba, ByteDance",
-                marketSize: "$50B+ combined value",
-                growth: "Near-parity performance",
-                keyPlayers: "Lower cost advantage",
-                risks: "Export controls",
-                opportunities: "Domestic market"
-            }
-        },
-        {
-            name: "AI Consulting",
-            category: "consulting",
-            risk: 3.5,
-            reward: 6.0,
-            value: 90,
-            details: {
-                title: "AI Consulting & Advisory",
-                companies: "Accenture, Deloitte, BCG",
-                marketSize: "$900M GenAI revenue",
-                growth: "40% revenue from AI by 2026",
-                keyPlayers: "$3B+ AI bookings",
-                risks: "Talent shortage",
-                opportunities: "Enterprise transformation"
-            }
-        },
-        {
-            name: "AI Hardware\nStartups",
-            category: "semiconductor",
-            risk: 8.5,
-            reward: 7.5,
-            value: 10,
-            trend: "down",
-            details: {
-                title: "Alternative AI Chips",
-                companies: "Cerebras, Graphcore",
-                marketSize: "$10B+ valuations",
-                growth: "Challenging NVIDIA",
-                keyPlayers: "Specialized architectures",
-                risks: "Competing with giants",
-                opportunities: "Niche applications"
-            }
-        },
-        // Lower Reward Quadrants
-        {
-            name: "Traditional\nIT Services",
-            category: "consulting",
-            risk: 2.0,
-            reward: 4.5,
-            value: 150,
-            details: {
-                title: "Traditional IT Services",
-                companies: "IBM, Cognizant, Infosys, TCS",
-                marketSize: "$150B+ market",
-                growth: "Single-digit growth",
-                keyPlayers: "Legacy system integration",
-                risks: "Disruption from AI-native firms",
-                opportunities: "AI transformation services"
-            }
-        },
-        {
-            name: "Open Source\nAI Projects",
-            category: "research",
-            risk: 3.0,
-            reward: 3.5,
-            value: 5,
-            details: {
-                title: "Open Source AI Initiatives",
-                companies: "Linux Foundation, Apache, Mozilla",
-                marketSize: "Community-driven",
-                growth: "High adoption, low monetization",
-                keyPlayers: "LangChain, Stable Diffusion",
-                risks: "Sustainability challenges",
-                opportunities: "Community innovation"
-            }
-        },
-        {
-            name: "AI Ethics &\nGovernance",
-            category: "consulting",
-            risk: 4.5,
-            reward: 4.0,
-            value: 2,
-            details: {
-                title: "AI Ethics Organizations",
-                companies: "Partnership on AI, AI Now Institute",
-                marketSize: "$2B+ funding",
-                growth: "Growing importance",
-                keyPlayers: "Non-profits, think tanks",
-                risks: "Limited revenue models",
-                opportunities: "Regulatory advisory"
-            }
-        },
-        {
-            name: "Government\nAI Programs",
-            category: "ai-users",
-            risk: 3.8,
-            reward: 4.2,
-            value: 50,
-            details: {
-                title: "Public Sector AI",
-                companies: "Defense, Healthcare, Smart Cities",
-                marketSize: "$50B+ spending",
-                growth: "15% CAGR",
-                keyPlayers: "DoD, NHS, Singapore",
-                risks: "Procurement complexity",
-                opportunities: "Large contracts"
-            }
-        },
-        {
-            name: "AI Education\nPlatforms",
-            category: "app-dev",
-            risk: 5.0,
-            reward: 5.0,
-            value: 8,
-            details: {
-                title: "AI Training & Education",
-                companies: "Coursera, Udacity, Fast.ai",
-                marketSize: "$8B market",
-                growth: "25% CAGR",
-                keyPlayers: "Online learning platforms",
-                risks: "Content commoditization",
-                opportunities: "Enterprise training"
-            }
-        },
-        {
-            name: "Legacy Data\nAnalytics",
-            category: "data-provider",
-            risk: 2.5,
-            reward: 3.8,
-            value: 60,
-            details: {
-                title: "Traditional Analytics",
-                companies: "SAS, SPSS, Tableau",
-                marketSize: "$60B market",
-                growth: "Low single-digit growth",
-                keyPlayers: "Business intelligence tools",
-                risks: "AI disruption",
-                opportunities: "AI integration"
-            }
-        },
-        {
-            name: "AI Testing &\nQA Tools",
-            category: "app-dev",
-            risk: 5.5,
-            reward: 6.0,
-            value: 3,
-            details: {
-                title: "AI Testing Solutions",
-                companies: "Testim, Applitools, Mabl",
-                marketSize: "$3B market",
-                growth: "30% CAGR",
-                keyPlayers: "QA automation startups",
-                risks: "Market education needed",
-                opportunities: "Growing AI complexity"
-            }
-        },
-        {
-            name: "Commoditized\nAI APIs",
-            category: "app-dev",
-            risk: 4.0,
-            reward: 3.5,
-            value: 15,
-            details: {
-                title: "Basic AI API Services",
-                companies: "OCR, Translation, Basic NLP",
-                marketSize: "$15B market",
-                growth: "Price compression",
-                keyPlayers: "Google, AWS, Azure APIs",
-                risks: "Race to bottom pricing",
-                opportunities: "Volume plays"
-            }
-        },
-        {
-            name: "AI Content\nModeration",
-            category: "app-dev",
-            risk: 5.5,
-            reward: 4.5,
-            value: 5,
-            details: {
-                title: "Content Moderation AI",
-                companies: "Spectrum Labs, Hive, Two Hat",
-                marketSize: "$5B market",
-                growth: "20% CAGR",
-                keyPlayers: "Trust & safety platforms",
-                risks: "Regulatory complexity",
-                opportunities: "Platform growth"
-            }
-        },
-        {
-            name: "Academic\nAI Research",
-            category: "research",
-            risk: 7.0,
-            reward: 3.0,
-            value: 30,
-            details: {
-                title: "University AI Programs",
-                companies: "MIT, Stanford, CMU, Oxford",
-                marketSize: "$30B+ funding",
-                growth: "Grant-dependent",
-                keyPlayers: "Top universities",
-                risks: "Brain drain to industry",
-                opportunities: "Fundamental research"
-            }
-        },
-        {
-            name: "AI Chiplets",
-            category: "semiconductor",
-            risk: 7.5,
-            reward: 5.5,
-            value: 4,
-            details: {
-                title: "Modular AI Chip Design",
-                companies: "UCIe consortium members",
-                marketSize: "$4B emerging market",
-                growth: "Early stage",
-                keyPlayers: "Intel, AMD initiatives",
-                risks: "Standards adoption",
-                opportunities: "Cost reduction"
-            }
-        },
-        {
-            name: "Research\nOrgs",
-            category: "research",
-            risk: 8.2,
-            reward: 5.0,
-            value: 20,
-            trend: "down",
-            details: {
-                title: "Research Labs & Academia",
-                companies: "Academic labs",
-                marketSize: "$20B+ funding",
-                growth: "High innovation output",
-                keyPlayers: "Stanford HAI, MIT",
-                risks: "Commercialization challenges",
-                opportunities: "Breakthrough innovations"
-            }
-        },
-        // New Critical AI Infrastructure
-        // {
-        //     name: "Energy &\nPower Infra",
-        //     category: "power",
-        //     risk: 3.2,
-        //     reward: 8.7,
-        //     value: 250,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI Power Infrastructure",
-        //         companies: "NextEra, Constellation, Vistra",
-        //         marketSize: "$250B+ market opportunity",
-        //         growth: "AI driving 20GW+ new demand",
-        //         keyPlayers: "Nuclear restarts, renewable PPAs",
-        //         risks: "Grid constraints, permitting",
-        //         opportunities: "Critical AI enabler"
-        //     }
-        // },
-        // {
-        //     name: "Network\nEquipment",
-        //     category: "datacenter",
-        //     risk: 3.8,
-        //     reward: 8.2,
-        //     value: 180,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI Networking Infrastructure",
-        //         companies: "Arista, Cisco, Juniper",
-        //         marketSize: "$180B market",
-        //         growth: "400G/800G adoption surge",
-        //         keyPlayers: "Arista: 35% AI network share",
-        //         risks: "Technology transitions",
-        //         opportunities: "AI cluster connectivity"
-        //     }
-        // },
-        // {
-        //     name: "Cooling &\nThermal Mgmt",
-        //     category: "datacenter",
-        //     risk: 4.5,
-        //     reward: 7.8,
-        //     value: 45,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI Cooling Solutions",
-        //         companies: "Vertiv, Schneider, Johnson Controls",
-        //         marketSize: "$45B → $120B by 2030",
-        //         growth: "Liquid cooling adoption",
-        //         keyPlayers: "Direct-to-chip cooling leaders",
-        //         risks: "Technical complexity",
-        //         opportunities: "GPU thermal management"
-        //     }
-        // },
-        {
-            name: "AI Security",
-            category: "security",
-            risk: 5.2,
-            reward: 8.0,
-            value: 25,
-            trend: "up",
-            details: {
-                title: "AI-Specific Security",
-                companies: "Anthropic Shield, Robust Intelligence",
-                marketSize: "$25B → $80B by 2030",
-                growth: "45% CAGR",
-                keyPlayers: "Model security, prompt injection defense",
-                risks: "Evolving threat landscape",
-                opportunities: "Critical for enterprise adoption"
-            }
-        },
-        {
-            name: "Synthetic\nData",
-            category: "data-provider",
-            risk: 6.2,
-            reward: 7.5,
-            value: 8,
-            trend: "up",
-            details: {
-                title: "Synthetic Data Generation",
-                companies: "Synthesis AI, Mostly AI, Gretel",
-                marketSize: "$8B → $35B by 2030",
-                growth: "Privacy-compliant training data",
-                keyPlayers: "Addressing data scarcity",
-                risks: "Quality validation",
-                opportunities: "Regulated industries"
-            }
-        },
-        // {
-        //     name: "GPU Cloud\nProviders",
-        //     category: "cloud",
-        //     risk: 5.5,
-        //     reward: 8.5,
-        //     value: 40,
-        //     trend: "up",
-        //     details: {
-        //         title: "Specialized GPU Cloud",
-        //         companies: "Lambda Labs, Paperspace, RunPod",
-        //         marketSize: "$40B market",
-        //         growth: "Lower cost than hyperscalers",
-        //         keyPlayers: "Serving AI startups",
-        //         risks: "Hyperscaler competition",
-        //         opportunities: "GPU shortage beneficiary"
-        //     }
-        // },
-        // {
-        //     name: "Robotics &\nAutomation",
-        //     category: "edge",
-        //     risk: 7.2,
-        //     reward: 8.8,
-        //     value: 85,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI-Powered Robotics",
-        //         companies: "Boston Dynamics, Figure, Tesla",
-        //         marketSize: "$85B → $380B by 2030",
-        //         growth: "Humanoid robots emerging",
-        //         keyPlayers: "Manufacturing, logistics leaders",
-        //         risks: "Technical challenges",
-        //         opportunities: "Physical AI revolution"
-        //     }
-        // },
-        {
-            name: "AI Observability",
-            category: "data-provider",
-            risk: 5.8,
-            reward: 7.2,
-            value: 12,
-            trend: "up",
-            details: {
-                title: "AI/ML Monitoring Tools",
-                companies: "Datadog, Weights & Biases, Neptune",
-                marketSize: "$12B market",
-                growth: "Essential for production AI",
-                keyPlayers: "Model performance tracking",
-                risks: "Market fragmentation",
-                opportunities: "MLOps maturity"
-            }
-        },
-        {
-            name: "Quantum\nComputing",
-            category: "semiconductor",
-            risk: 9.2,
-            reward: 7.0,
-            value: 30,
-            trend: "up",
-            details: {
-                title: "Quantum-AI Convergence",
-                companies: "IBM, Google, IonQ, Rigetti",
-                marketSize: "$30B investments",
-                growth: "Quantum ML algorithms",
-                keyPlayers: "1000+ qubit systems",
-                risks: "Technical uncertainty",
-                opportunities: "Next-gen AI compute"
-            }
-        },
-        // {
-        //     name: "AI Storage\nSolutions",
-        //     category: "datacenter",
-        //     risk: 4.2,
-        //     reward: 7.6,
-        //     value: 65,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI-Optimized Storage",
-        //         companies: "Pure Storage, NetApp, DDN",
-        //         marketSize: "$65B market",
-        //         growth: "High-bandwidth storage demand",
-        //         keyPlayers: "NVMe, parallel file systems",
-        //         risks: "Rapid tech evolution",
-        //         opportunities: "Training data management"
-        //     }
-        // },
-        // {
-        //     name: "Telecom\n5G/6G",
-        //     category: "edge",
-        //     risk: 4.8,
-        //     reward: 7.3,
-        //     value: 380,
-        //     trend: "up",
-        //     details: {
-        //         title: "Telecom Infrastructure for AI",
-        //         companies: "Verizon, AT&T, T-Mobile",
-        //         marketSize: "$380B market",
-        //         growth: "Edge AI enabling infrastructure",
-        //         keyPlayers: "Private 5G for enterprises",
-        //         risks: "Capex intensity",
-        //         opportunities: "Low-latency AI apps"
-        //     }
-        // },
-        // {
-        //     name: "EDA for\nAI Chips",
-        //     category: "semiconductor",
-        //     risk: 3.5,
-        //     reward: 8.0,
-        //     value: 22,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI Chip Design Software",
-        //         companies: "Synopsys, Cadence, Ansys",
-        //         marketSize: "$22B market",
-        //         growth: "AI-driven chip design",
-        //         keyPlayers: "3nm and below enablers",
-        //         risks: "R&D intensive",
-        //         opportunities: "Critical design tools"
-        //     }
-        // },
-        {
-            name: "Data\nLabeling",
-            category: "data-provider",
-            risk: 6.0,
-            reward: 5.8,
-            value: 15,
-            details: {
-                title: "Human-in-the-Loop Services",
-                companies: "Labelbox, Snorkel AI, Sama",
-                marketSize: "$15B market",
-                growth: "RLHF and fine-tuning demand",
-                keyPlayers: "Specialized annotation",
-                risks: "Automation threat",
-                opportunities: "Quality training data"
-            }
-        },
-        {
-            name: "AI Drug\nDiscovery",
-            category: "ai-users",
-            risk: 8.0,
-            reward: 9.0,
-            value: 120,
-            trend: "up",
-            details: {
-                title: "AI-First Pharma",
-                companies: "Recursion, Insitro, Atomwise",
-                marketSize: "$120B market potential",
-                growth: "10x faster drug development",
-                keyPlayers: "Multiple Phase 2/3 trials",
-                risks: "Regulatory approval",
-                opportunities: "Revolutionary treatments"
-            }
-        },
-        // {
-        //     name: "Battery &\nEnergy Storage",
-        //     category: "edge",
-        //     risk: 5.5,
-        //     reward: 7.7,
-        //     value: 140,
-        //     trend: "up",
-        //     details: {
-        //         title: "Energy Storage for AI",
-        //         companies: "Tesla Energy, Fluence, LG Energy",
-        //         marketSize: "$140B market",
-        //         growth: "Grid-scale storage for AI centers",
-        //         keyPlayers: "4-hour+ duration systems",
-        //         risks: "Supply chain constraints",
-        //         opportunities: "24/7 AI operations"
-        //     }
-        // },
-        {
-            name: "AI Accelerator\nStartups",
-            category: "semiconductor",
-            risk: 8.8,
-            reward: 6.5,
-            value: 25,
-            details: {
-                title: "Next-Gen AI Accelerators",
-                companies: "Groq, SambaNova, Tenstorrent",
-                marketSize: "$25B+ funding raised",
-                growth: "Alternative architectures",
-                keyPlayers: "Inference optimization",
-                risks: "NVIDIA dominance",
-                opportunities: "Specialized use cases"
-            }
-        },
-        {
-            name: "Autonomous\nVehicles",
-            category: "edge",
-            risk: 8.0,
-            reward: 8.0,
-            value: 180,
-            trend: "up",
-            details: {
-                title: "Self-Driving Technology",
-                companies: "Waymo, Cruise, Tesla FSD",
-                marketSize: "$180B market by 2030",
-                growth: "Level 4/5 deployment",
-                keyPlayers: "Robotaxi services live",
-                risks: "Regulatory hurdles",
-                opportunities: "$1.6T transport market"
-            }
-        },
-        // {
-        //     name: "AI-Native\nDatabases",
-        //     category: "data-provider",
-        //     risk: 5.8,
-        //     reward: 7.0,
-        //     value: 18,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI-First Database Systems",
-        //         companies: "SingleStore, ClickHouse, Vespa",
-        //         marketSize: "$18B emerging market",
-        //         growth: "Real-time AI inference",
-        //         keyPlayers: "Vector + traditional hybrid",
-        //         risks: "Market education",
-        //         opportunities: "Next-gen data infrastructure"
-        //     }
-        // },
-        // New High-Risk, High-Reward Opportunities
-        {
-            name: "AGI\nResearch",
-            category: "model-dev",
-            risk: 9.5,
-            reward: 9.8,
-            value: 50,
-            trend: "up",
-            details: {
-                title: "Artificial General Intelligence",
-                companies: "DeepMind, Anthropic (Claude), OpenAI",
-                marketSize: "$50B+ R&D investments",
-                growth: "Breakthrough potential by 2030",
-                keyPlayers: "Racing toward human-level AI",
-                risks: "Technical uncertainty, safety concerns",
-                opportunities: "Transformative technology"
-            }
-        },
-        {
-            name: "Brain-Computer\nInterfaces",
-            category: "edge",
-            risk: 8.8,
-            reward: 9.2,
-            value: 35,
-            trend: "up",
-            details: {
-                title: "Neural Interface Technology",
-                companies: "Neuralink, Synchron, Paradromics",
-                marketSize: "$35B market by 2030",
-                growth: "FDA approvals accelerating",
-                keyPlayers: "Neuralink human trials",
-                risks: "Regulatory, ethical challenges",
-                opportunities: "$400B healthcare market"
-            }
-        },
-        // {
-        //     name: "AI Avatars &\nDigital Humans",
-        //     category: "app-dev",
-        //     risk: 7.0,
-        //     reward: 8.6,
-        //     value: 22,
-        //     trend: "up",
-        //     details: {
-        //         title: "Photorealistic AI Avatars",
-        //         companies: "Synthesia, Hour One, Soul Machines",
-        //         marketSize: "$22B → $125B by 2030",
-        //         growth: "Enterprise adoption surge",
-        //         keyPlayers: "Customer service, entertainment",
-        //         risks: "Deepfake concerns",
-        //         opportunities: "Metaverse integration"
-        //     }
-        // },
-        // {
-        //     name: "Longevity\nAI",
-        //     category: "ai-users",
-        //     risk: 8.5,
-        //     reward: 9.5,
-        //     value: 60,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI-Powered Life Extension",
-        //         companies: "Altos Labs, Calico, Juvenescence",
-        //         marketSize: "$60B+ funding committed",
-        //         growth: "Reversing aging markers",
-        //         keyPlayers: "Bezos, Google backing",
-        //         risks: "Long development cycles",
-        //         opportunities: "$600B longevity market"
-        //     }
-        // },
-        // {
-        //     name: "Decentralized\nAI",
-        //     category: "model-dev",
-        //     risk: 8.2,
-        //     reward: 8.4,
-        //     value: 15,
-        //     trend: "up",
-        //     details: {
-        //         title: "Blockchain-Based AI Networks",
-        //         companies: "Bittensor, Fetch.ai, SingularityNET",
-        //         marketSize: "$15B market cap",
-        //         growth: "Distributed compute networks",
-        //         keyPlayers: "Democratizing AI access",
-        //         risks: "Technical complexity",
-        //         opportunities: "Web3 AI convergence"
-        //     }
-        // },
-        // {
-        //     name: "AI Space\nTech",
-        //     category: "edge",
-        //     risk: 9.0,
-        //     reward: 8.8,
-        //     value: 45,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI for Space Exploration",
-        //         companies: "SpaceX AI, Planet Labs, Orbital Insight",
-        //         marketSize: "$45B space AI market",
-        //         growth: "Autonomous spacecraft, analysis",
-        //         keyPlayers: "Satellite constellation AI",
-        //         risks: "High capital requirements",
-        //         opportunities: "$1T space economy"
-        //     }
-        // },
-        // {
-        //     name: "Neuromorphic\nComputing",
-        //     category: "semiconductor",
-        //     risk: 8.3,
-        //     reward: 8.5,
-        //     value: 12,
-        //     trend: "up",
-        //     details: {
-        //         title: "Brain-Inspired Processors",
-        //         companies: "Intel Loihi, IBM TrueNorth, BrainChip",
-        //         marketSize: "$12B → $75B by 2030",
-        //         growth: "1000x energy efficiency",
-        //         keyPlayers: "Event-driven computing",
-        //         risks: "Software ecosystem gap",
-        //         opportunities: "Edge AI revolution"
-        //     }
-        // },
-        // {
-        //     name: "AI Content\nCreation",
-        //     category: "app-dev",
-        //     risk: 6.8,
-        //     reward: 8.7,
-        //     value: 85,
-        //     trend: "up",
-        //     details: {
-        //         title: "Generative AI Platforms",
-        //         companies: "Runway, Midjourney, Stability AI",
-        //         marketSize: "$85B creator economy impact",
-        //         growth: "Video, music, 3D generation",
-        //         keyPlayers: "Hollywood adoption",
-        //         risks: "Copyright challenges",
-        //         opportunities: "$230B content market"
-        //     }
-        // },
-        // {
-        //     name: "Climate AI",
-        //     category: "ai-users",
-        //     risk: 7.3,
-        //     reward: 8.9,
-        //     value: 70,
-        //     trend: "up",
-        //     details: {
-        //         title: "AI for Climate Solutions",
-        //         companies: "Carbon capture AI, fusion AI control",
-        //         marketSize: "$70B climate tech AI",
-        //         growth: "Critical for net zero",
-        //         keyPlayers: "Google, Microsoft initiatives",
-        //         risks: "Policy dependency",
-        //         opportunities: "$10T climate transition"
-        //     }
-        // },
-        {
-            name: "Photonic\nAI Chips",
-            category: "semiconductor",
-            risk: 9.1,
-            reward: 8.3,
-            value: 8,
-            trend: "up",
-            details: {
-                title: "Light-Based AI Computing",
-                companies: "Lightmatter, Luminous, Lightelligence",
-                marketSize: "$8B emerging market",
-                growth: "100x speed potential",
-                keyPlayers: "Optical neural networks",
-                risks: "Manufacturing challenges",
-                opportunities: "Beyond Moore's Law"
-            }
-        },
-        {
-            name: "AI Materials\nDiscovery",
-            category: "ai-users",
-            risk: 7.8,
-            reward: 8.6,
-            value: 28,
-            trend: "up",
-            details: {
-                title: "AI-Accelerated Materials Science",
-                companies: "Materials Project, Citrine, Kebotix",
-                marketSize: "$28B market",
-                growth: "1000x faster discovery",
-                keyPlayers: "Battery, semiconductor materials",
-                risks: "Lab-to-market gap",
-                opportunities: "Revolutionary materials"
-            }
-        },
-        {
-            name: "AI Regulation\nTech",
-            category: "consulting",
-            risk: 6.5,
-            reward: 7.8,
-            value: 10,
-            trend: "up",
-            details: {
-                title: "AI Compliance Platforms",
-                companies: "Credo AI, Fiddler, Truera",
-                marketSize: "$10B → $50B by 2028",
-                growth: "EU AI Act driving demand",
-                keyPlayers: "Model governance tools",
-                risks: "Regulatory uncertainty",
-                opportunities: "Mandatory compliance"
-            }
-        },
-        // {
-        //     name: "Embodied AI\nAssistants",
-        //     category: "edge",
-        //     risk: 7.7,
-        //     reward: 8.8,
-        //     value: 95,
-        //     trend: "up",
-        //     details: {
-        //         title: "Physical AI Assistants",
-        //         companies: "1X Technologies, Agility Robotics",
-        //         marketSize: "$95B humanoid robot market",
-        //         growth: "Home and workplace adoption",
-        //         keyPlayers: "OpenAI-backed ventures",
-        //         risks: "Consumer acceptance",
-        //         opportunities: "Labor shortage solution"
-        //     }
-        // },
-        {
-            name: "AI Financial\nModels",
-            category: "ai-users",
-            risk: 6.2,
-            reward: 8.5,
-            value: 110,
-            trend: "up",
-            details: {
-                title: "AI Trading & Risk Systems",
-                companies: "Two Sigma, Renaissance, Citadel",
-                marketSize: "$110B quant fund AUM",
-                growth: "LLMs for market analysis",
-                keyPlayers: "70% of trades AI-driven",
-                risks: "Market manipulation concerns",
-                opportunities: "Alpha generation"
-            }
-        },
-        {
-            name: "Multimodal\nAI Systems",
-            category: "model-dev",
-            risk: 7.3,
-            reward: 9.1,
-            value: 75,
-            trend: "up",
-            details: {
-                title: "Vision-Language-Action Models",
-                companies: "Google Gemini, GPT-4V, Claude Vision",
-                marketSize: "$75B market impact",
-                growth: "True AI understanding",
-                keyPlayers: "Real-world AI agents",
-                risks: "Compute intensity",
-                opportunities: "AGI stepping stone"
-            }
-        },
-        {
-            name: "AI Gaming\nEngines",
-            category: "app-dev",
-            risk: 6.7,
-            reward: 8.2,
-            value: 55,
-            trend: "up",
-            details: {
-                title: "AI-Native Game Development",
-                companies: "Roblox AI, Unity AI, Unreal AI",
-                marketSize: "$55B gaming AI market",
-                growth: "Procedural worlds, NPCs",
-                keyPlayers: "AAA studio adoption",
-                risks: "Creative control balance",
-                opportunities: "$300B gaming market"
-            }
-        }
-            ];
-
-            // Remove any existing bubbles (so re-initializing doesn’t duplicate)
-            const existingBubbles = chartElement.querySelectorAll('.matrix-bubble');
-            existingBubbles.forEach(b => b.remove());
-            
-            // Map “value” → pixel radius between 20 and 65
-            function getRadius(value) {
-                const minRadius = 20;
-                const maxRadius = 65;
-                const logValue = Math.log10(value + 1);
-                const logMax = Math.log10(3300 + 1);
-                return minRadius + (maxRadius - minRadius) * (logValue / logMax);
-            }
-            
-            // Basic collision check between two circles in pixel space
-            function checkCollision(x1, y1, r1, x2, y2, r2) {
-                const dx = x1 - x2;
-                const dy = y1 - y2;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                const buffer = 5; // Small gap
-                return distance < (r1 + r2 + buffer);
-            }
-            
-            // Find a spiral‐based offset from (baseX, baseY) that doesn’t collide
-            function findPosition(baseX, baseY, radius, placedBubbles, attempts = 0) {
-                if (attempts > 100) {
-                    // If we’ve tried too many times, just return the base location
-                    return { x: baseX, y: baseY };
-                }
-                
-                let x = baseX;
-                let y = baseY;
-                if (attempts > 0) {
-                    const angle = (attempts * 137.5) * Math.PI / 180;
-                    const distance = attempts * 0.5; // small step in percentage space
-                    x = baseX + Math.cos(angle) * distance;
-                    y = baseY + Math.sin(angle) * distance;
-                }
-                
-                // Keep inside [3%, 97%] to avoid touching edges
-                const marginPercent = 3;
-                x = Math.max(marginPercent, Math.min(100 - marginPercent, x));
-                y = Math.max(marginPercent, Math.min(100 - marginPercent, y));
-                
-                // Convert this candidate percent→pixel
-                const chartWidth = chartElement.offsetWidth;
-                const chartHeight = chartElement.offsetHeight;
-                const xPx = (x / 100) * chartWidth;
-                const yPx = (y / 100) * chartHeight;
-                
-                // Check collision against all already‐placed bubbles
-                for (const placed of placedBubbles) {
-                    const placedXPx = (placed.x / 100) * chartWidth;
-                    const placedYPx = (placed.y / 100) * chartHeight;
-                    if (checkCollision(xPx, yPx, radius, placedXPx, placedYPx, placed.radius)) {
-                        return findPosition(baseX, baseY, radius, placedBubbles, attempts + 1);
-                    }
-                }
-                
-                // No collision → accept
-                return { x, y };
-            }
-            
-            // Sort descending by “value” so the largest bubble is placed first
-            const sortedData = [...matrixData].sort((a, b) => b.value - a.value);
-            const placedBubbles = [];
-            
-            sortedData.forEach((item, index) => {
-                const radius = getRadius(item.value);
-                const diameter = radius * 2;
-                const isSmall = diameter < 45;
-                
-                const bubble = document.createElement('div');
-                bubble.className = [
-                    'matrix-bubble',
-                    item.category,
-                    item.isCompany ? 'company' : '',
-                    isSmall ? 'small' : ''
-                ].join(' ').trim();
-                
-                // Convert risk/reward → [0..100]% (risk: 1→10 maps to 0→100; reward: 10→1 maps to 0→100)
-                const baseX = ((item.risk - 1) / 9) * 100;
-                const baseY = ((10 - item.reward) / 9) * 100;
-                
-                // Find a non‐overlapping percent‐position
-                const pos = findPosition(baseX, baseY, radius, placedBubbles);
-                placedBubbles.push({ x: pos.x, y: pos.y, radius });
-                
-                // Apply CSS sizing and centering
-                bubble.style.width = `${diameter}px`;
-                bubble.style.height = `${diameter}px`;
-                bubble.style.left = `${pos.x}%`;
-                bubble.style.top = `${pos.y}%`;
-                bubble.style.transform = `translate(-50%, -50%)`;
-                bubble.style.animationDelay = `${index * 0.02}s`;
-                
-                // Set font size so label scales with bubble
-                const fontSize = Math.max(10, Math.min(14, diameter / 5));
-                bubble.style.fontSize = `${fontSize}px`;
-                bubble.style.lineHeight = '1.1';
-                
-                // Create inner label (with line breaks as needed)
-                const label = document.createElement('div');
-                label.className = 'matrix-bubble-label';
-                label.innerHTML = item.name.replace(/\n/g, '<br>');
-                
-                // If there’s a trend arrow, append it
-                if (item.trend) {
-                    const trend = document.createElement('span');
-                    trend.className = `trend-indicator trend-${item.trend}`;
-                    trend.textContent = (item.trend === 'up') ? '↗' : '↘';
-                    label.appendChild(trend);
-                }
-                
-                bubble.appendChild(label);
-                bubble.dataset.item = JSON.stringify(item);
-                
-                // Tooltip: show on hover
-                bubble.addEventListener('mouseenter', (e) => {
-                    const data = JSON.parse(e.currentTarget.dataset.item);
-                    const d = data.details || {};
-                    let metricsHtml = '';
-                    if (d) {
-                        metricsHtml = `
-                            <div class="matrix-tooltip-metric">
-                                <span class="matrix-metric-label">Companies:</span>
-                                <span class="matrix-metric-value">${d.companies || ''}</span>
-                            </div>
-                            <div class="matrix-tooltip-metric">
-                                <span class="matrix-metric-label">Market Size:</span>
-                                <span class="matrix-metric-value">${d.marketSize || ''}</span>
-                            </div>
-                            <div class="matrix-tooltip-metric">
-                                <span class="matrix-metric-label">Growth:</span>
-                                <span class="matrix-metric-value">${d.growth || ''}</span>
-                            </div>
-                            <div class="matrix-tooltip-metric">
-                                <span class="matrix-metric-label">Key Players:</span>
-                                <span class="matrix-metric-value">${d.keyPlayers || ''}</span>
-                            </div>
-                            <div class="matrix-tooltip-metric">
-                                <span class="matrix-metric-label">Risks:</span>
-                                <span class="matrix-metric-value">${d.risks || ''}</span>
-                            </div>
-                            <div class="matrix-tooltip-metric">
-                                <span class="matrix-metric-label">Opportunities:</span>
-                                <span class="matrix-metric-value">${d.opportunities || ''}</span>
-                            </div>
-                        `;
-                    }
-                    tooltip.querySelector('.matrix-tooltip-title').textContent = d.title || data.name.replace(/\n/g, ' ');
-                    tooltip.querySelector('.matrix-tooltip-content').innerHTML = metricsHtml;
-                    tooltip.style.display = 'block';
-                });
-                
-                // Move tooltip with mouse
-                bubble.addEventListener('mousemove', (e) => {
-                    const x = e.pageX + 10;
-                    const y = e.pageY - tooltip.offsetHeight - 10;
-                    const maxX = window.innerWidth - tooltip.offsetWidth - 20;
-                    const maxY = window.innerHeight - tooltip.offsetHeight - 20;
-                    tooltip.style.left = `${Math.min(x, maxX)}px`;
-                    tooltip.style.top  = `${Math.max(20, Math.min(y, maxY))}px`;
-                });
-                
-                // Hide tooltip on leave
-                bubble.addEventListener('mouseleave', () => {
-                    tooltip.style.display = 'none';
-                });
-                
-                chartElement.appendChild(bubble);
-            });
-        }
-
-        // // Reinitialize matrix when switching tabs
-        // function showTab(event, tabName) {
-        //     // Hide all .tab-content
-        //     const tabContents = document.querySelectorAll('.tab-content');
-        //     tabContents.forEach(tab => tab.style.display = 'none');
-            
-        //     // Remove “active” from all .tab buttons
-        //     const tabs = document.querySelectorAll('.tab');
-        //     tabs.forEach(tab => tab.classList.remove('active'));
-            
-        //     // Show the selected tab
-        //     const selectedTab = document.getElementById(tabName);
-        //     if (selectedTab) {
-        //         selectedTab.style.display = 'block';
-        //     }
-            
-        //     // Mark the clicked tab as active
-        //     if (event && event.target) {
-        //         event.target.classList.add('active');
-        //     }
-            
-        //     // If we switched to “ai-matrix,” re-draw the bubbles
-        //     if (tabName === 'ai-matrix') {
-        //         setTimeout(() => {
-        //             initializeAIMatrix();
-        //         }, 100);
-        //     }
-        // }
-    </script>
-
-    <script>
-        function toggleDataPoint(index) {
-            const content = document.getElementById(`data-content-${index}`);
-            const arrow = document.getElementById(`data-arrow-${index}`);
-            
-            if (content.style.display === 'none' || content.style.display === '') {
-                content.style.display = 'block';
-                arrow.style.transform = 'rotate(180deg)';
-            } else {
-                content.style.display = 'none';
-                arrow.style.transform = 'rotate(0deg)';
-            }
-        }
-    </script>
 
     <script>
         // Initialize charts when page loads
@@ -8170,8 +6436,6 @@
         }    
     </script>
 
-
-
 </head>
 <body>
 
@@ -8182,11 +6446,11 @@
     <div class="container">
         <div class="header">
             <h1>🚀 Antriksh Cloud</h1>
-            <p>500MW AI GPU Data Center - Business Model Canvas & Market Intelligence</p>
+            <p>Building a 500MW AI GPU Data Center - AI Factory</p>
         </div>
         
         <div class="tabs">
-            <div class="tab active" onclick="showTab('why-antriksh')">🎯 Why Antriksh</div>
+            <div class="tab active" onclick="showTab('why-antriksh')">🚀 Why Antriksh</div>
             <div class="tab" onclick="showTab('ai-growth')">📈 AI Growth Opportunity</div>
             <div class="tab" onclick="showTab('ai-matrix')">🤖 AI Risk & Reward Matrix</div>
             <div class="tab" onclick="showTab('data-points')">📊 Data Points</div>
@@ -8196,7 +6460,6 @@
             <div class="tab" onclick="showTab('Investment')">💎 Investment Opportunity</div>
             <div class="tab" onclick="showTab('competition')">⚔️ Competition</div>
             <div class="tab" onclick="showTab('timeline')">🗓️ Timeline</div>
-            <!-- <div class="tab" onclick="showTab('revenue-flow')">💸 Revenue Flow</div> -->
             <div class="tab" onclick="showTab('swot-analysis')"> 
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 5px;">
                 <rect x="2" y="2" width="9" height="9" fill="#4CAF50"/>
@@ -8207,25 +6470,9 @@
             </div>
             <div class="tab" onclick="showTab('resources-files')">📁 Resources & Files</div>
             <div class="tab" onclick="showTab('qa')">❓ Q&A</div>
-
-
-            <!-- <div class="tab" onclick="showTab('market-reports')">📋 Market Reports</div> -->
-            <!-- <div class="tab" onclick="showTab('ai-startups')">🚀 AI Startups</div> -->
-            <!-- <div class="tab" onclick="showTab('income-flow')">income-flow</div> -->
-            <!-- <div class="tab" onclick="showTab('canvas')">📊 Business Model Canvas</div> -->
-            <!-- <div class="tab" onclick="showTab('vision-mission')">🎯 Vision & Mission</div> -->
-            <!-- <div class="tab" onclick="showTab('market-size')">📈 Market Size</div> -->
-            <!-- <div class="tab" onclick="showTab('global-news')">🌍 Global News</div> -->
-            <!-- <div class="tab" onclick="showTab('market-analysis')">📈 Market Analysis</div> -->
-            <!-- <div class="tab" onclick="showTab('india-news')">🇮🇳 India News</div> -->
-            <!-- <div class="tab" onclick="showTab('global-gpu-scale')">📋 FLOPS Rankings</div> -->
-
         </div>
         
 
-
-
-        <!-- Add this as a new tab content section (after executive-summary div) -->
         <div id="why-antriksh" class="tab-content active">
             <div class="section-container">
                 <!-- Section Header -->
@@ -8676,90 +6923,28 @@
         </div>
 
         <div id="ai-growth" class="tab-content">
-
-            <div class="section-container">
-                <!-- Hero Section -->
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
-                    <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 800;">The AI Intelligence Explosion</h1>
-                    <p style="font-size: 1.3rem; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-                        We are witnessing the greatest technological transformation in human history. 
-                        The AI market is exploding from $279B to $5.3T by 2035, and India stands at the 
-                        epicenter of this revolution with the world's highest AI adoption rate.
-                    </p>
-                    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
-                            $5.3 Trillion Market by 2035
-                        </div>
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
-                            19x Growth Opportunity
-                        </div>
-                        <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
-                            48% India AI Adoption
-                        </div>
-                        <!-- <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
-                            80% CAGR in LLMs
-                        </div> -->
-                    </div>
-                </div>
-
-                <!-- Market Growth Section -->
-                <!-- <div style="background: #f8f9fa; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px;">
-                    <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 40px; color: #1a1a2e; font-weight: 700;">
-                        Exponential AI Market Growth
-                    </h2> -->
-                    
-                    <!-- Market Growth Chart Canvas -->
-                    <!-- <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 40px;">
-                        <canvas id="aiMarketGrowthChart" width="400" height="200"></canvas>
-                    </div> -->
-                    
-                    <!-- Stats Grid -->
-                    <!-- <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px;">
-                        <div style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                            <div style="font-size: 3rem; font-weight: 800; color: #667eea; margin-bottom: 10px;">$279B</div>
-                            <div style="color: #718096; font-size: 1.1rem;">2024 Market Size</div>
-                        </div>
-                        <div style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                            <div style="font-size: 3rem; font-weight: 800; color: #667eea; margin-bottom: 10px;">$5.3T</div>
-                            <div style="color: #718096; font-size: 1.1rem;">2035 Projection</div>
-                        </div>
-                        <div style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                            <div style="font-size: 3rem; font-weight: 800; color: #667eea; margin-bottom: 10px;">30-80%</div>
-                            <div style="color: #718096; font-size: 1.1rem;">CAGR by Modality</div>
-                        </div>
-                        <div style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                            <div style="font-size: 3rem; font-weight: 800; color: #667eea; margin-bottom: 10px;">3.7x</div>
-                            <div style="color: #718096; font-size: 1.1rem;">Average ROI</div>
-                        </div>
-                    </div> -->
-                    
-                    <!-- Industry Impact Summary -->
-                    <!-- <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; border-radius: 20px; margin-top: 60px;">
-                        <h3 style="font-size: 2.5rem; text-align: center; margin-bottom: 40px;">Total Industry Impact by 2035</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center;">
-                            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
-                                <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">$15T+</div>
-                                <div>Total Economic Impact</div>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
-                                <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">2.4B</div>
-                                <div>Jobs Transformed</div>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
-                                <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">95%</div>
-                                <div>Industries Disrupted</div>
-                            </div>
-                            <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px;">
-                                <div style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">10x</div>
-                                <div>Productivity Gains</div>
-                            </div>
-                        </div>
-                        <p style="text-align: center; margin-top: 40px; font-size: 1.2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                            Every industry will be fundamentally transformed by AI. The question isn't whether to adopt AI, 
-                            but how quickly you can integrate it to avoid being left behind.
+            
+                <div class="section-container">
+                    <!-- Hero Section -->
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
+                        <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 800;">The AI Intelligence Explosion</h1>
+                        <p style="font-size: 1.3rem; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+                            We are witnessing the greatest technological transformation in human history. 
+                            The AI market is exploding from $279B to $5.3T by 2035, and India stands at the 
+                            epicenter of this revolution with the world's highest AI adoption rate.
                         </p>
-                    </div> -->
-
+                        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
+                                $5.3 Trillion Market by 2035
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
+                                19x Growth Opportunity
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
+                                48% India AI Adoption
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Visual Story -->
@@ -9378,149 +7563,6 @@
                 </div>
             </div>
 
-
-        <!-- <div id="canvas" class="tab-content">
-            <div class="canvas">
-                <div class="canvas-item key-partners">
-                    <h3>🤝 Key Partners</h3>
-                    <ul>
-                        <li><strong>GPU Manufacturers:</strong> NVIDIA, AMD, Cerebras, SambaNova, Groq, Intel</li>
-                        <li><strong>Hardware Vendors:</strong> Supermicro, Dell, HPE, Lenovo, VVDN </li>
-                        <li><strong>Power Providers:</strong> Renewable energy companies</li>
-                        <li><strong>Network Providers:</strong> Tier-1 ISPs, CDN providers</li>
-                        <li><strong>Financial Partners:</strong> Banks, VCs, Infrastructure funds</li>
-                        <li><strong>Research Institutions:</strong> Universities, AI Research Labs</li>
-                        <li><strong>Design Partners:</strong> CDAC, DLB, WWT</li>
-                    </ul>
-                </div>
-                
-                <div class="canvas-item key-activities">
-                    <h3>⚡ Key Activities</h3>
-                    <ul>
-                        <li><strong>Infrastructure Development:</strong> Greenfield Data center construction & setup</li>
-                        <li><strong>GPU Cluster Management:</strong> Configuration and optimization with Open Compute Project (OCP) standards</li>
-                        <li><strong>R&D:</strong> Support AI innovation</li>
-                        <li><strong>Partnership Management:</strong> Strategic alliances</li>
-                        <li><strong>Compliance:</strong> Security and regulatory adherence</li>
-                        <li><strong>Marketing:</strong> Customer acquisition and retention</li>
-                    </ul>
-                </div>
-                
-                <div class="canvas-item value-propositions">
-                    <h3>💎 Value Propositions</h3>
-                    <div class="highlight">
-                        <strong>🎯 Core Value: Democratizing AI Computing</strong>
-                    </div>
-                    <ul>
-                        <li><strong>Massive Scale:</strong> 500MW capacity for enterprise AI workloads</li>
-                        <li><strong>Cost Efficiency:</strong> Shared infrastructure reduces per-unit costs</li>
-                        <li><strong>D2C Liquid Cooling:</strong></li>
-                        <li><strong>Government Incentives:</strong> Policy support and subsidies</li>
-                        <li><strong>Low Latency:</strong> Strategic location in India</li>
-                        <li><strong>Strategic location in India</strong></li>
-                        <li><strong>Green energy</strong></li>
-                    </ul>
-                </div>
-                
-                <div class="canvas-item customer-relationships">
-                    <h3>🤝 Customer Relationships</h3>
-                    <ul>
-                        <li><strong>Cloud Platform:</strong> Web portal for resource management</li>
-                        <li><strong>Dedicated Account Management:</strong> For enterprise clients</li>
-                        <li><strong>Technical Support:</strong> 24/7 expert assistance</li>
-                        <li><strong>Community Building:</strong> Developer forums and events</li>
-                        <li><strong>Consulting:</strong> AI Cluster implementation guidance</li>
-                        <li><strong>Partnership Programs:</strong> With VCs, Incubators and AI Labs</li>
-                        <li><strong>Agentic AI Integration:</strong> Seamless system connectivity for AI Agents</li>
-                    </ul>
-                </div>
-                
-                <div class="canvas-item customer-segments">
-                    <h3>👥 Customer Segments</h3>
-                    <ul>
-                        <li><strong>AI/ML Startups:</strong> Every-stage AI companies & Agentic AI Workflows</li>
-                        <li><strong>Research Institutions:</strong> Universities, AI Research Labs</li>
-                        <li><strong>Government Agencies:</strong> Sovereign Needs, D. of Defence , DST, </li>
-                        <li><strong>Media & Entertainment:</strong> Content generation, VFX</li>
-                        <li><strong>Fintech Companies:</strong> Algorithmic trading, fraud detection</li>
-                        <li><strong>Healthcare Organizations:</strong> Medical AI applications</li>
-                        <li><strong>Autonomous vehicle development</strong></li>
-                    </ul>
-                </div>
-                
-                <div class="canvas-item key-resources">
-                    <h3>🔧 Key Resources</h3>
-                    <ul>
-                        <li><strong>Physical Infrastructure:</strong> 500MW data center facility</li>
-                        <li><strong>GPU Clusters:</strong> Thousands of high-end AI GPUs</li>
-                        <li><strong>Software Platform:</strong> Cloud management and orchestration</li>
-                        <li><strong>Technical Team:</strong> AI infrastructure specialists</li>
-                        <li><strong>Partnerships:</strong> Strategic technology alliances</li>
-                        <li><strong>Brand Reputation:</strong> Trust and reliability in AI space</li>
-                        <li><strong>Intellectual Property:</strong> Proprietary optimization algorithms</li>
-                    </ul>
-                </div>
-                
-                <div class="canvas-item channels">
-                    <h3>📡 Channels</h3>
-                    <ul>
-                        <li><strong>Direct Sales:</strong> Enterprise sales team</li>
-                        <li><strong>Online Platform:</strong> Self-service web portal</li>
-                        <li><strong>Partner Network:</strong> System integrators and resellers</li>
-                        <li><strong>Industry Events:</strong> AI conferences and trade shows</li>
-                        <li><strong>Cloud Marketplace:</strong> Cloud provider partnerships</li>
-                        <li><strong>Academic Programs:</strong> University collaborations</li>
-                        <li><strong>Government Relations:</strong> Policy and tender participation</li>
-
-                    </ul>
-                </div>
-                
-                <div class="canvas-item cost-structure">
-                    <h3>💰 Cost Structure</h3>
-                    <div class="highlight">
-                        <strong>📊 Capital Intensive with High Fixed Costs</strong>
-                    </div>
-                    <ul>
-                        <li><strong>Infrastructure CapEx:</strong> Data center construction, cooling systems</li>
-                        <li><strong>Hardware Costs:</strong> GPU procurement, servers, networking</li>
-                        <li><strong>Energy Costs:</strong> Power consumption (500MW capacity)</li>
-                        <li><strong>Personnel:</strong> Technical staff, operations, support</li>
-                        <li><strong>Software Licensing:</strong> Cloud platforms, management tools</li>
-                        <li><strong>Maintenance:</strong> Hardware replacement, system updates</li>
-                        <li><strong>Compliance:</strong> Security, regulatory, insurance</li>
-                        <li><strong>Marketing & Sales:</strong> Customer acquisition costs</li>
-                    </ul>
-                    <div style="margin-top: 15px;">
-                        <span class="metric">High Fixed Costs</span>
-                        <span class="metric">Economy of Scale</span>
-                        <span class="metric">Energy Intensive</span>
-                    </div>
-                </div>
-                
-                <div class="canvas-item revenue-streams">
-                    <h3>💵 Revenue Streams</h3>
-                    <div class="highlight">
-                        <strong>🎯 Multiple Revenue Models for Diversified Income</strong>
-                    </div>
-                    <ul>
-                        <li><strong>GPU-as-a-Service:</strong> Hourly/monthly GPU rental</li>
-                        <li><strong>Secured Sovereign Cloud Service:</strong> Data Sandboxed AI instances</li>
-                        <li><strong>Reserved Instances:</strong> Long-term capacity commitments</li>
-                        <li><strong>Managed AI Services:</strong> Pre-configured ML environments</li>
-                        <li><strong>Enterprise Contracts:</strong> Dedicated cluster arrangements</li>
-                        <li><strong>Inference Usage:</strong> Pay-per-API-call for inference</li>
-                    </ul>
-                    <div style="margin-top: 15px;">
-                        <span class="metric">Recurring Revenue</span>
-                        <span class="metric">Inference-Heavy</span>
-                        <span class="metric">Enterprise Contracts</span>
-                        <span class="metric">Service Premium</span>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-
-        <!-- 💎 Investment Opportunity -->
         <div id="Investment" class="tab-content">
             <div class="intelligence-grid">
             <div class="exec-container">
@@ -9557,30 +7599,6 @@
                             <div class="metric-label">Revenue Start</div>
                         </div>
                     </div>
-
-                    <!-- <div class="info-card success"> -->
-                    <!-- <h3 style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;">$150 Million Series A</h3> -->
-                    <!-- <p style="font-size: 1.2rem; margin-bottom: 20px;">Building India's Sovereign AI Infrastructure with Venture-Scale Returns</p> -->
-                    
-                    <!-- <div class="investment-metrics" style="margin-top: 30px;">
-                        <div class="metric-box">
-                            <h3>3MW</h3>
-                            <p>Phase 1 Deployment</p>
-                        </div>
-                        <div class="metric-box">
-                            <h3>Month 6</h3>
-                            <p>Revenue Start</p>
-                        </div>
-                        <div class="metric-box">
-                            <h3>15-30x</h3>
-                            <p>Return Potential</p>
-                        </div>
-                        <div class="metric-box">
-                            <h3>2030</h3>
-                            <p>IPO Timeline</p>
-                        </div>
-                    </div> -->
-
                 </div>
                 
                 <!-- Key Information Grid -->
@@ -9601,19 +7619,6 @@
             </div>
             </div>
         </div>
-
-        <!-- <div id="vision-mission" class="tab-content">
-            <div class="vision-mission-grid">
-                <div class="vision-card">
-                    <h3>🔭 Our Vision</h3>
-                    <p>To democratize AI computing power across India and become the leading provider of sustainable, scalable AI infrastructure that enables innovation for enterprises, startups, and researchers.</p>
-                </div>
-                <div class="mission-card">
-                    <h3>🎯 Our Mission</h3>
-                    <p>We provide world-class GPU computing infrastructure with 500MW capacity, enabling organizations of all sizes to harness the power of artificial intelligence through cost-effective, environmentally sustainable, and technologically advanced data center solutions.</p>
-                </div>
-            </div>
-        </div> -->
 
         <div id="business-model" class="tab-content">
             <div class="section">
@@ -9720,7 +7725,6 @@
             </div>
         </div>
         
-        <!-- Venture Compute Tab -->
         <div id="venture-compute" class="tab-content">
 
                             <!-- Pipeline -->
@@ -9928,13 +7932,6 @@
                     </div>
                 </div>
                 
-
-
-
-
-
-
-
                 <!-- Dual-Engine Strategy -->
                 <div class="investment-strategy" style="background: #0a0e27; color: #e0e6ed; padding: 50px 20px;">
                     <h2 style="color: white; text-align: center; margin-bottom: 30px; font-size: 2rem;">Antriksh Cloud's Dual-Engine Strategy</h2>
@@ -11001,12 +8998,7 @@
 
                 </div>
             </div>
-        </div>
-
-
-        
-
-           <!-- AI Risk & Reward Matrix Tab Content -->
+        </div> 
 
         <div id="ai-matrix" class="tab-content">
             <!-- <div class="container"> -->
@@ -11775,82 +9767,6 @@
                 </div>
         </div>
         
-        <!-- <div id="market-reports" class="tab-content">
-            <div class="intelligence-grid">
-                <div class="intelligence-section">
-                    <h3>📋 Market Reports & Research</h3>
-                    <ul>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.gartner.com/en/documents/4015818', '_blank')">
-                            <strong>Gartner:</strong> AI infrastructure spending to reach $79B in 2025
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.idc.com/getdoc.jsp?containerId=AP50124923', '_blank')">
-                            <strong>IDC:</strong> India AI market to grow at 25.7% CAGR through 2027
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.mckinsey.com/~/media/mckinsey/business%20functions/mckinsey%20digital/our%20insights/the%20age%20of%20ai/mgi-the-age-of-ai-discussion-paper.pdf', '_blank')">
-                            <strong>McKinsey:</strong> 70% of enterprises to adopt AI infrastructure by 2026
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.forrester.com/report/the-forrester-wave-public-cloud-development-and-infrastructure-platforms-q1-2024/RES179639', '_blank')">
-                            <strong>Forrester:</strong> GPU demand to outstrip supply until 2026
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.bcg.com/publications/2023/how-ai-can-help-companies-gain-competitive-advantage', '_blank')">
-                            <strong>BCG:</strong> AI infrastructure as key competitive differentiator
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www2.deloitte.com/content/dam/Deloitte/us/Documents/technology-media-telecommunications/us-tmt-green-cloud-computing.pdf', '_blank')">
-                            <strong>Deloitte:</strong> Green AI infrastructure driving investment decisions
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.pwc.in/assets/pdfs/industries/technology/india-data-centre-market.pdf', '_blank')">
-                            <strong>PwC:</strong> Indian data center market to reach $4.9B by 2025
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
-        
-        <!-- <div id="ai-startups" class="tab-content">
-            <div class="intelligence-grid">
-                <div class="intelligence-section">
-                    <h3>🚀 AI Infrastructure Startups</h3>
-                    <ul>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.coreweave.com/', '_blank')">
-                            <strong>CoreWeave:</strong> $7.5B valuation, specialized GPU cloud services
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.cerebras.net/', '_blank')">
-                            <strong>Cerebras:</strong> Wafer-scale AI processors for training workloads
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://sambanova.ai/', '_blank')">
-                            <strong>SambaNova:</strong> DataScale platform for enterprise AI
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.graphcore.ai/', '_blank')">
-                            <strong>Graphcore:</strong> Intelligence Processing Units (IPUs) for AI
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://habana.ai/', '_blank')">
-                            <strong>Habana Labs:</strong> Intel-acquired AI processor company
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://lambdalabs.com/', '_blank')">
-                            <strong>Lambda Labs:</strong> GPU cloud for AI researchers and developers
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                        <li style="cursor: pointer;" onclick="window.open('https://www.runpod.io/', '_blank')">
-                            <strong>RunPod:</strong> Serverless GPU computing platform
-                            <span style="margin-left: 8px; color: #3498db; font-size: 0.7rem;">🔗</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
-        
         <div id="unit-economics" class="tab-content">
 
 
@@ -11860,12 +9776,6 @@
                     <p class="tab-subtitle">1MW AI GPU Data Center - NVIDIA Blackwell GB200 NVL72 Configuration</p>
                 </div>
                 
-                <!-- <div class="pricing-disclaimer">
-                    <h3>⚠️ Optimized Investment Approach</h3>
-                    <p><strong>This analysis uses optimized CAPEX assumptions with strategic cost reduction.</strong></p>
-                    <p>Hardware at market price with infrastructure optimization through competitive bidding and local partnerships.</p>
-                    <p>Total CAPEX reduced to $34.4M per MW while maintaining quality standards.</p>
-                </div> -->
 
                 <!-- Comprehensive Investor Metrics Dashboard -->
                 <div style="background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%); color: white; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
@@ -13338,24 +11248,6 @@
                     </div>
                 </div>
 
-                <!-- <h3>Customer Pipeline Status - Per MW</h3>
-                <div class="verification-note">
-                    ✓ Pre-commitment verified: 40% of Year 1 capacity = 230 GPUs committed per MW
-                </div>
-                <ul>
-                    <li><strong>Confirmed LOIs</strong>: 40% of Year 1 capacity (230 GPUs per MW)</li>
-                    <li><strong>Active Negotiations</strong>: Additional 25% in advanced discussions</li>
-                    <li><strong>Target Segments</strong>: 
-                        <ul>
-                            <li>AI/ML startups (40%)</li>
-                            <li>Enterprise AI initiatives (35%)</li>
-                            <li>Research institutions (15%)</li>
-                            <li>International clients (10%)</li>
-                        </ul>
-                    </li>
-                    <li><strong>Revenue per Customer</strong>: Average $2M/year (8-10 customers per MW)</li>
-                </ul> -->
-
                 <h2>11. Investment Structure</h2>
                 
                 <h3>Optimal Capital Structure - Per MW</h3>
@@ -13457,191 +11349,6 @@
 
         <div id="timeline" class="tab-content">
             <div class="intelligence-grid">
-                <!-- <div class="intelligence-section" style="grid-column: 1 / -1;">
-                    <h3>🗓️ 500MW Development Timeline - 60 Month Master Plan</h3>
-                    <div class="highlight" style="margin-bottom: 20px;">
-                        <strong>🎯 Phased development approach enabling revenue generation from Month 6 while scaling to full 500MW capacity by Month 60</strong>
-                    </div>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 30px;">
-                        <div class="unit-economics-card">
-                            <h4>Total Duration</h4>
-                            <p class="unit-economics-value" style="color: #3498db;">60 Months</p>
-                        </div>
-                        <div class="unit-economics-card">
-                            <h4>First Revenue</h4>
-                            <p class="unit-economics-value" style="color: #27ae60;">Month 6</p>
-                        </div>
-                        <div class="unit-economics-card">
-                            <h4>Full Capacity</h4>
-                            <p class="unit-economics-value" style="color: #e74c3c;">500MW</p>
-                        </div>
-                        <div class="unit-economics-card">
-                            <h4>Total Investment</h4>
-                            <p class="unit-economics-value" style="color: #f39c12;">$12-14B</p>
-                        </div>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="intelligence-section" style="grid-column: 1 / -1;">
-                    <h3>🚀 Development Phases</h3>
-                    
-                    <div class="timeline-phase">
-                        <h3>🏗️ Pre-Development Phase (Months 1-6)</h3>
-                        <div class="timeline-bar">
-                            <div class="timeline-progress" style="width: 100%;">
-                                Complete in 6 months
-                            </div>
-                        </div>
-                        <ul>
-                            <li><strong>Site Selection & Due Diligence:</strong> 3 months</li>
-                            <li><strong>Land Acquisition:</strong> 6 months (parallel)</li>
-                            <li><strong>State MoU & Incentives:</strong> 4 months</li>
-                            <li><strong>Power Utility Negotiations:</strong> 6 months</li>
-                            <li><strong>Master Planning:</strong> 6 months</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="timeline-phase">
-                        <h3>🔧 Phase 0: 3MW Containerized PoC (Months 3-6)</h3>
-                        <div class="timeline-bar">
-                            <div class="timeline-progress" style="width: 100%;">
-                                Operational by Month 6
-                            </div>
-                        </div>
-                        <ul>
-                            <li><strong>Container Procurement:</strong> 5 months</li>
-                            <li><strong>Site Prep (3MW Power):</strong> 2 month</li>
-                            <li><strong>GB200 Installation & Testing:</strong> 1 month</li>
-                            
-                        </ul>
-                    </div>
-                    
-                    <div class="timeline-phase">
-                        <h3>🏭 Phase 1: 100MW Cluster (Months 7-24)</h3>
-                        <div class="timeline-bar">
-                            <div class="timeline-progress" style="width: 100%;">
-                                18 months construction
-                            </div>
-                        </div>
-                        <ul>
-                            <li><strong>Environmental Clearances:</strong> 6 months</li>
-                            <li><strong>Substation Development:</strong> 12 months</li>
-                            <li><strong>Civil Construction:</strong> 15 months</li>
-                            <li><strong>Liquid Cooling Infrastructure:</strong> 6 months</li>
-                            <li><strong>IT Fitout:</strong> 2 phases of 50MW each</li>
-                            
-                        </ul>
-                    </div>
-                    
-                    <div class="timeline-phase">
-                        <h3>⚡ Phase 2-5: Scaling to 500MW (Months 24-60)</h3>
-                        <div class="timeline-bar">
-                            <div class="timeline-progress" style="width: 100%;">
-                                100MW additions every 12-18 months
-                            </div>
-                        </div>
-                        <ul>
-                            <li><strong>Phase 2 (200MW):</strong> Month 37</li>
-                            <li><strong>Phase 3 (300MW):</strong> Month 50</li>
-                            <li><strong>Phase 4 (400MW):</strong> Month 60</li>
-                            <li><strong>Phase 5 (500MW):</strong> Month 60</li>
-                        </ul>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="intelligence-section">
-                    <h3>🎯 Key Milestones & Revenue</h3>
-                    
-                    <div class="milestone-card">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div class="milestone-icon">📦</div>
-                            <div>
-                                <strong>Month 3: PoC Go-Live</strong>
-                                <p style="color: #666; margin: 5px 0;">3MW Containerized System</p>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <p style="color: #27ae60; font-weight: bold; font-size: 1.2rem;">$4-5M/year</p>
-                        </div>
-                    </div>
-                    
-                    <div class="milestone-card">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div class="milestone-icon">🏭</div>
-                            <div>
-                                <strong>Month 18: Phase 1 Operational</strong>
-                                <p style="color: #666; margin: 5px 0;">100MW Full Production</p>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <p style="color: #27ae60; font-weight: bold; font-size: 1.2rem;">$150-180M/year</p>
-                        </div>
-                    </div>
-                    
-                    <div class="milestone-card">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div class="milestone-icon">🚀</div>
-                            <div>
-                                <strong>Month 27: Phase 2 Complete</strong>
-                                <p style="color: #666; margin: 5px 0;">200MW Capacity</p>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <p style="color: #27ae60; font-weight: bold; font-size: 1.2rem;">$300-360M/year</p>
-                        </div>
-                    </div>
-                    
-                    <div class="milestone-card">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div class="milestone-icon">⚡</div>
-                            <div>
-                                <strong>Month 48: Full 500MW</strong>
-                                <p style="color: #666; margin: 5px 0;">Complete Infrastructure</p>
-                            </div>
-                        </div>
-                        <div style="text-align: right;">
-                            <p style="color: #27ae60; font-weight: bold; font-size: 1.2rem;">$750-900M/year</p>
-                        </div>
-                    </div>
-                </div> -->
-                
-                <!-- <div class="intelligence-section"> -->
-                <!-- <div class="intelligence-section" style="grid-column: 1 / -1;">
-                    
-                    <h3>⚠️ Critical Path & Risk Mitigation</h3>
-                    
-                    <div class="risk-item">
-                        <h4 style="color: #f39c12; margin-bottom: 10px;">🔌 Long-Lead Equipment (Order Immediately)</h4>
-                        <ul>
-                            <li><strong>Power Transformers:</strong> 120-210 week lead time</li>
-                            <li><strong>Medium Voltage Switchgear:</strong> 52+ weeks</li>
-                            <li><strong>Liquid Cooling Systems:</strong> 19-34 weeks</li>
-                            <li><strong>GB200 GPU Allocation:</strong> Secure with NVIDIA early</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="risk-item">
-                        <h4 style="color: #f39c12; margin-bottom: 10px;">🏗️ Parallel Activities for Timeline Compression</h4>
-                        <ul>
-                            <li>Environmental assessments during land acquisition</li>
-                            <li>Modular construction during site development</li>
-                            <li>IT procurement during MEP installation</li>
-                            <li>Customer pre-leasing during construction</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="risk-item">
-                        <h4 style="color: #f39c12; margin-bottom: 10px;">📊 Critical Success Factors</h4>
-                        <ul>
-                            <li>Favorable regulatory environment with state support</li>
-                            <li>Modular construction enables 20-30% timeline compression</li>
-                            <li>Each 100MW phase designed for standalone operation</li>
-                            <li>Revenue generation begins Month 3 to support cash flow</li>
-                        </ul>
-                    </div>
-                </div> -->
-                
                 <div class="intelligence-section" style="grid-column: 1 / -1;">
                     <h3>📊 Visual Timeline Overview</h3>
                     <div style="overflow-x: auto;">
@@ -14209,8 +11916,6 @@
             </div>
         </div>
 
-
-        <!-- <div class="container"> -->
         <div id="resources-files" class="tab-content">
             
                 <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
@@ -14724,138 +12429,405 @@
                 });
             </script>
             </div>
-        </div>       
-
-
-
+        </div>      
+         
         <div id="qa" class="tab-content">
-            <div class="qa-section">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <h2 style="color: #2a5298; margin-bottom: 10px;">❓ Frequently Asked Questions</h2>
-                    <p style="color: #666; font-size: 1.1rem;">Get answers to common questions about Antriksh Cloud's AI infrastructure services</p>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(0)">
-                        <span>What makes Antriksh Cloud different from other GPU cloud providers?</span>
+             <div class="container">
+                    <!-- <div class="content-area"> -->
+                <div class="qa-section">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h2 style="color: #2a5298; margin-bottom: 10px;">❓ Frequently Asked Questions</h2>
+                        <p style="color: #666; font-size: 1.1rem;">Get answers to common questions about Antriksh Cloud's AI infrastructure services</p>
+                    </div>
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(0)">
+                        <span>What makes Antriksh Cloud different from other cloud providers?</span>
                         <span id="qa-arrow-0" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-0" class="qa-answer">
+                        <p><strong>Laser-focused on AI workloads only.</strong> We are <em>not</em> a general-purpose cloud; every rupee, rack, and process is optimised for
+                           modern AI training and inference in India.</p>
+
+                        <!-- Comparison Table -->
+                        <table class="compare-table">
+                          <thead>
+                            <tr>
+                              <th>Others …</th>
+                              <th>Antriksh Cloud</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Blend AI with web-hosting &amp; generic VMs</td>
+                              <td><strong>500&nbsp;MW campus reserved 100 % for Agentic AI and AI compute</strong>—no other workloads</td>
+                            </tr>
+                            <tr>
+                              <td>Air-cooled racks that throttle under sustained load</td>
+                              <td><strong>Liquid direct-to-chip cooling</strong> → PUE &lt; 1.2 and up to 15 % more usable FLOPs</td>
+                            </tr>
+                            <tr>
+                              <td>Regions outside India (latency &gt; 80 ms) or exposed to US CLOUD Act</td>
+                              <td><strong>Strategic site</strong> → 5–30 ms nationwide, full data-sovereignty, state green-power subsidies</td>
+                            </tr>
+                            <tr>
+                              <td>One-price-fits-all, USD billing, hidden egress fees</td>
+                              <td><strong>INR billing, 30–40 % cheaper ₹/GPU-hour, zero egress</strong>; tiers tuned to Indian AI-startup budgets</td>
+                            </tr>
+                            <!-- <tr>
+                              <td>Generic ticket queues for support</td>
+                              <td><strong>10-minute SLA</strong> from on-site AI engineers (PyTorch, TensorFlow, JAX, Groq)</td>
+                            </tr> -->
+                            <!-- <tr>
+                              <td>Patchwork “green” claims</td>
+                              <td><strong>&gt; 60 % hydro/solar-powered</strong>; canal-water loop taps &lt; 1 % of flow and recycles 95 %</td>
+                            </tr> -->
+                          </tbody>
+                        </table>
+
+                        <!-- Key Benefits -->
+                        <ul class="key-benefits">
+                          <li><strong>Better ₹-per-FLOP economics</strong> – latest GPUs + liquid cooling maximise compute for every rupee.</li>
+                          <li><strong>Regulatory peace-of-mind</strong> – data, keys, and logs never leave Indian jurisdiction.</li>
+                          <li><strong>Rapid time-to-GPU</strong> – containerised 3 MW pods can be live ≈ 6 months after purchase order.</li>
+                          <!-- <li><strong>Sustainable scale</strong> – designed up to 500 MW with renewable PPAs and LEED/ISO 14001 targets.</li> -->
+                        </ul>
+
+                        <p class="bottom-line"><strong>Bottom line:</strong> If your workload isn’t AI, we’re not your cloud.
+                           If it is - nobody in India can match our cost, latency, sustainability, or sovereignty guarantees at this scale.</p>
+                      </div>
                     </div>
-                    <div id="qa-answer-0" class="qa-answer">
-                        Antriksh Cloud offers 500MW of dedicated AI infrastructure with liquid cooling technology, strategic location in India for low latency, government incentives, and focus on sustainability with green energy. We provide cost-effective solutions specifically designed for the Indian market while maintaining global standards.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(1)">
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(1)">
                         <span>What types of GPUs do you offer and what are the pricing models?</span>
                         <span id="qa-arrow-1" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-1" class="qa-answer">
+                        <p><strong>GPU portfolio&nbsp;(launch sequence)</strong></p>
+                        <ul>
+                          <li><strong>Blackwell&nbsp;+ family</strong> (GB200 and future refreshes)</li>
+                          <!-- <li>NVIDIA&nbsp;H100 &amp; A100 for continuity</li> -->
+                          <li>AMD&nbsp;MI350X clusters for cost-optimised training</li>
+                          <li>Cerebras&nbsp;CS-3 wafer-scale engines for ultra-large models</li>
+                          <li>Groq&nbsp;LPUs for sub-10 ms, high-throughput inference</li>
+                        </ul>
+
+                        <p><strong>Evolving rack densities</strong> – pods start at 150 kW and are engineered to scale to 300 kW and 600 kW per rack as chip TDPs climb.</p>
+
+                        <p><strong>Pricing models</strong></p>
+                        <ul>
+                          <li>On-demand ₹/GPU-hour or month-to-month rental</li>
+                          <li>Reserved instances (1-3 yr) with up to 50 % discount</li>
+                          <li>Dedicated enterprise clusters billed at cluster size rate</li>
+                          <li>Pay-per-API-call for managed inference endpoints</li>
+                        </ul>
+                      </div>
                     </div>
-                    <div id="qa-answer-1" class="qa-answer">
-                        We offer NVIDIA H100, A100, and latest Blackwell series GPUs. Our pricing models include: hourly/monthly GPU rental, reserved instances for long-term commitments, enterprise contracts for dedicated clusters, and pay-per-API-call for inference workloads. Contact us for specific pricing based on your requirements.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(2)">
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(2)">
                         <span>How do you ensure data security and compliance?</span>
                         <span id="qa-arrow-2" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-2" class="qa-answer">
+                        <p>Security and sovereignty are built in from day one:</p>
+
+                        <ul>
+                          <li><strong>Certifications</strong> – SOC 2 Type II, ISO 27001 / 27017 / 27701, and continuous DPDP Act 2023 audits.</li>
+                          <li><strong>Always-on protection</strong> – 24 × 7 SIEM monitoring, zero-trust IAM, full-volume and in-flight AES-256 encryption, HSM-backed key management.</li>
+                          <li><strong>Enterprise sandboxing</strong> – every tenant runs in a logically isolated VPC with private subnets, dedicated GPU pools, and policy-based egress controls.</li>
+                          <li><strong>Defence-grade segregation</strong> – national-security workloads are housed in a physically separate, air-gapped building tied directly to classified defence networks and staffed by cleared personnel.</li>
+                          <li><strong>Sovereign safeguards</strong> – data, logs, and keys never leave India; change-of-control clauses lock infrastructure to Indian jurisdiction.</li>
+                          <li><strong>Compliance reporting</strong> – real-time audit dashboards plus quarterly third-party penetration tests, with attestation reports available under NDA.</li>
+                        </ul>
+
+                        <p class="bottom-line"><strong>Result:</strong> Whether you are a start-up, a listed enterprise, or a defence agency, your workloads stay isolated, encrypted, and fully compliant—today and as regulations evolve.</p>
+                      </div>
                     </div>
-                    <div id="qa-answer-2" class="qa-answer">
-                        We maintain SOC 2 Type II compliance, ISO 27001 certification, and follow Indian data protection regulations. Our infrastructure includes 24/7 monitoring, encrypted data transmission, secure access controls, and dedicated enterprise environments for sensitive workloads.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(3)">
-                        <span>What is your uptime guarantee and support structure?</span>
-                        <span id="qa-arrow-3" style="transition: transform 0.3s ease;">▶</span>
-                    </div>
-                    <div id="qa-answer-3" class="qa-answer">
-                        We provide 99.9% uptime SLA with 24/7 technical support. Our support includes dedicated account managers for enterprise clients, technical consultation, API integration assistance, and comprehensive training programs for your teams.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(4)">
+
+                     <!-- QA Item 4 – “How quickly can I get started?” -->
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(4)">
                         <span>How quickly can I get started with AI workloads?</span>
                         <span id="qa-arrow-4" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-4" class="qa-answer">
+                        <p><strong>Minutes for experiments, hours for production.</strong></p>
+
+                        <ul>
+                          <li><strong>Self-service portal</strong> – spin up a single-node notebook or multi-GPU job in&nbsp;<em>&lt; 15&nbsp;minutes</em>.</li>
+                          <li><strong>Pre-baked ML images</strong> – PyTorch, TensorFlow, JAX, and CUDA optimised kernels are one click away.</li>
+                          <li><strong>Custom enterprise clusters</strong> – delivered in&nbsp;<em>24-48 hours</em> with VPC peering, private subnets, and policy-based egress controls.</li>
+                          <li><strong>Code-level API</strong> – request, monitor, and tear down GPU pools programmatically (see example in the next answer).</li>
+                        </ul>
+
+                        <p class="bottom-line">Result: you can move from “idea” to “training run” the same day—no GPU waitlists, no long procurement cycles.</p>
+                      </div>
                     </div>
-                    <div id="qa-answer-4" class="qa-answer">
-                        Small to medium workloads can be provisioned within minutes through our self-service platform. Enterprise deployments typically take 24-48 hours for custom configurations. We offer pre-configured ML environments for faster deployment.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(5)">
+
+
+                    <!-- QA Item 5 – “Do you support hybrid and multi-cloud?” -->
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(5)">
                         <span>Do you support hybrid and multi-cloud deployments?</span>
                         <span id="qa-arrow-5" style="transition: transform 0.3s ease;">▶</span>
-                    </div>
-                    <div id="qa-answer-5" class="qa-answer">
-                        Yes, we integrate seamlessly with AWS, Azure, and Google Cloud through our API marketplace. Our platform supports hybrid deployments, data migration tools, and multi-cloud orchestration for optimal workload distribution.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(6)">
-                        <span>What industries do you primarily serve?</span>
-                        <span id="qa-arrow-6" style="transition: transform 0.3s ease;">▶</span>
-                    </div>
-                    <div id="qa-answer-6" class="qa-answer">
-                        We serve diverse industries including banking & financial services, healthcare & life sciences, automotive (autonomous vehicles), media & entertainment, research institutions, government agencies, and AI/ML startups across India and globally.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(7)">
-                        <span>How do you address sustainability and environmental concerns?</span>
-                        <span id="qa-arrow-7" style="transition: transform 0.3s ease;">▶</span>
-                    </div>
-                    <div id="qa-answer-7" class="qa-answer">
-                        Our facilities are powered by renewable energy sources, utilize advanced liquid cooling for 40% better energy efficiency, and we're committed to carbon neutrality. We also provide detailed energy usage reports to help customers track their environmental impact.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(8)">
-                        <span>What training and consulting services do you offer?</span>
-                        <span id="qa-arrow-8" style="transition: transform 0.3s ease;">▶</span>
-                    </div>
-                    <div id="qa-answer-8" class="qa-answer">
-                        We provide comprehensive AI implementation consulting, hands-on training workshops, certification programs, migration assistance from existing platforms, and ongoing technical advisory services to maximize your AI infrastructure investment.
-                    </div>
-                </div>
-                
-                <div class="qa-item">
-                    <div class="qa-question" onclick="toggleQA(9)">
+                      </div>
+
+                      <div id="qa-answer-5" class="qa-answer">
+                        <p><strong>Yes—Antriksh Cloud plugs into any cloud or on-prem stack.</strong></p>
+
+                        <ul>
+                          <li>Native peering &amp; VPN options for AWS, Azure, GCP, OCI, and on-prem DCs.</li>
+                          <li><strong>API marketplace</strong> – REST &amp; Python SDKs for workload scheduling, data migration, and cost optimisation across clouds.</li>
+                          <li id="code-link"><strong>Code-level access</strong> – request GPUs in one line:</li>
+                        </ul>
+
+                        <pre><code class="language-python">
+                        from antriksh.cloud import Cluster
+
+                        # Create an 8-GPU GB200 server in 'delhi-1' region
+                        cluster = Cluster(region="delhi-1")
+                        job = cluster.request(
+                            gpus=8,
+                            gpu_type="GB200",
+                            duration="24h",            # on-demand
+                            storage="2TB_NVMe",
+                            network="100G_InfiniBand"
+                        )
+                        print("Job ID:", job.id)
+                        </code></pre>
+
+                            <ul>
+                              <li><strong>Kubernetes-ready</strong> – use our CSI &amp; CNI plugins to burst pods to Antriksh while keeping control-plane on your primary cloud.</li>
+                              <li><strong>Unified billing</strong> – single invoice in INR even when workloads span multiple providers.</li>
+                            </ul>
+
+                            <p class="bottom-line">Bring data from anywhere, burst massive AI jobs to our GPU fabric, and return results—without lock-in.</p>
+                          </div>
+                        </div>
+
+      
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(9)">
                         <span>How do you handle scaling during peak demand periods?</span>
                         <span id="qa-arrow-9" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-9" class="qa-answer">
+                        <p><strong>We combine predictive software and modular hardware to keep queue wait-times under five minutes—even on launch-day spikes.</strong></p>
+
+                        <ul>
+                          <li><strong>Elastic GPU pools :</strong> Kubernetes + Slurm control plane can burst spare GPUs across adjacent racks in&nbsp;<em>&lt; 30 s</em>; autoscaler pre-allocates capacity as queue depth grows.</li>
+
+                          <li><strong>Tiered job queues :</strong>  
+                            <ol>
+                              <li><em>On-demand</em> (interruptible / non-interruptible)</li>
+                              <li><em>Reserved</em> (guaranteed start window)</li>
+                              <li><em>Priority</em> (24 × 7 latency-critical inference)</li>
+                            </ol>
+                            Jobs are promoted or throttled automatically based on SLA and credit balance.
+                          </li>
+
+                          <li><strong>Hot-swap containers :</strong> GPU “blade” modules (96–192 kW) let us inject or remove 512–1,024 GPUs at a time without touching core power-or-cooling loops.</li>
+
+                          <li><strong>Predictive scaling :</strong> Prometheus telemetry feeds a Prophet model that forecasts demand two hours ahead; idle pods are shut down or released to the spot pool.</li>
+
+                          <li><strong>Multi-chip flexibility :</strong> If NVIDIA inventory tightens, the scheduler transparently routes compatible workloads to AMD MI300X or Groq LPUs, keeping queue wait &lt; 5 min.</li>
+
+                          <li><strong>Reserved-capacity SLAs :</strong> Enterprise contracts include “GPU credits” that guarantee burst rights during peak events—backed by a 10 % service-credit penalty for any miss.</li>
+                        </ul>
+                      </div>
                     </div>
-                    <div id="qa-answer-9" class="qa-answer">
-                        Our 500MW infrastructure provides massive scalability. We offer auto-scaling capabilities, load balancing, queue management for high-demand periods, and priority access through reserved instances for critical workloads.
+
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(11)">
+                            <span>When will the site start earning revenue?</span>
+                            <span id="qa-arrow-11" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-11" class="qa-answer">
+                            Immediately after the Seed-Infra round closes we will order a 3 MW container-based turnkey GPU pod. Customer billing is projected <strong>6-8 months</strong> after the purchase order—before any follow-on fund-raise.
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Ask a Question Section -->
-            <div class="ask-question-section">
-                <div class="ask-question-header">
-                    <h3>📝 Have a Question?</h3>
-                    <p>Submit your question below and our team will respond within 24-48 hours.</p>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(12)">
+                            <span>Who are your first customers and how strong is their interest?</span>
+                            <span id="qa-arrow-12" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-12" class="qa-answer">
+                            GenAI companies that currently run inference in Singapore/Malaysia have issued soft commitments covering <strong>&gt; 3 MW</strong> of capacity for low-latency, India-hosted deployment once our PoC pod is live.
+                        </div>
+                    </div>
+
+                    <!-- Scale & Sustainability -->
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(13)">
+                            <span>How much water will the campus consume and is that sustainable?</span>
+                            <span id="qa-arrow-13" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-13" class="qa-answer">
+                            At full 500 MW build-out we will circulate <strong>100-300 MLD</strong> from the adjacent irrigation canal—about <strong>1%</strong> of its average flow. Closed-loop liquid cooling recycles 95% of that volume and all discharge meets CPCB norms; no potable water is drawn.
+                        </div>
+                    </div>
+
+                    <!-- Mission & Vision -->
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(15)">
+                            <span>What is Antriksh Cloud's core mission?</span>
+                            <span id="qa-arrow-15" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-15" class="qa-answer">
+                            To deliver India-owned, AI-optimised GPU cloud infrastructure that is 30-40% cheaper than hyperscalers while guaranteeing full data sovereignty.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(16)">
+                            <span>Summarise the project in one sentence.</span>
+                            <span id="qa-arrow-16" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-16" class="qa-answer">
+                            "500 MW of sovereign, AI-first GPU compute powering India's AI boom."
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(17)">
+                            <span>What makes the facility transformative for India?</span>
+                            <span id="qa-arrow-17" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-17" class="qa-answer">
+                            The single campus will provide more AI compute than <strong>all existing Indian data centres combined</strong>, closing the nation's current capacity gap.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(20)">
+                        <span>How is network latency addressed?</span>
+                        <span id="qa-arrow-20" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-20" class="qa-answer">
+                        <p><strong>Sub-50 ms latency nationwide, backed by multi-terabit dark fibre.</strong></p>
+
+                        <ul>
+                          <li><strong>Feasibility complete :</strong> end-to-end fibre routes surveyed with five independent carriers already present in the region.</li>
+
+                          <li><strong>Tri-path redundancy :</strong> dual dark-fibre paths to neutral IXPs in Mumbai &amp; Delhi NCR, plus a third east-bound path for disaster resilience.</li>
+
+                          <li><strong>Massive headroom :</strong> initial order of <em>1.6 Tbps</em> of dedicated bandwidth (four 400 G channels) split across <em>at least three</em> providers.</li>
+
+                          <li><strong>Metro ring integration :</strong> 400 G leaf-spine fabric ties directly into India’s top metro markets, sustaining &lt; 50 ms RTT even under failover.</li>
+
+                          <li><strong>Carrier-agnostic cross-connects :</strong> single-mode and multi-mode options inside the data-centre meet-me room for tenant direct connects, Wave, MPLS or Internet transit.</li>
+
+                          <li><strong>Jumbo frame &amp; RDMA-ready :</strong> 100 G/400 G InfiniBand gateways ensure low-latency east-west traffic for distributed training jobs.</li>
+                        </ul>
+
+                        <p class="bottom-line">Result: AI workloads reach users and other clouds in milliseconds, with no single carrier dependency and ample future bandwidth.</p>
+                      </div>
+                    </div>
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(21)">
+                        <span>How does Antriksh Cloud make money?</span>
+                        <span id="qa-arrow-21" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-21" class="qa-answer">
+                        <p><strong>Five complementary revenue streams power our business:</strong></p>
+
+                        <ul>
+                          <li><strong>GPU Infrastructure-as-a-Service (IaaS)</strong> – on-demand and reserved GPU hours for training workloads&nbsp;<em>(≈ 50 %)</em></li>
+
+                          <li><strong>AI Platform-as-a-Service (PaaS)</strong> – managed training pipelines, low-latency inference, vector DBs, RAG tooling, and MLOps&nbsp;<em>(≈ 20 %)</em></li>
+
+                          <li><strong>Defence &amp; Government Cloud</strong> – air-gapped, sovereign clusters on long-term contracts with national-security agencies&nbsp;<em>(≈ 15 %)</em></li>
+
+                          <li><strong>Venture Compute</strong> – we allocate otherwise idle, off-peak GPU capacity to promising AI start-ups at a steep discount in exchange for equity stakes&nbsp;<em>(≈ 5 %)</em></li>
+
+                          <li><strong>AI-Ops &amp; Compliance Add-ons</strong> – audit logging, model observability, policy enforcement, and premium support subscriptions&nbsp;<em>(≈ 10 %)</em></li>
+                        </ul>
+
+                        <p>These streams blend usage-based revenue with sticky subscriptions, turning idle capacity into equity upside while keeping cash flow predictable.</p>
+                      </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(25)">
+                            <span>What milestones have already been achieved?</span>
+                            <span id="qa-arrow-25" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-25" class="qa-answer">
+                            • State-level in-principle approvals for land & power<br>
+                            • Draft MoU with renewable-power and incentives<br>
+                            • Engineering design for 3 MW PoC pod<br>
+                            <!-- • LoIs from AI anchors covering &gt; 3 MW -->
+                        </div>
+                    </div>
+
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(26)">
+                        <span>How much are you raising and how will it be used?</span>
+                        <span id="qa-arrow-26" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-26" class="qa-answer">
+                        <p><strong>Seed-Infra round: US $66 million</strong></p>
+                        <ul>
+                          <li><strong>64 %</strong>: 3 MW Proof-of-Concept (PoC) capex, incl. GPUs and liquid-cooling modules</li>
+                          <li><strong>20 %</strong>: Land acquisition with a multi year payment plan, permits, and state-incentive obligations</li>
+                          <li><strong>10 %</strong>: working capital &amp; early operations</li>
+                          <li><strong>6 %</strong>: contingency reserve</li>
+                        </ul>
+
+                        <p>This capital turns the PoC live and revenue-generating—creating an optional early exit for investors—yet our plan is to scale the campus ourselves.</p>
+
+                        <p><strong>Next phase of capital:</strong> scale from 3 MW to the first <em>100 MW GPU cluster</em> once PoC revenues and metrics are proven.</p>
+                      </div>
+                    </div>
+
+
+                    <!-- ESG & Sustainability -->
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(32)">
+                            <span>How is water stewardship ensured?</span>
+                            <span id="qa-arrow-32" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-32" class="qa-answer">
+                            Closed-loop cooling recycles 95% of water; discharge meets CPCB norms and canal draw is limited to ~1% of average flow.
+                        </div>
+                    </div>
                 </div>
 
-                <div class="question-form-wrapper">
-                    <div class="question-form-container">
-                        <div class="loading-indicator" id="questionFormLoadingIndicator">
-                            <div class="spinner"></div>
-                            <p>Loading question form...</p>
+                
+                <!-- Ask a Question Section -->
+                <div class="ask-question-section">
+                    <div class="ask-question-header">
+                        <h3>📝 Have a Question?</h3>
+                        <p>Submit your question below and our team will respond within 24-48 hours.</p>
+                    </div>
+
+                    <div class="question-form-wrapper">
+                        <div class="question-form-container">
+                            <div class="loading-indicator" id="questionFormLoadingIndicator">
+                                <div class="spinner"></div>
+                                <p>Loading question form...</p>
+                            </div>
+                            <iframe
+                                id="questionGoogleForm"
+                                class="question-form-iframe"
+                                src="https://docs.google.com/forms/d/e/1FAIpQLScYZnVN3mMXvgikDea9QpiVkd2Yn6AJ0CDEGQKvEa9lfMGowQ/viewform?usp=dialog"
+                                onload="document.getElementById('questionFormLoadingIndicator').style.display='none';">
+                                Loading…
+                            </iframe>
                         </div>
-                        <!-- Replace YOUR_QUESTION_FORM_ID with your actual Google Form ID -->
-                        <iframe 
-                            id="questionGoogleForm"
-                            class="question-form-iframe"
-                            src="https://docs.google.com/forms/d/e/1FAIpQLScYZnVN3mMXvgikDea9QpiVkd2Yn6AJ0CDEGQKvEa9lfMGowQ/viewform?usp=dialog"
-                            onload="document.getElementById('questionFormLoadingIndicator').style.display='none';">
-                            Loading…
-                        </iframe>
                     </div>
                 </div>
             </div>
