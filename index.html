@@ -6923,7 +6923,7 @@
         </div>
 
         <div id="ai-growth" class="tab-content">
-            
+
                 <div class="section-container">
                     <!-- Hero Section -->
                     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
@@ -9023,9 +9023,7 @@
                 <div class="opportunity-highlight">
                     <h3>Why GPU Data Centers Win</h3>
                     <p>
-                        <strong>Optimal Risk-Reward Position:</strong> Unlike pure-play semiconductor companies (higher risk) 
-                        or general cloud providers (lower specialization), we combine infrastructure stability with 
-                        AI-specific expertise and premium pricing power from GPU scarcity.
+                        <strong>Optimal Risk-Reward Position:</strong> Unlike pure-play semiconductor companies (higher risk) or general cloud providers (lower specialization), we combine infrastructure stability with AI-specific expertise and premium pricing power from GPU scarcity.
                     </p>
                 </div>
 
@@ -9161,12 +9159,7 @@
                                 <div class="metric">35x</div>
                                 <div class="description">Singapore's per capita cloud investment advantage over India</div>
                             </div>
-                            <div class="insight-card">
-                                <div class="metric">0 GPUs</div>
-                                <div class="description">Latest H100/H200 clusters deployed in India (vs 100,000s in US)</div>
-                            </div>
                         </div>
-                    <!-- </div> -->
                 </div>
                 
                 <div class="container">
@@ -11916,15 +11909,409 @@
             </div>
         </div>
 
-        <div id="resources-files" class="tab-content">
-            
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
-                    <div class="section-header">
+        <div id="qa" class="tab-content">
+             <!-- <div class="container"> -->
+                    <!-- <div class="content-area"> -->
+                <div class="qa-section">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h2 style="color: #2a5298; margin-bottom: 10px;">❓ Frequently Asked Questions</h2>
+                        <p style="color: #666; font-size: 1.1rem;">Get answers to common questions about Antriksh Cloud's AI infrastructure services</p>
+                    </div>
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(0)">
+                        <span>What makes Antriksh Cloud different from other cloud providers?</span>
+                        <span id="qa-arrow-0" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
 
-                        <h1>Files & Resources</h1>
-                        <p>All project documentation, appendices, and external resources in one place</p>
+                      <div id="qa-answer-0" class="qa-answer">
+                        <p><strong>Laser-focused on AI workloads only.</strong> We are <em>not</em> a general-purpose cloud; every rupee, rack, and process is optimised for
+                           modern AI training and inference in India.</p>
+
+                        <!-- Comparison Table -->
+                        <table class="compare-table">
+                          <thead>
+                            <tr>
+                              <th>Others …</th>
+                              <th>Antriksh Cloud</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Blend AI with web-hosting &amp; generic VMs</td>
+                              <td><strong>500&nbsp;MW campus reserved 100 % for Agentic AI and AI compute</strong>—no other workloads</td>
+                            </tr>
+                            <tr>
+                              <td>Air-cooled racks that throttle under sustained load</td>
+                              <td><strong>Liquid direct-to-chip cooling</strong> → PUE &lt; 1.2 and up to 15 % more usable FLOPs</td>
+                            </tr>
+                            <tr>
+                              <td>Regions outside India (latency &gt; 80 ms) or exposed to US CLOUD Act</td>
+                              <td><strong>Strategic site</strong> → 5–30 ms nationwide, full data-sovereignty, state green-power subsidies</td>
+                            </tr>
+                            <tr>
+                              <td>One-price-fits-all, USD billing, hidden egress fees</td>
+                              <td><strong>INR billing, 30–40 % cheaper ₹/GPU-hour, zero egress</strong>; tiers tuned to Indian AI-startup budgets</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <!-- Key Benefits -->
+                        <ul class="key-benefits">
+                          <li><strong>Better ₹-per-FLOP economics</strong> – latest GPUs + liquid cooling maximise compute for every rupee.</li>
+                          <li><strong>Regulatory peace-of-mind</strong> – data, keys, and logs never leave Indian jurisdiction.</li>
+                          <li><strong>Rapid time-to-GPU</strong> – containerised 3 MW pods can be live ≈ 6 months after purchase order.</li>
+                          <!-- <li><strong>Sustainable scale</strong> – designed up to 500 MW with renewable PPAs and LEED/ISO 14001 targets.</li> -->
+                        </ul>
+
+                        <p class="bottom-line"><strong>Bottom line:</strong> If your workload isn’t AI, we’re not your cloud.
+                           If it is - nobody in India can match our cost, latency, sustainability, or sovereignty guarantees at this scale.</p>
+                      </div>
+                    </div>
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(1)">
+                        <span>What types of GPUs do you offer and what are the pricing models?</span>
+                        <span id="qa-arrow-1" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-1" class="qa-answer">
+                        <p><strong>GPU portfolio&nbsp;(launch sequence)</strong></p>
+                        <ul>
+                          <li><strong>Blackwell&nbsp;+ family</strong> (GB200 and future refreshes)</li>
+                          <!-- <li>NVIDIA&nbsp;H100 &amp; A100 for continuity</li> -->
+                          <li>AMD&nbsp;MI350X clusters for cost-optimised training</li>
+                          <li>Cerebras&nbsp;CS-3 wafer-scale engines for ultra-large models</li>
+                          <li>Groq&nbsp;LPUs for sub-10 ms, high-throughput inference</li>
+                        </ul>
+
+                        <p><strong>Evolving rack densities</strong> – pods start at 150 kW and are engineered to scale to 300 kW and 600 kW per rack as chip TDPs climb.</p>
+
+                        <p><strong>Pricing models</strong></p>
+                        <ul>
+                          <li>On-demand ₹/GPU-hour or month-to-month rental</li>
+                          <li>Reserved instances (1-3 yr) with up to 50 % discount</li>
+                          <li>Dedicated enterprise clusters billed at cluster size rate</li>
+                          <li>Pay-per-API-call for managed inference endpoints</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(2)">
+                        <span>How do you ensure data security and compliance?</span>
+                        <span id="qa-arrow-2" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-2" class="qa-answer">
+                        <p>Security and sovereignty are built in from day one:</p>
+
+                        <ul>
+                          <li><strong>Certifications</strong> – SOC 2 Type II, ISO 27001 / 27017 / 27701, and continuous DPDP Act 2023 audits.</li>
+                          <li><strong>Always-on protection</strong> – 24 × 7 SIEM monitoring, zero-trust IAM, full-volume and in-flight AES-256 encryption, HSM-backed key management.</li>
+                          <li><strong>Enterprise sandboxing</strong> – every tenant runs in a logically isolated VPC with private subnets, dedicated GPU pools, and policy-based egress controls.</li>
+                          <li><strong>Defence-grade segregation</strong> – national-security workloads are housed in a physically separate, air-gapped building tied directly to classified defence networks and staffed by cleared personnel.</li>
+                          <li><strong>Sovereign safeguards</strong> – data, logs, and keys never leave India; change-of-control clauses lock infrastructure to Indian jurisdiction.</li>
+                          <li><strong>Compliance reporting</strong> – real-time audit dashboards plus quarterly third-party penetration tests, with attestation reports available under NDA.</li>
+                        </ul>
+
+                        <p class="bottom-line"><strong>Result:</strong> Whether you are a start-up, a listed enterprise, or a defence agency, your workloads stay isolated, encrypted, and fully compliant—today and as regulations evolve.</p>
+                      </div>
+                    </div>
+
+                     <!-- QA Item 4 – “How quickly can I get started?” -->
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(4)">
+                        <span>How quickly can I get started with AI workloads?</span>
+                        <span id="qa-arrow-4" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-4" class="qa-answer">
+                        <p><strong>Minutes for experiments, hours for production.</strong></p>
+
+                        <ul>
+                          <li><strong>Self-service portal</strong> – spin up a single-node notebook or multi-GPU job in&nbsp;<em>&lt; 15&nbsp;minutes</em>.</li>
+                          <li><strong>Pre-baked ML images</strong> – PyTorch, TensorFlow, JAX, and CUDA optimised kernels are one click away.</li>
+                          <li><strong>Custom enterprise clusters</strong> – delivered in&nbsp;<em>24-48 hours</em> with VPC peering, private subnets, and policy-based egress controls.</li>
+                          <li><strong>Code-level API</strong> – request, monitor, and tear down GPU pools programmatically (see example in the next answer).</li>
+                        </ul>
+
+                        <p class="bottom-line">Result: you can move from “idea” to “training run” the same day—no GPU waitlists, no long procurement cycles.</p>
+                      </div>
+                    </div>
+
+                    <!-- QA Item 5 – “Do you support hybrid and multi-cloud?” -->
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(5)">
+                        <span>Do you support hybrid and multi-cloud deployments?</span>
+                        <span id="qa-arrow-5" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-5" class="qa-answer">
+                        <p><strong>Yes—Antriksh Cloud plugs into any cloud or on-prem stack.</strong></p>
+
+                        <ul>
+                          <li>Native peering &amp; VPN options for AWS, Azure, GCP, OCI, and on-prem DCs.</li>
+                          <li><strong>API marketplace</strong> – REST &amp; Python SDKs for workload scheduling, data migration, and cost optimisation across clouds.</li>
+                          <li id="code-link"><strong>Code-level access</strong> – request GPUs in one line:</li>
+                        </ul>
+
+                        <pre><code class="language-python">
+                        from antriksh.cloud import Cluster
+
+                        # Create an 8-GPU GB200 server in 'delhi-1' region
+                        cluster = Cluster(region="delhi-1")
+                        job = cluster.request(
+                            gpus=8,
+                            gpu_type="GB200",
+                            duration="24h",            # on-demand
+                            storage="2TB_NVMe",
+                            network="100G_InfiniBand"
+                        )
+                        print("Job ID:", job.id)
+                        </code></pre>
+
+                            <ul>
+                              <li><strong>Kubernetes-ready</strong> – use our CSI &amp; CNI plugins to burst pods to Antriksh while keeping control-plane on your primary cloud.</li>
+                              <li><strong>Unified billing</strong> – single invoice in INR even when workloads span multiple providers.</li>
+                            </ul>
+
+                            <p class="bottom-line">Bring data from anywhere, burst massive AI jobs to our GPU fabric, and return results—without lock-in.</p>
+                          </div>
+                        </div>
+
+      
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(9)">
+                        <span>How do you handle scaling during peak demand periods?</span>
+                        <span id="qa-arrow-9" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-9" class="qa-answer">
+                        <p><strong>We combine predictive software and modular hardware to keep queue wait-times under five minutes—even on launch-day spikes.</strong></p>
+
+                        <ul>
+                          <li><strong>Elastic GPU pools :</strong> Kubernetes + Slurm control plane can burst spare GPUs across adjacent racks in&nbsp;<em>&lt; 30 s</em>; autoscaler pre-allocates capacity as queue depth grows.</li>
+
+                          <li><strong>Tiered job queues :</strong>  
+                            <ol>
+                              <li><em>On-demand</em> (interruptible / non-interruptible)</li>
+                              <li><em>Reserved</em> (guaranteed start window)</li>
+                              <li><em>Priority</em> (24 × 7 latency-critical inference)</li>
+                            </ol>
+                            Jobs are promoted or throttled automatically based on SLA and credit balance.
+                          </li>
+
+                          <li><strong>Hot-swap containers :</strong> GPU “blade” modules (96–192 kW) let us inject or remove 512–1,024 GPUs at a time without touching core power-or-cooling loops.</li>
+
+                          <li><strong>Predictive scaling :</strong> Prometheus telemetry feeds a Prophet model that forecasts demand two hours ahead; idle pods are shut down or released to the spot pool.</li>
+
+                          <li><strong>Multi-chip flexibility :</strong> If NVIDIA inventory tightens, the scheduler transparently routes compatible workloads to AMD MI300X or Groq LPUs, keeping queue wait &lt; 5 min.</li>
+
+                          <li><strong>Reserved-capacity SLAs :</strong> Enterprise contracts include “GPU credits” that guarantee burst rights during peak events—backed by a 10 % service-credit penalty for any miss.</li>
+                        </ul>
+                      </div>
+                    </div>
+
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(11)">
+                            <span>When will the site start earning revenue?</span>
+                            <span id="qa-arrow-11" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-11" class="qa-answer">
+                            Immediately after the Seed-Infra round closes we will order a 3 MW container-based turnkey GPU pod. Customer billing is projected <strong>6-8 months</strong> after the purchase order—before any follow-on fund-raise.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(12)">
+                            <span>Who are your first customers and how strong is their interest?</span>
+                            <span id="qa-arrow-12" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-12" class="qa-answer">
+                            GenAI companies that currently run inference in Singapore/Malaysia have issued soft commitments covering <strong>&gt; 3 MW</strong> of capacity for low-latency, India-hosted deployment once our PoC pod is live.
+                        </div>
+                    </div>
+
+                    <!-- Scale & Sustainability -->
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(13)">
+                            <span>How much water will the campus consume and is that sustainable?</span>
+                            <span id="qa-arrow-13" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-13" class="qa-answer">
+                            At full 500 MW build-out we will circulate <strong>100-300 MLD</strong> from the adjacent irrigation canal—about <strong>1%</strong> of its average flow. Closed-loop liquid cooling recycles 95% of that volume and all discharge meets CPCB norms; no potable water is drawn.
+                        </div>
+                    </div>
+
+                    <!-- Mission & Vision -->
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(15)">
+                            <span>What is Antriksh Cloud's core mission?</span>
+                            <span id="qa-arrow-15" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-15" class="qa-answer">
+                            To deliver India-owned, AI-optimised GPU cloud infrastructure that is 30-40% cheaper than hyperscalers while guaranteeing full data sovereignty.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(16)">
+                            <span>Summarise the project in one sentence.</span>
+                            <span id="qa-arrow-16" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-16" class="qa-answer">
+                            "500 MW of sovereign, AI-first GPU compute powering India's AI boom."
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(17)">
+                            <span>What makes the facility transformative for India?</span>
+                            <span id="qa-arrow-17" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-17" class="qa-answer">
+                            The single campus will provide more AI compute than <strong>all existing Indian data centres combined</strong>, closing the nation's current capacity gap.
+                        </div>
+                    </div>
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(20)">
+                        <span>How is network latency addressed?</span>
+                        <span id="qa-arrow-20" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-20" class="qa-answer">
+                        <p><strong>Sub-50 ms latency nationwide, backed by multi-terabit dark fibre.</strong></p>
+
+                        <ul>
+                          <li><strong>Feasibility complete :</strong> end-to-end fibre routes surveyed with five independent carriers already present in the region.</li>
+
+                          <li><strong>Tri-path redundancy :</strong> dual dark-fibre paths to neutral IXPs in Mumbai &amp; Delhi NCR, plus a third east-bound path for disaster resilience.</li>
+
+                          <li><strong>Massive headroom :</strong> initial order of <em>1.6 Tbps</em> of dedicated bandwidth (four 400 G channels) split across <em>at least three</em> providers.</li>
+
+                          <li><strong>Metro ring integration :</strong> 400 G leaf-spine fabric ties directly into India’s top metro markets, sustaining &lt; 50 ms RTT even under failover.</li>
+
+                          <li><strong>Carrier-agnostic cross-connects :</strong> single-mode and multi-mode options inside the data-centre meet-me room for tenant direct connects, Wave, MPLS or Internet transit.</li>
+
+                          <li><strong>Jumbo frame &amp; RDMA-ready :</strong> 100 G/400 G InfiniBand gateways ensure low-latency east-west traffic for distributed training jobs.</li>
+                        </ul>
+
+                        <p class="bottom-line">Result: AI workloads reach users and other clouds in milliseconds, with no single carrier dependency and ample future bandwidth.</p>
+                      </div>
+                    </div>
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(21)">
+                        <span>How does Antriksh Cloud make money?</span>
+                        <span id="qa-arrow-21" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-21" class="qa-answer">
+                        <p><strong>Five complementary revenue streams power our business:</strong></p>
+
+                        <ul>
+                          <li><strong>GPU Infrastructure-as-a-Service (IaaS)</strong> – on-demand and reserved GPU hours for training workloads&nbsp;<em>(≈ 50 %)</em></li>
+
+                          <li><strong>AI Platform-as-a-Service (PaaS)</strong> – managed training pipelines, low-latency inference, vector DBs, RAG tooling, and MLOps&nbsp;<em>(≈ 20 %)</em></li>
+
+                          <li><strong>Defence &amp; Government Cloud</strong> – air-gapped, sovereign clusters on long-term contracts with national-security agencies&nbsp;<em>(≈ 15 %)</em></li>
+
+                          <li><strong>Venture Compute</strong> – we allocate otherwise idle, off-peak GPU capacity to promising AI start-ups at a steep discount in exchange for equity stakes&nbsp;<em>(≈ 5 %)</em></li>
+
+                          <li><strong>AI-Ops &amp; Compliance Add-ons</strong> – audit logging, model observability, policy enforcement, and premium support subscriptions&nbsp;<em>(≈ 10 %)</em></li>
+                        </ul>
+
+                        <p>These streams blend usage-based revenue with sticky subscriptions, turning idle capacity into equity upside while keeping cash flow predictable.</p>
+                      </div>
+                    </div>
+
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(25)">
+                            <span>What milestones have already been achieved?</span>
+                            <span id="qa-arrow-25" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-25" class="qa-answer">
+                            • State-level in-principle approvals for land & power<br>
+                            • Draft MoU with renewable-power and incentives<br>
+                            • Engineering design for 3 MW PoC pod<br>
+                            <!-- • LoIs from AI anchors covering &gt; 3 MW -->
+                        </div>
+                    </div>
+
+
+                    <div class="qa-item">
+                      <div class="qa-question" onclick="toggleQA(26)">
+                        <span>How much are you raising and how will it be used?</span>
+                        <span id="qa-arrow-26" style="transition: transform 0.3s ease;">▶</span>
+                      </div>
+
+                      <div id="qa-answer-26" class="qa-answer">
+                        <p><strong>Seed-Infra round: US $66 million</strong></p>
+                        <ul>
+                          <li><strong>64 %</strong>: 3 MW Proof-of-Concept (PoC) capex, incl. GPUs and liquid-cooling modules</li>
+                          <li><strong>20 %</strong>: Land acquisition with a multi year payment plan, permits, and state-incentive obligations</li>
+                          <li><strong>10 %</strong>: working capital &amp; early operations</li>
+                          <li><strong>6 %</strong>: contingency reserve</li>
+                        </ul>
+
+                        <p>This capital turns the PoC live and revenue-generating—creating an optional early exit for investors—yet our plan is to scale the campus ourselves.</p>
+
+                        <p><strong>Next phase of capital:</strong> scale from 3 MW to the first <em>100 MW GPU cluster</em> once PoC revenues and metrics are proven.</p>
+                      </div>
+                    </div>
+
+
+                    <!-- ESG & Sustainability -->
+                    <div class="qa-item">
+                        <div class="qa-question" onclick="toggleQA(32)">
+                            <span>How is water stewardship ensured?</span>
+                            <span id="qa-arrow-32" style="transition: transform 0.3s ease;">▶</span>
+                        </div>
+                        <div id="qa-answer-32" class="qa-answer">
+                            Closed-loop cooling recycles 95% of water; discharge meets CPCB norms and canal draw is limited to ~1% of average flow.
+                        </div>
                     </div>
                 </div>
+
+                
+                <!-- Ask a Question Section -->
+                <div class="ask-question-section">
+                    <div class="ask-question-header">
+                        <h3>📝 Have a Question?</h3>
+                        <p>Submit your question below and our team will respond within 24-48 hours.</p>
+                    </div>
+
+                    <div class="question-form-wrapper">
+                        <div class="question-form-container">
+                            <div class="loading-indicator" id="questionFormLoadingIndicator">
+                                <div class="spinner"></div>
+                                <p>Loading question form...</p>
+                            </div>
+                            <iframe
+                                id="questionGoogleForm"
+                                class="question-form-iframe"
+                                src="https://docs.google.com/forms/d/e/1FAIpQLScYZnVN3mMXvgikDea9QpiVkd2Yn6AJ0CDEGQKvEa9lfMGowQ/viewform?usp=dialog"
+                                onload="document.getElementById('questionFormLoadingIndicator').style.display='none';">
+                                Loading…
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+
+        <div id="resources-files" class="tab-content">
+            
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
+                <div class="section-header">
+
+                    <h1>Files & Resources</h1>
+                    <p>All project documentation, appendices, and external resources in one place</p>
+                </div>
+            </div>
+            
             <div class="container">
                 <div class="content-area">
 
@@ -12376,6 +12763,7 @@
                     </div>
                 </div>
             </div>
+    
             <script>
                 // Smooth scroll to sections
                 document.querySelectorAll('.quick-nav-link').forEach(link => {
@@ -12428,410 +12816,11 @@
                     observer.observe(card);
                 });
             </script>
-            </div>
-        </div>      
-         
-        <div id="qa" class="tab-content">
-             <div class="container">
-                    <!-- <div class="content-area"> -->
-                <div class="qa-section">
-                    <div style="text-align: center; margin-bottom: 30px;">
-                        <h2 style="color: #2a5298; margin-bottom: 10px;">❓ Frequently Asked Questions</h2>
-                        <p style="color: #666; font-size: 1.1rem;">Get answers to common questions about Antriksh Cloud's AI infrastructure services</p>
-                    </div>
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(0)">
-                        <span>What makes Antriksh Cloud different from other cloud providers?</span>
-                        <span id="qa-arrow-0" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-0" class="qa-answer">
-                        <p><strong>Laser-focused on AI workloads only.</strong> We are <em>not</em> a general-purpose cloud; every rupee, rack, and process is optimised for
-                           modern AI training and inference in India.</p>
-
-                        <!-- Comparison Table -->
-                        <table class="compare-table">
-                          <thead>
-                            <tr>
-                              <th>Others …</th>
-                              <th>Antriksh Cloud</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>Blend AI with web-hosting &amp; generic VMs</td>
-                              <td><strong>500&nbsp;MW campus reserved 100 % for Agentic AI and AI compute</strong>—no other workloads</td>
-                            </tr>
-                            <tr>
-                              <td>Air-cooled racks that throttle under sustained load</td>
-                              <td><strong>Liquid direct-to-chip cooling</strong> → PUE &lt; 1.2 and up to 15 % more usable FLOPs</td>
-                            </tr>
-                            <tr>
-                              <td>Regions outside India (latency &gt; 80 ms) or exposed to US CLOUD Act</td>
-                              <td><strong>Strategic site</strong> → 5–30 ms nationwide, full data-sovereignty, state green-power subsidies</td>
-                            </tr>
-                            <tr>
-                              <td>One-price-fits-all, USD billing, hidden egress fees</td>
-                              <td><strong>INR billing, 30–40 % cheaper ₹/GPU-hour, zero egress</strong>; tiers tuned to Indian AI-startup budgets</td>
-                            </tr>
-                            <!-- <tr>
-                              <td>Generic ticket queues for support</td>
-                              <td><strong>10-minute SLA</strong> from on-site AI engineers (PyTorch, TensorFlow, JAX, Groq)</td>
-                            </tr> -->
-                            <!-- <tr>
-                              <td>Patchwork “green” claims</td>
-                              <td><strong>&gt; 60 % hydro/solar-powered</strong>; canal-water loop taps &lt; 1 % of flow and recycles 95 %</td>
-                            </tr> -->
-                          </tbody>
-                        </table>
-
-                        <!-- Key Benefits -->
-                        <ul class="key-benefits">
-                          <li><strong>Better ₹-per-FLOP economics</strong> – latest GPUs + liquid cooling maximise compute for every rupee.</li>
-                          <li><strong>Regulatory peace-of-mind</strong> – data, keys, and logs never leave Indian jurisdiction.</li>
-                          <li><strong>Rapid time-to-GPU</strong> – containerised 3 MW pods can be live ≈ 6 months after purchase order.</li>
-                          <!-- <li><strong>Sustainable scale</strong> – designed up to 500 MW with renewable PPAs and LEED/ISO 14001 targets.</li> -->
-                        </ul>
-
-                        <p class="bottom-line"><strong>Bottom line:</strong> If your workload isn’t AI, we’re not your cloud.
-                           If it is - nobody in India can match our cost, latency, sustainability, or sovereignty guarantees at this scale.</p>
-                      </div>
-                    </div>
-
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(1)">
-                        <span>What types of GPUs do you offer and what are the pricing models?</span>
-                        <span id="qa-arrow-1" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-1" class="qa-answer">
-                        <p><strong>GPU portfolio&nbsp;(launch sequence)</strong></p>
-                        <ul>
-                          <li><strong>Blackwell&nbsp;+ family</strong> (GB200 and future refreshes)</li>
-                          <!-- <li>NVIDIA&nbsp;H100 &amp; A100 for continuity</li> -->
-                          <li>AMD&nbsp;MI350X clusters for cost-optimised training</li>
-                          <li>Cerebras&nbsp;CS-3 wafer-scale engines for ultra-large models</li>
-                          <li>Groq&nbsp;LPUs for sub-10 ms, high-throughput inference</li>
-                        </ul>
-
-                        <p><strong>Evolving rack densities</strong> – pods start at 150 kW and are engineered to scale to 300 kW and 600 kW per rack as chip TDPs climb.</p>
-
-                        <p><strong>Pricing models</strong></p>
-                        <ul>
-                          <li>On-demand ₹/GPU-hour or month-to-month rental</li>
-                          <li>Reserved instances (1-3 yr) with up to 50 % discount</li>
-                          <li>Dedicated enterprise clusters billed at cluster size rate</li>
-                          <li>Pay-per-API-call for managed inference endpoints</li>
-                        </ul>
-                      </div>
-                    </div>
-
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(2)">
-                        <span>How do you ensure data security and compliance?</span>
-                        <span id="qa-arrow-2" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-2" class="qa-answer">
-                        <p>Security and sovereignty are built in from day one:</p>
-
-                        <ul>
-                          <li><strong>Certifications</strong> – SOC 2 Type II, ISO 27001 / 27017 / 27701, and continuous DPDP Act 2023 audits.</li>
-                          <li><strong>Always-on protection</strong> – 24 × 7 SIEM monitoring, zero-trust IAM, full-volume and in-flight AES-256 encryption, HSM-backed key management.</li>
-                          <li><strong>Enterprise sandboxing</strong> – every tenant runs in a logically isolated VPC with private subnets, dedicated GPU pools, and policy-based egress controls.</li>
-                          <li><strong>Defence-grade segregation</strong> – national-security workloads are housed in a physically separate, air-gapped building tied directly to classified defence networks and staffed by cleared personnel.</li>
-                          <li><strong>Sovereign safeguards</strong> – data, logs, and keys never leave India; change-of-control clauses lock infrastructure to Indian jurisdiction.</li>
-                          <li><strong>Compliance reporting</strong> – real-time audit dashboards plus quarterly third-party penetration tests, with attestation reports available under NDA.</li>
-                        </ul>
-
-                        <p class="bottom-line"><strong>Result:</strong> Whether you are a start-up, a listed enterprise, or a defence agency, your workloads stay isolated, encrypted, and fully compliant—today and as regulations evolve.</p>
-                      </div>
-                    </div>
-
-                     <!-- QA Item 4 – “How quickly can I get started?” -->
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(4)">
-                        <span>How quickly can I get started with AI workloads?</span>
-                        <span id="qa-arrow-4" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-4" class="qa-answer">
-                        <p><strong>Minutes for experiments, hours for production.</strong></p>
-
-                        <ul>
-                          <li><strong>Self-service portal</strong> – spin up a single-node notebook or multi-GPU job in&nbsp;<em>&lt; 15&nbsp;minutes</em>.</li>
-                          <li><strong>Pre-baked ML images</strong> – PyTorch, TensorFlow, JAX, and CUDA optimised kernels are one click away.</li>
-                          <li><strong>Custom enterprise clusters</strong> – delivered in&nbsp;<em>24-48 hours</em> with VPC peering, private subnets, and policy-based egress controls.</li>
-                          <li><strong>Code-level API</strong> – request, monitor, and tear down GPU pools programmatically (see example in the next answer).</li>
-                        </ul>
-
-                        <p class="bottom-line">Result: you can move from “idea” to “training run” the same day—no GPU waitlists, no long procurement cycles.</p>
-                      </div>
-                    </div>
-
-
-                    <!-- QA Item 5 – “Do you support hybrid and multi-cloud?” -->
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(5)">
-                        <span>Do you support hybrid and multi-cloud deployments?</span>
-                        <span id="qa-arrow-5" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-5" class="qa-answer">
-                        <p><strong>Yes—Antriksh Cloud plugs into any cloud or on-prem stack.</strong></p>
-
-                        <ul>
-                          <li>Native peering &amp; VPN options for AWS, Azure, GCP, OCI, and on-prem DCs.</li>
-                          <li><strong>API marketplace</strong> – REST &amp; Python SDKs for workload scheduling, data migration, and cost optimisation across clouds.</li>
-                          <li id="code-link"><strong>Code-level access</strong> – request GPUs in one line:</li>
-                        </ul>
-
-                        <pre><code class="language-python">
-                        from antriksh.cloud import Cluster
-
-                        # Create an 8-GPU GB200 server in 'delhi-1' region
-                        cluster = Cluster(region="delhi-1")
-                        job = cluster.request(
-                            gpus=8,
-                            gpu_type="GB200",
-                            duration="24h",            # on-demand
-                            storage="2TB_NVMe",
-                            network="100G_InfiniBand"
-                        )
-                        print("Job ID:", job.id)
-                        </code></pre>
-
-                            <ul>
-                              <li><strong>Kubernetes-ready</strong> – use our CSI &amp; CNI plugins to burst pods to Antriksh while keeping control-plane on your primary cloud.</li>
-                              <li><strong>Unified billing</strong> – single invoice in INR even when workloads span multiple providers.</li>
-                            </ul>
-
-                            <p class="bottom-line">Bring data from anywhere, burst massive AI jobs to our GPU fabric, and return results—without lock-in.</p>
-                          </div>
-                        </div>
-
-      
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(9)">
-                        <span>How do you handle scaling during peak demand periods?</span>
-                        <span id="qa-arrow-9" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-9" class="qa-answer">
-                        <p><strong>We combine predictive software and modular hardware to keep queue wait-times under five minutes—even on launch-day spikes.</strong></p>
-
-                        <ul>
-                          <li><strong>Elastic GPU pools :</strong> Kubernetes + Slurm control plane can burst spare GPUs across adjacent racks in&nbsp;<em>&lt; 30 s</em>; autoscaler pre-allocates capacity as queue depth grows.</li>
-
-                          <li><strong>Tiered job queues :</strong>  
-                            <ol>
-                              <li><em>On-demand</em> (interruptible / non-interruptible)</li>
-                              <li><em>Reserved</em> (guaranteed start window)</li>
-                              <li><em>Priority</em> (24 × 7 latency-critical inference)</li>
-                            </ol>
-                            Jobs are promoted or throttled automatically based on SLA and credit balance.
-                          </li>
-
-                          <li><strong>Hot-swap containers :</strong> GPU “blade” modules (96–192 kW) let us inject or remove 512–1,024 GPUs at a time without touching core power-or-cooling loops.</li>
-
-                          <li><strong>Predictive scaling :</strong> Prometheus telemetry feeds a Prophet model that forecasts demand two hours ahead; idle pods are shut down or released to the spot pool.</li>
-
-                          <li><strong>Multi-chip flexibility :</strong> If NVIDIA inventory tightens, the scheduler transparently routes compatible workloads to AMD MI300X or Groq LPUs, keeping queue wait &lt; 5 min.</li>
-
-                          <li><strong>Reserved-capacity SLAs :</strong> Enterprise contracts include “GPU credits” that guarantee burst rights during peak events—backed by a 10 % service-credit penalty for any miss.</li>
-                        </ul>
-                      </div>
-                    </div>
-
-
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(11)">
-                            <span>When will the site start earning revenue?</span>
-                            <span id="qa-arrow-11" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-11" class="qa-answer">
-                            Immediately after the Seed-Infra round closes we will order a 3 MW container-based turnkey GPU pod. Customer billing is projected <strong>6-8 months</strong> after the purchase order—before any follow-on fund-raise.
-                        </div>
-                    </div>
-
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(12)">
-                            <span>Who are your first customers and how strong is their interest?</span>
-                            <span id="qa-arrow-12" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-12" class="qa-answer">
-                            GenAI companies that currently run inference in Singapore/Malaysia have issued soft commitments covering <strong>&gt; 3 MW</strong> of capacity for low-latency, India-hosted deployment once our PoC pod is live.
-                        </div>
-                    </div>
-
-                    <!-- Scale & Sustainability -->
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(13)">
-                            <span>How much water will the campus consume and is that sustainable?</span>
-                            <span id="qa-arrow-13" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-13" class="qa-answer">
-                            At full 500 MW build-out we will circulate <strong>100-300 MLD</strong> from the adjacent irrigation canal—about <strong>1%</strong> of its average flow. Closed-loop liquid cooling recycles 95% of that volume and all discharge meets CPCB norms; no potable water is drawn.
-                        </div>
-                    </div>
-
-                    <!-- Mission & Vision -->
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(15)">
-                            <span>What is Antriksh Cloud's core mission?</span>
-                            <span id="qa-arrow-15" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-15" class="qa-answer">
-                            To deliver India-owned, AI-optimised GPU cloud infrastructure that is 30-40% cheaper than hyperscalers while guaranteeing full data sovereignty.
-                        </div>
-                    </div>
-
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(16)">
-                            <span>Summarise the project in one sentence.</span>
-                            <span id="qa-arrow-16" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-16" class="qa-answer">
-                            "500 MW of sovereign, AI-first GPU compute powering India's AI boom."
-                        </div>
-                    </div>
-
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(17)">
-                            <span>What makes the facility transformative for India?</span>
-                            <span id="qa-arrow-17" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-17" class="qa-answer">
-                            The single campus will provide more AI compute than <strong>all existing Indian data centres combined</strong>, closing the nation's current capacity gap.
-                        </div>
-                    </div>
-
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(20)">
-                        <span>How is network latency addressed?</span>
-                        <span id="qa-arrow-20" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-20" class="qa-answer">
-                        <p><strong>Sub-50 ms latency nationwide, backed by multi-terabit dark fibre.</strong></p>
-
-                        <ul>
-                          <li><strong>Feasibility complete :</strong> end-to-end fibre routes surveyed with five independent carriers already present in the region.</li>
-
-                          <li><strong>Tri-path redundancy :</strong> dual dark-fibre paths to neutral IXPs in Mumbai &amp; Delhi NCR, plus a third east-bound path for disaster resilience.</li>
-
-                          <li><strong>Massive headroom :</strong> initial order of <em>1.6 Tbps</em> of dedicated bandwidth (four 400 G channels) split across <em>at least three</em> providers.</li>
-
-                          <li><strong>Metro ring integration :</strong> 400 G leaf-spine fabric ties directly into India’s top metro markets, sustaining &lt; 50 ms RTT even under failover.</li>
-
-                          <li><strong>Carrier-agnostic cross-connects :</strong> single-mode and multi-mode options inside the data-centre meet-me room for tenant direct connects, Wave, MPLS or Internet transit.</li>
-
-                          <li><strong>Jumbo frame &amp; RDMA-ready :</strong> 100 G/400 G InfiniBand gateways ensure low-latency east-west traffic for distributed training jobs.</li>
-                        </ul>
-
-                        <p class="bottom-line">Result: AI workloads reach users and other clouds in milliseconds, with no single carrier dependency and ample future bandwidth.</p>
-                      </div>
-                    </div>
-
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(21)">
-                        <span>How does Antriksh Cloud make money?</span>
-                        <span id="qa-arrow-21" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-21" class="qa-answer">
-                        <p><strong>Five complementary revenue streams power our business:</strong></p>
-
-                        <ul>
-                          <li><strong>GPU Infrastructure-as-a-Service (IaaS)</strong> – on-demand and reserved GPU hours for training workloads&nbsp;<em>(≈ 50 %)</em></li>
-
-                          <li><strong>AI Platform-as-a-Service (PaaS)</strong> – managed training pipelines, low-latency inference, vector DBs, RAG tooling, and MLOps&nbsp;<em>(≈ 20 %)</em></li>
-
-                          <li><strong>Defence &amp; Government Cloud</strong> – air-gapped, sovereign clusters on long-term contracts with national-security agencies&nbsp;<em>(≈ 15 %)</em></li>
-
-                          <li><strong>Venture Compute</strong> – we allocate otherwise idle, off-peak GPU capacity to promising AI start-ups at a steep discount in exchange for equity stakes&nbsp;<em>(≈ 5 %)</em></li>
-
-                          <li><strong>AI-Ops &amp; Compliance Add-ons</strong> – audit logging, model observability, policy enforcement, and premium support subscriptions&nbsp;<em>(≈ 10 %)</em></li>
-                        </ul>
-
-                        <p>These streams blend usage-based revenue with sticky subscriptions, turning idle capacity into equity upside while keeping cash flow predictable.</p>
-                      </div>
-                    </div>
-
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(25)">
-                            <span>What milestones have already been achieved?</span>
-                            <span id="qa-arrow-25" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-25" class="qa-answer">
-                            • State-level in-principle approvals for land & power<br>
-                            • Draft MoU with renewable-power and incentives<br>
-                            • Engineering design for 3 MW PoC pod<br>
-                            <!-- • LoIs from AI anchors covering &gt; 3 MW -->
-                        </div>
-                    </div>
-
-
-                    <div class="qa-item">
-                      <div class="qa-question" onclick="toggleQA(26)">
-                        <span>How much are you raising and how will it be used?</span>
-                        <span id="qa-arrow-26" style="transition: transform 0.3s ease;">▶</span>
-                      </div>
-
-                      <div id="qa-answer-26" class="qa-answer">
-                        <p><strong>Seed-Infra round: US $66 million</strong></p>
-                        <ul>
-                          <li><strong>64 %</strong>: 3 MW Proof-of-Concept (PoC) capex, incl. GPUs and liquid-cooling modules</li>
-                          <li><strong>20 %</strong>: Land acquisition with a multi year payment plan, permits, and state-incentive obligations</li>
-                          <li><strong>10 %</strong>: working capital &amp; early operations</li>
-                          <li><strong>6 %</strong>: contingency reserve</li>
-                        </ul>
-
-                        <p>This capital turns the PoC live and revenue-generating—creating an optional early exit for investors—yet our plan is to scale the campus ourselves.</p>
-
-                        <p><strong>Next phase of capital:</strong> scale from 3 MW to the first <em>100 MW GPU cluster</em> once PoC revenues and metrics are proven.</p>
-                      </div>
-                    </div>
-
-
-                    <!-- ESG & Sustainability -->
-                    <div class="qa-item">
-                        <div class="qa-question" onclick="toggleQA(32)">
-                            <span>How is water stewardship ensured?</span>
-                            <span id="qa-arrow-32" style="transition: transform 0.3s ease;">▶</span>
-                        </div>
-                        <div id="qa-answer-32" class="qa-answer">
-                            Closed-loop cooling recycles 95% of water; discharge meets CPCB norms and canal draw is limited to ~1% of average flow.
-                        </div>
-                    </div>
-                </div>
-
-                
-                <!-- Ask a Question Section -->
-                <div class="ask-question-section">
-                    <div class="ask-question-header">
-                        <h3>📝 Have a Question?</h3>
-                        <p>Submit your question below and our team will respond within 24-48 hours.</p>
-                    </div>
-
-                    <div class="question-form-wrapper">
-                        <div class="question-form-container">
-                            <div class="loading-indicator" id="questionFormLoadingIndicator">
-                                <div class="spinner"></div>
-                                <p>Loading question form...</p>
-                            </div>
-                            <iframe
-                                id="questionGoogleForm"
-                                class="question-form-iframe"
-                                src="https://docs.google.com/forms/d/e/1FAIpQLScYZnVN3mMXvgikDea9QpiVkd2Yn6AJ0CDEGQKvEa9lfMGowQ/viewform?usp=dialog"
-                                onload="document.getElementById('questionFormLoadingIndicator').style.display='none';">
-                                Loading…
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+
+        <!-- </div>       -->
+         
+
         
         <div class="footer">
             <h3>🌟 Strategic Positioning</h3>
