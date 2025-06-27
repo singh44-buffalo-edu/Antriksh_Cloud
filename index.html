@@ -3014,8 +3014,8 @@
         .opportunity-highlight {
             background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
             border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
+            padding: 2px;
+            margin: 10px 0;
             text-align: center;
             border: 2px solid #3b82f6;
         }
@@ -3030,7 +3030,7 @@
             color: #1e3a8a;
             font-size: 1.2rem;
             line-height: 1.8;
-            max-width: 900px;
+            max-width: auto;
             margin: 0 auto;
         }
 
@@ -3298,11 +3298,11 @@
             position: absolute;
             top: -30px;
             right: 40px;
-            font-size: 4rem;
+            font-size: 5rem;
             background: white;
             border-radius: 50%;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -4823,6 +4823,213 @@
                 max-width: 900px;
                 margin: 0 auto;
             }
+
+            /* =================================== 
+               MARKET SIZE VISUALIZATION 
+               =================================== */
+            .market-size-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+                gap: 20px;
+                padding: 20px;
+            }
+
+            .market-card {
+                background: white;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-left: 4px solid #2a5298;
+            }
+
+            .funnel-chart {
+                padding: 20px;
+            }
+
+            .funnel-item {
+                text-align: center;
+                padding: 20px;
+                margin: 10px 0;
+                border-radius: 8px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .funnel-item.tam {
+                background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+                border: 1px solid #64b5f6;
+            }
+
+            .funnel-item.sam {
+                background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+                border: 1px solid #ba68c8;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .funnel-item.som {
+                background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+                border: 1px solid #81c784;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .funnel-item.target {
+                background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+                border: 1px solid #ffb74d;
+                width: 70%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .funnel-label {
+                font-weight: 600;
+                color: #2c3e50;
+                margin-bottom: 5px;
+            }
+
+            .funnel-value {
+                font-size: 2rem;
+                font-weight: 700;
+                color: #1976d2;
+                margin: 10px 0;
+            }
+
+            .funnel-desc {
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+            /* Growth Chart Styles */
+            .growth-chart {
+                padding: 20px;
+            }
+
+            .growth-years {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                color: #666;
+                font-size: 0.9rem;
+            }
+
+            .growth-line {
+                background: #e0e0e0;
+                height: 200px;
+                border-radius: 8px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .growth-points {
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+                height: 100%;
+                padding: 0 10px;
+            }
+
+            .growth-point {
+                background: linear-gradient(135deg, #2a5298 0%, #3498db 100%);
+                width: 15%;
+                border-radius: 4px 4px 0 0;
+                transition: height 0.5s ease;
+            }
+
+            /* Market Size Section */
+            .market-section {
+                background: white;
+                border-radius: 20px;
+                padding: 40px;
+                margin-bottom: 40px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            }
+
+            .market-section h2 {
+                color: #2a5298;
+                margin-bottom: 10px;
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .market-subtitle {
+                color: #666;
+                font-size: 1.1rem;
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .market-size-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+
+            .market-card {
+                background: #f8f9fa;
+                padding: 30px;
+                border-radius: 15px;
+                border: 1px solid #e5e7eb;
+            }
+
+            .market-card h3 {
+                color: #2d3748;
+                margin-bottom: 20px;
+                font-size: 1.3rem;
+            }
+
+
+            /* Infrastructure Gap */
+            .infrastructure-gap {
+                padding: 20px;
+            }
+
+            .gap-comparison {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .gap-item {
+                text-align: center;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 8px;
+                border: 1px solid #e0e0e0;
+            }
+
+            .gap-country {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            .gap-value {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #e74c3c;
+                display: block;
+                margin: 10px 0;
+            }
+
+            .gap-item:first-child .gap-value {
+                color: #e74c3c;
+            }
+
+            .gap-item:nth-child(2) .gap-value,
+            .gap-item:nth-child(3) .gap-value,
+            .gap-item:nth-child(4) .gap-value {
+                color: #2c3e50;
+            }
+
+            .gap-label {
+                font-size: 0.8rem;
+                color: #666;
+            }
+
+
             
             .opportunity-highlight {
                 background: linear-gradient(135deg, #fff3cd 0%, #ffe8a1 100%);
@@ -6452,7 +6659,7 @@
         <div class="tabs">
             <div class="tab active" onclick="showTab('why-antriksh')">🚀 Why Antriksh</div>
             <div class="tab" onclick="showTab('ai-growth')">📈 AI Growth Opportunity</div>
-            <div class="tab" onclick="showTab('ai-matrix')">🤖 AI Risk & Reward Matrix</div>
+            <!-- <div class="tab" onclick="showTab('ai-matrix')">🤖 AI Risk & Reward Matrix</div> -->
             <div class="tab" onclick="showTab('data-points')">📊 Data Points</div>
             <div class="tab" onclick="showTab('business-model')">💼 Business Model</div>
             <div class="tab" onclick="showTab('venture-compute')">📍🗺️ Venture Compute</div>
@@ -6618,7 +6825,6 @@
                 </div>
                 
                 <!-- India's Strategic Imperative with Enhanced Data -->
-
                 <div class="india-section">
                     <div class="india-flag">🇮🇳</div>
                     <h2 style="font-size: 2.5rem; margin-bottom: 20px; text-align: center; color: #1e293b;">
@@ -6694,131 +6900,36 @@
                     </div>
                 </div>
 
-                <div class="container">    
-                <div class="risk-opportunity">
-                    <div class="risk-card">
-                        <h3 style="color: #dc2626; font-size: 1.5rem; margin-bottom: 20px;">
-                            ❌ The Cost of Inaction
-                        </h3>
-                        <ul style="list-style: none; padding: 0; color: #7f1d1d;">
-                            <li style="margin-bottom: 15px;">• Permanent dependence on US/China AI systems</li>
-                            <li style="margin-bottom: 15px;">• Loss of data and AI sovereignty</li>
-                            <li style="margin-bottom: 15px;">• Exclusion from $10T AGI value creation</li>
-                            <li style="margin-bottom: 15px;">• 1.4 billion Indians become AI consumers, not creators</li>
-                            <li>• Economic colonization through AI monopolies</li>
-                        </ul>
+                <!-- <div class="container">     -->
+                    <div class="risk-opportunity">
+                        <div class="risk-card">
+                            <h3 style="color: #dc2626; font-size: 1.5rem; margin-bottom: 20px;">
+                                ❌ The Cost of Inaction
+                            </h3>
+                            <ul style="list-style: none; padding: 0; color: #7f1d1d;">
+                                <li style="margin-bottom: 15px;">• Permanent dependence on US/China AI systems</li>
+                                <li style="margin-bottom: 15px;">• Loss of data and AI sovereignty</li>
+                                <li style="margin-bottom: 15px;">• Exclusion from $10T AGI value creation</li>
+                                <li style="margin-bottom: 15px;">• 1.4 billion Indians become AI consumers, not creators</li>
+                                <li>• Economic colonization through AI monopolies</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="opportunity-card">
+                            <h3 style="color: #16a34a; font-size: 1.5rem; margin-bottom: 20px;">
+                                ✅ The Prize for Action
+                            </h3>
+                            <ul style="list-style: none; padding: 0; color: #14532d;">
+                                <li style="margin-bottom: 15px;">• Lead the Global South in AI revolution</li>
+                                <li style="margin-bottom: 15px;">• Create $1 trillion AI economy by 2030</li>
+                                <li style="margin-bottom: 15px;">• Secure technological sovereignty forever</li>
+                                <li style="margin-bottom: 15px;">• Enable 10,000+ Indian AI unicorns</li>
+                                <li>• Position as trusted AI partner for democratic nations</li>
+                            </ul>
+                        </div>
                     </div>
-                    
-                    <div class="opportunity-card">
-                        <h3 style="color: #16a34a; font-size: 1.5rem; margin-bottom: 20px;">
-                            ✅ The Prize for Action
-                        </h3>
-                        <ul style="list-style: none; padding: 0; color: #14532d;">
-                            <li style="margin-bottom: 15px;">• Lead the Global South in AI revolution</li>
-                            <li style="margin-bottom: 15px;">• Create $1 trillion AI economy by 2030</li>
-                            <li style="margin-bottom: 15px;">• Secure technological sovereignty forever</li>
-                            <li style="margin-bottom: 15px;">• Enable 10,000+ Indian AI unicorns</li>
-                            <li>• Position as trusted AI partner for democratic nations</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                <!-- </div> -->
                 
-                <!-- Urgent Timeline -->
-                <div class="timeline-section">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px; text-align: center; color: #92400e;">
-                        ⏰ The 24-Month Window
-                    </h2>
-                    <p style="font-size: 1.2rem; text-align: center; color: #78350f; max-width: 800px; margin: 0 auto;">
-                        The race to AGI infrastructure is happening NOW. Every month of delay is a permanent setback.
-                    </p>
-                    
-                    <div class="timeline-container">
-                        <div class="timeline-line"></div>
-                        
-                        <div class="timeline-phase">
-                            <div class="timeline-dot"></div>
-                            <!-- <div class="timeline-content"> -->
-                                <h3 style="color: #d97706; margin-bottom: 10px;">2025-2027: Decision Window</h3>
-                                <p style="color: #78350f;">
-                                    Global powers are committing $1T+ to AI infrastructure. Saudi Arabia allocates $600B. 
-                                    UAE targets 500,000 GPUs. China builds despite sanctions. India must act NOW.
-                                </p>
-                            <!-- </div> -->
-                        </div>
-                        
-                        <div class="timeline-phase">
-                            <div class="timeline-dot"></div>
-                            <!-- <div class="timeline-content"> -->
-                                <h3 style="color: #d97706; margin-bottom: 10px;">2030-2035: Capability Divide</h3>
-                                <p style="color: #78350f;">
-                                    Nations with infrastructure train sovereign AGI models. Those without become permanent 
-                                    consumers. The technological hierarchy gets locked in forever.
-                                </p>
-                            <!-- </div> -->
-                        </div>
-                        
-                        <div class="timeline-phase">
-                            <div class="timeline-dot"></div>
-                            <!-- <div class="timeline-content"> -->
-                                <h3 style="color: #d97706; margin-bottom: 10px;">2035-2040: New World Order</h3>
-                                <p style="color: #78350f;">
-                                    AGI transforms into ASI. Economic and military supremacy flows to AI-sovereign nations. 
-                                    The infrastructure built today determines prosperity for centuries.
-                                </p>
-                            <!-- </div> -->
-                        </div>
-                    </div>
-                </div>
-
-            
-
-                <!-- Why 500MW Scale with Data Context -->
-                <div class="scale-section">
-                    <h2 style="font-size: 3rem; margin-bottom: 20px;color: white;">
-                        ⚡ Why 500MW Changes Everything
-                    </h2>
-                    <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
-                        This isn't incremental progress. It's a quantum leap that positions India among the 
-                        global AI superpowers overnight.
-                    </p>
-                    
-                    <div class="scale-grid">
-                        <div class="scale-card">
-                            <div class="scale-icon">🌍</div>
-                            <div class="scale-number">Top 5</div>
-                            <div>Global AI Infrastructure</div>
-                        </div>
-                        
-                        <div class="scale-card">
-                            <div class="scale-icon">🖥️</div>
-                            <div class="scale-number">280K</div>
-                            <div>Latest GPUs</div>
-                        </div>
-                        
-                        <div class="scale-card">
-                            <div class="scale-icon">🧠</div>
-                            <div class="scale-number">126 EF</div>
-                            <div>ExaFLOPS Compute</div>
-                        </div>
-                        
-                        <div class="scale-card">
-                            <div class="scale-icon">🚀</div>
-                            <div class="scale-number">10,000+</div>
-                            <div>AI Startups Enabled</div>
-                        </div>
-                    </div>
-                    
-                    <div class="scale-impact">
-                        <h3>Impact at Scale</h3>
-                        <p>
-                            500MW represents a 40% increase in India's total data center capacity, specifically dedicated to AI. 
-                            This single facility will provide more AI compute than all existing Indian data centers combined, 
-                            finally matching India's 48% AI adoption rate with world-class infrastructure.
-                        </p>
-                    </div>
-                </div>
-
                 <!-- Company Progress Section -->
                 <div class="progress-section">
                     <h2 style="font-size: 2.5rem; margin-bottom: 30px; color: #1e293b;">
@@ -6906,17 +7017,110 @@
                     </div>
                 </div>
                 
+                <!-- Urgent Timeline -->
+                <div class="timeline-section">
+                    <h2 style="font-size: 1.5rem; margin-bottom: auto; text-align: center; color: #92400e;">
+                        ⏰ The 24-Month Window
+                    </h2>
+                    <p style="font-size: 1.0rem; text-align: center; color: #78350f; max-width: auto; margin: 0 auto;">
+                        The race to AGI infrastructure is happening NOW. Every month of delay is a permanent setback.
+                    </p>
+                    
+                    <div class="timeline-container">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="timeline-phase">
+                            <div class="timeline-dot"></div>
+                            <!-- <div class="timeline-content"> -->
+                                <h3 style="color: #d97706; margin-bottom: 10px;">2025-2027: Decision Window</h3>
+                                <p style="color: #78350f;">
+                                    Global powers are committing $1T+ to AI infrastructure. Saudi Arabia allocates $600B. 
+                                    UAE targets 500,000 GPUs. China builds despite sanctions. India must act NOW.
+                                </p>
+                            <!-- </div> -->
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="timeline-dot"></div>
+                            <!-- <div class="timeline-content"> -->
+                                <h3 style="color: #d97706; margin-bottom: 10px;">2030-2035: Capability Divide</h3>
+                                <p style="color: #78350f;">
+                                    Nations with infrastructure train sovereign AGI models. Those without become permanent 
+                                    consumers. The technological hierarchy gets locked in forever.
+                                </p>
+                            <!-- </div> -->
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="timeline-dot"></div>
+                            <!-- <div class="timeline-content"> -->
+                                <h3 style="color: #d97706; margin-bottom: 10px;">2035-2040: New World Order</h3>
+                                <p style="color: #78350f;">
+                                    AGI transforms into ASI. Economic and military supremacy flows to AI-sovereign nations. 
+                                    The infrastructure built today determines prosperity for centuries.
+                                </p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why 500MW Scale with Data Context -->
+                <div class="scale-section">
+                    <h2 style="font-size: 3rem; margin-bottom: 20px;color: white;">
+                        ⚡ Why 500MW Changes Everything
+                    </h2>
+                    <p style="font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+                        This isn't incremental progress. It's a quantum leap that positions India among the 
+                        global AI superpowers overnight.
+                    </p>
+                    
+                    <div class="scale-grid">
+                        <div class="scale-card">
+                            <div class="scale-icon">🌍</div>
+                            <div class="scale-number">Top 5</div>
+                            <div>Global AI Infrastructure</div>
+                        </div>
+                        
+                        <div class="scale-card">
+                            <div class="scale-icon">🖥️</div>
+                            <div class="scale-number">280K</div>
+                            <div>Latest GPUs</div>
+                        </div>
+                        
+                        <div class="scale-card">
+                            <div class="scale-icon">🧠</div>
+                            <div class="scale-number">126 EF</div>
+                            <div>ExaFLOPS Compute</div>
+                        </div>
+                        
+                        <div class="scale-card">
+                            <div class="scale-icon">🚀</div>
+                            <div class="scale-number">10,000+</div>
+                            <div>AI Startups Enabled</div>
+                        </div>
+                    </div>
+                    
+                    <div class="scale-impact">
+                        <h3>Impact at Scale</h3>
+                        <p>
+                            500MW represents a 40% increase in India's total data center capacity, specifically dedicated to AI. 
+                            This single facility will provide more AI compute than all existing Indian data centers combined, 
+                            finally matching India's 48% AI adoption rate with world-class infrastructure.
+                        </p>
+                    </div>
+                </div>
+
                 <!-- Final CTA -->
                 <div class="cta-section">
-                    <h2>Now Is the Time to Invest</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 40px; opacity: 0.95;">
+                    <h1>Now Is the Time to Invest</h1>
+                    <p style="font-size: 1.2rem; margin-bottom: auto; opacity: 0.91;">
                         Antriksh stands at the convergence of government momentum, technical readiness,<br>
                         ecosystem support, and perfect market timing. The AGI race has begun.
                     </p>                    
-                    <p style="font-size: 1.2rem; margin-top: 40px; font-weight: 600;">
+                    <p style="font-size: 1.2rem; margin-top: auto; font-weight: 500;">
                         Join us in building India's sovereign AI infrastructure.<br>
                         Help define the future of AI for 1.4 billion people.<br>
-                        <span style="font-size: 1.8rem; color: #fbbf24;">The time is now. The opportunity is massive. The future is compute.</span>
+                        <span style="font-size: 1.4rem; color: #fbbf24;">The time is now. The opportunity is massive. The future is compute.</span>
                     </p>
                 </div>
             </div>
@@ -6924,25 +7128,241 @@
 
         <div id="ai-growth" class="tab-content">
 
-                <div class="section-container">
-                    <!-- Hero Section -->
-                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
-                        <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 800;">The AI Intelligence Explosion</h1>
-                        <p style="font-size: 1.3rem; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-                            We are witnessing the greatest technological transformation in human history. 
-                            The AI market is exploding from $279B to $5.3T by 2035, and India stands at the 
-                            epicenter of this revolution with the world's highest AI adoption rate.
+                <!-- Market Size Section -->
+                <div class="market-section">
+                    <h2>📈 AI Compute Market Sizing & Opportunity</h2>
+                    <p class="market-subtitle">📈 Market Growth CAGR above 32% </p>
+                    
+                    <div class="market-size-grid">
+                        <!-- TAM/SAM/SOM Funnel -->
+                        <div class="market-card">
+                            <h3>🎯 TAM / SAM / SOM Funnel (2025)</h3>
+                            <div class="funnel-chart">
+                                <div class="funnel-item tam">
+                                    <div class="funnel-label">Total Addressable Market (TAM)</div>
+                                    <div class="funnel-value">$757.6B</div>
+                                    <div class="funnel-desc">Global AI market in 2025</div>
+                                </div>
+                                <div class="funnel-item sam">
+                                    <div class="funnel-label">APAC AI Market (SAM)</div>
+                                    <div class="funnel-value">$227.3B</div>
+                                    <div class="funnel-desc">APAC addressable market (30% of global)</div>
+                                </div>
+                                <div class="funnel-item som">
+                                    <div class="funnel-label">India AI Market (SAM)</div>
+                                    <div class="funnel-value">$41.7B</div>
+                                    <div class="funnel-desc">India addressable market (5.5% of global)</div>
+                                </div>
+                                <div class="funnel-item target">
+                                    <div class="funnel-label">Target Share - Scale (500MW)</div>
+                                    <div class="funnel-value">$12.5B</div>
+                                    <div class="funnel-desc">Scaled target (30% of India market)</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Growth Projections -->
+                        <div class="market-card">
+                            <h3>📊 AI-GPU Compute Demand Growth (2022-2030)</h3>
+                            <div class="growth-chart">
+                                <div class="highlight">
+                                    <strong>Global AI GPU Market CAGR: 33.3% (2022-2030)</strong>
+                                </div>
+                                <div class="growth-years">
+                                    <span>2022</span>
+                                    <span>2024</span>
+                                    <span>2026</span>
+                                    <span>2028</span>
+                                    <span>2030</span>
+                                </div>
+                                <div class="growth-line">
+                                    <div class="growth-points">
+                                        <div class="growth-point" style="height: 20%;"></div>
+                                        <div class="growth-point" style="height: 35%;"></div>
+                                        <div class="growth-point" style="height: 55%;"></div>
+                                        <div class="growth-point" style="height: 75%;"></div>
+                                        <div class="growth-point" style="height: 100%;"></div>
+                                    </div>
+                                </div>
+                                <div style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 15px;">
+                                    <strong>Market Growth: </strong>$52.1B (2022) → $352.8B (2030)
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- CAGR Comparison -->
+                        <!-- Infrastructure Gap -->
+                        <div class="market-card">
+                            <h3>🇮🇳 India's Infrastructure Gap: The Opportunity</h3>
+                            <div class="infrastructure-gap">
+                                <h4 style="color: #2a5298; margin-bottom: 15px; text-align: center;">
+                                    🚨 DC Capacity vs Data Consumption Mismatch
+                                </h4>
+                                <div class="gap-comparison">
+                                    <div class="gap-item">
+                                        <div class="gap-country">🇮🇳 India</div>
+                                        <div class="gap-value">1</div>
+                                        <div class="gap-label">MW/Million Users</div>
+                                    </div>
+                                    <div class="gap-item">
+                                        <div class="gap-country">🇨🇳 China</div>
+                                        <div class="gap-value">4</div>
+                                        <div class="gap-label">MW/Million Users</div>
+                                    </div>
+                                    <div class="gap-item">
+                                        <div class="gap-country">🇺🇸 USA</div>
+                                        <div class="gap-value">51</div>
+                                        <div class="gap-label">MW/Million Users</div>
+                                    </div>
+                                    <div class="gap-item">
+                                        <div class="gap-country">🇪🇺 EU</div>
+                                        <div class="gap-value">12</div>
+                                        <div class="gap-label">MW/Million Users</div>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 15px; padding: 15px; background: #e6fffa; border-radius: 8px; border: 1px solid #a7f3d0;">
+                                    <strong>🔥 Key Insight:</strong> India has the highest mobile data consumption (26 EB/month, equal to China) 
+                                    but the lowest data center capacity, creating a massive infrastructure gap and growth opportunity.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Intelligence Section -->
+                <div class="market-section">
+                    <h3 style="font-size: 2rem; margin-bottom: 30px; color: #2d3748;">💡 Key Market Insights & Growth Drivers</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <div>
+                            <h4 style="color: #3498db; margin-bottom: 10px; border-bottom: 2px solid #3498db; padding-bottom: 5px;">
+                                🌍 Global Market Projections
+                            </h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin: 8px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e5e7eb;">
+                                    Global AI market projected to reach $3.68 trillion by 2034 with 19.2% CAGR
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e5e7eb;">
+                                    AI chips/GPU market expected to reach $92B by 2025
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e5e7eb;">
+                                    Global GPU-as-a-Service market to grow at 28.78% CAGR to $28.7B by 2030
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e5e7eb;">
+                                    Data center capacity demand to grow 19-22% annually through 2030
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: #27ae60; margin-bottom: 10px; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">
+                                🇮🇳 India's Growth Drivers
+                            </h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin: 8px 0; padding: 12px; background: #e8f5e9; border-radius: 8px; border: 1px solid #a7f3d0;">
+                                    Digital transformation & 5G deployment driving data demand
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #e8f5e9; border-radius: 8px; border: 1px solid #a7f3d0;">
+                                    Infrastructure status granted to DC sector (Draft Data Centre Policy 2020)
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #e8f5e9; border-radius: 8px; border: 1px solid #a7f3d0;">
+                                    India's data center market to add 987+ MW capacity by 2026
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #e8f5e9; border-radius: 8px; border: 1px solid #a7f3d0;">
+                                    Government allocated ₹10,732 crore ($1.24B) for AI infrastructure
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #e8f5e9; border-radius: 8px; border: 1px solid #a7f3d0;">
+                                    DC capacity grew from 350 MW (2019) to 854 MW (2023)
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="color: #e74c3c; margin-bottom: 10px; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">
+                                ⚡ Infrastructure Requirements
+                            </h4>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="margin: 8px 0; padding: 12px; background: #ffebee; border-radius: 8px; border: 1px solid #fecaca;">
+                                    India needs additional 40-45 TWh of power by 2030 for AI growth
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #ffebee; border-radius: 8px; border: 1px solid #fecaca;">
+                                    Average data center power densities doubled: 8kW → 17kW per rack
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #ffebee; border-radius: 8px; border: 1px solid #fecaca;">
+                                    AI-ready data centers expected to reach 30kW per rack by 2027
+                                </li>
+                                <li style="margin: 8px 0; padding: 12px; background: #ffebee; border-radius: 8px; border: 1px solid #fecaca;">
+                                    Despite generating 20% of global data, India has only 3% DC capacity
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h2 text-align: center; style="font-size: 2.5rem; color: #2a5298; margin-bottom: 12px; margin-top: 0;">
+                            AI Risk & Reward Matrix
+                        </h2>
+                        <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 8px;">
+                            Comprehensive Analysis of the AI Value Chain Ecosystem
                         </p>
-                        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
-                                $5.3 Trillion Market by 2035
-                            </div>
-                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
-                                19x Growth Opportunity
-                            </div>
-                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
-                                48% India AI Adoption
-                            </div>
+                    <div class="chart-wrapper">
+                        <canvas id="scatterChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Section Divider -->
+                <div class="section-divider"></div>
+
+                <!-- Our Position Highlight -->
+                <div class="opportunity-highlight">
+                    <h3>AI GPU Data Centers have the best RoI Performance</h3>
+                    <p>
+                        <strong>Optimal Risk-Reward Position:</strong> Unlike pure-play semiconductor companies (higher risk) or general cloud providers (lower specialization), we combine infrastructure stability with AI-specific expertise and premium pricing power from GPU scarcity.
+                    </p>
+                </div>
+
+                <!-- Radar Chart -->
+                <div class="chart-container">
+                    <h2>Multi-Factor Performance Analysis</h2>
+                    <p style="text-align: center; color: #666; margin-bottom: 30px;">
+                        GPU Data Centers excel across key investment criteria
+                    </p>
+                    <div class="chart-wrapper">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+                <p>• Data based on Koncentrik market analysis</p>
+
+                <!-- Investment Thesis Details -->
+                <div class="explanation">
+                    <h3>📊 The GPU Data Center Investment Thesis</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
+                        <div>
+                            <h4 style="color: #667eea;">Revenue Model Advantages</h4>
+                            <ul>
+                                <li><strong>Recurring Revenue:</strong> Monthly/annual contracts vs one-time sales</li>
+                                <li><strong>High Margins:</strong> 60-70% gross margins at scale</li>
+                                <li><strong>Pricing Power:</strong> Supply-demand imbalance favors providers</li>
+                                <li><strong>Network Effects:</strong> Ecosystem attracts more customers</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #667eea;">Risk Mitigation Factors</h4>
+                            <ul>
+                                <li><strong>Diversified Client Base:</strong> Not dependent on single customers</li>
+                                <li><strong>Essential Service:</strong> AI compute is mission-critical</li>
+                                <li><strong>Capital Efficiency:</strong> Shared infrastructure model</li>
+                                <li><strong>Proven Demand:</strong> Waitlists for GPU capacity</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 style="color: #667eea;">Market Timing</h4>
+                            <ul>
+                                <li><strong>Early Stage:</strong> AI adoption still <10% of potential</li>
+                                <li><strong>Regulatory Tailwinds:</strong> Government AI initiatives</li>
+                                <li><strong>Technology Inflection:</strong> GPT moment driving demand</li>
+                                <li><strong>Capital Scarcity:</strong> Limited competition due to high barriers</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -7315,7 +7735,6 @@
                 </div>
 
                 <!-- AI Modalities Investment Comparison Section -->
-                <div style="background: #f8f9fa; padding: 80px 40px; border-radius: 20px; margin-top: 60px;">
                     <h2 style="font-size: 2.8rem; text-align: center; margin-bottom: 60px; color: #1a1a2e; font-weight: 700;">
                         AI Modalities Investment Comparison
                     </h2>
@@ -7427,29 +7846,25 @@
                     </div>
 
 
-
-
-
-                    <!-- Key Insights -->
-                    <!-- <div style="margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto;">
-                        <h3 style="font-size: 1.8rem; margin-bottom: 30px; text-align: center; color: #1a1a2e;">Key Investment Insights</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
-                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #667eea;">
-                                <h4 style="color: #2d3748; margin-bottom: 15px;">🚀 Highest Growth</h4>
-                                <p style="color: #4a5568; line-height: 1.6;">LLMs lead with 79.8% CAGR, representing the fastest-growing segment with potential for 150x+ returns by 2035.</p>
-                            </div>
-                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #22c55e;">
-                                <h4 style="color: #2d3748; margin-bottom: 15px;">🌏 India's Opportunity</h4>
-                                <p style="color: #4a5568; line-height: 1.6;">Indian AI companies are rapidly emerging across all modalities, with particular strength in voice AI, robotics, and enterprise solutions.</p>
-                            </div>
-                            <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #fbbf24;">
-                                <h4 style="color: #2d3748; margin-bottom: 15px;">💡 Best Balance</h4>
-                                <p style="color: #4a5568; line-height: 1.6;">Scientific AI combines high growth (48.1%) with proven impact, backed by tangible pharmaceutical and research breakthroughs.</p>
-                            </div>
+                <!-- Key Insights -->
+                <div style="margin-top: 50px; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 30px; text-align: center; color: #1a1a2e;">Key Investment Insights</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;">
+                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #667eea;">
+                            <h4 style="color: #2d3748; margin-bottom: 15px;">🚀 Highest Growth</h4>
+                            <!-- <p style="color: #4a5568; line-height: 1.6;">LLMs lead with 79.8% CAGR, representing the fastest-growing segment with potential for 150x+ returns by 2035.</p> -->
                         </div>
-                    </div> -->
+                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #22c55e;">
+                            <h4 style="color: #2d3748; margin-bottom: 15px;">🌏 India's Opportunity</h4>
+                            <!-- <p style="color: #4a5568; line-height: 1.6;">Indian AI companies are rapidly emerging across all modalities, with particular strength in voice AI, robotics, and enterprise solutions.</p> -->
+                        </div>
+                        <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 4px solid #fbbf24;">
+                            <h4 style="color: #2d3748; margin-bottom: 15px;">💡 Best Balance</h4>
+                            <!-- <p style="color: #4a5568; line-height: 1.6;">Scientific AI combines high growth (48.1%) with proven impact, backed by tangible pharmaceutical and research breakthroughs.</p> -->
+                        </div>
+                    </div>
                 </div>
-
+                
                 <!-- Timeline Section -->
                 <div style="background: #f7fafc; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px;">
                     <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 40px; color: #1a1a2e; font-weight: 700;">
@@ -7503,64 +7918,29 @@
                     </div>
                 </div>
 
-                <!-- Infrastructure Section -->
-                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; border-radius: 20px; margin-bottom: 40px;">
-                    <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 40px;">
-                        Infrastructure: The Foundation of AI Growth
-                    </h2>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px;">
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); text-align: center;">
-                            <h3 style="margin-bottom: 20px;">Global Investment</h3>
-                            <div style="font-size: 3rem; font-weight: 800; margin: 20px 0;">$320B</div>
-                            <p>Annual infrastructure spending by hyperscalers in 2025</p>
+                <div class="section-container">
+                    <!-- Hero Section -->
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 40px; text-align: center; border-radius: 20px; margin-bottom: 40px;">
+                        <h1 style="font-size: 3.5rem; margin-bottom: 20px; font-weight: 800;">The AI Intelligence Explosion</h1>
+                        <p style="font-size: 1.3rem; margin-bottom: 30px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.8;">
+                            We are witnessing the greatest technological transformation in human history. 
+                            The AI market is exploding from $279B to $5.3T by 2035, and India stands at the 
+                            epicenter of this revolution with the world's highest AI adoption rate.
+                        </p>
+                        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
+                                $5.3 Trillion Market by 2035
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
+                                19x Growth Opportunity
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 50px; backdrop-filter: blur(10px); font-weight: 600;">
+                                48% India AI Adoption
+                            </div>
                         </div>
-                        
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); text-align: center;">
-                            <h3 style="margin-bottom: 20px;">India's Opportunity</h3>
-                            <div style="font-size: 3rem; font-weight: 800; margin: 20px 0;">$42B</div>
-                            <p>AI infrastructure market with 51x growth potential</p>
-                        </div>
-                        
-                        <!-- <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); text-align: center;">
-                            <h3 style="margin-bottom: 20px;">Antriksh Impact</h3>
-                            <div style="font-size: 3rem; font-weight: 800; margin: 20px 0;">40%</div>
-                            <p>Of India's AI capacity from single 500MW facility</p>
-                        </div> -->
-                        
-                        <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); text-align: center;">
-                            <h3 style="margin-bottom: 20px;">Compute Revolution</h3>
-                            <div style="font-size: 3rem; font-weight: 800; margin: 20px 0;">126 EF</div>
-                            <p>ExaFLOPS enabling AGI-scale AI</p>
-                        </div>
-                        
-                        <!-- <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); text-align: center;">
-                            <h3 style="margin-bottom: 20px;">GPU Deployment</h3>
-                            <div style="font-size: 3rem; font-weight: 800; margin: 20px 0;">280K</div>
-                            <p>Latest GPUs powering India's AI ambitions</p>
-                        </div> -->
-                        
-                        <!-- <div style="background: rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); text-align: center;">
-                            <h3 style="margin-bottom: 20px;">Market Valuation</h3>
-                            <div style="font-size: 3rem; font-weight: 800; margin: 20px 0;">$10B</div>
-                            <p>Projected market cap positioning India in top 5</p>
-                        </div> -->
                     </div>
                 </div>
 
-                <!-- CTA Section -->
-                <div style="background: #1a1a2e; color: white; padding: 60px 40px; text-align: center; border-radius: 20px;">
-                    <h2 style="font-size: 3rem; margin-bottom: 20px;color: white;">The Time to Act is NOW</h2>
-                    <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto;">
-                        The AI revolution is happening at unprecedented speed. With the world's highest AI adoption 
-                        and largest infrastructure gap, India has a unique 24-month window to secure its position 
-                        as a global AI superpower. Join Antriksh in building the infrastructure that will power 
-                        India's AI future.
-                    </p>
-                    <a href="#contact" style="display: inline-block; background: #667eea; color: white; padding: 20px 40px; border-radius: 50px; font-weight: 700; font-size: 1.2rem; text-decoration: none; margin-top: 30px; transition: all 0.3s ease;">
-                        Partner with Antriksh
-                    </a>
-                </div>
             </div>
 
         <div id="Investment" class="tab-content">
@@ -8220,7 +8600,7 @@
                                     <div class="unit-economics-card">
                                         <h4>Market Control</h4>
                                         <p class="unit-economics-value" style="color: #e74c3c;">100%</p>
-                                        <p style="font-size: 0.9rem; color: #666;">India's cloud market controlled by U.S. companies subject to CLOUD Act</p>
+                                        <p style="font-size: 0.9rem; color: #666;">India's Hyperscaler clouds controlled by U.S. CLOUD Act</p>
                                     </div>
                                     <div class="unit-economics-card">
                                         <h4>Legal Bypass</h4>
@@ -8978,8 +9358,8 @@
                                     </div>
                                     <div style="background: white; padding: 20px; border-radius: 8px; text-align: center; border: 2px solid #e0e0e0;">
                                         <h5 style="color: #2a5298;">Scale AI</h5>
-                                        <div style="font-size: 1.8rem; font-weight: bold; color: #27ae60; margin: 10px 0;">$13.8B</div>
-                                        <p style="color: #666; font-size: 0.9rem;">18x Revenue Multiple</p>
+                                        <div style="font-size: 1.8rem; font-weight: bold; color: #27ae60; margin: 10px 0;">$29B</div>
+                                        <p style="color: #666; font-size: 0.9rem;">18x Revenue Multiple, Latest investment by Meta</p>
                                     </div>
                                     <div style="background: white; padding: 20px; border-radius: 8px; text-align: center; border: 2px solid #e0e0e0;">
                                         <h5 style="color: #2a5298;">Lambda Labs</h5>
@@ -8999,84 +9379,6 @@
                 </div>
             </div>
         </div> 
-
-        <div id="ai-matrix" class="tab-content">
-            <!-- <div class="container"> -->
-                <!-- Detailed Analysis Charts -->
-                <div class="chart-container">
-                    <h2 text-align: center; style="font-size: 2.5rem; color: #2a5298; margin-bottom: 12px; margin-top: 0;">
-                            AI Risk & Reward Matrix
-                        </h2>
-                        <p style="font-size: 1.1rem; color: #64748b; margin-bottom: 8px;">
-                            Comprehensive Analysis of the AI Value Chain Ecosystem
-                        </p>
-                    <div class="chart-wrapper">
-                        <canvas id="scatterChart"></canvas>
-                    </div>
-                    
-                </div>
-
-                <!-- Section Divider -->
-                <div class="section-divider"></div>
-
-                <!-- Our Position Highlight -->
-                <div class="opportunity-highlight">
-                    <h3>Why GPU Data Centers Win</h3>
-                    <p>
-                        <strong>Optimal Risk-Reward Position:</strong> Unlike pure-play semiconductor companies (higher risk) or general cloud providers (lower specialization), we combine infrastructure stability with AI-specific expertise and premium pricing power from GPU scarcity.
-                    </p>
-                </div>
-
-                <!-- Radar Chart -->
-                <div class="chart-container">
-                    <h2>Multi-Factor Performance Analysis</h2>
-                    <p style="text-align: center; color: #666; margin-bottom: 30px;">
-                        GPU Data Centers excel across key investment criteria
-                    </p>
-                    <div class="chart-wrapper">
-                        <canvas id="radarChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Investment Thesis Details -->
-                <div class="explanation">
-                    <h3>📊 The GPU Data Center Investment Thesis</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 25px;">
-                        <div>
-                            <h4 style="color: #667eea;">Revenue Model Advantages</h4>
-                            <ul>
-                                <li><strong>Recurring Revenue:</strong> Monthly/annual contracts vs one-time sales</li>
-                                <li><strong>High Margins:</strong> 60-70% gross margins at scale</li>
-                                <li><strong>Pricing Power:</strong> Supply-demand imbalance favors providers</li>
-                                <li><strong>Network Effects:</strong> Ecosystem attracts more customers</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="color: #667eea;">Risk Mitigation Factors</h4>
-                            <ul>
-                                <li><strong>Diversified Client Base:</strong> Not dependent on single customers</li>
-                                <li><strong>Essential Service:</strong> AI compute is mission-critical</li>
-                                <li><strong>Capital Efficiency:</strong> Shared infrastructure model</li>
-                                <li><strong>Proven Demand:</strong> Waitlists for GPU capacity</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="color: #667eea;">Market Timing</h4>
-                            <ul>
-                                <li><strong>Early Stage:</strong> AI adoption still <10% of potential</li>
-                                <li><strong>Regulatory Tailwinds:</strong> Government AI initiatives</li>
-                                <li><strong>Technology Inflection:</strong> GPT moment driving demand</li>
-                                <li><strong>Capital Scarcity:</strong> Limited competition due to high barriers</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer">
-                    <p><strong>Confidential Investment Memorandum</strong> • AI GPU Data Center Project</p>
-                    <p>For accredited investors only • Data based on Koncentrik market analysis</p>
-                </div>
-        </div>
         
         <div id="competition" class="tab-content">
                 <div class="container">
@@ -9229,12 +9531,12 @@
                                     </td>
                                 </tr>
                                 <tr class="decacorn">
-                                    <td class="company-name">Scale AI<br><span class="valuation-badge">$13.8B</span></td>
+                                    <td class="company-name">Scale AI<br><span class="valuation-badge">$29B</span></td>
                                     <td>
-                                        <strong>Valuation:</strong> $13.8B<br>
+                                        <strong>Valuation:</strong> $29B<br>
                                         <strong>Seeking:</strong> $25B tender<br>
-                                        <strong>Total Raised:</strong> $1.6B<br>
-                                        <strong>Revenue Multiple:</strong> 18x
+                                        <strong>Total Raised:</strong> $16B<br>
+                                        <strong>Latest:</strong> by Meta
                                     </td>
                                     <td>
                                         <strong>2024 Revenue:</strong> $870M<br>
@@ -12300,7 +12602,6 @@
                     </div>
                 </div>
             </div>
-        <!-- </div> -->
 
         <div id="resources-files" class="tab-content">
             
@@ -12311,7 +12612,7 @@
                     <p>All project documentation, appendices, and external resources in one place</p>
                 </div>
             </div>
-            
+
             <div class="container">
                 <div class="content-area">
 
@@ -12818,10 +13119,6 @@
             </script>
         </div>
 
-        <!-- </div>       -->
-         
-
-        
         <div class="footer">
             <h3>🌟 Strategic Positioning</h3>
             <p><strong>Antriksh Cloud aims to become India's leading AI infrastructure provider, offering scalable, sustainable, and cost-effective GPU computing solutions for the rapidly growing AI market.</strong></p>
