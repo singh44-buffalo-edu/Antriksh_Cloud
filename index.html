@@ -12,159 +12,159 @@
     <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 
     <style>
-            .deck-download {
-                width: 16px;
-                height: 16px;
-                opacity: 0.8;
-                transition: all 0.3s ease;
-            }
+        .deck-download {
+            width: 16px;
+            height: 16px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
 
-            .pitch-deck-tab {
-                text-decoration: none;
-                color: #f59e0b !important;
-                border-color: #f59e0b !important;
-            }
+        .pitch-deck-tab {
+            text-decoration: none;
+            color: #f59e0b;
+            border-color: #f59e0b;
+        }
 
-            .pitch-deck-tab:hover {
-                background: rgba(245, 158, 11, 0.1) !important;
-            }
+        .pitch-deck-tab:hover {
+            background: rgba(245, 158, 11, 0.1);
+        }
 
-                    /* Scale Section */
-            .scale-section {
-                background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-                color: white;
-                padding: 60px 40px;
-                border-radius: 20px;
-                margin: 60px 0;
-                text-align: center;
-            }
-            
-            .scale-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                gap: 30px;
-                margin: 40px 0;
-            }
-            
-            .scale-card {
-                background: rgba(255,255,255,0.1);
-                padding: 30px;
-                border-radius: 15px;
-                backdrop-filter: blur(10px);
-            }
-            
-            .scale-icon {
-                font-size: 3rem;
-                margin-bottom: 15px;
-            }
-            
-            .scale-number {
-                font-size: 2.5rem;
-                font-weight: 700;
-                margin-bottom: 10px;
-            }
-            
-            .scale-impact {
-                background: rgba(255,255,255,0.1);
-                padding: 30px;
-                border-radius: 15px;
-                margin-top: 40px;
-                backdrop-filter: blur(10px);
-            }
-            /* Company Progress Section */
-            .progress-section {
-                background: white;
-                padding: 60px 40px;
-                border-radius: 20px;
-                margin: 60px 0;
-                /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);*/
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            }
-            
-            .achievement-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 20px;
-                margin: 30px 0;
-            }
-            
-            .achievement-card {
-                background: #f7fafc;
-                padding: 25px;
-                border-radius: 10px;
-                border: 1px solid #cbd5e0;
-                transition: all 0.3s ease;
-            }
-            
-            .achievement-card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
-                border-color: #3182ce;
-            }
-            
-            .stats {
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: wrap;
-                gap: 30px;
-                margin: 40px 0;
-            }
-            
-            .stat-item {
-                text-align: center;
-            }
-            
-            .stat-number {
-                font-size: 2.5rem;
-                font-weight: 700;
-                color: #3b82f6;
-                display: block;
-            }
-            
-            .stat-label {
-                color: #64748b;
-                font-size: 1.1rem;
-            }
+                /* Scale Section */
+        .scale-section {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 60px 0;
+            text-align: center;
+        }
+        
+        .scale-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .scale-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .scale-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .scale-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .scale-impact {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            backdrop-filter: blur(10px);
+        }
+        /* Company Progress Section */
+        .progress-section {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 60px 0;
+            /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);*/
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .achievement-card {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e0;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+            border-color: #3182ce;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+            display: block;
+        }
+        
+        .stat-label {
+            color: #64748b;
+            font-size: 1.1rem;
+        }
 
-            .sankey-container {
-                background: white;
-                border-radius: 20px;
-                padding: 40px 30px;
-                box-shadow: 0 8px 20px rgba(0,0,0,0.04);
-                margin-bottom: 30px;
-                border: 1px solid #e5e7eb;
-                max-width: 1200px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .sankey-title {
-                font-size: 24px;
-                font-weight: 600;
-                color: #1a202c;
-                margin-bottom: 30px;
-                text-align: center;
-            }
-            
-            #sankey-chart {
-                width: 100%;
-                height: 700px;
-            }
-            
-            .tooltip {
-                position: absolute;
-                pointer-events: none;
-                padding: 8px 12px;
-                background: rgba(0, 0, 0, 0.85);
-                color: #fff;
-                font-size: 13px;
-                border-radius: 6px;
-                opacity: 0;
-                transition: opacity 0.2s ease;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-                z-index: 1000;
-            }
-        </style>
+        .sankey-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+            border: 1px solid #e5e7eb;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .sankey-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        #sankey-chart {
+            width: 100%;
+            height: 700px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            pointer-events: none;
+            padding: 8px 12px;
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            font-size: 13px;
+            border-radius: 6px;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+    </style>
 
     <style>
         .metrics-summary {
@@ -5439,33 +5439,73 @@
 
 
     <style>
-        body {
-          margin: 0;
-          font-family: sans-serif;
-        }
-
         #mobile-warning {
-          display: none;
-          text-align: center;
-          padding: 50px;
-          font-size: 1.2rem;
-          color: #fff;
-          background-color: #333;
-          height: 100vh;
-        }
-
-        #main-content {
-          display: block;
-        }
-
-        @media screen and (max-width: 768px) {
-          #mobile-warning {
-            display: block;
-          }
-
-          #main-content {
             display: none;
-          }
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #1a1a2e;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            z-index: 9999;
+            text-align: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        #mobile-warning h2 {
+            font-size: 28px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            color: #4fc3f7;
+        }
+
+        #mobile-warning p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mobile-deck-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-deck-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 195, 247, 0.4);
+            background: linear-gradient(135deg, #29b6f6 0%, #4fc3f7 100%);
+        }
+
+        /* Show mobile warning only on mobile devices */
+        @media only screen and (max-width: 768px) {
+            #mobile-warning {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Hide the main container on mobile */
+            .container {
+                display: none;
+            }
         }
     </style>
 
@@ -6087,6 +6127,60 @@
     </style>
 
     <style>
+
+        /* Simple Investment Deck Button */
+        .investment-deck-simple {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .deck-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .deck-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .deck-button:hover::before {
+            left: 100%;
+        }
+
+        .deck-button:hover {
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 480px) {
+            .deck-button {
+                font-size: 15px;
+                padding: 10px 24px;
+            }
+        }
+
+
+
 
         /* Ask a Question Section */
         .ask-question-section {
@@ -6794,14 +6888,36 @@
 </head>
 <body>
 
-    <div id="mobile-warning">
+    <!-- <div id="mobile-warning">
       🚫 This website is not available on mobile. Please use a larger screen.
+    </div> -->
+
+    <div id="mobile-warning">
+        
+        
+        <h2>📱 Mobile Users</h2>
+        <p>To learn more about our Business Model, Market Analysis, and detailed Data Points, please open this website on a desktop computer.</p>
+        <p>For now, you can view our mobile-friendly pitch deck:</p>
+        <a href="https://www.antriksh.cloud/Deck" class="mobile-deck-btn">
+            📑 📊 View Investment Deck
+        </a>
     </div>
+
 
     <div class="container">
         <div class="header">
             <h1>🚀 Antriksh Cloud</h1>
             <p>Building a 500MW AI GPU Data Center - AI Factory</p>
+
+            <!-- Simple Investment Deck Button -->
+            <div class="investment-deck-simple">
+                <a href="https://www.antriksh.cloud/Deck" class="deck-button" target="_blank">
+                    📊 View Investment Deck
+                    <svg class="deck-download" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                        </svg>
+                </a>
+            </div>
         </div>
         
         <div class="tabs">
@@ -6827,12 +6943,12 @@
             <div class="tab" onclick="showTab('qa')">❓ Q&A</div>
             <!-- New Pitch Deck Tab -->
                 <!-- New Pitch Deck Tab -->
-                   <a href="https://www.antriksh.cloud/Deck" class="tab pitch-deck-tab" target="_blank">
+                   <!-- <a href="https://www.antriksh.cloud/Deck" class="tab pitch-deck-tab" target="_blank">
                        📑 Investment Deck
                         <svg class="deck-download" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
                         </svg>
-                   </a>
+                   </a> -->
         </div>
         
 
@@ -9578,135 +9694,135 @@
                 </div>
                 
                 <!-- Data Point: CoreWeave Growth Metrics -->
-                    <div class="data-point-item">
-                        <div class="data-point-header">
-                            <h3 style="color: #2a5298; margin-bottom: 10px;">🚀 CoreWeave: Startup to $80B Valuation</h3>
-                            <p style="color: #555; line-height: 1.6; margin-bottom: 15px;">
-                                <strong>Key Insight:</strong> CoreWeave IPO'd in March 2025 at $23B valuation ($40/share), then surged 300% to $80B ($158-164/share) in just 4 months. Revenue exploded from $16M (2022) to $982M (Q1 2025), backed by $15.9B OpenAI partnership and exclusive Platinum rating.
-                            </p>
-                            <button class="data-toggle-btn" onclick="toggleDataPoint('coreweave')">
-                                <span>View Growth Analysis</span>
-                                <span id="data-arrow-coreweave" style="margin-left: 10px; transition: transform 0.3s ease;">▼</span>
-                            </button>
-                        </div>
-                        <div id="data-content-coreweave" class="data-point-content">
-                            <h4 style="color: #2a5298; margin-bottom: 20px; text-align: center;">CoreWeave Revenue Growth 2022-2024</h4>
-                            <div style="text-align: center; margin-bottom: 30px;">
-                                <img src="Screenshot.png" 
-                                     alt="Coreweave upto 2024" 
-                                     style="max-width: 40%; height: auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                            </div> 
-                            <h4 style="color: #2a5298; margin-bottom: 20px; text-align: center;">CoreWeave 2025E Revenue - $5B </h4>
-
-                            <!-- IPO Performance Section -->
-                            <h4 style="color: #2a5298; margin-bottom: 15px;">📈 IPO Performance & Stock Surge</h4>
-                            <div style="background: #f0f4f8; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                                    <div style="text-align: center;">
-                                        <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">IPO Date</div>
-                                        <div style="font-size: 1.4rem; font-weight: bold; color: #2a5298;">March 28, 2025</div>
-                                    </div>
-                                    <div style="text-align: center;">
-                                        <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">IPO Price</div>
-                                        <div style="font-size: 1.8rem; font-weight: bold; color: #666;">$40/share</div>
-                                    </div>
-                                    <div style="text-align: center;">
-                                        <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Current Price</div>
-                                        <div style="font-size: 1.8rem; font-weight: bold; color: #2e7d32;">$158-164</div>
-                                    </div>
-                                    <!-- <div style="text-align: center;">
-                                        <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Gain Since IPO</div>
-                                        <div style="font-size: 1.8rem; font-weight: bold; color: #2e7d32;">+300%</div>
-                                    </div> -->
-                                    <div style="text-align: center;">
-                                        <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">IPO Valuation</div>
-                                        <div style="font-size: 1.8rem; font-weight: bold; color: #666;">$23B</div>
-                                    </div>
-                                    <div style="text-align: center;">
-                                        <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Current Valuation</div>
-                                        <div style="font-size: 1.8rem; font-weight: bold; color: #1976d2;">$80B</div>
-                                    </div>
-                                </div>
-                                <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px;">
-                                    <p style="margin: 0; color: #1e7e34; line-height: 1.6;">
-                                        <strong>📊 IPO Highlights:</strong> CoreWeave raised $1.5B in the largest U.S. tech IPO since 2021, with Nvidia investing $250M as anchor investor. 
-                                        Despite pricing below initial expectations ($40 vs $44-50 target), the stock has tripled in just 4 months, making it the best-performing tech IPO of 2025. 
-                                        <strong>Early investors saw returns exceeding 3,400% from the Series C valuation of $19B just 10 months earlier.</strong>
-                                    </p>
-                                </div>
-                            </div>
-                            
-                            <!-- Revenue Growth Chart -->
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 30px;">
-                                <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; text-align: center;">
-                                    <div style="font-size: 2.5rem; font-weight: bold; color: #1976d2;">$80B</div>
-                                    <div style="color: #0d47a1; font-weight: 500;">Market Cap</div>
-                                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">3.5x IPO in 4 months</div>
-                                </div>
-                                <div style="background: #e8f5e9; padding: 20px; border-radius: 8px; text-align: center;">
-                                    <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">420%</div>
-                                    <div style="color: #1b5e20; font-weight: 500;">YoY Growth</div>
-                                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">Q1 2025</div>
-                                </div>
-                                <div style="background: #fff3e0; padding: 20px; border-radius: 8px; text-align: center;">
-                                    <div style="font-size: 2.5rem; font-weight: bold; color: #f57c00;">$982M</div>
-                                    <div style="color: #e65100; font-weight: 500;">Q1 2025 Revenue</div>
-                                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">Single quarter</div>
-                                </div>
-
-                                <div style="background: #e1f5fe; padding: 20px; border-radius: 8px; text-align: center;">
-                                    <div style="font-size: 2.5rem; font-weight: bold; color: #0277bd;">62%</div>
-                                    <div style="color: #01579b; font-weight: 500;">EBITDA Margin</div>
-                                    <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">Adjusted, Q1 2025</div>
-                                </div>
-                            </div>
-                            
-                            <!-- Revenue Progression Table -->
-                            <h4 style="color: #2a5298; margin-bottom: 15px;">Revenue Growth Trajectory</h4>
-                            <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
-                                <thead>
-                                    <tr style="background: #2a5298; color: white;">
-                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Year</th>
-                                        <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Revenue</th>
-                                        <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">YoY Growth</th>
-                                        <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Key Milestone</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>2022</strong></td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$16M</td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">—</td>
-                                        <td style="padding: 12px; border: 1px solid #ddd;">Pivoted from crypto mining</td>
-                                    </tr>
-                                    <tr style="background: #f0f0f0;">
-                                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>2023</strong></td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$229M</td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #1976d2; font-weight: bold;">+1,346%</td>
-                                        <td style="padding: 12px; border: 1px solid #ddd;">AI boom begins</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>2024</strong></td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$1.92B</td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #f57c00; font-weight: bold;">+736%</td>
-                                        <td style="padding: 12px; border: 1px solid #ddd;">Microsoft = 62% of revenue</td>
-                                    </tr>
-                                    <tr style="background: #f0f0f0;">
-                                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>Q1 2025</strong></td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$982M</td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #2e7d32; font-weight: bold;">+420%</td>
-                                        <td style="padding: 12px; border: 1px solid #ddd;">IPO March 28 at $23B → Now $80B</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 12px; border: 1px solid #ddd;"><strong>2025E</strong></td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$4.9-5.1B</td>
-                                        <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #1976d2; font-weight: bold;">+163%</td>
-                                        <td style="padding: 12px; border: 1px solid #ddd;">Management guidance</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                <div class="data-point-item">
+                    <div class="data-point-header">
+                        <h3 style="color: #2a5298; margin-bottom: 10px;">🚀 CoreWeave: Startup to $80B Valuation</h3>
+                        <p style="color: #555; line-height: 1.6; margin-bottom: 15px;">
+                            <strong>Key Insight:</strong> CoreWeave IPO'd in March 2025 at $23B valuation ($40/share), then surged 300% to $80B ($158-164/share) in just 4 months. Revenue exploded from $16M (2022) to $982M (Q1 2025), backed by $15.9B OpenAI partnership and exclusive Platinum rating.
+                        </p>
+                        <button class="data-toggle-btn" onclick="toggleDataPoint('coreweave')">
+                            <span>View Growth Analysis</span>
+                            <span id="data-arrow-coreweave" style="margin-left: 10px; transition: transform 0.3s ease;">▼</span>
+                        </button>
                     </div>
+                    <div id="data-content-coreweave" class="data-point-content">
+                        <h4 style="color: #2a5298; margin-bottom: 20px; text-align: center;">CoreWeave Revenue Growth 2022-2024</h4>
+                        <div style="text-align: center; margin-bottom: 30px;">
+                            <img src="Screenshot.png" 
+                                 alt="Coreweave upto 2024" 
+                                 style="max-width: 40%; height: auto; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        </div> 
+                        <h4 style="color: #2a5298; margin-bottom: 20px; text-align: center;">CoreWeave 2025E Revenue - $5B </h4>
+
+                        <!-- IPO Performance Section -->
+                        <h4 style="color: #2a5298; margin-bottom: 15px;">📈 IPO Performance & Stock Surge</h4>
+                        <div style="background: #f0f4f8; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                                <div style="text-align: center;">
+                                    <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">IPO Date</div>
+                                    <div style="font-size: 1.4rem; font-weight: bold; color: #2a5298;">March 28, 2025</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">IPO Price</div>
+                                    <div style="font-size: 1.8rem; font-weight: bold; color: #666;">$40/share</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Current Price</div>
+                                    <div style="font-size: 1.8rem; font-weight: bold; color: #2e7d32;">$158-164</div>
+                                </div>
+                                <!-- <div style="text-align: center;">
+                                    <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Gain Since IPO</div>
+                                    <div style="font-size: 1.8rem; font-weight: bold; color: #2e7d32;">+300%</div>
+                                </div> -->
+                                <div style="text-align: center;">
+                                    <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">IPO Valuation</div>
+                                    <div style="font-size: 1.8rem; font-weight: bold; color: #666;">$23B</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Current Valuation</div>
+                                    <div style="font-size: 1.8rem; font-weight: bold; color: #1976d2;">$80B</div>
+                                </div>
+                            </div>
+                            <div style="margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 8px;">
+                                <p style="margin: 0; color: #1e7e34; line-height: 1.6;">
+                                    <strong>📊 IPO Highlights:</strong> CoreWeave raised $1.5B in the largest U.S. tech IPO since 2021, with Nvidia investing $250M as anchor investor. 
+                                    Despite pricing below initial expectations ($40 vs $44-50 target), the stock has tripled in just 4 months, making it the best-performing tech IPO of 2025. 
+                                    <strong>Early investors saw returns exceeding 3,400% from the Series C valuation of $19B just 10 months earlier.</strong>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Revenue Growth Chart -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                            <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: bold; color: #1976d2;">$80B</div>
+                                <div style="color: #0d47a1; font-weight: 500;">Market Cap</div>
+                                <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">3.5x IPO in 4 months</div>
+                            </div>
+                            <div style="background: #e8f5e9; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: bold; color: #2e7d32;">420%</div>
+                                <div style="color: #1b5e20; font-weight: 500;">YoY Growth</div>
+                                <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">Q1 2025</div>
+                            </div>
+                            <div style="background: #fff3e0; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: bold; color: #f57c00;">$982M</div>
+                                <div style="color: #e65100; font-weight: 500;">Q1 2025 Revenue</div>
+                                <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">Single quarter</div>
+                            </div>
+
+                            <div style="background: #e1f5fe; padding: 20px; border-radius: 8px; text-align: center;">
+                                <div style="font-size: 2.5rem; font-weight: bold; color: #0277bd;">62%</div>
+                                <div style="color: #01579b; font-weight: 500;">EBITDA Margin</div>
+                                <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">Adjusted, Q1 2025</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Revenue Progression Table -->
+                        <h4 style="color: #2a5298; margin-bottom: 15px;">Revenue Growth Trajectory</h4>
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 30px;">
+                            <thead>
+                                <tr style="background: #2a5298; color: white;">
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Year</th>
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Revenue</th>
+                                    <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">YoY Growth</th>
+                                    <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Key Milestone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>2022</strong></td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$16M</td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd;">—</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Pivoted from crypto mining</td>
+                                </tr>
+                                <tr style="background: #f0f0f0;">
+                                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>2023</strong></td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$229M</td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #1976d2; font-weight: bold;">+1,346%</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">AI boom begins</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>2024</strong></td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$1.92B</td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #f57c00; font-weight: bold;">+736%</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Microsoft = 62% of revenue</td>
+                                </tr>
+                                <tr style="background: #f0f0f0;">
+                                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>Q1 2025</strong></td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$982M</td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #2e7d32; font-weight: bold;">+420%</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">IPO March 28 at $23B → Now $80B</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; border: 1px solid #ddd;"><strong>2025E</strong></td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; font-weight: bold;">$4.9-5.1B</td>
+                                    <td style="padding: 12px; text-align: center; border: 1px solid #ddd; color: #1976d2; font-weight: bold;">+163%</td>
+                                    <td style="padding: 12px; border: 1px solid #ddd;">Management guidance</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
                 <!-- Data Point 5: Market Valuations -->
                 <!-- <div class="data-point-item">
@@ -10233,11 +10349,53 @@
                                     <td colspan="7" class="category-header">DECACORNS - Market Leaders ($10B+ Valuation)</td>
                                 </tr>
                                 <tr class="decacorn">
+                                    <td class="company-name">CoreWeave<br><span class="valuation-badge">$80B</span></td>
+                                    <td>
+                                        <strong>IPO March 2025:</strong> $40/share<br>
+                                        <strong>Current Price:</strong> $158-164<br>
+                                        <strong>IPO Performance:</strong> +300%<br>
+                                        <strong>EBITDA Margin:</strong> 62%<br>
+                                        <strong>Total Raised:</strong> $12B+
+                                    </td>
+                                    <td>
+                                        <strong>2024 Revenue:</strong> $1.92B<br>
+                                        <span class="growth-rate">736% YoY</span><br>
+                                        <strong>Q1 2025:</strong> $982M<br>
+                                        <strong>2025E:</strong> $4.9-5.1B<br>
+                                        <strong>120x growth in 2 years</strong>
+                                    </td>
+                                    <td>
+                                        <span class="metric-excellent">250,000+ GPUs</span><br>
+                                        H100, H200, GB200<br>
+                                        32 DCs, 1.3GW power<br>
+                                        Target: 500k GPUs by 2026
+                                    </td>
+                                    <td>
+                                        <strong>H100:</strong> $2.23-4.25/hr<br>
+                                        80% below hyperscalers<br>
+                                        <span class="highlight">Market Leader</span><br>
+                                        OpenAI: $15.9B partnership
+                                    </td>
+                                    <td>
+                                        NVIDIA (7% stake)<br>
+                                        OpenAI ($15.9B deal)<br>
+                                        Microsoft (62% revenue)<br>
+                                        <strong>Platinum Rating</strong>
+                                    </td>
+                                    <td>
+                                        <span class="metric-excellent">IPO: $23B → $80B</span><br>
+                                        Best tech IPO 2025<br>
+                                        990% CAGR (2022-24)<br>
+                                        <strong>3,400% Series C returns</strong>
+                                    </td>
+                                </tr>
+
+                                <!-- <tr class="decacorn">
                                     <td class="company-name">CoreWeave<br><span class="valuation-badge">$30B</span></td>
                                     <td>
                                         <strong>IPO in March 2025:</strong> $40 <br>
                                         <strong>IPO Performance:</strong> +42 %<br>
-                                        <!-- <strong>Revenue Multiple:</strong> 38x<br> -->
+                                        
                                         <strong>Total Raised:</strong> $12B+<br>
                                         <strong>NVIDIA Stake:</strong> 7%
                                     </td>
@@ -10271,8 +10429,46 @@
                                         Hyperscaler alternative<br>
                                         <strong>Leading growth trajectory</strong>
                                     </td>
-                                </tr>
-                                <tr class="decacorn">
+                                </tr> -->
+
+                                <td class="company-name">Scale AI<br><span class="valuation-badge">$29B</span></td>
+                                    <td>
+                                        <strong>Valuation Growth:</strong><br>
+                                        2019: $1B → 2025: $29B<br>
+                                        <span class="growth-rate">29x in 6 years</span><br>
+                                        Latest: $14.3B by Meta
+                                    </td>
+                                    <td>
+                                        <strong>Revenue Growth:</strong><br>
+                                        2021: $250M → 2025: $2B<br>
+                                        <span class="growth-rate">8x in 4 years</span><br>
+                                        2024: $870M (130% YoY)
+                                    </td>
+                                    <td>
+                                        <strong>AI data platform</strong><br>
+                                        Not GPU infrastructure<br>
+                                        but key ecosystem player<br>
+                                        400+ enterprise clients
+                                    </td>
+                                    <td>
+                                        <strong>Employee Growth:</strong><br>
+                                        900-958 globally<br>
+                                        Now expanding again
+                                    </td>
+                                    <td>
+                                        <strong>Partners:</strong><br>
+                                        US Government,OpenAI,<br>
+                                        NVIDIA, Meta, Amazon,<br>
+                                        Self-driving companies
+                                    </td>
+                                    <td>
+                                        <span class="metric-good">Growth Highlights:</span><br>
+                                        ARR: $1.4B (2024)<br>
+                                        Gov contracts: $249M+<br>
+                                        162% 2-year CAGR (2021-23)
+                                    </td>
+
+                                <!-- <tr class="decacorn">
                                     <td class="company-name">Scale AI<br><span class="valuation-badge">$29B</span></td>
                                     <td>
                                         <strong>Valuation:</strong> $29B<br>
@@ -10310,12 +10506,14 @@
                                         Diversified revenue base<br>
                                         Strong growth trajectory
                                     </td>
-                                </tr>
+                                </tr> -->
                                 
+
                                 <!-- UNICORNS ($1B+) -->
                                 <tr>
                                     <td colspan="7" class="category-header">UNICORNS - High Growth Players ($1B+ Valuation)</td>
                                 </tr>
+
                                 <tr class="unicorn">
                                     <td class="company-name">Lambda Labs<br><span class="valuation-badge">$2.5B</span></td>
                                     <td>
@@ -12385,6 +12583,57 @@
         </div>
 
         <div id="timeline" class="tab-content">
+
+            
+            <div class="intelligence-section" style="grid-column: 1 / -1; background: linear-gradient(135deg, #2a5298, #1a3968); color: white; padding: 30px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <h1 style="text-align: center; margin-bottom: 25px; font-size: 28px;">🚀 Fast-Track Development Timeline</h1>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 25px;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: center;">
+                        <h3 style="color: #4ecdc4; margin-bottom: 10px; font-size: 20px;">📦 Phase 0: Quick Start</h3>
+                        <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">3MW Container PoC</p>
+                        <p style="font-size: 18px; opacity: 0.9;">Live in 6-8 months</p>
+                        <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">Immediate revenue generation while building at scale</p>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: center;">
+                        <h3 style="color: #f39c12; margin-bottom: 10px; font-size: 20px;">🏗️ Phase 1: Scale Up</h3>
+                        <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">100MW Building</p>
+                        <p style="font-size: 18px; opacity: 0.9;">Live in 18 months</p>
+                        <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">Full-scale facility with enterprise infrastructure</p>
+                    </div>
+                    
+                    <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; text-align: center;">
+                        <h3 style="color: #e74c3c; margin-bottom: 10px; font-size: 20px;">🎯 5-Year Vision</h3>
+                        <p style="font-size: 24px; font-weight: bold; margin: 5px 0;">500MW Campus</p>
+                        <p style="font-size: 18px; opacity: 0.9;">Phased expansion</p>
+                        <p style="font-size: 14px; opacity: 0.8; margin-top: 10px;">Regional AI infrastructure hub</p>
+                    </div>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 8px; text-align: center;">
+                    <h4 style="margin-bottom: 15px; font-size: 18px; color: #4ecdc4;">⚡ Parallel Execution Strategy</h4>
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #4ecdc4; border-radius: 50%;"></div>
+                            <span>Deploy 3MW containers while designing 100MW facility</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #f39c12; border-radius: 50%;"></div>
+                            <span>Early revenue + Proven demand</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 20px; height: 20px; background: #e74c3c; border-radius: 50%;"></div>
+                            <span>De-risked scaling approach</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 20px; font-size: 16px; opacity: 0.9; font-style: italic;">
+                    Timeline starts from MoU signing | All phases designed for independent operation and revenue generation
+                </p>
+            </div>
+
             <div class="intelligence-grid">
                 <div class="intelligence-section" style="grid-column: 1 / -1;">
                     <h3>📊 Visual Timeline Overview</h3>
@@ -12491,7 +12740,7 @@
                     </p>
                 </div>
                 
-                <div class="intelligence-section" style="grid-column: 1 / -1;">
+                <!-- <div class="intelligence-section" style="grid-column: 1 / -1;">
                     <h3>💡 Investment Highlights</h3>
                     <div class="highlight" style="margin-bottom: 15px;">
                         <strong>Early Revenue Generation:</strong> Containerized PoC generates revenue from Month 3, demonstrating operational capability and market demand
@@ -12505,7 +12754,7 @@
                     <div class="highlight">
                         <strong>Proven Demand:</strong> Pre-leasing commitments during construction phase ensure immediate revenue upon commissioning
                     </div>
-                </div>
+                </div> -->
 
                 
                 
@@ -12761,7 +13010,7 @@
                                 <div class="swot-item-detail">Proximity to government agencies, defense establishments, and major enterprises in the capital region enables low-latency access for sovereign AI applications and rapid policy alignment</div>
                             </li>
                             <li class="swot-item">
-                                <div class="swot-item-main">100% Renewable Hydropower Integration</div>
+                                <div class="swot-item-main">Renewable Hydropower Integration</div>
                                 <div class="swot-item-detail">Committed to hydroelectric power sourcing providing stable long-term energy costs, ESG compliance, and insulation from fossil fuel volatility - attracting green financing at lower rates</div>
                             </li>
                             <li class="swot-item">
