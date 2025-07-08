@@ -6127,6 +6127,577 @@
     </style>
 
     <style>
+        /* Investment Container */
+        .investment-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header Section */
+        .investment-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .investment-header h1 {
+            font-size: 2.5rem;
+            color: #1565c0;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .investment-header .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .thesis-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .thesis-icon {
+            font-size: 2rem;
+        }
+
+        .thesis-content {
+            text-align: left;
+            color: #1565c0;
+        }
+
+        /* Investment Overview */
+        .investment-overview {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /*.metric-card.venture-highlight {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid #7b1fa2;
+        }
+
+        .metric-card.venture-highlight h4 {
+            color: #7b1fa2;
+        }*/
+
+        /* Adjust grid for 5 items */
+        @media (min-width: 1200px) {
+            .metrics-row {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .metrics-row {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .metric-card.venture-highlight {
+                grid-column: span 3;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        .venture-note {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+
+        .metric.venture-metric {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+        }
+
+        .metric.venture-metric .metric-value {
+            color: #7b1fa2;
+        }
+
+        @media (max-width: 768px) {
+            .key-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .metric.venture-metric {
+                grid-column: span 2;
+            }
+        }
+
+        .amount-box {
+            background: linear-gradient(135deg, #7b1fa2 0%, #512da8 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .amount {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .amount-desc {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .amount-structure {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 1.1rem 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .metric:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .metric-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-value {
+            font-size: 1.0rem;
+            font-weight: 700;
+            color: #1565c0;
+            margin-bottom: 0.3rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .section-card h2 {
+            color: #1565c0;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        /* Tranche Visualization */
+        .tranche-visualization {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .tranche-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: auto;
+        }
+
+        .tranche {
+            width: 120px;
+            height: calc(var(--height) * 1.5);
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px 8px 0 0;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-wrap;
+            padding-top: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .tranche:nth-child(2) {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+        }
+
+        .tranche:nth-child(3) {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+        }
+
+        .tranche:hover {
+            transform: scale(1.05);
+        }
+
+        .tranche-amount {
+            font-size: 1rem;
+            margin-top: -50px;
+            position: relative;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .tranche-percent {
+            font-size: 1rem;
+            color: #666;
+            margin: 0.3rem 0;
+        }
+
+        .tranche-name {
+            position: absolute;
+            bottom: -30px;
+            font-size:1rem;
+            color: black;
+        }
+
+        .tranche-summary {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .summary-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .summary-value {
+            font-weight: 700;
+            color: #1565c0;
+        }
+
+        /* Milestones Section */
+        .milestones-section {
+            margin: 3rem 0;
+        }
+
+        .milestones-section h2 {
+            text-align: center;
+            color: #1565c0;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .milestone-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .milestone-block {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .milestone-block.tranche-1 {
+            border-left: 5px solid #1565c0;
+        }
+
+        .milestone-block.tranche-2 {
+            border-left: 5px solid #2e7d32;
+        }
+
+        .milestone-block.tranche-3 {
+            border-left: 5px solid #e65100;
+        }
+
+        .milestone-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: #f8f9fa;
+        }
+
+        .milestone-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .milestone-title h3 {
+            margin: 0;
+            font-size: 1.3rem;
+        }
+
+        .milestone-amount {
+            background: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 700;
+            color: #1565c0;
+        }
+
+        .milestone-timing {
+            color: #666;
+            font-weight: 600;
+        }
+
+        .milestone-content {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .milestone-group h4 {
+            margin: 0 0 0.8rem 0;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .milestone-group ul {
+            margin: 0;
+            padding-left: 1.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .milestone-success {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 1rem 2rem;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        /* Financial Grid */
+        .financial-grid {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 3rem;
+        }
+
+        .clean-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .clean-table th {
+            background: #1565c0;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .clean-table th.t1 { background: #1565c0; }
+        .clean-table th.t2 { background: #2e7d32; }
+        .clean-table th.t3 { background: #e65100; }
+
+        .clean-table td {
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .clean-table td.t1 { background: rgba(21, 101, 192, 0.05); }
+        .clean-table td.t2 { background: rgba(46, 125, 50, 0.05); }
+        .clean-table td.t3 { background: rgba(230, 81, 0, 0.05); }
+
+        .highlight-row {
+            background: #fffde7;
+        }
+
+        /* Returns Cards */
+        .returns-scenarios {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .return-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+        }
+
+        .return-card.conservative {
+            background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+        }
+
+        .return-card.base {
+            background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%);
+        }
+
+        .return-card.upside {
+            background: linear-gradient(135deg, #ffa726 0%, #ff9800 100%);
+        }
+
+        .return-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .return-multiple {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .return-exit {
+            font-size: 1rem;
+        }
+
+        /* Metrics Showcase */
+        .metrics-showcase {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+        }
+
+        .metrics-showcase h2 {
+            text-align: center;
+            color: #1565c0;
+            margin-bottom: 2rem;
+        }
+
+        .metrics-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .metric-emoji {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .metric-card h4 {
+            color: #1565c0;
+            margin-bottom: 1rem;
+        }
+
+        .metric-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: #666;
+        }
+
+        .metric-card li {
+            padding: 0.3rem 0;
+        }
+
+        /* CTA Section */
+        .investment-cta-section {
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .investment-cta-section h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .investment-cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button.primary {
+            background: white;
+            color: #1565c0;
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cta-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .investment-overview {
+                grid-template-columns: 1fr;
+            }
+            
+            .key-metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .financial-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tranche-visualization {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-actions {
+                flex-direction: column;
+            }
+        }
 
         /* Simple Investment Deck Button */
         .investment-deck-simple {
@@ -6887,14 +7458,7 @@
 
 </head>
 <body>
-
-    <!-- <div id="mobile-warning">
-      🚫 This website is not available on mobile. Please use a larger screen.
-    </div> -->
-
     <div id="mobile-warning">
-        
-        
         <h2>📱 Mobile Users</h2>
         <p>To learn more about our Business Model, Market Analysis, and detailed Data Points, please open this website on a desktop computer.</p>
         <p>For now, you can view our mobile-friendly pitch deck:</p>
@@ -8425,6 +8989,321 @@
 
             </div>
 
+
+        <div id="Investment" class="tab-content">
+            <div class="investment-container">
+                <!-- Header Section -->
+                <div class="investment-header">
+                    <h1>3MW Phase 1 PoC Investment Opportunity</h1>
+                    <p class="tagline">Building India's AI Infrastructure Leader with Progressive Milestone-Based Funding</p>
+                    <div class="thesis-box">
+                        <div class="thesis-icon">💡</div>
+                        <div class="thesis-content">
+                            <strong>Investment Thesis:</strong> First-mover advantage in India's $41.7B AI infrastructure gap. 
+                            De-risked deployment with 91% capital protected until execution proven.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Investment Overview -->
+                <div class="investment-overview">
+
+                    <div class="amount-box">
+                        <div class="amount">$66 Million</div>
+                        <div class="amount-desc">3MW Phase 1 PoC</div>
+                        <div class="amount-structure">3 Progressive Tranches</div>
+                    </div>
+                    
+                    <div class="key-metrics">
+                        <div class="metric">
+                            <div class="metric-icon">🏗️</div>
+                            <div class="metric-value">3MW</div>
+                            <div class="metric-label">Container PoC</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon">💰</div>
+                            <div class="metric-value">46%</div>
+                            <div class="metric-label">Target IRR</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon">🖥️</div>
+                            <div class="metric-value">1,728</div>
+                            <div class="metric-label">GB200 GPUs</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-icon">📈</div>
+                            <div class="metric-value">Month 6</div>
+                            <div class="metric-label">Revenue Start</div>
+                        </div>
+                        <div class="metric venture-metric">
+                            <div class="metric-icon">🚀</div>
+                            <div class="metric-value">10%</div>
+                            <div class="metric-label">Venture Allocation</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tranche Structure Section -->
+                <div class="section-card">
+                    <h2>Progressive Capital Deployment Structure</h2>
+                    
+                    <div class="tranche-visualization">
+                        <div class="tranche-chart">
+                            <div class="tranche" style="--height: 9%">
+                                <div class="tranche-amount">$6M (9%)</div>
+                                <!-- <div class="tranche-percent">9%</div> -->
+                                <div class="tranche-name">Tranche 1</div>
+                            </div>
+                            <div class="tranche" style="--height: 29%">
+                                <div class="tranche-amount">$19M (29%)</div>
+                                <!-- <div class="tranche-percent">29%</div> -->
+                                <div class="tranche-name">Tranche 2</div>
+                            </div>
+                            <div class="tranche" style="--height: 62%">
+                                <div class="tranche-amount">$41M (62%)</div>
+                                <!-- <div class="tranche-percent">62%</div> -->
+                                <div class="tranche-name">Tranche 3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tranche-summary">
+                            <div class="summary-item">
+                                <span class="summary-label">Capital Protected:</span>
+                                <span class="summary-value">91%</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">GPU Investment:</span>
+                                <span class="summary-value">Only in Tranche 3</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Timeline:</span>
+                                <span class="summary-value">6-8 Months Total</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detailed Milestones -->
+                <div class="milestones-section">
+                    <h2>Detailed 3MW PoC Milestones</h2>
+                    
+                    <div class="milestone-timeline">
+                        <!-- Tranche 1 -->
+                        <div class="milestone-block tranche-1">
+                            <div class="milestone-header">
+                                <div class="milestone-title">
+                                    <h3>Tranche 1: Regulatory & Site Validation</h3>
+                                    <div class="milestone-amount">$6M</div>
+                                </div>
+                                <!-- <div class="milestone-timing">Months 0-2.5</div> -->
+                            </div>
+                            
+                            <div class="milestone-content">
+                                <div class="milestone-group">
+                                    <h4>🏛️ Government & Regulatory</h4>
+                                    <ul>
+                                        <li>Execute final MoU with state government</li>
+                                        <!-- <li>Secure IndiaAI provider agreement</li> -->
+                                        <li>Obtain environmental & pollution clearances</li>
+                                        <li>Secure fire safety NOC</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="milestone-group">
+                                    <h4>📍 Site & Infrastructure</h4>
+                                    <ul>
+                                        <li>Execute land lease agreement</li>
+                                        <li>Complete soil testing & geotechnical survey</li>
+                                        <li>Finalize container layout design</li>
+                                        <li>Obtain construction permits</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="milestone-group">
+                                    <h4>⚡ Power & Supply Chain</h4>
+                                    <ul>
+                                        <li>Secure power allocation</li>
+                                        <li>Sign fiber connectivity agreement (1.6Tbps)</li>
+                                        <li>Execute NVIDIA partner agreement</li>
+                                        <li>Confirm GB200 allocation (1,728 units)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="milestone-success">
+                                ✅ Success Gate: All permits secured, GPU allocation confirmed
+                            </div>
+                        </div>
+                        
+                        <!-- Tranche 2 -->
+                        <div class="milestone-block tranche-2">
+                            <div class="milestone-header">
+                                <div class="milestone-title">
+                                    <h3>Tranche 2: 3MW Infrastructure Build</h3>
+                                    <div class="milestone-amount">$19M</div>
+                                </div>
+                                <!-- <div class="milestone-timing">Months 2.5-5</div> -->
+                            </div>
+                            
+                            <div class="milestone-content">
+                                <div class="milestone-group">
+                                    <h4>🏗️ Civil & Construction</h4>
+                                    <ul>
+                                        <li>Complete site grading & compaction</li>
+                                        <li>Build container pad foundations</li>
+                                        <li>Construct access roads & security fencing</li>
+                                        <li>Install drainage & fire suppression systems</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="milestone-group">
+                                    <h4>🔌 Power Infrastructure</h4>
+                                    <ul>
+                                        <li>Comission electrical substation</li>
+                                        <li>Install transformers & switchgear</li>
+                                        <li>Deploy UPS systems & backup generators</li>
+                                        <li>Complete electrical testing & commissioning</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="milestone-group">
+                                    <h4>📦 Container & Commercial</h4>
+                                    <ul>
+                                        <li>Deploy 3x 1MW container shells</li>
+                                        <li>Install internal racking systems</li>
+                                        <li>Complete liquid cooling piping (dry)</li>
+                                        <li>Sign 3+ anchor customers ($15M+ contracts)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="milestone-success">
+                                ✅ Success Gate: Infrastructure 70% complete, customers signed
+                            </div>
+                        </div>
+                        
+                        <!-- Tranche 3 -->
+                        <div class="milestone-block tranche-3">
+                            <div class="milestone-header">
+                                <div class="milestone-title">
+                                    <h3>Tranche 3: Go-Live & Revenue Generation</h3>
+                                    <div class="milestone-amount">$41M</div>
+                                </div>
+                                <!-- <div class="milestone-timing">Months 5-8</div> -->
+                            </div>
+                            
+                            <div class="milestone-content">
+                                <div class="milestone-group">
+                                    <h4>🖥️ GPU Deployment</h4>
+                                    <ul>
+                                        <li>Procure 1,728 NVIDIA GB200 GPUs</li>
+                                        <li>Complete rack integration & cabling</li>
+                                        <li>Deploy 400Gbps network fabric</li>
+                                        <li>Install GPU monitoring systems</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="milestone-group">
+                                    <h4>❄️ Cooling & Operations</h4>
+                                    <ul>
+                                        <li>Fill & commission liquid cooling system</li>
+                                        <li>Optimize CDU performance (150kW/rack)</li>
+                                        <li>Achieve PUE < 1.10</li>
+                                        <li>Complete 24/7 operations setup</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="milestone-group">
+                                    <h4>💻 Platform & Revenue</h4>
+                                    <ul>
+                                        <li>Launch cloud orchestration platform</li>
+                                        <li>Deploy billing & provisioning systems</li>
+                                        <li>Achieve first customer go-live</li>
+                                        <li>Reach $1M+ monthly recurring revenue</li>
+                                        <li>Secure Series A for 100MW expansion</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="milestone-success">
+                                ✅ Success Gate: 85% utilization, $1M+ MRR, Series A secured
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                <!-- Success Metrics -->
+                <div class="metrics-showcase">
+                    <h2>3MW PoC Success Metrics</h2>
+                    <div class="metrics-row">
+                        <div class="metric-card">
+                            <div class="metric-emoji">⚡</div>
+                            <h4>Technical Excellence</h4>
+                            <ul>
+                                <li>150kW+ rack density</li>
+                                <li>PUE < 1.10</li>
+                                <li>99.99% uptime</li>
+                            </ul>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-emoji">💰</div>
+                            <h4>Commercial Success</h4>
+                            <ul>
+                                <li>85% utilization</li>
+                                <li>$1M+ MRR</li>
+                                <li>3+ anchor customers</li>
+                            </ul>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-emoji">📈</div>
+                            <h4>Strategic Milestones</h4>
+                            <ul>
+                                <li>Series A secured</li>
+                                <li>100MW site ready</li>
+                                <li>Team scaled to 50+</li>
+                            </ul>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-emoji">⏱️</div>
+                            <h4>Execution Timeline</h4>
+                            <ul>
+                                <li>Revenue in 6 months</li>
+                                <li>Proven in 8 months</li>
+                                <li>Scale-ready in 12 months</li>
+                            </ul>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-emoji">🚀</div>
+                            <h4>Venture Compute Incubation</h4>
+                            <ul>
+                                <li>5+ AI startups onboarded</li>
+                                <li>10% GPU compute allocated</li>
+                                <li>$2M+ equity value created</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Call to Action -->
+                <div class="investment-cta-section">
+                    <h2>Join Us in Building India's AI Future</h2>
+                    <p>Limited allocation available for strategic investors who share our vision of sovereign AI infrastructure</p>
+                    <div class="cta-actions">
+                        <a href="https://calendly.com/antrikshcloud" class="cta-button primary">
+                            <span class="cta-icon">📅</span>
+                            Schedule Investment Discussion
+                        </a>
+                        <a href="#" class="cta-button secondary">
+                            <span class="cta-icon">📊</span>
+                            Download Investment Deck
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
         <div id="Investment" class="tab-content">
             <div class="intelligence-grid">
             <div class="exec-container">
@@ -8481,6 +9360,7 @@
             </div>
             </div>
         </div>
+        
 
         <div id="business-model" class="tab-content">
             <div class="section">
