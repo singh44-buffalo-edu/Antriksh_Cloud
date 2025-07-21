@@ -688,6 +688,237 @@
         </div>
     </section>
 
+    <!-- Global AI Infrastructure Dependencies Section -->
+    <section class="py-12 sm:py-16 bg-gradient-to-b from-white via-indigo-50 to-white relative">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="max-w-3xl mx-auto">
+                <!-- Section Header -->
+                <div class="text-center mb-8 fade-in">
+                    <div class="inline-flex items-center bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-semibold mb-3">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Global AI Infrastructure
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 mb-3">
+                        Where the World Gets Its A.I.
+                    </h2>
+                    <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+                        Companies and countries throughout the world rely mostly on major American and Chinese cloud operators for A.I. facilities
+                    </p>
+                </div>
+
+                <!-- Sankey Diagram Container -->
+                <div class="bg-white rounded-2xl shadow-xl p-4 sm:p-6 fade-in">
+                    <div class="flex justify-between text-xs sm:text-sm text-gray-700 font-medium mb-3">
+                        <span>Companies based here ...</span>
+                        <span class="text-right">... operating A.I. facilities here</span>
+                    </div>
+                    
+                    <div id="sankey-chart" class="w-full mx-auto" style="height: 380px; max-width: 700px;"></div>
+                    
+                    <p class="text-center text-xs text-gray-500 mt-4">
+                        Source: Oxford University, <a href="https://www.nytimes.com/interactive/2025/06/23/technology/ai-computing-global-divide.html" target="_blank" class="underline hover:text-gray-700">The New York Times</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.12.3/d3-sankey.min.js"></script>
+    <script>
+    // Set dimensions and margins
+    const margin = {top: 10, right: 100, bottom: 10, left: 100};
+    const container = document.getElementById('sankey-chart');
+    const containerWidth = Math.min(container.offsetWidth, 700); // Cap at 700px
+    const width = containerWidth - margin.left - margin.right;
+    const height = 380 - margin.top - margin.bottom;
+
+    // Create SVG
+    const svg = d3.select("#sankey-chart")
+        .append("svg")
+        .attr("width", containerWidth)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // Define nodes with sharp, professional colors
+    const nodes = [
+        {id: 0, name: "China", color: "#dc2626"},
+        {id: 1, name: "United States", color: "#2563eb"},
+        {id: 2, name: "Switzerland", color: "#4f46e5"},
+        {id: 3, name: "France", color: "#f59e0b"},
+        {id: 4, name: "Asia", color: "#6b7280"},
+        {id: 5, name: "Europe", color: "#6b7280"},
+        {id: 6, name: "Middle East", color: "#6b7280"},
+        {id: 7, name: "North America", color: "#6b7280"},
+        {id: 8, name: "South Africa", color: "#6b7280"},
+        {id: 9, name: "South America", color: "#6b7280"},
+        {id: 10, name: "Australia", color: "#6b7280"}
+    ];
+
+    // Define links with sharper colors
+    const links = [
+        {source: 0, target: 4, value: 35, color: "#dc2626"},
+        {source: 0, target: 5, value: 8, color: "#dc2626"},
+        {source: 0, target: 6, value: 3, color: "#dc2626"},
+        {source: 0, target: 7, value: 5, color: "#dc2626"},
+        {source: 0, target: 8, value: 2, color: "#dc2626"},
+        {source: 0, target: 9, value: 2, color: "#dc2626"},
+        {source: 0, target: 10, value: 2, color: "#dc2626"},
+        {source: 1, target: 4, value: 15, color: "#2563eb"},
+        {source: 1, target: 5, value: 20, color: "#2563eb"},
+        {source: 1, target: 6, value: 5, color: "#2563eb"},
+        {source: 1, target: 7, value: 25, color: "#2563eb"},
+        {source: 1, target: 8, value: 3, color: "#2563eb"},
+        {source: 1, target: 9, value: 5, color: "#2563eb"},
+        {source: 1, target: 10, value: 5, color: "#2563eb"},
+        {source: 2, target: 5, value: 3, color: "#4f46e5"},
+        {source: 3, target: 5, value: 4, color: "#f59e0b"}
+    ];
+
+    // Create sankey generator with tighter spacing
+    const sankey = d3.sankey()
+        .nodeId(d => d.id)
+        .nodeWidth(15)
+        .nodePadding(8)
+        .extent([[1, 1], [width - 1, height - 6]]);
+
+    // Generate the sankey diagram
+    const {nodes: sankeyNodes, links: sankeyLinks} = sankey({
+        nodes: nodes.map(d => Object.assign({}, d)),
+        links: links.map(d => Object.assign({}, d))
+    });
+
+    // Add links with sharper appearance
+    const link = svg.append("g")
+        .selectAll(".link")
+        .data(sankeyLinks)
+        .enter().append("path")
+        .attr("class", "link")
+        .attr("d", d3.sankeyLinkHorizontal())
+        .attr("stroke", d => d.color)
+        .attr("stroke-width", d => Math.max(1, d.width))
+        .attr("fill", "none")
+        .style("opacity", 0.3)
+        .transition()
+        .duration(600)
+        .delay((d, i) => i * 30)
+        .style("opacity", 0.4);
+
+    // Add hover effect to links
+    svg.selectAll(".link")
+        .on("mouseover", function() {
+            d3.select(this)
+                .transition()
+                .duration(150)
+                .style("opacity", 0.7)
+                .attr("stroke-width", d => Math.max(1.5, d.width * 1.1));
+        })
+        .on("mouseout", function() {
+            d3.select(this)
+                .transition()
+                .duration(150)
+                .style("opacity", 0.4)
+                .attr("stroke-width", d => Math.max(1, d.width));
+        });
+
+    // Add nodes with sharper styling
+    const node = svg.append("g")
+        .selectAll(".node")
+        .data(sankeyNodes)
+        .enter().append("g")
+        .attr("class", "node")
+        .style("opacity", 0);
+
+    // Add rectangles with sharp corners
+    node.append("rect")
+        .attr("x", d => d.x0)
+        .attr("y", d => d.y0)
+        .attr("height", d => d.y1 - d.y0)
+        .attr("width", d => d.x1 - d.x0)
+        .attr("fill", d => d.color)
+        .attr("rx", 2)
+        .attr("ry", 2)
+        .style("stroke", d => d.color)
+        .style("stroke-width", 1);
+
+    // Add node labels with cleaner typography
+    node.append("text")
+        .attr("x", d => d.x0 < width / 2 ? d.x0 - 10 : d.x1 + 10)
+        .attr("y", d => (d.y1 + d.y0) / 2)
+        .attr("dy", "0.35em")
+        .attr("text-anchor", d => d.x0 < width / 2 ? "end" : "start")
+        .attr("fill", d => d.id < 4 ? d.color : "#111827")
+        .style("font-weight", d => d.id < 4 ? "700" : "500")
+        .style("font-size", "13px")
+        .style("font-family", "'Inter', -apple-system, BlinkMacSystemFont, sans-serif")
+        .text(d => d.name);
+
+    // Animate nodes appearing
+    node.transition()
+        .duration(600)
+        .delay((d, i) => i * 80)
+        .style("opacity", 1);
+
+    // Add hover effect to nodes
+    node.on("mouseover", function(event, d) {
+        d3.select(this).select("rect")
+            .transition()
+            .duration(150)
+            .style("stroke-width", 2)
+            .style("filter", "drop-shadow(0 4px 6px rgba(0,0,0,0.1))");
+    })
+    .on("mouseout", function() {
+        d3.select(this).select("rect")
+            .transition()
+            .duration(150)
+            .style("stroke-width", 1)
+            .style("filter", "none");
+    });
+
+    // Clean, minimal tooltip
+    const tooltip = d3.select("body").append("div")
+        .attr("class", "tooltip")
+        .style("position", "absolute")
+        .style("padding", "6px 10px")
+        .style("background", "rgba(17, 24, 39, 0.95)")
+        .style("color", "white")
+        .style("border-radius", "4px")
+        .style("font-size", "12px")
+        .style("font-family", "'Inter', sans-serif")
+        .style("pointer-events", "none")
+        .style("opacity", 0)
+        .style("box-shadow", "0 4px 6px rgba(0, 0, 0, 0.1)");
+
+    // Node hover tooltips
+    node.on("mouseover", function(event, d) {
+        const flows = d.sourceLinks.length + d.targetLinks.length;
+        tooltip.transition()
+            .duration(150)
+            .style("opacity", 1);
+        tooltip.html(`<strong>${d.name}</strong><br/>${flows} connections`)
+            .style("left", (event.pageX + 10) + "px")
+            .style("top", (event.pageY - 28) + "px");
+    })
+    .on("mouseout", function() {
+        tooltip.transition()
+            .duration(150)
+            .style("opacity", 0);
+    });
+
+    // Clean up tooltip on resize
+    window.addEventListener('resize', function() {
+        const newContainerWidth = Math.min(container.offsetWidth, 700);
+        const newWidth = newContainerWidth - margin.left - margin.right;
+        if (Math.abs(newWidth - width) > 50) {
+            location.reload();
+        }
+    });
+    </script>
+
     <!-- Solution Section -->
     <section id="solution" class="py-16 sm:py-24 bg-gradient-to-b from-white via-indigo-50 to-white relative">
         <div class="container mx-auto px-4 sm:px-6">
@@ -1464,66 +1695,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Market Timing & Traction -->
-                <!-- <div class="grid md:grid-cols-2 gap-6 mb-10"> -->
-                    <!-- Why Now -->
-                    <!-- <div class="bg-gradient-to-r from-indigo-100/20 to-purple-100/20 backdrop-blur rounded-3xl p-6 fade-in border border-white/30">
-                        <h3 class="text-lg font-bold mb-4 text-center">⏰ Perfect Timing</h3>
-                        <div class="space-y-3">
-                            <div class="flex items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-green-400 mr-3">✓</span>
-                                <span class="text-sm">AI compute demand doubling every 6-12 months</span>
-                            </div>
-                            <div class="flex items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-green-400 mr-3">✓</span>
-                                <span class="text-sm">GB200 allocation</span>
-                            </div>
-                            <div class="flex items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-green-400 mr-3">✓</span>
-                                <span class="text-sm">Data sovereignty laws mandate local infra</span>
-                            </div>
-                            <div class="flex items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-green-400 mr-3">✓</span>
-                                <span class="text-sm">Liquid-Cooled Facility</span>
-                            </div>
-                            <div class="flex items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-green-400 mr-3">✓</span>
-                                <span class="text-sm">51x infrastructure gap = massive opportunity</span>
-                            </div>
-                        </div>
-                    </div> -->
-                    
-                    <!-- Revenue Growth -->
-                    <!-- <div class="bg-gradient-to-r from-green-100/20 to-emerald-100/20 backdrop-blur rounded-3xl p-6 fade-in border border-green-300/50" style="animation-delay: 0.1s">
-                        <h3 class="text-lg font-bold mb-4 text-center">📊 Path to $10B Valuation</h3>
-                        <div class="space-y-2 mb-4">
-                            <div class="flex justify-between items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-sm">Year 1</span>
-                                <span class="font-bold">$48M</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-sm">Year 2</span>
-                                <span class="font-bold">$150M</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-sm">Year 3</span>
-                                <span class="font-bold">$380M</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-white/10 rounded-lg p-3">
-                                <span class="text-sm">Year 4</span>
-                                <span class="font-bold">$620M</span>
-                            </div>
-                            <div class="flex justify-between items-center bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-lg p-3 border border-green-300/50">
-                                <span class="text-sm font-semibold">Year 5</span>
-                                <span class="font-bold text-xl text-green-200">$850M</span>
-                            </div>
-                        </div>
-                        <div class="text-center text-sm">
-                            <span class="font-semibold">66% EBITDA Margins • $16M Revenue/MW</span>
-                        </div>
-                    </div> -->
-                <!-- </div> -->
 
                 <!-- Investment Structure -->
                 <div class="bg-gradient-to-r from-white/15 to-white/25 backdrop-blur rounded-3xl p-6 sm:p-10 mb-12 fade-in border border-white/20">
@@ -1642,49 +1813,6 @@
                         </p>
                     </div>
                 </div>
-                
-
-                <!-- 5 Comparable Success Stories -->
-                <!-- <div class="bg-gradient-to-r from-purple-100/20 to-pink-100/20 backdrop-blur rounded-3xl p-6 mb-10 fade-in border border-purple-300/50">
-                    <h3 class="text-xl font-bold mb-6 text-center">AI Infrastructure = Fastest Path to Unicorn</h3>
-                    
-                    <div class="grid md:grid-cols-5 gap-4">
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🚀</div>
-                            <h4 class="font-bold text-sm">CoreWeave</h4>
-                            <p class="text-xs text-purple-200">$7B → $80B</p>
-                            <p class="text-xs text-blue-100">4 months</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">💎</div>
-                            <h4 class="font-bold text-sm">Lambda Labs</h4>
-                            <p class="text-xs text-purple-200">→ $2.5B</p>
-                            <p class="text-xs text-blue-100">GPU cloud</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">⚡</div>
-                            <h4 class="font-bold text-sm">Crusoe</h4>
-                            <p class="text-xs text-purple-200">→ $2.8B</p>
-                            <p class="text-xs text-blue-100">Sustainable AI</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🌟</div>
-                            <h4 class="font-bold text-sm">Voltage Park</h4>
-                            <p class="text-xs text-purple-200">$500M seed</p>
-                            <p class="text-xs text-blue-100">ML infra</p>
-                        </div>
-                        <div class="text-center">
-                            <div class="text-2xl mb-2">🔥</div>
-                            <h4 class="font-bold text-sm">Together AI</h4>
-                            <p class="text-xs text-purple-200">→ $1.25B</p>
-                            <p class="text-xs text-blue-100">Inference</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-4 text-center bg-white/10 rounded-xl p-3">
-                        <p class="text-sm font-semibold">AI infra companies achieving 10-100x returns in 2-4 years</p>
-                    </div>
-                </div> -->
 
                 <!-- 5 Key Investor Benefits -->
                 <div class="bg-gradient-to-r from-amber-100/20 to-yellow-100/20 backdrop-blur rounded-3xl p-6 mb-10 fade-in border border-amber-300/50">
@@ -1997,7 +2125,7 @@
     </section>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/12066650905?text=Hi%20Antriksh%20Cloud%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20AI%20infrastructure%20solutions." 
+    <a href="https://wa.me/918682940765?text=Hi%20Antriksh%20Cloud%2C%20I'm%20interested%20in%20learning%20more%20about%20your%20AI%20infrastructure%20solutions." 
        target="_blank" 
        class="whatsapp-float"
        aria-label="Chat on WhatsApp">
