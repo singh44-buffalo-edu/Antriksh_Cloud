@@ -41,6 +41,302 @@
             }
         }, 100);
     </script>
+    <style>
+        /* Loading skeleton animations */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Show skeleton while page loads */
+        .loading-skeleton {
+            min-height: 200px;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Hide content until fonts load */
+        .fonts-loading body {
+            opacity: 0;
+        }
+
+        .fonts-loaded body {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+    </style>
+    <script>
+        (function() {
+            'use strict';
+            
+            // Safe function wrapper
+            function safeExecute(fn, fallback) {
+                try {
+                    return fn();
+                } catch (error) {
+                    console.error('Error in function:', error);
+                    if (fallback) return fallback();
+                }
+            }
+
+            // Enhanced mobile menu toggle with error handling
+            window.toggleMobileMenu = function() {
+                safeExecute(function() {
+                    var menu = document.getElementById('mobileMenu');
+                    if (!menu) {
+                        console.warn('Mobile menu element not found');
+                        return;
+                    }
+                    menu.classList.toggle('hidden');
+                });
+            };
+
+            // DOM ready handler with multiple fallbacks
+            function ready(fn) {
+                if (document.readyState === 'loading') {
+                    if (document.addEventListener) {
+                        document.addEventListener('DOMContentLoaded', fn);
+                    } else if (document.attachEvent) {
+                        document.attachEvent('onreadystatechange', function() {
+                            if (document.readyState === 'complete') fn();
+                        });
+                    } else {
+                        window.onload = fn;
+                    }
+                } else {
+                    fn();
+                }
+            }
+
+            ready(function() {
+                // Initialize all features with error handling
+                initializeSmoothScroll();
+                initializeIntersectionObserver();
+                initializeWhatsAppButton();
+                initializeMobileMenu();
+                initializeSankeyChart();
+            });
+
+            function initializeSmoothScroll() {
+                safeExecute(function() {
+                    var links = document.querySelectorAll('a[href^="#"]');
+                    if (!links.length) return;
+
+                    links.forEach(function(link) {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            var targetId = this.getAttribute('href');
+                            if (!targetId || targetId === '#') return;
+                            
+                            var target = document.querySelector(targetId);
+                            if (!target) return;
+
+                            var headerOffset = 80;
+                            var elementPosition = target.getBoundingClientRect().top;
+                            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                            if ('scrollBehavior' in document.documentElement.style) {
+                                window.scrollTo({
+                                    top: offsetPosition,
+                                    behavior: 'smooth'
+                                });
+                            } else {
+                                window.scrollTo(0, offsetPosition);
+                            }
+                        });
+                    });
+                });
+            }
+
+            function initializeIntersectionObserver() {
+                safeExecute(function() {
+                    var elements = document.querySelectorAll('.fade-in, .scale-in');
+                    if (!elements.length) return;
+
+                    if ('IntersectionObserver' in window) {
+                        var observer = new IntersectionObserver(function(entries) {
+                            entries.forEach(function(entry) {
+                                if (entry.isIntersecting) {
+                                    entry.target.classList.add('visible');
+                                    observer.unobserve(entry.target);
+                                }
+                            });
+                        }, {
+                            threshold: 0.1,
+                            rootMargin: '0px 0px -50px 0px'
+                        });
+
+                        elements.forEach(function(el) {
+                            observer.observe(el);
+                        });
+                    } else {
+                        // Fallback for older browsers
+                        elements.forEach(function(el) {
+                            el.classList.add('visible');
+                        });
+                    }
+                });
+            }
+
+            function initializeWhatsAppButton() {
+                safeExecute(function() {
+                    setTimeout(function() {
+                        var whatsappBtn = document.querySelector('.whatsapp-float');
+                        if (whatsappBtn) {
+                            whatsappBtn.style.opacity = '1';
+                            whatsappBtn.style.transform = 'translateY(0)';
+                        }
+                    }, 1000);
+                });
+            }
+
+            function initializeMobileMenu() {
+                safeExecute(function() {
+                    var mobileLinks = document.querySelectorAll('#mobileMenu a');
+                    var menu = document.getElementById('mobileMenu');
+                    
+                    if (!mobileLinks.length || !menu) return;
+
+                    mobileLinks.forEach(function(link) {
+                        link.addEventListener('click', function() {
+                            menu.classList.add('hidden');
+                        });
+                    });
+                });
+            }
+
+            function initializeSankeyChart() {
+                safeExecute(function() {
+                    // Wait for D3 to load
+                    var checkD3 = setInterval(function() {
+                        if (typeof d3 !== 'undefined' && typeof d3.sankey !== 'undefined') {
+                            clearInterval(checkD3);
+                            createSankeyChart();
+                        }
+                    }, 100);
+
+                    // Stop checking after 5 seconds
+                    setTimeout(function() {
+                        clearInterval(checkD3);
+                    }, 5000);
+                });
+            }
+
+            function createSankeyChart() {
+                // Your existing Sankey chart code wrapped in try-catch
+                safeExecute(function() {
+                    // ... (your existing Sankey chart code)
+                });
+            }
+        })();
+    </script>
+
+    <!-- Optimized font loading with fallback -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+        // Font loading with fallback
+        (function() {
+            var fontLink = document.createElement('link');
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap';
+            fontLink.rel = 'stylesheet';
+            
+            document.documentElement.classList.add('fonts-loading');
+            
+            fontLink.onload = function() {
+                document.documentElement.classList.remove('fonts-loading');
+                document.documentElement.classList.add('fonts-loaded');
+            };
+            
+            fontLink.onerror = function() {
+                document.documentElement.classList.remove('fonts-loading');
+                // Fall back to system fonts
+                var style = document.createElement('style');
+                style.textContent = 'body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }';
+                document.head.appendChild(style);
+            };
+            
+            document.head.appendChild(fontLink);
+            
+            // Timeout fallback after 3 seconds
+            setTimeout(function() {
+                document.documentElement.classList.remove('fonts-loading');
+            }, 3000);
+        })();
+    </script>
+
+
+    <script>
+        // Enhanced CDN fallback system
+        (function() {
+            var cdnFallbacks = {
+                tailwind: [
+                    'https://cdn.tailwindcss.com',
+                    'https://unpkg.com/tailwindcss@latest/dist/tailwind.min.js',
+                    'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js'
+                ],
+                d3: [
+                    'https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js',
+                    'https://unpkg.com/d3@7.8.5/dist/d3.min.js',
+                    'https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js'
+                ]
+            };
+
+            function loadScript(urls, index, callback) {
+                if (index >= urls.length) {
+                    console.error('All CDN attempts failed for', urls);
+                    if (callback) callback(false);
+                    return;
+                }
+
+                var script = document.createElement('script');
+                script.src = urls[index];
+                script.onload = function() {
+                    console.log('Successfully loaded from:', urls[index]);
+                    if (callback) callback(true);
+                };
+                script.onerror = function() {
+                    console.warn('Failed to load from:', urls[index]);
+                    loadScript(urls, index + 1, callback);
+                };
+                document.head.appendChild(script);
+            }
+
+            // Load Tailwind with fallbacks
+            window.addEventListener('load', function() {
+                if (typeof tailwind === 'undefined') {
+                    loadScript(cdnFallbacks.tailwind, 0, function(success) {
+                        if (!success) {
+                            // Load minimal fallback CSS
+                            var style = document.createElement('style');
+                            style.textContent = `
+                                /* Minimal fallback styles */
+                                body { font-family: system-ui, -apple-system, sans-serif; margin: 0; padding: 0; }
+                                .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+                                .hidden { display: none; }
+                                .text-center { text-align: center; }
+                                .flex { display: flex; }
+                                .grid { display: grid; }
+                                .rounded-full { border-radius: 9999px; }
+                                .bg-white { background-color: white; }
+                                .text-white { color: white; }
+                                .font-bold { font-weight: 700; }
+                                .mb-4 { margin-bottom: 1rem; }
+                                .p-4 { padding: 1rem; }
+                            `;
+                            document.head.appendChild(style);
+                        }
+                    });
+                }
+            });
+        })();
+    </script>
 
     
     <!-- Add structured data -->
@@ -52,199 +348,6 @@
       "description": "India's first 500MW liquid-cooled AI infrastructure",
       "url": "https://antriksh.cloud"
     }
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.12.3/d3-sankey.min.js"></script>
-    <script>
-        // Set dimensions and margins
-        const margin = {top: 10, right: 100, bottom: 10, left: 100};
-        const container = document.getElementById('sankey-chart');
-        const containerWidth = Math.min(container.offsetWidth, 700); // Cap at 700px
-        const width = containerWidth - margin.left - margin.right;
-        const height = 380 - margin.top - margin.bottom;
-
-        // Create SVG
-        const svg = d3.select("#sankey-chart")
-            .append("svg")
-            .attr("width", containerWidth)
-            .attr("height", height + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", `translate(${margin.left},${margin.top})`);
-
-        // Define nodes with sharp, professional colors
-        const nodes = [
-            {id: 0, name: "China", color: "#dc2626"},
-            {id: 1, name: "United States", color: "#2563eb"},
-            {id: 2, name: "Switzerland", color: "#4f46e5"},
-            {id: 3, name: "France", color: "#f59e0b"},
-            {id: 4, name: "Asia", color: "#6b7280"},
-            {id: 5, name: "Europe", color: "#6b7280"},
-            {id: 6, name: "Middle East", color: "#6b7280"},
-            {id: 7, name: "North America", color: "#6b7280"},
-            {id: 8, name: "South Africa", color: "#6b7280"},
-            {id: 9, name: "South America", color: "#6b7280"},
-            {id: 10, name: "Australia", color: "#6b7280"}
-        ];
-
-        // Define links with sharper colors
-        const links = [
-            {source: 0, target: 4, value: 35, color: "#dc2626"},
-            {source: 0, target: 5, value: 8, color: "#dc2626"},
-            {source: 0, target: 6, value: 3, color: "#dc2626"},
-            {source: 0, target: 7, value: 5, color: "#dc2626"},
-            {source: 0, target: 8, value: 2, color: "#dc2626"},
-            {source: 0, target: 9, value: 2, color: "#dc2626"},
-            {source: 0, target: 10, value: 2, color: "#dc2626"},
-            {source: 1, target: 4, value: 15, color: "#2563eb"},
-            {source: 1, target: 5, value: 20, color: "#2563eb"},
-            {source: 1, target: 6, value: 5, color: "#2563eb"},
-            {source: 1, target: 7, value: 25, color: "#2563eb"},
-            {source: 1, target: 8, value: 3, color: "#2563eb"},
-            {source: 1, target: 9, value: 5, color: "#2563eb"},
-            {source: 1, target: 10, value: 5, color: "#2563eb"},
-            {source: 2, target: 5, value: 3, color: "#4f46e5"},
-            {source: 3, target: 5, value: 4, color: "#f59e0b"}
-        ];
-
-        // Create sankey generator with tighter spacing
-        const sankey = d3.sankey()
-            .nodeId(d => d.id)
-            .nodeWidth(15)
-            .nodePadding(8)
-            .extent([[1, 1], [width - 1, height - 6]]);
-
-        // Generate the sankey diagram
-        const {nodes: sankeyNodes, links: sankeyLinks} = sankey({
-            nodes: nodes.map(d => Object.assign({}, d)),
-            links: links.map(d => Object.assign({}, d))
-        });
-
-        // Add links with sharper appearance
-        const link = svg.append("g")
-            .selectAll(".link")
-            .data(sankeyLinks)
-            .enter().append("path")
-            .attr("class", "link")
-            .attr("d", d3.sankeyLinkHorizontal())
-            .attr("stroke", d => d.color)
-            .attr("stroke-width", d => Math.max(1, d.width))
-            .attr("fill", "none")
-            .style("opacity", 0.3)
-            .transition()
-            .duration(600)
-            .delay((d, i) => i * 30)
-            .style("opacity", 0.4);
-
-        // Add hover effect to links
-        svg.selectAll(".link")
-            .on("mouseover", function() {
-                d3.select(this)
-                    .transition()
-                    .duration(150)
-                    .style("opacity", 0.7)
-                    .attr("stroke-width", d => Math.max(1.5, d.width * 1.1));
-            })
-            .on("mouseout", function() {
-                d3.select(this)
-                    .transition()
-                    .duration(150)
-                    .style("opacity", 0.4)
-                    .attr("stroke-width", d => Math.max(1, d.width));
-            });
-
-        // Add nodes with sharper styling
-        const node = svg.append("g")
-            .selectAll(".node")
-            .data(sankeyNodes)
-            .enter().append("g")
-            .attr("class", "node")
-            .style("opacity", 0);
-
-        // Add rectangles with sharp corners
-        node.append("rect")
-            .attr("x", d => d.x0)
-            .attr("y", d => d.y0)
-            .attr("height", d => d.y1 - d.y0)
-            .attr("width", d => d.x1 - d.x0)
-            .attr("fill", d => d.color)
-            .attr("rx", 2)
-            .attr("ry", 2)
-            .style("stroke", d => d.color)
-            .style("stroke-width", 1);
-
-        // Add node labels with cleaner typography
-        node.append("text")
-            .attr("x", d => d.x0 < width / 2 ? d.x0 - 10 : d.x1 + 10)
-            .attr("y", d => (d.y1 + d.y0) / 2)
-            .attr("dy", "0.35em")
-            .attr("text-anchor", d => d.x0 < width / 2 ? "end" : "start")
-            .attr("fill", d => d.id < 4 ? d.color : "#111827")
-            .style("font-weight", d => d.id < 4 ? "700" : "500")
-            .style("font-size", "13px")
-            .style("font-family", "'Inter', -apple-system, BlinkMacSystemFont, sans-serif")
-            .text(d => d.name);
-
-        // Animate nodes appearing
-        node.transition()
-            .duration(600)
-            .delay((d, i) => i * 80)
-            .style("opacity", 1);
-
-        // Add hover effect to nodes
-        node.on("mouseover", function(event, d) {
-            d3.select(this).select("rect")
-                .transition()
-                .duration(150)
-                .style("stroke-width", 2)
-                .style("filter", "drop-shadow(0 4px 6px rgba(0,0,0,0.1))");
-        })
-        .on("mouseout", function() {
-            d3.select(this).select("rect")
-                .transition()
-                .duration(150)
-                .style("stroke-width", 1)
-                .style("filter", "none");
-        });
-
-        // Clean, minimal tooltip
-        const tooltip = d3.select("body").append("div")
-            .attr("class", "tooltip")
-            .style("position", "absolute")
-            .style("padding", "6px 10px")
-            .style("background", "rgba(17, 24, 39, 0.95)")
-            .style("color", "white")
-            .style("border-radius", "4px")
-            .style("font-size", "12px")
-            .style("font-family", "'Inter', sans-serif")
-            .style("pointer-events", "none")
-            .style("opacity", 0)
-            .style("box-shadow", "0 4px 6px rgba(0, 0, 0, 0.1)");
-
-        // Node hover tooltips
-        node.on("mouseover", function(event, d) {
-            const flows = d.sourceLinks.length + d.targetLinks.length;
-            tooltip.transition()
-                .duration(150)
-                .style("opacity", 1);
-            tooltip.html(`<strong>${d.name}</strong><br/>${flows} connections`)
-                .style("left", (event.pageX + 10) + "px")
-                .style("top", (event.pageY - 28) + "px");
-        })
-        .on("mouseout", function() {
-            tooltip.transition()
-                .duration(150)
-                .style("opacity", 0);
-        });
-
-        // Clean up tooltip on resize
-        window.addEventListener('resize', function() {
-            const newContainerWidth = Math.min(container.offsetWidth, 700);
-            const newWidth = newContainerWidth - margin.left - margin.right;
-            if (Math.abs(newWidth - width) > 50) {
-                location.reload();
-            }
-        });
     </script>
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://antriksh.cloud">
@@ -919,7 +1022,198 @@
         </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-sankey/0.12.3/d3-sankey.min.js"></script>
+    <script>
+        // Set dimensions and margins
+        const margin = {top: 10, right: 100, bottom: 10, left: 100};
+        const container = document.getElementById('sankey-chart');
+        const containerWidth = Math.min(container.offsetWidth, 700); // Cap at 700px
+        const width = containerWidth - margin.left - margin.right;
+        const height = 380 - margin.top - margin.bottom;
 
+        // Create SVG
+        const svg = d3.select("#sankey-chart")
+            .append("svg")
+            .attr("width", containerWidth)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        // Define nodes with sharp, professional colors
+        const nodes = [
+            {id: 0, name: "China", color: "#dc2626"},
+            {id: 1, name: "United States", color: "#2563eb"},
+            {id: 2, name: "Switzerland", color: "#4f46e5"},
+            {id: 3, name: "France", color: "#f59e0b"},
+            {id: 4, name: "Asia", color: "#6b7280"},
+            {id: 5, name: "Europe", color: "#6b7280"},
+            {id: 6, name: "Middle East", color: "#6b7280"},
+            {id: 7, name: "North America", color: "#6b7280"},
+            {id: 8, name: "South Africa", color: "#6b7280"},
+            {id: 9, name: "South America", color: "#6b7280"},
+            {id: 10, name: "Australia", color: "#6b7280"}
+        ];
+
+        // Define links with sharper colors
+        const links = [
+            {source: 0, target: 4, value: 35, color: "#dc2626"},
+            {source: 0, target: 5, value: 8, color: "#dc2626"},
+            {source: 0, target: 6, value: 3, color: "#dc2626"},
+            {source: 0, target: 7, value: 5, color: "#dc2626"},
+            {source: 0, target: 8, value: 2, color: "#dc2626"},
+            {source: 0, target: 9, value: 2, color: "#dc2626"},
+            {source: 0, target: 10, value: 2, color: "#dc2626"},
+            {source: 1, target: 4, value: 15, color: "#2563eb"},
+            {source: 1, target: 5, value: 20, color: "#2563eb"},
+            {source: 1, target: 6, value: 5, color: "#2563eb"},
+            {source: 1, target: 7, value: 25, color: "#2563eb"},
+            {source: 1, target: 8, value: 3, color: "#2563eb"},
+            {source: 1, target: 9, value: 5, color: "#2563eb"},
+            {source: 1, target: 10, value: 5, color: "#2563eb"},
+            {source: 2, target: 5, value: 3, color: "#4f46e5"},
+            {source: 3, target: 5, value: 4, color: "#f59e0b"}
+        ];
+
+        // Create sankey generator with tighter spacing
+        const sankey = d3.sankey()
+            .nodeId(d => d.id)
+            .nodeWidth(15)
+            .nodePadding(8)
+            .extent([[1, 1], [width - 1, height - 6]]);
+
+        // Generate the sankey diagram
+        const {nodes: sankeyNodes, links: sankeyLinks} = sankey({
+            nodes: nodes.map(d => Object.assign({}, d)),
+            links: links.map(d => Object.assign({}, d))
+        });
+
+        // Add links with sharper appearance
+        const link = svg.append("g")
+            .selectAll(".link")
+            .data(sankeyLinks)
+            .enter().append("path")
+            .attr("class", "link")
+            .attr("d", d3.sankeyLinkHorizontal())
+            .attr("stroke", d => d.color)
+            .attr("stroke-width", d => Math.max(1, d.width))
+            .attr("fill", "none")
+            .style("opacity", 0.3)
+            .transition()
+            .duration(600)
+            .delay((d, i) => i * 30)
+            .style("opacity", 0.4);
+
+        // Add hover effect to links
+        svg.selectAll(".link")
+            .on("mouseover", function() {
+                d3.select(this)
+                    .transition()
+                    .duration(150)
+                    .style("opacity", 0.7)
+                    .attr("stroke-width", d => Math.max(1.5, d.width * 1.1));
+            })
+            .on("mouseout", function() {
+                d3.select(this)
+                    .transition()
+                    .duration(150)
+                    .style("opacity", 0.4)
+                    .attr("stroke-width", d => Math.max(1, d.width));
+            });
+
+        // Add nodes with sharper styling
+        const node = svg.append("g")
+            .selectAll(".node")
+            .data(sankeyNodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .style("opacity", 0);
+
+        // Add rectangles with sharp corners
+        node.append("rect")
+            .attr("x", d => d.x0)
+            .attr("y", d => d.y0)
+            .attr("height", d => d.y1 - d.y0)
+            .attr("width", d => d.x1 - d.x0)
+            .attr("fill", d => d.color)
+            .attr("rx", 2)
+            .attr("ry", 2)
+            .style("stroke", d => d.color)
+            .style("stroke-width", 1);
+
+        // Add node labels with cleaner typography
+        node.append("text")
+            .attr("x", d => d.x0 < width / 2 ? d.x0 - 10 : d.x1 + 10)
+            .attr("y", d => (d.y1 + d.y0) / 2)
+            .attr("dy", "0.35em")
+            .attr("text-anchor", d => d.x0 < width / 2 ? "end" : "start")
+            .attr("fill", d => d.id < 4 ? d.color : "#111827")
+            .style("font-weight", d => d.id < 4 ? "700" : "500")
+            .style("font-size", "13px")
+            .style("font-family", "'Inter', -apple-system, BlinkMacSystemFont, sans-serif")
+            .text(d => d.name);
+
+        // Animate nodes appearing
+        node.transition()
+            .duration(600)
+            .delay((d, i) => i * 80)
+            .style("opacity", 1);
+
+        // Add hover effect to nodes
+        node.on("mouseover", function(event, d) {
+            d3.select(this).select("rect")
+                .transition()
+                .duration(150)
+                .style("stroke-width", 2)
+                .style("filter", "drop-shadow(0 4px 6px rgba(0,0,0,0.1))");
+        })
+        .on("mouseout", function() {
+            d3.select(this).select("rect")
+                .transition()
+                .duration(150)
+                .style("stroke-width", 1)
+                .style("filter", "none");
+        });
+
+        // Clean, minimal tooltip
+        const tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("position", "absolute")
+            .style("padding", "6px 10px")
+            .style("background", "rgba(17, 24, 39, 0.95)")
+            .style("color", "white")
+            .style("border-radius", "4px")
+            .style("font-size", "12px")
+            .style("font-family", "'Inter', sans-serif")
+            .style("pointer-events", "none")
+            .style("opacity", 0)
+            .style("box-shadow", "0 4px 6px rgba(0, 0, 0, 0.1)");
+
+        // Node hover tooltips
+        node.on("mouseover", function(event, d) {
+            const flows = d.sourceLinks.length + d.targetLinks.length;
+            tooltip.transition()
+                .duration(150)
+                .style("opacity", 1);
+            tooltip.html(`<strong>${d.name}</strong><br/>${flows} connections`)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY - 28) + "px");
+        })
+        .on("mouseout", function() {
+            tooltip.transition()
+                .duration(150)
+                .style("opacity", 0);
+        });
+
+        // Clean up tooltip on resize
+        window.addEventListener('resize', function() {
+            const newContainerWidth = Math.min(container.offsetWidth, 700);
+            const newWidth = newContainerWidth - margin.left - margin.right;
+            if (Math.abs(newWidth - width) > 50) {
+                location.reload();
+            }
+        });
+    </script>
 
     <!-- Solution Section -->
     <section id="solution" class="py-16 sm:py-24 bg-gradient-to-b from-white via-indigo-50 to-white relative">
@@ -2360,6 +2654,89 @@
                 }
             });
         }
+    </script>
+    <script>
+        // Network status monitoring
+        (function() {
+            var isOnline = navigator.onLine;
+            
+            function updateNetworkStatus() {
+                if (!navigator.onLine) {
+                    document.body.classList.add('offline');
+                    showNotification('You are currently offline. Some features may be limited.');
+                } else {
+                    document.body.classList.remove('offline');
+                    if (!isOnline) {
+                        showNotification('You are back online!');
+                    }
+                }
+                isOnline = navigator.onLine;
+            }
+            
+            function showNotification(message) {
+                var notification = document.createElement('div');
+                notification.className = 'network-notification';
+                notification.textContent = message;
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background: #333;
+                    color: white;
+                    padding: 12px 24px;
+                    border-radius: 8px;
+                    z-index: 9999;
+                    animation: slideIn 0.3s ease-out;
+                `;
+                document.body.appendChild(notification);
+                
+                setTimeout(function() {
+                    notification.remove();
+                }, 3000);
+            }
+            
+            window.addEventListener('online', updateNetworkStatus);
+            window.addEventListener('offline', updateNetworkStatus);
+            updateNetworkStatus();
+        })();
+    </script>
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js').catch(function(error) {
+                    console.log('ServiceWorker registration failed:', error);
+                });
+            });
+        }
+    </script>
+    <script>
+        // Global error handler
+        window.addEventListener('error', function(event) {
+            console.error('Global error:', event.error);
+            // In production, send to your error tracking service
+            if (window.location.hostname !== 'localhost') {
+                // Example: send to your analytics endpoint
+                try {
+                    fetch('/api/errors', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            message: event.error?.message || 'Unknown error',
+                            stack: event.error?.stack,
+                            url: window.location.href,
+                            userAgent: navigator.userAgent,
+                            timestamp: new Date().toISOString()
+                        })
+                    }).catch(() => {}); // Fail silently
+                } catch (e) {}
+            }
+        });
+
+        // Promise rejection handler
+        window.addEventListener('unhandledrejection', function(event) {
+            console.error('Unhandled promise rejection:', event.reason);
+        });
     </script>
 </body>
 </html>
