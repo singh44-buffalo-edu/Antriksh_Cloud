@@ -307,13 +307,83 @@
         /* ANIMATIONS */
         .fade-up{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
         .fade-up.visible{opacity:1;transform:none}
-        .fade-up:nth-child(2){transition-delay:.07s}
-        .fade-up:nth-child(3){transition-delay:.14s}
-        .fade-up:nth-child(4){transition-delay:.21s}
-        .fade-up:nth-child(5){transition-delay:.28s}
+        /* ── ANIMATIONS ───────────────────────────────── */
+
+        /* Scroll reveals */
+        .fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+        .fade-up.visible{opacity:1;transform:none}
+        .fade-left{opacity:0;transform:translateX(-28px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+        .fade-left.visible{opacity:1;transform:none}
+        .fade-right{opacity:0;transform:translateX(28px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+        .fade-right.visible{opacity:1;transform:none}
+        .scale-in{opacity:0;transform:scale(.94);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1)}
+        .scale-in.visible{opacity:1;transform:none}
+
+        /* Stagger delays */
+        .stagger-1{transition-delay:.08s!important}
+        .stagger-2{transition-delay:.16s!important}
+        .stagger-3{transition-delay:.24s!important}
+        .stagger-4{transition-delay:.32s!important}
+        .stagger-5{transition-delay:.40s!important}
+
+        /* Hero canvas */
+        #hero-canvas{position:absolute;inset:0;pointer-events:none;opacity:.45}
+        #hero{position:relative;overflow:hidden}
+
+        /* Shimmer on grad text */
+        .grad-shimmer{background:linear-gradient(90deg,#3b82f6,#7c3aed,#3b82f6);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 4s linear infinite}
+        @keyframes shimmer{to{background-position:200% center}}
+
+        /* Magnetic button base */
+        .btn-magnetic{transition:transform .25s cubic-bezier(.23,1,.32,1),box-shadow .25s}
+
+        /* Card hover lifts */
+        .rev-card{transition:transform .25s cubic-bezier(.23,1,.32,1),box-shadow .25s,border-color .2s}
+        .rev-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+        .tl-card{transition:transform .25s cubic-bezier(.23,1,.32,1),box-shadow .25s,border-color .2s}
+        .tl-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.07)}
+        .vc-card{transition:transform .22s cubic-bezier(.23,1,.32,1),box-shadow .22s}
+        .vc-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.07)}
+        .tr-item{transition:background .15s,transform .2s}
+        .tr-item:hover{transform:translateX(4px)}
+
+        /* Value visual float */
+        .vp-visual{animation:float 5s ease-in-out infinite}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+        /* Timeline power bar animation */
+        .tl-power-fill{width:0!important;transition:width 1.2s cubic-bezier(.16,1,.3,1)}
+        .tl-power-fill.animated{width:var(--pw)!important}
+
+        /* Count-up numbers */
+        .count-num{display:inline-block}
+
+        /* Nav hide/show */
+        #nav{transition:transform .35s cubic-bezier(.16,1,.3,1),background .2s,box-shadow .2s}
+        #nav.hidden{transform:translateY(-100%)}
+        #nav.scrolled{box-shadow:0 1px 20px rgba(0,0,0,.08)}
+
+        /* Glow cursor */
+        #cursor-glow{position:fixed;width:400px;height:400px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(59,130,246,.06) 0%,transparent 70%);transform:translate(-50%,-50%);transition:transform .08s linear;display:none}
+        @media(hover:hover){#cursor-glow{display:block}}
+
+        /* Pulse on badge dot */
+        .hero-dot{animation:pdot 1.8s infinite}
+        @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+
+        /* Ticker pause on hover */
+        .ticker:hover .ticker-track{animation-play-state:paused}
+
+        /* Hero stats count animation */
+        .hstat{transition:transform .2s,box-shadow .2s}
+        .hstat:hover{transform:translateY(-2px)}
+
+        /* Section heading underline draw */
+        .lbl::before{transition:width .6s cubic-bezier(.16,1,.3,1)}
     </style>
 </head>
 <body>
+<div id="cursor-glow"></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -347,42 +417,43 @@
 
 <!-- HERO -->
 <section id="hero">
+    <canvas id="hero-canvas"></canvas>
     <div class="container">
         <div class="hero-inner">
             <div>
-                <div class="hero-badge">
+                <div class="hero-badge fade-up">
                     <span class="hero-dot"></span>
                     Early access now open
                 </div>
-                <h1 class="hero-h">
+                <h1 class="hero-h fade-up stagger-1">
                     Built for India.<br>
-                    Built for <span class="grad">AI.</span>
+                    Built for <span class="grad-shimmer">AI.</span>
                 </h1>
-                <p class="hero-p">
+                <p class="hero-p fade-up stagger-2">
                     Sovereign, liquid-cooled GB200 and GB300 GPU clusters in Delhi NCR. 40–50% cheaper than overseas alternatives. Your data never leaves India.
                 </p>
-                <div class="hero-actions">
-                    <a href="#waitlist" class="btn btn-primary">
+                <div class="hero-actions fade-up stagger-3">
+                    <a href="#waitlist" class="btn btn-primary btn-magnetic">
                         Get Early Access
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="#value" class="btn btn-outline">Learn More</a>
+                    <a href="#value" class="btn btn-outline btn-magnetic">Learn More</a>
                 </div>
-                <div class="hero-stats">
+                <div class="hero-stats fade-up stagger-4">
                     <div class="hstat">
-                        <div class="hstat-val">5–30 ms</div>
+                        <div class="hstat-val"><span class="count-num" data-count="30" data-suffix=" ms" data-prefix="5–">5–30 ms</span></div>
                         <div class="hstat-lbl">Latency across India</div>
                     </div>
                     <div class="hstat">
-                        <div class="hstat-val">40–50%</div>
+                        <div class="hstat-val"><span class="count-num" data-count="50" data-suffix="%" data-prefix="40–">40–50%</span></div>
                         <div class="hstat-lbl">Below hyperscaler pricing</div>
                     </div>
                     <div class="hstat">
-                        <div class="hstat-val">500 MW</div>
+                        <div class="hstat-val"><span class="count-num" data-count="500" data-suffix=" MW">500 MW</span></div>
                         <div class="hstat-lbl">Total planned capacity</div>
                     </div>
                     <div class="hstat">
-                        <div class="hstat-val">100%</div>
+                        <div class="hstat-val"><span class="count-num" data-count="100" data-suffix="%">100%</span></div>
                         <div class="hstat-lbl">India data residency</div>
                     </div>
                 </div>
@@ -757,7 +828,7 @@ endpoint = client.<span class="cf">deploy</span>(
                         <div class="tl-phase-title">Proof of Concept</div>
                         <div class="tl-phase-time">6–8 months</div>
                         <div class="tl-power-bar">
-                            <div class="tl-power-fill" style="width:0.6%"></div>
+                            <div class="tl-power-fill" style="--pw:0.6%" data-pw="0.6%"></div>
                         </div>
                         <div class="tl-mw">3 MW</div>
                         <ul class="tl-list">
@@ -776,7 +847,7 @@ endpoint = client.<span class="cf">deploy</span>(
                         <div class="tl-phase-title">Scale to 100 MW</div>
                         <div class="tl-phase-time">Year 1–2</div>
                         <div class="tl-power-bar">
-                            <div class="tl-power-fill" style="width:20%"></div>
+                            <div class="tl-power-fill" style="--pw:20%" data-pw="20%"></div>
                         </div>
                         <div class="tl-mw">100 MW</div>
                         <ul class="tl-list">
@@ -795,7 +866,7 @@ endpoint = client.<span class="cf">deploy</span>(
                         <div class="tl-phase-title">Full 500 MW</div>
                         <div class="tl-phase-time">Year 5</div>
                         <div class="tl-power-bar">
-                            <div class="tl-power-fill" style="width:100%"></div>
+                            <div class="tl-power-fill" style="--pw:100%" data-pw="100%"></div>
                         </div>
                         <div class="tl-mw">500 MW</div>
                         <ul class="tl-list">
@@ -810,26 +881,26 @@ endpoint = client.<span class="cf">deploy</span>(
 
         <!-- Bottom stat strip -->
         <div class="tl-stats">
-            <div class="tl-stat">
-                <div class="tl-stat-val">126</div>
+            <div class="tl-stat scale-in stagger-1">
+                <div class="tl-stat-val"><span class="count-num" data-count="126">126</span></div>
                 <div class="tl-stat-unit">ExaFLOPS</div>
                 <div class="tl-stat-lbl">at 500 MW</div>
             </div>
             <div class="tl-stat-div"></div>
-            <div class="tl-stat">
-                <div class="tl-stat-val">288K</div>
+            <div class="tl-stat scale-in stagger-2">
+                <div class="tl-stat-val"><span class="count-num" data-count="288" data-suffix="K">288K</span></div>
                 <div class="tl-stat-unit">GPUs</div>
                 <div class="tl-stat-lbl">at full build</div>
             </div>
             <div class="tl-stat-div"></div>
-            <div class="tl-stat">
-                <div class="tl-stat-val">5</div>
+            <div class="tl-stat scale-in stagger-3">
+                <div class="tl-stat-val"><span class="count-num" data-count="5">5</span></div>
                 <div class="tl-stat-unit">Years</div>
                 <div class="tl-stat-lbl">to full campus</div>
             </div>
             <div class="tl-stat-div"></div>
-            <div class="tl-stat">
-                <div class="tl-stat-val">10K+</div>
+            <div class="tl-stat scale-in stagger-4">
+                <div class="tl-stat-val"><span class="count-num" data-count="10" data-suffix="K+">10K+</span></div>
                 <div class="tl-stat-unit">Startups</div>
                 <div class="tl-stat-lbl">enabled</div>
             </div>
@@ -991,20 +1062,167 @@ endpoint = client.<span class="cf">deploy</span>(
 </footer>
 
 <script>
-// Intersection observer
-const io = new IntersectionObserver(e => {
-    e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); });
-}, {threshold:.1, rootMargin:'0px 0px -28px 0px'});
-document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+// ── Hero canvas dot-grid ──────────────────────────────────────
+(function(){
+    const canvas = document.getElementById('hero-canvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let W, H, dots = [], mouse = {x:-999, y:-999};
+    const GAP = 36, R = 1.5, REACH = 120;
 
-// FAQ
+    function resize() {
+        const hero = document.getElementById('hero');
+        W = canvas.width  = hero.offsetWidth;
+        H = canvas.height = hero.offsetHeight;
+        dots = [];
+        for(let x = GAP; x < W; x += GAP)
+            for(let y = GAP; y < H; y += GAP)
+                dots.push({x, y, ox:x, oy:y, vx:0, vy:0});
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, W, H);
+        dots.forEach(d => {
+            const dx = mouse.x - d.x, dy = mouse.y - d.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if(dist < REACH) {
+                const force = (REACH - dist) / REACH;
+                d.vx -= dx * force * 0.04;
+                d.vy -= dy * force * 0.04;
+            }
+            d.vx += (d.ox - d.x) * 0.08;
+            d.vy += (d.oy - d.y) * 0.08;
+            d.vx *= 0.82; d.vy *= 0.82;
+            d.x += d.vx; d.y += d.vy;
+
+            const dd = Math.sqrt((d.x-d.ox)**2 + (d.y-d.oy)**2);
+            const alpha = 0.18 + Math.min(dd/8, 1) * 0.5;
+            ctx.beginPath();
+            ctx.arc(d.x, d.y, R, 0, Math.PI*2);
+            ctx.fillStyle = `rgba(59,130,246,${alpha})`;
+            ctx.fill();
+        });
+        requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('resize', resize);
+    document.getElementById('hero').addEventListener('mousemove', e => {
+        const r = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - r.left;
+        mouse.y = e.clientY - r.top;
+    });
+    document.getElementById('hero').addEventListener('mouseleave', () => {
+        mouse.x = -999; mouse.y = -999;
+    });
+
+    resize(); draw();
+})();
+
+// ── Nav hide/show on scroll ───────────────────────────────────
+(function(){
+    let last = 0, ticking = false;
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+        if(ticking) return;
+        requestAnimationFrame(() => {
+            const y = window.scrollY;
+            if(y > 80) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+            if(y > last + 6 && y > 120) nav.classList.add('hidden');
+            else if(y < last - 4) nav.classList.remove('hidden');
+            last = y; ticking = false;
+        });
+        ticking = true;
+    });
+})();
+
+// ── Cursor glow ───────────────────────────────────────────────
+(function(){
+    const glow = document.getElementById('cursor-glow');
+    if(!glow) return;
+    document.addEventListener('mousemove', e => {
+        glow.style.left = e.clientX + 'px';
+        glow.style.top  = e.clientY + 'px';
+    });
+})();
+
+// ── Magnetic buttons ─────────────────────────────────────────
+document.querySelectorAll('.btn-magnetic').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width/2)  * 0.18;
+        const y = (e.clientY - r.top  - r.height/2) * 0.18;
+        btn.style.transform = `translate(${x}px,${y}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+    });
+});
+
+// ── Count-up animation ───────────────────────────────────────
+function countUp(el) {
+    if(el.dataset.counted) return;
+    el.dataset.counted = '1';
+    const target  = parseFloat(el.dataset.count);
+    const suffix  = el.dataset.suffix  || '';
+    const prefix  = el.dataset.prefix  || '';
+    const dur     = 1600;
+    const start   = performance.now();
+    const isInt   = Number.isInteger(target);
+
+    function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        const ease = 1 - Math.pow(1-p, 3);
+        const v = target * ease;
+        el.textContent = prefix + (isInt ? Math.round(v) : v.toFixed(1)) + suffix;
+        if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+}
+
+// ── Scroll-reveal + power bars + counters ────────────────────
+const revealIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+        if(!e.isIntersecting) return;
+        const el = e.target;
+
+        // Reveal classes
+        if(el.classList.contains('fade-up') || el.classList.contains('fade-left') ||
+           el.classList.contains('fade-right') || el.classList.contains('scale-in')) {
+            el.classList.add('visible');
+        }
+
+        // Power bar
+        if(el.classList.contains('tl-power-fill')) {
+            el.style.width = el.dataset.pw;
+            el.classList.add('animated');
+        }
+
+        // Count-up
+        if(el.classList.contains('count-num')) countUp(el);
+
+        revealIO.unobserve(el);
+    });
+}, {threshold: 0.15, rootMargin: '0px 0px -40px 0px'});
+
+document.querySelectorAll(
+    '.fade-up,.fade-left,.fade-right,.scale-in,.tl-power-fill,.count-num'
+).forEach(el => revealIO.observe(el));
+
+// Trigger hero elements immediately
+document.querySelectorAll('#hero .fade-up, #hero .count-num').forEach(el => {
+    setTimeout(() => { el.classList.add('visible'); if(el.classList.contains('count-num')) countUp(el); }, 120);
+});
+
+// ── FAQ ──────────────────────────────────────────────────────
 function faq(btn) {
     const a = btn.nextElementSibling, open = a.classList.contains('open');
-    document.querySelectorAll('.faq-a.open').forEach(x => { x.classList.remove('open'); x.previousElementSibling.classList.remove('open'); });
+    document.querySelectorAll('.faq-a.open').forEach(x => {
+        x.classList.remove('open'); x.previousElementSibling.classList.remove('open');
+    });
     if(!open) { a.classList.add('open'); btn.classList.add('open'); }
 }
 
-// Waitlist
+// ── Waitlist ─────────────────────────────────────────────────
 function submitWl(e) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
@@ -1017,7 +1235,7 @@ function submitWl(e) {
     }, 500);
 }
 
-// Mobile nav close
+// ── Mobile nav close ─────────────────────────────────────────
 document.querySelectorAll('#navLinks a').forEach(a =>
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
 );
