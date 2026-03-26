@@ -67,8 +67,15 @@
 
         /* HERO */
         #hero{padding-top:100px;padding-bottom:0;background:var(--bg)}
-        .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding-bottom:4rem}
-        @media(max-width:760px){.hero-inner{grid-template-columns:1fr;gap:2rem}}
+        .hero-inner{padding-bottom:4rem;max-width:720px}
+        .hero-p{font-size:1.0625rem;color:var(--ink-soft);line-height:1.75;margin-bottom:1.875rem;max-width:560px}
+        .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg-sub);max-width:640px}
+        @media(max-width:580px){
+            .hero-stats{grid-template-columns:1fr 1fr}
+            .hstat:nth-child(2){border-right:none}
+            .hstat:nth-child(3){border-top:1px solid var(--border)}
+            .hstat:nth-child(4){border-top:1px solid var(--border);border-right:none}
+        }
         .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--blue-lt);border:1px solid #bfdbfe;color:var(--blue);font-size:.75rem;font-weight:600;padding:.3rem .875rem;border-radius:100px;margin-bottom:1.5rem}
         .hero-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pdot 1.8s infinite}
         @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
@@ -138,20 +145,40 @@
         .st-ready{background:#f5f3ff;color:var(--purple)}
         .st-next{background:var(--ink);color:#fff}
 
-        /* JOURNEY */
+        /* JOURNEY TIMELINE */
         #journey{background:var(--bg-sub)}
-        .journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
-        @media(max-width:720px){.journey-grid{grid-template-columns:1fr}}
-        .jcard{border:1px solid var(--border);border-radius:12px;padding:1.75rem;background:var(--bg);position:relative}
-        .jcard.active{border-color:var(--blue);background:var(--blue-lt)}
-        .jphase{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--blue);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem}
-        .jcard.active .jphase{color:var(--blue-dk)}
-        .jtitle{font-weight:700;font-size:1.125rem;margin-bottom:.25rem}
-        .jtime{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--ink-soft);margin-bottom:1rem}
-        .jcard.active .jtime{color:var(--blue)}
-        .jlist{list-style:none;display:flex;flex-direction:column;gap:.375rem}
-        .jlist li{font-size:.8125rem;color:var(--ink-mid);display:flex;gap:.5rem}
-        .jlist li::before{content:'→';color:var(--blue);flex-shrink:0}
+        .tl-wrap{margin-top:3rem;position:relative}
+        .tl-track{position:absolute;top:20px;left:20px;right:20px;height:2px;background:var(--border);z-index:0}
+        @media(max-width:720px){.tl-track{display:none}}
+        .tl-fill{height:100%;width:8%;background:linear-gradient(90deg,var(--blue),#3b82f680)}
+        .tl-phases{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative;z-index:1}
+        @media(max-width:720px){.tl-phases{grid-template-columns:1fr}}
+        .tl-phase{display:flex;flex-direction:column;align-items:flex-start}
+        .tl-node{width:40px;height:40px;border-radius:50%;background:var(--border);border:2px solid var(--bg-sub);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;flex-shrink:0;transition:background .2s}
+        .tl-node.active{background:var(--blue);box-shadow:0 0 0 5px rgba(59,130,246,.15)}
+        .tl-card{width:100%;border:1px solid var(--border);border-radius:14px;padding:1.5rem;background:var(--bg);transition:box-shadow .2s}
+        .tl-card.active{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.1)}
+        .tl-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.07)}
+        .tl-phase-tag{font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem}
+        .tl-phase-title{font-size:1.125rem;font-weight:700;color:var(--ink);margin-bottom:.2rem}
+        .tl-phase-time{font-size:.8125rem;font-weight:600;color:var(--ink-soft);margin-bottom:1.25rem}
+        .tl-card.active .tl-phase-time{color:var(--blue)}
+        /* Power bar */
+        .tl-power-bar{height:6px;background:var(--bg-tint);border-radius:100px;overflow:hidden;margin-bottom:.4rem}
+        .tl-power-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,var(--blue),var(--purple));min-width:4px}
+        .tl-mw{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--ink-soft);margin-bottom:1rem}
+        .tl-list{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+        .tl-list li{font-size:.8rem;color:var(--ink-soft);display:flex;gap:.5rem;align-items:flex-start}
+        .tl-list li::before{content:'→';color:var(--blue);flex-shrink:0;font-weight:700;font-size:.75rem;margin-top:.05rem}
+        /* Bottom stats */
+        .tl-stats{display:flex;align-items:center;gap:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:2.5rem;background:var(--bg)}
+        @media(max-width:600px){.tl-stats{flex-wrap:wrap}}
+        .tl-stat{flex:1;padding:1.25rem 1.5rem;text-align:center;min-width:120px}
+        .tl-stat-val{font-size:1.75rem;font-weight:700;color:var(--ink);letter-spacing:-0.03em;line-height:1}
+        .tl-stat-unit{font-size:.7rem;font-weight:600;color:var(--blue);letter-spacing:.05em;text-transform:uppercase;margin-top:.2rem}
+        .tl-stat-lbl{font-size:.7rem;color:var(--ink-soft);margin-top:.15rem}
+        .tl-stat-div{width:1px;background:var(--border);align-self:stretch}
+        @media(max-width:600px){.tl-stat-div{display:none}.tl-stat{border-bottom:1px solid var(--border)}.tl-stat:last-child{border-bottom:none}}
 
         /* REVENUE STREAMS */
         #revenue{background:var(--bg)}
@@ -361,39 +388,7 @@
                 </div>
             </div>
 
-            <!-- Visual panel -->
-            <div class="hero-img">
-                <div class="hero-img-inner">
-                    <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem">Antriksh Cloud · Delhi NCR</div>
-                    <div class="hero-img-title">India's AI Infrastructure</div>
-                    <div class="hero-img-sub">Liquid-cooled · Sovereign · Always-on</div>
-                    <div class="hero-img-grid">
-                        <div class="hero-img-cell">
-                            <div class="hero-img-cell-val">GB200</div>
-                            <div class="hero-img-cell-lbl">GPU</div>
-                        </div>
-                        <div class="hero-img-cell">
-                            <div class="hero-img-cell-val">GB300</div>
-                            <div class="hero-img-cell-lbl">GPU</div>
-                        </div>
-                        <div class="hero-img-cell">
-                            <div class="hero-img-cell-val">&lt;1.10</div>
-                            <div class="hero-img-cell-lbl">PUE</div>
-                        </div>
-                        <div class="hero-img-cell">
-                            <div class="hero-img-cell-val">500MW</div>
-                            <div class="hero-img-cell-lbl">Power</div>
-                        </div>
-                    </div>
-                    <div style="margin-top:1.5rem;width:100%;height:1px;background:rgba(255,255,255,.07)"></div>
-                    <div style="margin-top:1.25rem;display:flex;justify-content:center;gap:.625rem;flex-wrap:wrap">
-                        <span style="font-size:.7rem;background:rgba(59,130,246,.2);color:#93c5fd;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(59,130,246,.2)">CERT-In</span>
-                        <span style="font-size:.7rem;background:rgba(124,58,237,.2);color:#c4b5fd;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(124,58,237,.2)">DPDP Act</span>
-                        <span style="font-size:.7rem;background:rgba(34,197,94,.2);color:#4ade80;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(34,197,94,.2)">Sovereign</span>
-                        <span style="font-size:.7rem;background:rgba(251,191,36,.2);color:#fbbf24;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(251,191,36,.2)">CDAC Validated</span>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
@@ -497,111 +492,6 @@
                         <div class="vp-mini-stat-lbl">To first GPU on-demand</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- TRACTION -->
-<section id="traction">
-    <div class="container">
-        <div class="lbl">Execution Progress</div>
-        <h2>Everything in place<br>to build.</h2>
-        <p style="max-width:500px;margin-top:.75rem">Years of groundwork. Ready to deploy the moment funding closes.</p>
-        <div class="traction-list">
-            <div class="tr-item fade-up">
-                <div class="tr-check done">
-                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div>
-                    <div class="tr-title">500MW Power Allocation Secured</div>
-                    <div class="tr-desc">Strategic canal-side location with abundant water for cooling infrastructure.</div>
-                </div>
-                <div class="tr-status st-done">Completed</div>
-            </div>
-            <div class="tr-item fade-up">
-                <div class="tr-check progress">
-                    <svg fill="none" stroke="#a16207" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div>
-                    <div class="tr-title">Government MoU in Final Stages</div>
-                    <div class="tr-desc">State backing with infrastructure status and regulatory clearances.</div>
-                </div>
-                <div class="tr-status st-review">Final Review</div>
-            </div>
-            <div class="tr-item fade-up">
-                <div class="tr-check done">
-                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div>
-                    <div class="tr-title">NVIDIA GB200 Supply Confirmed</div>
-                    <div class="tr-desc">Direct allocation secured for immediate deployment upon funding.</div>
-                </div>
-                <div class="tr-status st-confirm">Confirmed</div>
-            </div>
-            <div class="tr-item fade-up">
-                <div class="tr-check done">
-                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-                </div>
-                <div>
-                    <div class="tr-title">Technical Design Complete</div>
-                    <div class="tr-desc">3MW container PoC ready for deployment within 6 months. CDAC &amp; NSM validated.</div>
-                </div>
-                <div class="tr-status st-ready">Ready</div>
-            </div>
-            <div class="tr-item fade-up">
-                <div class="tr-check next">
-                    <svg fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </div>
-                <div>
-                    <div class="tr-title">Ready for Deployment</div>
-                    <div class="tr-desc">3MW PoC generates revenue in 6–8 months, validates model for 500MW scale. Early access customers onboarded first.</div>
-                </div>
-                <div class="tr-status st-next">Next</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- OUR JOURNEY -->
-<section id="journey">
-    <div class="container">
-        <div class="lbl">Build Roadmap</div>
-        <h2>Our journey to 500 MW.</h2>
-        <p style="max-width:500px;margin-top:.75rem">Container-based PoC live in 6–8 months. Risk-mitigated phased execution to full campus.</p>
-        <div class="journey-grid">
-            <div class="jcard active fade-up">
-                <div class="jphase">Phase 1</div>
-                <div class="jtitle">Proof of Concept</div>
-                <div class="jtime">6–8 months</div>
-                <ul class="jlist">
-                    <li>3 MW container deployment</li>
-                    <li>1,728 GB200 GPUs live</li>
-                    <li>Revenue generation starts</li>
-                    <li>Early access customers go live</li>
-                </ul>
-            </div>
-            <div class="jcard fade-up">
-                <div class="jphase">Phase 2</div>
-                <div class="jtitle">Scale to 100 MW</div>
-                <div class="jtime">Year 1–2</div>
-                <ul class="jlist">
-                    <li>100 MW permanent building</li>
-                    <li>57,600 GPUs deployed</li>
-                    <li>Enterprise contracts onboarded</li>
-                    <li>Sovereign zones operational</li>
-                </ul>
-            </div>
-            <div class="jcard fade-up">
-                <div class="jphase">Phase 3</div>
-                <div class="jtitle">Full 500 MW Campus</div>
-                <div class="jtime">Year 5</div>
-                <ul class="jlist">
-                    <li>288,000 GPUs deployed</li>
-                    <li>India's largest AI facility</li>
-                    <li>40% of India's AI capacity</li>
-                    <li>10,000+ startups enabled</li>
-                </ul>
             </div>
         </div>
     </div>
@@ -776,6 +666,172 @@ endpoint = client.<span class="cf">deploy</span>(
                         <span class="chip">Agentic AI</span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRACTION -->
+<section id="traction">
+    <div class="container">
+        <div class="lbl">Execution Progress</div>
+        <h2>Everything in place<br>to build.</h2>
+        <p style="max-width:500px;margin-top:.75rem">Years of groundwork. Ready to deploy the moment funding closes.</p>
+        <div class="traction-list">
+            <div class="tr-item fade-up">
+                <div class="tr-check done">
+                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">500MW Power Allocation Secured</div>
+                    <div class="tr-desc">Strategic canal-side location with abundant water for cooling infrastructure.</div>
+                </div>
+                <div class="tr-status st-done">Completed</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check progress">
+                    <svg fill="none" stroke="#a16207" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">Government MoU in Final Stages</div>
+                    <div class="tr-desc">State backing with infrastructure status and regulatory clearances.</div>
+                </div>
+                <div class="tr-status st-review">Final Review</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check done">
+                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">NVIDIA GB200 Supply Confirmed</div>
+                    <div class="tr-desc">Direct allocation secured for immediate deployment upon funding.</div>
+                </div>
+                <div class="tr-status st-confirm">Confirmed</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check done">
+                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">Technical Design Complete</div>
+                    <div class="tr-desc">3MW container PoC ready for deployment within 6 months. CDAC &amp; NSM validated.</div>
+                </div>
+                <div class="tr-status st-ready">Ready</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check next">
+                    <svg fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">Ready for Deployment</div>
+                    <div class="tr-desc">3MW PoC generates revenue in 6–8 months, validates model for 500MW scale. Early access customers onboarded first.</div>
+                </div>
+                <div class="tr-status st-next">Next</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUR JOURNEY -->
+<section id="journey">
+    <div class="container">
+        <div class="lbl">Build Roadmap</div>
+        <h2>Our journey to 500 MW.</h2>
+        <p style="max-width:440px;margin-top:.75rem;font-size:1rem">3 MW PoC live in 6–8 months after funding. Five years to India's largest AI facility.</p>
+
+        <!-- Timeline -->
+        <div class="tl-wrap">
+            <!-- Progress bar -->
+            <div class="tl-track">
+                <div class="tl-fill"></div>
+            </div>
+
+            <div class="tl-phases">
+                <!-- Phase 1 -->
+                <div class="tl-phase active">
+                    <div class="tl-node active">
+                        <svg width="14" height="14" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                    <div class="tl-card active">
+                        <div class="tl-phase-tag">Phase 1</div>
+                        <div class="tl-phase-title">Proof of Concept</div>
+                        <div class="tl-phase-time">6–8 months</div>
+                        <div class="tl-power-bar">
+                            <div class="tl-power-fill" style="width:0.6%"></div>
+                        </div>
+                        <div class="tl-mw">3 MW</div>
+                        <ul class="tl-list">
+                            <li>1,728 GB200 GPUs</li>
+                            <li>Revenue starts</li>
+                            <li>Early access live</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="tl-phase">
+                    <div class="tl-node"></div>
+                    <div class="tl-card">
+                        <div class="tl-phase-tag">Phase 2</div>
+                        <div class="tl-phase-title">Scale to 100 MW</div>
+                        <div class="tl-phase-time">Year 1–2</div>
+                        <div class="tl-power-bar">
+                            <div class="tl-power-fill" style="width:20%"></div>
+                        </div>
+                        <div class="tl-mw">100 MW</div>
+                        <ul class="tl-list">
+                            <li>57,600 GPUs</li>
+                            <li>Enterprise contracts</li>
+                            <li>Sovereign zones</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="tl-phase">
+                    <div class="tl-node"></div>
+                    <div class="tl-card">
+                        <div class="tl-phase-tag">Phase 3</div>
+                        <div class="tl-phase-title">Full 500 MW</div>
+                        <div class="tl-phase-time">Year 5</div>
+                        <div class="tl-power-bar">
+                            <div class="tl-power-fill" style="width:100%"></div>
+                        </div>
+                        <div class="tl-mw">500 MW</div>
+                        <ul class="tl-list">
+                            <li>288,000 GPUs</li>
+                            <li>India's largest AI facility</li>
+                            <li>40% of India's AI capacity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom stat strip -->
+        <div class="tl-stats">
+            <div class="tl-stat">
+                <div class="tl-stat-val">126</div>
+                <div class="tl-stat-unit">ExaFLOPS</div>
+                <div class="tl-stat-lbl">at 500 MW</div>
+            </div>
+            <div class="tl-stat-div"></div>
+            <div class="tl-stat">
+                <div class="tl-stat-val">288K</div>
+                <div class="tl-stat-unit">GPUs</div>
+                <div class="tl-stat-lbl">at full build</div>
+            </div>
+            <div class="tl-stat-div"></div>
+            <div class="tl-stat">
+                <div class="tl-stat-val">5</div>
+                <div class="tl-stat-unit">Years</div>
+                <div class="tl-stat-lbl">to full campus</div>
+            </div>
+            <div class="tl-stat-div"></div>
+            <div class="tl-stat">
+                <div class="tl-stat-val">10K+</div>
+                <div class="tl-stat-unit">Startups</div>
+                <div class="tl-stat-lbl">enabled</div>
             </div>
         </div>
     </div>
