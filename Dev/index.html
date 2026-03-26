@@ -98,10 +98,25 @@
 
         /* VALUE PROPOSITION */
         #value{background:var(--bg-sub)}
-        .vp-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem}
-        @media(max-width:760px){.vp-grid{grid-template-columns:1fr;gap:1.75rem}}
-        .vp-p{font-size:1.0625rem;color:var(--ink-mid);line-height:1.9}
-        .vp-p strong{color:var(--ink)}
+        .vp-layout{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem;align-items:center}
+        @media(max-width:760px){.vp-layout{grid-template-columns:1fr;gap:2rem}}
+        .vp-bullets{display:flex;flex-direction:column;gap:1.125rem;margin-top:1.75rem}
+        .vp-point{display:flex;gap:1rem;align-items:flex-start}
+        .vp-icon{width:36px;height:36px;border-radius:9px;background:var(--blue-lt);border:1px solid #bfdbfe;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9375rem}
+        .vp-point-text strong{display:block;font-size:.9375rem;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+        .vp-point-text span{font-size:.8375rem;color:var(--ink-soft);line-height:1.6}
+        .vp-visual{border-radius:16px;overflow:hidden;background:var(--ink);position:relative;min-height:400px;display:flex;flex-direction:column}
+        .vp-visual-top{padding:2rem 2rem 1.5rem;flex:1}
+        .vp-visual-label{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.25rem}
+        .vp-visual-stat{margin-bottom:1.5rem}
+        .vp-visual-stat-val{font-size:2.5rem;font-weight:700;color:#fff;letter-spacing:-0.04em;line-height:1}
+        .vp-visual-stat-lbl{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:.25rem}
+        .vp-visual-divider{height:1px;background:rgba(255,255,255,.07);margin:0 2rem}
+        .vp-visual-bottom{padding:1.5rem 2rem 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+        .vp-mini-stat-val{font-size:1.25rem;font-weight:700;color:#fff;letter-spacing:-0.025em;line-height:1.2;margin-bottom:.2rem}
+        .vp-mini-stat-lbl{font-size:.7rem;color:rgba(255,255,255,.35);font-weight:500}
+        .vp-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+        .vp-tag{font-size:.7rem;font-weight:500;padding:.25rem .7rem;border-radius:100px;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45)}
 
         /* TRACTION */
         #traction{background:var(--bg)}
@@ -410,13 +425,79 @@
     <div class="container">
         <div class="lbl">What We Do</div>
         <h2>Built for India.<br>Built for AI.</h2>
-        <div class="vp-grid">
-            <p class="vp-p">
-                India has the world's highest AI adoption rate — yet <strong>90% of its AI runs on foreign servers</strong>, costing Indian companies 3–4× more, adding over 200ms of latency to every request, and sending sensitive data overseas. Antriksh Cloud is India's first liquid-cooled, sovereign GPU infrastructure: GB200 and GB300 clusters in Delhi NCR, priced 40–50% below hyperscalers, with your data guaranteed to never leave India.
-            </p>
-            <p class="vp-p">
-                We are not a general-purpose cloud. <strong>Every rack, every networking decision, every cooling system was designed for one thing</strong> — running AI workloads at the density, speed, and compliance standard that India's builders actually need. Whether you are a startup training your first model or an enterprise deploying AI at scale, Antriksh gives you the infrastructure to build without compromise.
-            </p>
+        <div class="vp-layout">
+            <div>
+                <p style="font-size:1.0625rem;color:var(--ink-mid);line-height:1.8;max-width:460px">India has the world's highest AI adoption — yet <strong style="color:var(--ink)">90% of it runs on foreign servers</strong>, at 3–4× the cost, with data leaving the country. We fix that.</p>
+                <div class="vp-bullets">
+                    <div class="vp-point">
+                        <div class="vp-icon">💸</div>
+                        <div class="vp-point-text">
+                            <strong>40–50% cheaper than hyperscalers</strong>
+                            <span>Liquid-cooled efficiency + India-native infrastructure passes real savings to you.</span>
+                        </div>
+                    </div>
+                    <div class="vp-point">
+                        <div class="vp-icon">⚡</div>
+                        <div class="vp-point-text">
+                            <strong>5–30ms latency, anywhere in India</strong>
+                            <span>Delhi NCR location means your users stop waiting. No more 200ms+ overseas round trips.</span>
+                        </div>
+                    </div>
+                    <div class="vp-point">
+                        <div class="vp-icon">🛡️</div>
+                        <div class="vp-point-text">
+                            <strong>Your data never leaves India</strong>
+                            <span>CERT-In compliant, DPDP Act ready. Built for defence, BFSI, and regulated enterprise from day one.</span>
+                        </div>
+                    </div>
+                    <div class="vp-point">
+                        <div class="vp-icon">🚀</div>
+                        <div class="vp-point-text">
+                            <strong>AI-native, not general-purpose cloud</strong>
+                            <span>Every rack and cooling decision made for one thing — running AI at the density India actually needs.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual panel -->
+            <div class="vp-visual">
+                <div class="vp-visual-top">
+                    <div class="vp-visual-label">Antriksh Cloud · Delhi NCR</div>
+                    <div class="vp-visual-stat">
+                        <div class="vp-visual-stat-val">500 MW</div>
+                        <div class="vp-visual-stat-lbl">Total planned GPU compute capacity</div>
+                    </div>
+                    <div class="vp-tags">
+                        <span class="vp-tag">GB200 GPUs</span>
+                        <span class="vp-tag">GB300 GPUs</span>
+                        <span class="vp-tag">Liquid-cooled</span>
+                        <span class="vp-tag">CERT-In</span>
+                        <span class="vp-tag">DPDP Act</span>
+                        <span class="vp-tag">CDAC Validated</span>
+                        <span class="vp-tag">Sovereign</span>
+                    </div>
+                </div>
+                <div class="vp-visual-divider"></div>
+                <div class="vp-visual-bottom">
+                    <div>
+                        <div class="vp-mini-stat-val">$2.50/hr</div>
+                        <div class="vp-mini-stat-lbl">Starting price per GPU</div>
+                    </div>
+                    <div>
+                        <div class="vp-mini-stat-val">PUE &lt; 1.10</div>
+                        <div class="vp-mini-stat-lbl">Energy efficiency</div>
+                    </div>
+                    <div>
+                        <div class="vp-mini-stat-val">288K GPUs</div>
+                        <div class="vp-mini-stat-lbl">At full 500MW scale</div>
+                    </div>
+                    <div>
+                        <div class="vp-mini-stat-val">15 min</div>
+                        <div class="vp-mini-stat-lbl">To first GPU on-demand</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
