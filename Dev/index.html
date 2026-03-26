@@ -3,136 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Antriksh Cloud — India's sovereign AI GPU infrastructure. Liquid-cooled H100, H200 and GB-series clusters. 40–50% cheaper than hyperscalers. Data never leaves India.">
-    <title>Antriksh Cloud — India's AI Compute Platform</title>
+    <meta name="description" content="Antriksh Cloud — India's sovereign AI GPU infrastructure. Liquid-cooled GB200 and GB300 clusters. 40–50% cheaper than hyperscalers. Data never leaves India.">
+    <title>Antriksh Cloud — Built for India. Built for AI.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --blue:       #3b82f6;
-            --blue-dark:  #1d4ed8;
-            --blue-light: #eff6ff;
-            --purple:     #7c3aed;
-            --ink:        #0f172a;
-            --ink-mid:    #334155;
-            --ink-soft:   #64748b;
-            --border:     #e2e8f0;
-            --border-mid: #cbd5e1;
-            --bg:         #ffffff;
-            --bg-subtle:  #f8fafc;
-            --bg-tinted:  #f1f5f9;
-            --grad:       linear-gradient(135deg,#3b82f6,#7c3aed);
+            --blue:      #3b82f6;
+            --blue-dk:   #1d4ed8;
+            --blue-lt:   #eff6ff;
+            --purple:    #7c3aed;
+            --ink:       #0f172a;
+            --ink-mid:   #334155;
+            --ink-soft:  #64748b;
+            --border:    #e2e8f0;
+            --bg:        #ffffff;
+            --bg-sub:    #f8fafc;
+            --bg-tint:   #f1f5f9;
+            --grad:      linear-gradient(135deg,#3b82f6,#7c3aed);
         }
-
         *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
-        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--bg);overflow-x:hidden}
+        body{font-family:'Inter',-apple-system,sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--bg);overflow-x:hidden}
         a{color:inherit;text-decoration:none}
         button{cursor:pointer;font-family:inherit}
         p{color:var(--ink-mid);line-height:1.75}
-
         h1{font-size:clamp(2.25rem,5vw,4rem);font-weight:700;line-height:1.08;letter-spacing:-0.035em}
         h2{font-size:clamp(1.75rem,3.5vw,2.75rem);font-weight:700;line-height:1.12;letter-spacing:-0.028em}
-        h3{font-size:1.25rem;font-weight:600;line-height:1.3;letter-spacing:-0.01em}
+        h3{font-size:1.25rem;font-weight:600;line-height:1.3}
         h4{font-size:1rem;font-weight:600;line-height:1.4}
-
         .container{max-width:1100px;margin:0 auto;padding:0 1.5rem}
         section{padding:5rem 0}
-
-        .label{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
-        .label::before{content:'';display:inline-block;width:16px;height:1px;background:var(--blue)}
+        .lbl{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+        .lbl::before{content:'';display:inline-block;width:16px;height:1px;background:var(--blue)}
 
         /* BUTTONS */
         .btn{display:inline-flex;align-items:center;gap:.4rem;font-size:.9375rem;font-weight:600;padding:.75rem 1.5rem;border-radius:8px;border:none;transition:all .18s;white-space:nowrap;cursor:pointer}
         .btn-primary{background:var(--blue);color:#fff}
-        .btn-primary:hover{background:var(--blue-dark);transform:translateY(-1px);box-shadow:0 4px 14px rgba(59,130,246,.35)}
-        .btn-outline{background:transparent;color:var(--ink);border:1px solid var(--border-mid)}
-        .btn-outline:hover{border-color:var(--ink);background:var(--bg-subtle)}
+        .btn-primary:hover{background:var(--blue-dk);transform:translateY(-1px);box-shadow:0 4px 14px rgba(59,130,246,.35)}
+        .btn-outline{background:transparent;color:var(--ink);border:1px solid #cbd5e1}
+        .btn-outline:hover{border-color:var(--ink);background:var(--bg-sub)}
         .btn-white{background:#fff;color:var(--blue);font-weight:700}
         .btn-white:hover{background:#f0f7ff;transform:translateY(-1px)}
 
         /* NAV */
-        #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center}
+        #nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);display:flex;align-items:center}
         #nav .container{display:flex;align-items:center;justify-content:space-between;width:100%}
         .nav-logo{display:flex;align-items:center;gap:.5rem;font-weight:700;font-size:.9375rem;color:var(--ink)}
-        .nav-logo-mark{width:32px;height:32px;background:var(--ink);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .nav-mark{width:32px;height:32px;background:var(--ink);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
         .nav-links{display:flex;align-items:center;gap:.125rem;list-style:none}
         .nav-links a{font-size:.875rem;font-weight:500;color:var(--ink-soft);padding:.375rem .75rem;border-radius:6px;transition:color .15s,background .15s}
-        .nav-links a:hover{color:var(--ink);background:var(--bg-subtle)}
+        .nav-links a:hover{color:var(--ink);background:var(--bg-sub)}
         .nav-cta{background:var(--blue)!important;color:#fff!important;padding:.375rem 1rem!important;border-radius:7px!important}
-        .nav-cta:hover{background:var(--blue-dark)!important}
-        .nav-menu-btn{display:none;background:none;border:none;color:var(--ink);padding:.25rem}
+        .nav-cta:hover{background:var(--blue-dk)!important}
+        .nav-btn{display:none;background:none;border:none;color:var(--ink);padding:.25rem}
         @media(max-width:760px){
             .nav-links{display:none}
-            .nav-menu-btn{display:flex}
-            .nav-links.open{display:flex;flex-direction:column;align-items:stretch;gap:0;position:absolute;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:.75rem 1rem}
+            .nav-btn{display:flex}
+            .nav-links.open{display:flex;flex-direction:column;align-items:stretch;position:absolute;top:60px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:.75rem 1rem;gap:0}
             .nav-links.open a{padding:.625rem .75rem}
         }
 
         /* HERO */
-        #hero{padding-top:108px;padding-bottom:72px}
-        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--blue-light);border:1px solid #bfdbfe;color:var(--blue);font-size:.75rem;font-weight:600;padding:.3rem .875rem;border-radius:100px;margin-bottom:1.75rem}
-        .hero-badge-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pdot 1.8s infinite}
+        #hero{padding-top:100px;padding-bottom:0;background:var(--bg)}
+        .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;padding-bottom:4rem}
+        @media(max-width:760px){.hero-inner{grid-template-columns:1fr;gap:2rem}}
+        .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--blue-lt);border:1px solid #bfdbfe;color:var(--blue);font-size:.75rem;font-weight:600;padding:.3rem .875rem;border-radius:100px;margin-bottom:1.5rem}
+        .hero-dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:pdot 1.8s infinite}
         @keyframes pdot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
-        .hero-headline{color:var(--ink);max-width:780px;margin-bottom:1.25rem}
+        .hero-h{color:var(--ink);margin-bottom:1.125rem}
         .grad{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .hero-sub{max-width:520px;font-size:1.0625rem;color:var(--ink-soft);line-height:1.75;margin-bottom:2rem}
-        .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:3rem}
-        .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg-subtle);max-width:740px}
-        .hero-stat{padding:1rem 1.25rem;border-right:1px solid var(--border)}
-        .hero-stat:last-child{border-right:none}
-        .hero-stat-val{font-size:1.375rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1.2;margin-bottom:.2rem}
-        .hero-stat-label{font-size:.7rem;color:var(--ink-soft);font-weight:500;line-height:1.4}
-        @media(max-width:580px){
-            .hero-stats{grid-template-columns:1fr 1fr}
-            .hero-stat:nth-child(2){border-right:none}
-            .hero-stat:nth-child(3){border-top:1px solid var(--border)}
-            .hero-stat:nth-child(4){border-top:1px solid var(--border);border-right:none}
-        }
+        .hero-p{font-size:1.0625rem;color:var(--ink-soft);line-height:1.75;margin-bottom:1.875rem;max-width:480px}
+        .hero-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:2.5rem}
+        .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+        .hstat{padding:.875rem 1.125rem;background:var(--bg-sub)}
+        .hstat-val{font-size:1.25rem;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1.2;margin-bottom:.15rem}
+        .hstat-lbl{font-size:.7rem;color:var(--ink-soft);font-weight:500}
+        .hero-img{border-radius:16px;overflow:hidden;background:var(--ink);aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative}
+        .hero-img-inner{text-align:center;padding:2.5rem}
+        .hero-img-title{font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:.5rem}
+        .hero-img-sub{font-size:.875rem;color:rgba(255,255,255,.5)}
+        .hero-img-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.375rem;margin-top:1.5rem}
+        .hero-img-cell{background:rgba(255,255,255,.07);border-radius:6px;padding:.75rem .5rem;text-align:center}
+        .hero-img-cell-val{font-size:1rem;font-weight:700;color:#fff;letter-spacing:-0.02em}
+        .hero-img-cell-lbl{font-size:.6rem;color:rgba(255,255,255,.4);margin-top:.1rem}
 
         /* TICKER */
         .ticker{background:var(--ink);padding:11px 0;overflow:hidden;white-space:nowrap}
         .ticker-track{display:inline-flex;gap:2.5rem;animation:tick 38s linear infinite}
-        .ticker-item{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.02em}
-        .ticker-dot{width:3px;height:3px;border-radius:50%;background:var(--blue);flex-shrink:0}
+        .t-item{display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.02em}
+        .t-dot{width:3px;height:3px;border-radius:50%;background:var(--blue);flex-shrink:0}
         @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
         /* VALUE PROPOSITION */
-        #value{background:var(--bg-subtle)}
-        .vp-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
-        @media(max-width:760px){.vp-layout{grid-template-columns:1fr;gap:1.5rem}}
-        .vp-p{font-size:1.0625rem;color:var(--ink-mid);line-height:1.85}
+        #value{background:var(--bg-sub)}
+        .vp-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:2.5rem}
+        @media(max-width:760px){.vp-grid{grid-template-columns:1fr;gap:1.75rem}}
+        .vp-p{font-size:1.0625rem;color:var(--ink-mid);line-height:1.9}
         .vp-p strong{color:var(--ink)}
 
-        /* TECH */
-        #tech{background:var(--bg)}
+        /* TRACTION */
+        #traction{background:var(--bg)}
+        .traction-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;border:1px solid var(--border);border-radius:14px;overflow:hidden;max-width:780px}
+        .tr-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1.5rem 1.75rem;background:var(--bg);border-bottom:1px solid var(--border);transition:background .15s}
+        .tr-item:last-child{border-bottom:none}
+        .tr-item:hover{background:var(--bg-sub)}
+        .tr-check{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+        .tr-check.done{background:#dcfce7}
+        .tr-check.progress{background:#fef9c3}
+        .tr-check.next{background:#dbeafe}
+        .tr-check svg{width:16px;height:16px}
+        .tr-title{font-weight:600;font-size:.9375rem;margin-bottom:.2rem}
+        .tr-desc{font-size:.8125rem;color:var(--ink-soft);line-height:1.6}
+        .tr-status{margin-left:auto;font-size:.6875rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:.25rem .625rem;border-radius:100px;white-space:nowrap;flex-shrink:0}
+        .st-done{background:#dcfce7;color:#15803d}
+        .st-review{background:#fef9c3;color:#a16207}
+        .st-confirm{background:#dbeafe;color:var(--blue)}
+        .st-ready{background:#f5f3ff;color:var(--purple)}
+        .st-next{background:var(--ink);color:#fff}
+
+        /* JOURNEY */
+        #journey{background:var(--bg-sub)}
+        .journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+        @media(max-width:720px){.journey-grid{grid-template-columns:1fr}}
+        .jcard{border:1px solid var(--border);border-radius:12px;padding:1.75rem;background:var(--bg);position:relative}
+        .jcard.active{border-color:var(--blue);background:var(--blue-lt)}
+        .jphase{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--blue);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem}
+        .jcard.active .jphase{color:var(--blue-dk)}
+        .jtitle{font-weight:700;font-size:1.125rem;margin-bottom:.25rem}
+        .jtime{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--ink-soft);margin-bottom:1rem}
+        .jcard.active .jtime{color:var(--blue)}
+        .jlist{list-style:none;display:flex;flex-direction:column;gap:.375rem}
+        .jlist li{font-size:.8125rem;color:var(--ink-mid);display:flex;gap:.5rem}
+        .jlist li::before{content:'→';color:var(--blue);flex-shrink:0}
+
+        /* REVENUE STREAMS */
+        #revenue{background:var(--bg)}
+        .rev-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-top:2.5rem}
+        @media(max-width:960px){.rev-grid{grid-template-columns:1fr 1fr}}
+        @media(max-width:480px){.rev-grid{grid-template-columns:1fr}}
+        .rev-card{border:1px solid var(--border);border-radius:12px;padding:1.5rem;background:var(--bg-sub)}
+        .rev-icon{font-size:1.375rem;margin-bottom:.875rem}
+        .rev-title{font-weight:600;font-size:.9rem;margin-bottom:.5rem}
+        .rev-val{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:.5rem}
+        .rv1{color:var(--blue)}
+        .rv2{color:var(--purple)}
+        .rv3{color:#16a34a}
+        .rv4{color:#ea580c}
+        .rv5{color:#db2777}
+        .rev-desc{font-size:.8rem;color:var(--ink-soft);line-height:1.6}
+
+        /* TECH / SDK */
+        #tech{background:var(--bg-sub)}
         .tech-layout{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem;align-items:start}
         @media(max-width:760px){.tech-layout{grid-template-columns:1fr}}
         .spec-list{display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-        .spec-item{display:flex;gap:1rem;padding:1.25rem 1.375rem;background:var(--bg);transition:background .15s}
-        .spec-item:hover{background:var(--bg-subtle)}
-        .spec-icon{width:36px;height:36px;flex-shrink:0;border-radius:8px;background:var(--bg-tinted);display:flex;align-items:center;justify-content:center;font-size:1rem}
-        .spec-name{font-weight:600;font-size:.9rem;margin-bottom:.2rem}
-        .spec-desc{font-size:.8125rem;color:var(--ink-soft);line-height:1.6}
+        .spec-item{display:flex;gap:1rem;padding:1.125rem 1.375rem;background:var(--bg);transition:background .15s}
+        .spec-item:hover{background:var(--bg-sub)}
+        .spec-icon{width:34px;height:34px;flex-shrink:0;border-radius:8px;background:var(--bg-tint);display:flex;align-items:center;justify-content:center;font-size:.9375rem}
+        .spec-name{font-weight:600;font-size:.875rem;margin-bottom:.175rem}
+        .spec-desc{font-size:.8rem;color:var(--ink-soft);line-height:1.6}
         .spec-val{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--blue);margin-top:.25rem}
         .code-panel{background:#0f172a;border-radius:12px;overflow:hidden;position:sticky;top:76px}
-        .code-topbar{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.06)}
-        .code-dot{width:10px;height:10px;border-radius:50%}
-        .code-fn{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.28);margin-left:.25rem}
-        .code-badge{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.2);background:rgba(255,255,255,.05);padding:.2rem .625rem;border-radius:100px;border:1px solid rgba(255,255,255,.08)}
-        .code-body{padding:1.125rem 1.25rem 1.5rem;font-family:'IBM Plex Mono',monospace;font-size:.8rem;line-height:2;color:rgba(255,255,255,.7)}
-        .cc{color:#475569}.ck{color:#93c5fd}.cs{color:#6ee7b7}.cn{color:#fbbf24}.cf{color:#f9a8d4}.cp{color:#c4b5fd}
+        .code-bar{display:flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.06)}
+        .cdot{width:10px;height:10px;border-radius:50%}
+        .cfn{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:rgba(255,255,255,.25);margin-left:.25rem}
+        .cbadge{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.2);background:rgba(255,255,255,.05);padding:.2rem .6rem;border-radius:100px;border:1px solid rgba(255,255,255,.08)}
+        .code-body{padding:1.25rem;font-family:'IBM Plex Mono',monospace;font-size:.8rem;line-height:1.9;color:rgba(255,255,255,.75)}
+        .code-body .cm{color:#475569}.code-body .ck{color:#93c5fd}
+        .code-body .cs{color:#6ee7b7}.code-body .cn{color:#fbbf24}
+        .code-body .cf{color:#f9a8d4}.code-body .cp{color:#c4b5fd}
 
         /* FOR BUILDERS */
-        #venture{background:var(--bg-subtle)}
+        #venture{background:var(--bg)}
         .vc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem}
         @media(max-width:700px){.vc-grid{grid-template-columns:1fr}}
-        .vc-card{border-radius:12px;padding:2rem;border:1px solid var(--border);background:var(--bg)}
+        .vc-card{border-radius:12px;padding:2rem;border:1px solid var(--border);background:var(--bg-sub)}
         .vc-card.dark{background:var(--ink);border-color:var(--ink);color:#fff}
-        .vc-tag{display:inline-block;font-size:.6875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .625rem;border-radius:100px;background:var(--blue-light);color:var(--blue);margin-bottom:1rem}
+        .vc-tag{display:inline-block;font-size:.6875rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .625rem;border-radius:100px;background:var(--blue-lt);color:var(--blue);margin-bottom:1rem}
         .vc-tag.purple{background:#f5f3ff;color:var(--purple)}
-        .vc-tag.on-dark{background:rgba(255,255,255,.1);color:rgba(255,255,255,.65)}
+        .vc-tag.dk{background:rgba(255,255,255,.1);color:rgba(255,255,255,.65)}
         .vc-card h3{margin-bottom:.625rem}
         .vc-card p{font-size:.875rem;line-height:1.75}
         .vc-card.dark p{color:rgba(255,255,255,.6)}
@@ -143,36 +194,36 @@
         .vc-card.dark .vc-list li .ar{color:#93c5fd}
         .vc-stack{display:flex;flex-direction:column;gap:1.25rem}
         .chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.875rem}
-        .chip{font-size:.75rem;font-weight:500;padding:.275rem .7rem;border-radius:100px;background:var(--bg-tinted);border:1px solid var(--border);color:var(--ink-mid)}
+        .chip{font-size:.75rem;font-weight:500;padding:.275rem .7rem;border-radius:100px;background:var(--bg-tint);border:1px solid var(--border);color:var(--ink-mid)}
 
         /* CAREERS */
         #careers{background:var(--ink)}
         #careers h2{color:#fff}
         #careers p{color:rgba(255,255,255,.55)}
-        .careers-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#93c5fd;margin-bottom:1rem}
-        .careers-label::before{content:'';display:inline-block;width:16px;height:1px;background:#93c5fd}
+        .c-lbl{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:#93c5fd;margin-bottom:1rem}
+        .c-lbl::before{content:'';display:inline-block;width:16px;height:1px;background:#93c5fd}
         .jobs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;margin-top:2.5rem}
         @media(max-width:860px){.jobs-grid{grid-template-columns:1fr 1fr}}
         @media(max-width:480px){.jobs-grid{grid-template-columns:1fr}}
-        .job-card{background:rgba(255,255,255,.02);padding:1.375rem;transition:background .15s}
-        .job-card:hover{background:rgba(255,255,255,.06)}
-        .job-tag{display:inline-block;font-size:.6875rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .625rem;border-radius:100px;margin-bottom:.5rem}
-        .teng{background:rgba(147,197,253,.12);color:#93c5fd}
-        .tbiz{background:rgba(251,191,36,.12);color:#fbbf24}
-        .tvc{background:rgba(196,181,253,.12);color:#c4b5fd}
-        .job-title{font-weight:600;font-size:.9375rem;color:#fff;margin-bottom:.2rem}
-        .job-loc{font-size:.775rem;color:rgba(255,255,255,.32)}
-        .careers-footer{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:2.25rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
+        .jb{background:rgba(255,255,255,.02);padding:1.375rem;transition:background .15s}
+        .jb:hover{background:rgba(255,255,255,.06)}
+        .jbtag{display:inline-block;font-size:.6875rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .625rem;border-radius:100px;margin-bottom:.5rem}
+        .te{background:rgba(147,197,253,.12);color:#93c5fd}
+        .tb{background:rgba(251,191,36,.12);color:#fbbf24}
+        .tv{background:rgba(196,181,253,.12);color:#c4b5fd}
+        .jbtitle{font-weight:600;font-size:.9375rem;color:#fff;margin-bottom:.2rem}
+        .jbloc{font-size:.775rem;color:rgba(255,255,255,.32)}
+        .careers-ft{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:2.25rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.08)}
         .careers-note{font-size:.8125rem;color:rgba(255,255,255,.32)}
 
         /* FAQ */
-        #faq{background:var(--bg-subtle)}
+        #faq{background:var(--bg-sub)}
         .faq-list{margin-top:2.5rem;max-width:680px}
         .faq-item{border-bottom:1px solid var(--border)}
         .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1.125rem 0;background:none;border:none;text-align:left;font-size:.9375rem;font-weight:600;color:var(--ink);gap:1rem;cursor:pointer}
         .faq-q:hover{color:var(--blue)}
-        .faq-chev{color:var(--ink-soft);flex-shrink:0;transition:transform .25s;font-size:.875rem}
-        .faq-q.open .faq-chev{transform:rotate(180deg);color:var(--blue)}
+        .faq-ch{color:var(--ink-soft);flex-shrink:0;transition:transform .25s;font-size:.875rem}
+        .faq-q.open .faq-ch{transform:rotate(180deg);color:var(--blue)}
         .faq-a{font-size:.875rem;color:var(--ink-soft);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
         .faq-a.open{max-height:260px;padding-bottom:1.125rem}
 
@@ -180,36 +231,36 @@
         #waitlist{background:var(--blue)}
         #waitlist h2{color:#fff}
         #waitlist p{color:rgba(255,255,255,.7)}
-        .wl-label{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1rem}
-        .wl-label::before{content:'';display:inline-block;width:16px;height:1px;background:rgba(255,255,255,.6)}
+        .wl-lbl{display:inline-flex;align-items:center;gap:.5rem;font-size:.6875rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1rem}
+        .wl-lbl::before{content:'';display:inline-block;width:16px;height:1px;background:rgba(255,255,255,.6)}
         .wl-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;align-items:start}
         @media(max-width:760px){.wl-layout{grid-template-columns:1fr;gap:2.5rem}}
         .wl-form{display:flex;flex-direction:column;gap:.75rem}
-        .wl-input,.wl-select{width:100%;padding:.75rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);color:#fff;font-size:.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .15s,background .15s}
-        .wl-input::placeholder{color:rgba(255,255,255,.45)}
-        .wl-input:focus,.wl-select:focus{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.16)}
-        .wl-select{cursor:pointer}.wl-select option{background:#1e3a8a;color:#fff}
+        .wl-in,.wl-sel{width:100%;padding:.75rem 1rem;border-radius:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.1);color:#fff;font-size:.9rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .15s,background .15s}
+        .wl-in::placeholder{color:rgba(255,255,255,.45)}
+        .wl-in:focus,.wl-sel:focus{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.16)}
+        .wl-sel option{background:#1e3a8a;color:#fff}
         .wl-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
         @media(max-width:480px){.wl-row{grid-template-columns:1fr}}
         .wl-submit{background:#fff;color:var(--blue);border:none;border-radius:8px;padding:.875rem 1.5rem;font-size:.9375rem;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;transition:background .15s,transform .15s;display:flex;align-items:center;justify-content:center;gap:.4rem}
         .wl-submit:hover{background:#f0f7ff;transform:translateY(-1px)}
-        .wl-success{display:none;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:1rem;color:#fff;font-size:.875rem;font-weight:500;margin-top:.5rem}
+        .wl-ok{display:none;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:1rem;color:#fff;font-size:.875rem;font-weight:500;margin-top:.5rem}
         .wl-note{font-size:.75rem;color:rgba(255,255,255,.38);margin-top:.375rem}
         .wl-stats{display:flex;flex-direction:column;gap:1.5rem}
-        .wl-stat-val{font-size:1.875rem;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1}
-        .wl-stat-label{font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.2rem}
+        .wl-sv{font-size:1.875rem;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1}
+        .wl-sl{font-size:.8125rem;color:rgba(255,255,255,.5);margin-top:.2rem}
         .wl-hr{border:none;border-top:1px solid rgba(255,255,255,.12)}
         .wl-btns{display:flex;gap:.75rem;flex-wrap:wrap}
 
         /* FOOTER */
         footer{background:#020617;padding:2.5rem 0}
-        .footer-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem}
-        .footer-logo{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:700;color:#fff}
-        .footer-logo-mark{width:28px;height:28px;background:rgba(255,255,255,.07);border-radius:6px;display:flex;align-items:center;justify-content:center}
-        .footer-col h5{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.875rem}
-        .footer-col a{display:block;font-size:.8125rem;color:rgba(255,255,255,.4);transition:color .15s;margin-bottom:.5rem}
-        .footer-col a:hover{color:rgba(255,255,255,.8)}
-        .footer-copy{font-size:.75rem;color:rgba(255,255,255,.18);margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06)}
+        .ft-inner{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:2rem}
+        .ft-logo{display:flex;align-items:center;gap:.5rem;font-size:.9rem;font-weight:700;color:#fff}
+        .ft-mark{width:28px;height:28px;background:rgba(255,255,255,.07);border-radius:6px;display:flex;align-items:center;justify-content:center}
+        .ft-col h5{font-size:.7rem;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.875rem}
+        .ft-col a{display:block;font-size:.8125rem;color:rgba(255,255,255,.4);margin-bottom:.5rem;transition:color .15s}
+        .ft-col a:hover{color:rgba(255,255,255,.8)}
+        .ft-copy{font-size:.75rem;color:rgba(255,255,255,.18);margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06)}
 
         /* ANIMATIONS */
         .fade-up{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
@@ -218,7 +269,6 @@
         .fade-up:nth-child(3){transition-delay:.14s}
         .fade-up:nth-child(4){transition-delay:.21s}
         .fade-up:nth-child(5){transition-delay:.28s}
-        .fade-up:nth-child(6){transition-delay:.35s}
     </style>
 </head>
 <body>
@@ -227,7 +277,7 @@
 <nav id="nav">
     <div class="container">
         <a href="#" class="nav-logo">
-            <div class="nav-logo-mark">
+            <div class="nav-mark">
                 <svg width="18" height="18" viewBox="56 48 58 48" fill="white">
                     <path d="M83.58 78.95v-.57l-1.06.32-1.03-3.41 6.86-2.08 1.03 3.41-1.63.5v2.02l9.28 17.65h-2.33l-7.16-13.33 4.36 13.33h-2.32l-4.76-14.44-8.27 14.44h-2.33L83.58 78.95z"/>
                     <path d="M76.58 72.97l-9.23 2.69-2.69-9.29 9.23-2.69 2.69 9.29z"/>
@@ -240,14 +290,14 @@
             Antriksh Cloud
         </a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="#value">About</a></li>
+            <li><a href="#value">Platform</a></li>
             <li><a href="#tech">Technology</a></li>
             <li><a href="#venture">For Builders</a></li>
             <li><a href="#careers">Careers</a></li>
             <li><a href="Market analysis/Index.html">Market Analysis</a></li>
             <li><a href="#waitlist" class="nav-cta">Get Early Access</a></li>
         </ul>
-        <button class="nav-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+        <button class="nav-btn" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
             <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
         </button>
     </div>
@@ -256,40 +306,78 @@
 <!-- HERO -->
 <section id="hero">
     <div class="container">
-        <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Early access applications now open
-        </div>
-        <h1 class="hero-headline">
-            GPU compute built<br>
-            for <span class="grad">India's AI builders.</span>
-        </h1>
-        <p class="hero-sub">
-            Liquid-cooled H100, H200, and GB-series clusters — sovereign, low-latency, and 40–50% cheaper than overseas alternatives. Your data never leaves India.
-        </p>
-        <div class="hero-actions">
-            <a href="#waitlist" class="btn btn-primary">
-                Request Early Access
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#value" class="btn btn-outline">Learn More</a>
-        </div>
-        <div class="hero-stats">
-            <div class="hero-stat">
-                <div class="hero-stat-val">5–30 ms</div>
-                <div class="hero-stat-label">Latency across India</div>
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge">
+                    <span class="hero-dot"></span>
+                    Early access now open
+                </div>
+                <h1 class="hero-h">
+                    Built for India.<br>
+                    Built for <span class="grad">AI.</span>
+                </h1>
+                <p class="hero-p">
+                    Sovereign, liquid-cooled GB200 and GB300 GPU clusters in Delhi NCR. 40–50% cheaper than overseas alternatives. Your data never leaves India.
+                </p>
+                <div class="hero-actions">
+                    <a href="#waitlist" class="btn btn-primary">
+                        Get Early Access
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    <a href="#value" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hstat">
+                        <div class="hstat-val">5–30 ms</div>
+                        <div class="hstat-lbl">Latency across India</div>
+                    </div>
+                    <div class="hstat">
+                        <div class="hstat-val">40–50%</div>
+                        <div class="hstat-lbl">Below hyperscaler pricing</div>
+                    </div>
+                    <div class="hstat">
+                        <div class="hstat-val">500 MW</div>
+                        <div class="hstat-lbl">Total planned capacity</div>
+                    </div>
+                    <div class="hstat">
+                        <div class="hstat-val">100%</div>
+                        <div class="hstat-lbl">India data residency</div>
+                    </div>
+                </div>
             </div>
-            <div class="hero-stat">
-                <div class="hero-stat-val">40–50%</div>
-                <div class="hero-stat-label">Below hyperscaler pricing</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-val">500 MW</div>
-                <div class="hero-stat-label">Total planned capacity</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-val">100%</div>
-                <div class="hero-stat-label">India data residency</div>
+
+            <!-- Visual panel -->
+            <div class="hero-img">
+                <div class="hero-img-inner">
+                    <div style="font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.75rem">Antriksh Cloud · Delhi NCR</div>
+                    <div class="hero-img-title">India's AI Infrastructure</div>
+                    <div class="hero-img-sub">Liquid-cooled · Sovereign · Always-on</div>
+                    <div class="hero-img-grid">
+                        <div class="hero-img-cell">
+                            <div class="hero-img-cell-val">GB200</div>
+                            <div class="hero-img-cell-lbl">GPU</div>
+                        </div>
+                        <div class="hero-img-cell">
+                            <div class="hero-img-cell-val">GB300</div>
+                            <div class="hero-img-cell-lbl">GPU</div>
+                        </div>
+                        <div class="hero-img-cell">
+                            <div class="hero-img-cell-val">&lt;1.10</div>
+                            <div class="hero-img-cell-lbl">PUE</div>
+                        </div>
+                        <div class="hero-img-cell">
+                            <div class="hero-img-cell-val">500MW</div>
+                            <div class="hero-img-cell-lbl">Power</div>
+                        </div>
+                    </div>
+                    <div style="margin-top:1.5rem;width:100%;height:1px;background:rgba(255,255,255,.07)"></div>
+                    <div style="margin-top:1.25rem;display:flex;justify-content:center;gap:.625rem;flex-wrap:wrap">
+                        <span style="font-size:.7rem;background:rgba(59,130,246,.2);color:#93c5fd;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(59,130,246,.2)">CERT-In</span>
+                        <span style="font-size:.7rem;background:rgba(124,58,237,.2);color:#c4b5fd;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(124,58,237,.2)">DPDP Act</span>
+                        <span style="font-size:.7rem;background:rgba(34,197,94,.2);color:#4ade80;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(34,197,94,.2)">Sovereign</span>
+                        <span style="font-size:.7rem;background:rgba(251,191,36,.2);color:#fbbf24;padding:.25rem .625rem;border-radius:100px;border:1px solid rgba(251,191,36,.2)">CDAC Validated</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -298,33 +386,33 @@
 <!-- TICKER -->
 <div class="ticker">
     <div class="ticker-track">
-        <span class="ticker-item"><span class="ticker-dot"></span>H100 · H200 · GB-series GPUs</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Direct-to-chip liquid cooling</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>PUE &lt; 1.10</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>CERT-In compliant · DPDP Act ready</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>8 → 1,024 GPUs in minutes</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Delhi NCR · Government MoU in final stages</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>From $2.50 / GPU / hr · INR billing</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>CDAC &amp; NSM design validated</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>H100 · H200 · GB-series GPUs</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Direct-to-chip liquid cooling</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>PUE &lt; 1.10</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>CERT-In compliant · DPDP Act ready</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>8 → 1,024 GPUs in minutes</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>Delhi NCR · Government MoU in final stages</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>From $2.50 / GPU / hr · INR billing</span>
-        <span class="ticker-item"><span class="ticker-dot"></span>CDAC &amp; NSM design validated</span>
+        <span class="t-item"><span class="t-dot"></span>GB200 · GB300 GPUs</span>
+        <span class="t-item"><span class="t-dot"></span>Direct-to-chip liquid cooling</span>
+        <span class="t-item"><span class="t-dot"></span>PUE &lt; 1.10</span>
+        <span class="t-item"><span class="t-dot"></span>CERT-In compliant · DPDP Act ready</span>
+        <span class="t-item"><span class="t-dot"></span>8 → 1,024 GPUs on demand</span>
+        <span class="t-item"><span class="t-dot"></span>Delhi NCR · Government MoU in final stages</span>
+        <span class="t-item"><span class="t-dot"></span>From $2.50 / GPU / hr · INR billing</span>
+        <span class="t-item"><span class="t-dot"></span>CDAC &amp; NSM design validated</span>
+        <span class="t-item"><span class="t-dot"></span>GB200 · GB300 GPUs</span>
+        <span class="t-item"><span class="t-dot"></span>Direct-to-chip liquid cooling</span>
+        <span class="t-item"><span class="t-dot"></span>PUE &lt; 1.10</span>
+        <span class="t-item"><span class="t-dot"></span>CERT-In compliant · DPDP Act ready</span>
+        <span class="t-item"><span class="t-dot"></span>8 → 1,024 GPUs on demand</span>
+        <span class="t-item"><span class="t-dot"></span>Delhi NCR · Government MoU in final stages</span>
+        <span class="t-item"><span class="t-dot"></span>From $2.50 / GPU / hr · INR billing</span>
+        <span class="t-item"><span class="t-dot"></span>CDAC &amp; NSM design validated</span>
     </div>
 </div>
 
 <!-- VALUE PROPOSITION -->
 <section id="value">
     <div class="container">
-        <div class="label">What We Do</div>
+        <div class="lbl">What We Do</div>
         <h2>Built for India.<br>Built for AI.</h2>
-        <div class="vp-layout">
+        <div class="vp-grid">
             <p class="vp-p">
-                India has the world's highest AI adoption rate — yet <strong>90% of its AI runs on foreign servers</strong>, costing Indian companies 3–4× more, adding over 200ms of latency to every request, and sending sensitive data overseas. Antriksh Cloud is India's first liquid-cooled, sovereign GPU infrastructure: H100, H200, and GB-series clusters in Delhi NCR, priced 40–50% below hyperscalers, with your data guaranteed to never leave India.
+                India has the world's highest AI adoption rate — yet <strong>90% of its AI runs on foreign servers</strong>, costing Indian companies 3–4× more, adding over 200ms of latency to every request, and sending sensitive data overseas. Antriksh Cloud is India's first liquid-cooled, sovereign GPU infrastructure: GB200 and GB300 clusters in Delhi NCR, priced 40–50% below hyperscalers, with your data guaranteed to never leave India.
             </p>
             <p class="vp-p">
                 We are not a general-purpose cloud. <strong>Every rack, every networking decision, every cooling system was designed for one thing</strong> — running AI workloads at the density, speed, and compliance standard that India's builders actually need. Whether you are a startup training your first model or an enterprise deploying AI at scale, Antriksh gives you the infrastructure to build without compromise.
@@ -333,19 +421,165 @@
     </div>
 </section>
 
+<!-- TRACTION -->
+<section id="traction">
+    <div class="container">
+        <div class="lbl">Execution Progress</div>
+        <h2>Everything in place<br>to build.</h2>
+        <p style="max-width:500px;margin-top:.75rem">Years of groundwork. Ready to deploy the moment funding closes.</p>
+        <div class="traction-list">
+            <div class="tr-item fade-up">
+                <div class="tr-check done">
+                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">500MW Power Allocation Secured</div>
+                    <div class="tr-desc">Strategic canal-side location with abundant water for cooling infrastructure.</div>
+                </div>
+                <div class="tr-status st-done">Completed</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check progress">
+                    <svg fill="none" stroke="#a16207" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">Government MoU in Final Stages</div>
+                    <div class="tr-desc">State backing with infrastructure status and regulatory clearances.</div>
+                </div>
+                <div class="tr-status st-review">Final Review</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check done">
+                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">NVIDIA GB200 Supply Confirmed</div>
+                    <div class="tr-desc">Direct allocation secured for immediate deployment upon funding.</div>
+                </div>
+                <div class="tr-status st-confirm">Confirmed</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check done">
+                    <svg fill="none" stroke="#16a34a" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">Technical Design Complete</div>
+                    <div class="tr-desc">3MW container PoC ready for deployment within 6 months. CDAC &amp; NSM validated.</div>
+                </div>
+                <div class="tr-status st-ready">Ready</div>
+            </div>
+            <div class="tr-item fade-up">
+                <div class="tr-check next">
+                    <svg fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div>
+                    <div class="tr-title">Ready for Deployment</div>
+                    <div class="tr-desc">3MW PoC generates revenue in 6–8 months, validates model for 500MW scale. Early access customers onboarded first.</div>
+                </div>
+                <div class="tr-status st-next">Next</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OUR JOURNEY -->
+<section id="journey">
+    <div class="container">
+        <div class="lbl">Build Roadmap</div>
+        <h2>Our journey to 500 MW.</h2>
+        <p style="max-width:500px;margin-top:.75rem">Container-based PoC live in 6–8 months. Risk-mitigated phased execution to full campus.</p>
+        <div class="journey-grid">
+            <div class="jcard active fade-up">
+                <div class="jphase">Phase 1</div>
+                <div class="jtitle">Proof of Concept</div>
+                <div class="jtime">6–8 months</div>
+                <ul class="jlist">
+                    <li>3 MW container deployment</li>
+                    <li>1,728 GB200 GPUs live</li>
+                    <li>Revenue generation starts</li>
+                    <li>Early access customers go live</li>
+                </ul>
+            </div>
+            <div class="jcard fade-up">
+                <div class="jphase">Phase 2</div>
+                <div class="jtitle">Scale to 100 MW</div>
+                <div class="jtime">Year 1–2</div>
+                <ul class="jlist">
+                    <li>100 MW permanent building</li>
+                    <li>57,600 GPUs deployed</li>
+                    <li>Enterprise contracts onboarded</li>
+                    <li>Sovereign zones operational</li>
+                </ul>
+            </div>
+            <div class="jcard fade-up">
+                <div class="jphase">Phase 3</div>
+                <div class="jtitle">Full 500 MW Campus</div>
+                <div class="jtime">Year 5</div>
+                <ul class="jlist">
+                    <li>288,000 GPUs deployed</li>
+                    <li>India's largest AI facility</li>
+                    <li>40% of India's AI capacity</li>
+                    <li>10,000+ startups enabled</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVENUE STREAMS -->
+<section id="revenue">
+    <div class="container">
+        <div class="lbl">How We Serve You</div>
+        <h2>Five ways to access<br>Antriksh.</h2>
+        <p style="max-width:500px;margin-top:.75rem">From on-demand compute to long-term enterprise contracts — built around how you actually work.</p>
+        <div class="rev-grid">
+            <div class="rev-card fade-up">
+                <div class="rev-icon">⚡</div>
+                <div class="rev-title">GPU-as-a-Service</div>
+                <div class="rev-val rv1">$2.50–5 / hr</div>
+                <div class="rev-desc">On-demand GB200 &amp; GB300 compute. Pay by the second. No commitment.</div>
+            </div>
+            <div class="rev-card fade-up">
+                <div class="rev-icon">📊</div>
+                <div class="rev-title">Enterprise Contracts</div>
+                <div class="rev-val rv2">Reserved capacity</div>
+                <div class="rev-desc">Long-term GPU allocation for Fortune 500 and large enterprises. SLA-backed.</div>
+            </div>
+            <div class="rev-card fade-up">
+                <div class="rev-icon">🤖</div>
+                <div class="rev-title">Inference APIs</div>
+                <div class="rev-val rv3">Pay-per-token</div>
+                <div class="rev-desc">Deploy and serve models via API. Scalable, low-latency inference endpoints.</div>
+            </div>
+            <div class="rev-card fade-up">
+                <div class="rev-icon">🔧</div>
+                <div class="rev-title">Managed Services</div>
+                <div class="rev-val rv4">Full-stack MLOps</div>
+                <div class="rev-desc">Fine-tuning, optimisation, and ongoing infrastructure management.</div>
+            </div>
+            <div class="rev-card fade-up">
+                <div class="rev-icon">🚀</div>
+                <div class="rev-title">Venture Compute</div>
+                <div class="rev-val rv5">For AI startups</div>
+                <div class="rev-desc">GPU credits for early-stage AI companies. Build without burning runway.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- TECH -->
 <section id="tech">
     <div class="container">
-        <div class="label">Under the Hood</div>
-        <h2>Infrastructure built for<br>AI from the ground up.</h2>
-        <p style="max-width:520px;margin-top:.75rem;font-size:1.0625rem">Every architectural decision optimised for GPU-dense workloads — training, inference, fine-tuning, and RAG at any scale.</p>
+        <div class="lbl">Under the Hood</div>
+        <h2>Infrastructure built<br>for AI, not cloud.</h2>
+        <p style="max-width:500px;margin-top:.75rem">Every decision optimised for GPU-dense AI workloads — training, inference, fine-tuning, RAG.</p>
         <div class="tech-layout">
             <div class="spec-list">
                 <div class="spec-item fade-up">
                     <div class="spec-icon">💧</div>
                     <div>
                         <div class="spec-name">Direct-to-Chip Liquid Cooling</div>
-                        <div class="spec-desc">Coolant delivered to the GPU die — not the room. Zero thermal throttling, full sustained throughput, PUE below 1.10.</div>
+                        <div class="spec-desc">Coolant to the GPU die. Zero throttling, full sustained throughput, PUE &lt; 1.10.</div>
                         <div class="spec-val">150–300 kW/rack · PUE &lt; 1.10 · Zero liquid discharge</div>
                     </div>
                 </div>
@@ -353,15 +587,15 @@
                     <div class="spec-icon">🔗</div>
                     <div>
                         <div class="spec-name">NVLink + InfiniBand Fabric</div>
-                        <div class="spec-desc">Full-mesh GPU interconnect for high-bandwidth, low-latency communication. Scale to thousands of GPUs without bottlenecks.</div>
+                        <div class="spec-desc">Full-mesh GPU interconnect. Scale to thousands of GPUs without bottlenecks.</div>
                         <div class="spec-val">High-speed bisection bandwidth · Multi-rail InfiniBand</div>
                     </div>
                 </div>
                 <div class="spec-item fade-up">
                     <div class="spec-icon">⚡</div>
                     <div>
-                        <div class="spec-name">Software-Defined Provisioning</div>
-                        <div class="spec-desc">Spin up clusters via API in 15 minutes. INR billing, zero egress fees, multi-cloud native. API-first throughout.</div>
+                        <div class="spec-name">On-demand Provisioning</div>
+                        <div class="spec-desc">Clusters via API in 15 minutes. INR billing, zero egress fees, multi-cloud native.</div>
                         <div class="spec-val">8 → 1,024 GPUs · 15 min to first GPU · Zero egress fees</div>
                     </div>
                 </div>
@@ -369,7 +603,7 @@
                     <div class="spec-icon">🛡️</div>
                     <div>
                         <div class="spec-name">Air-Gapped Sovereign Zones</div>
-                        <div class="spec-desc">Physically isolated environments for government, defence, and regulated enterprise. CDAC and NSM design validated.</div>
+                        <div class="spec-desc">Physically isolated environments for government, defence, and regulated enterprise.</div>
                         <div class="spec-val">CERT-In · DPDP Act · CDAC validated</div>
                     </div>
                 </div>
@@ -377,43 +611,42 @@
                     <div class="spec-icon">🏗️</div>
                     <div>
                         <div class="spec-name">500 MW Power Campus</div>
-                        <div class="spec-desc">Delhi NCR. Canal-side location, dual-feed substations, N+1 redundancy, ≥50% renewable power commitment.</div>
+                        <div class="spec-desc">Delhi NCR. Canal-side, dual-feed substations, N+1 redundancy, ≥50% renewable power.</div>
                         <div class="spec-val">₹0.08 / kWh · ≥50% renewables · 99.99% uptime target</div>
                     </div>
                 </div>
             </div>
 
             <div class="code-panel">
-                <div class="code-topbar">
-                    <div class="code-dot" style="background:#ef4444"></div>
-                    <div class="code-dot" style="background:#fbbf24"></div>
-                    <div class="code-dot" style="background:#22c55e"></div>
-                    <span class="code-fn">antriksh_sdk.py</span>
-                    <span class="code-badge">SDK coming soon</span>
+                <div class="code-bar">
+                    <div class="cdot" style="background:#ef4444"></div>
+                    <div class="cdot" style="background:#fbbf24"></div>
+                    <div class="cdot" style="background:#22c55e"></div>
+                    <span class="cfn">antriksh.py</span>
+                    <span class="cbadge">SDK coming soon</span>
                 </div>
                 <div class="code-body">
-<span class="cc"># pip install antriksh-cloud  (preview)</span>
+<span class="cm"># Install (preview)</span>
+<span class="cm"># pip install antriksh-cloud</span>
+
 <span class="ck">import</span> antriksh
 
 client = antriksh.<span class="cf">Client</span>(<span class="cp">api_key</span>=<span class="cs">"ak_..."</span>)
 
-<span class="cc"># Spin up a training cluster</span>
-cluster = client.clusters.<span class="cf">create</span>(
-  <span class="cp">gpus</span>=<span class="cn">64</span>,
-  <span class="cp">gpu_type</span>=<span class="cs">"H100"</span>,
-  <span class="cp">zone</span>=<span class="cs">"in-north-1"</span>,
-  <span class="cp">sovereign</span>=<span class="ck">True</span>
+<span class="cm"># Launch a GPU cluster</span>
+cluster = client.<span class="cf">create_cluster</span>(
+  gpus=<span class="cn">8</span>,
+  gpu_type=<span class="cs">"GB200"</span>,
+  zone=<span class="cs">"in-north-1"</span>
 )
 
-<span class="cc"># Or deploy an inference endpoint</span>
-endpoint = client.inference.<span class="cf">deploy</span>(
-  <span class="cp">model</span>=<span class="cs">"meta/llama-3.1-70b"</span>,
-  <span class="cp">gpus</span>=<span class="cn">8</span>,
-  <span class="cp">autoscale</span>=<span class="ck">True</span>
+<span class="cm"># Deploy an inference endpoint</span>
+endpoint = client.<span class="cf">deploy</span>(
+  model=<span class="cs">"llama-3.1-70b"</span>,
+  gpus=<span class="cn">4</span>
 )
 
-<span class="cc"># From $2.50/GPU/hr · INR billing</span>
-<span class="cc"># Zero egress fees</span>
+<span class="cm"># $2.50/GPU/hr · INR billing</span>
                 </div>
             </div>
         </div>
@@ -423,17 +656,17 @@ endpoint = client.inference.<span class="cf">deploy</span>(
 <!-- FOR BUILDERS -->
 <section id="venture">
     <div class="container">
-        <div class="label">For AI Builders</div>
+        <div class="lbl">For AI Builders</div>
         <h2>Whether you're a startup<br>or an enterprise.</h2>
-        <p style="max-width:520px;margin-top:.75rem;font-size:1.0625rem">Two ways to access Antriksh — depending on where you are in your journey.</p>
+        <p style="max-width:500px;margin-top:.75rem">Two ways to access Antriksh — depending on where you are in your journey.</p>
         <div class="vc-grid">
             <div class="vc-card dark">
-                <div class="vc-tag on-dark">AI Startups — Venture Compute</div>
-                <h3 style="color:#fff">GPU credits in exchange for equity.</h3>
-                <p>We allocate GPU credits in exchange for a small equity stake (5–10%). You get the compute to build without burning runway. 10% of Antriksh capacity is permanently reserved for portfolio companies.</p>
+                <div class="vc-tag dk">AI Startups — Venture Compute</div>
+                <h3 style="color:#fff">GPU credits for incubation.</h3>
+                <p>We provide GPU credits to high-potential AI startups. You get the compute to build your product without burning runway. 10% of Antriksh capacity is permanently reserved for our portfolio companies.</p>
                 <ul class="vc-list">
                     <li><span class="ar">→</span><span>Credits from $50K to $2M in GPU time</span></li>
-                    <li><span class="ar">→</span><span>10% of capacity reserved for portfolio</span></li>
+                    <li><span class="ar">→</span><span>10% of capacity permanently reserved</span></li>
                     <li><span class="ar">→</span><span>Incubation: GTM, hiring, regulatory navigation</span></li>
                     <li><span class="ar">→</span><span>Priority access as we scale to 500 MW</span></li>
                 </ul>
@@ -449,8 +682,8 @@ endpoint = client.inference.<span class="cf">deploy</span>(
                         <li><span class="ar">→</span><span>INR billing · zero egress fees</span></li>
                     </ul>
                 </div>
-                <div class="vc-card" style="background:var(--bg-tinted)">
-                    <div style="font-size:.8125rem;font-weight:600;color:var(--ink);margin-bottom:.75rem">Workloads we're optimised for</div>
+                <div class="vc-card" style="background:var(--bg-tint)">
+                    <div style="font-size:.8125rem;font-weight:600;color:var(--ink);margin-bottom:.75rem">Workloads we're built for</div>
                     <div class="chips">
                         <span class="chip">LLM training</span>
                         <span class="chip">Inference at scale</span>
@@ -470,57 +703,21 @@ endpoint = client.inference.<span class="cf">deploy</span>(
 <!-- CAREERS -->
 <section id="careers">
     <div class="container">
-        <div class="careers-label">We're Hiring</div>
+        <div class="c-lbl">We're Hiring</div>
         <h2>Build India's AI backbone with us.</h2>
         <p style="max-width:480px;margin-top:.75rem">Exceptional teams across engineering, sales, and venture — in San Francisco and Delhi NCR.</p>
         <div class="jobs-grid">
-            <div class="job-card fade-up">
-                <div class="job-tag teng">Engineering · SF / Delhi</div>
-                <div class="job-title">Cloud Infrastructure Architect</div>
-                <div class="job-loc">Kubernetes, GPU orchestration, distributed systems</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag teng">Engineering · Delhi</div>
-                <div class="job-title">GPU Cluster Engineer</div>
-                <div class="job-loc">NVIDIA, InfiniBand, NCCL, NVLink</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag teng">Engineering · SF / Remote</div>
-                <div class="job-title">ML Infrastructure Engineer</div>
-                <div class="job-loc">PyTorch, CUDA, inference optimisation</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag teng">Engineering · Delhi</div>
-                <div class="job-title">Network Performance Engineer</div>
-                <div class="job-loc">RDMA, InfiniBand, ultra-low latency</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag tbiz">Sales · Delhi / Mumbai</div>
-                <div class="job-title">Enterprise Sales Lead</div>
-                <div class="job-loc">BFSI, healthcare, government verticals</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag tbiz">Sales · SF / Delhi</div>
-                <div class="job-title">Solutions Architect</div>
-                <div class="job-loc">Pre-sales, AI workload design</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag tbiz">Marketing · SF</div>
-                <div class="job-title">Developer Relations Lead</div>
-                <div class="job-loc">Community, content, developer events</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag tvc">Venture · Delhi</div>
-                <div class="job-title">Venture Partner</div>
-                <div class="job-loc">AI startup ecosystem, deal sourcing</div>
-            </div>
-            <div class="job-card fade-up">
-                <div class="job-tag tvc">Venture · Delhi / SF</div>
-                <div class="job-title">Portfolio Success Manager</div>
-                <div class="job-loc">Startup support, GTM, technical due diligence</div>
-            </div>
+            <div class="jb fade-up"><div class="jbtag te">Engineering · SF / Delhi</div><div class="jbtitle">Cloud Infrastructure Architect</div><div class="jbloc">Kubernetes, GPU orchestration, distributed systems</div></div>
+            <div class="jb fade-up"><div class="jbtag te">Engineering · Delhi</div><div class="jbtitle">GPU Cluster Engineer</div><div class="jbloc">NVIDIA, InfiniBand, NCCL, NVLink</div></div>
+            <div class="jb fade-up"><div class="jbtag te">Engineering · SF / Remote</div><div class="jbtitle">ML Infrastructure Engineer</div><div class="jbloc">PyTorch, CUDA, inference optimisation</div></div>
+            <div class="jb fade-up"><div class="jbtag te">Engineering · Delhi</div><div class="jbtitle">Network Performance Engineer</div><div class="jbloc">RDMA, InfiniBand, ultra-low latency</div></div>
+            <div class="jb fade-up"><div class="jbtag tb">Sales · Delhi / Mumbai</div><div class="jbtitle">Enterprise Sales Lead</div><div class="jbloc">BFSI, healthcare, government verticals</div></div>
+            <div class="jb fade-up"><div class="jbtag tb">Sales · SF / Delhi</div><div class="jbtitle">Solutions Architect</div><div class="jbloc">Pre-sales, AI workload design</div></div>
+            <div class="jb fade-up"><div class="jbtag tb">Marketing · SF</div><div class="jbtitle">Developer Relations Lead</div><div class="jbloc">Community, content, developer events</div></div>
+            <div class="jb fade-up"><div class="jbtag tv">Venture · Delhi</div><div class="jbtitle">Venture Partner</div><div class="jbloc">AI startup ecosystem, deal sourcing</div></div>
+            <div class="jb fade-up"><div class="jbtag tv">Venture · Delhi / SF</div><div class="jbtitle">Portfolio Success Manager</div><div class="jbloc">Startup support, GTM, due diligence</div></div>
         </div>
-        <div class="careers-footer">
+        <div class="careers-ft">
             <a href="mailto:careers@antriksh.cloud" class="btn btn-primary">Apply — careers@antriksh.cloud</a>
             <span class="careers-note">Competitive equity · ESOP · SF &amp; Delhi NCR offices</span>
         </div>
@@ -530,27 +727,27 @@ endpoint = client.inference.<span class="cf">deploy</span>(
 <!-- FAQ -->
 <section id="faq">
     <div class="container">
-        <div class="label">Questions</div>
+        <div class="lbl">Questions</div>
         <h2>Frequently asked.</h2>
         <div class="faq-list">
             <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">When will Antriksh be available?<span class="faq-chev">▾</span></button>
-                <div class="faq-a">Our 3 MW container proof-of-concept goes live approximately 6–8 months after funding close, with 1,728 GPUs operational. Early access customers are onboarded first — join the waitlist to secure your place.</div>
+                <button class="faq-q" onclick="faq(this)">When will Antriksh be available?<span class="faq-ch">▾</span></button>
+                <div class="faq-a">Our 3 MW container PoC goes live approximately 6–8 months after funding close, with 1,728 GB200 GPUs operational. Early access customers are onboarded first — join the waitlist to secure your place.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">Which GPU models will be available?<span class="faq-chev">▾</span></button>
-                <div class="faq-a">A mix of H100, H200, and GB-series GPUs. The exact allocation depends on supply finalisation, but early access customers will be consulted on which GPU type best fits their workload before go-live.</div>
+                <button class="faq-q" onclick="faq(this)">Which GPUs will be available?<span class="faq-ch">▾</span></button>
+                <div class="faq-a">We are deploying NVIDIA GB200 and GB300 GPUs. Early access customers will be consulted on which GPU type best fits their specific workload before we go live.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">How is this different from AWS, GCP, or Azure in India?<span class="faq-chev">▾</span></button>
+                <button class="faq-q" onclick="faq(this)">How is this different from AWS, GCP, or Azure?<span class="faq-ch">▾</span></button>
                 <div class="faq-a">Hyperscalers offer general-purpose cloud with limited GPU availability in India. Antriksh is AI-native — 10× denser racks, liquid cooling that prevents throttling, 40–50% lower pricing, INR billing with zero egress fees, and true data sovereignty with no cross-border data flows, ever.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">Is my data safe? Who can access it?<span class="faq-chev">▾</span></button>
-                <div class="faq-a">Your data never leaves India. Full tenant isolation, encryption at rest and in transit, and dedicated air-gapped zones for regulated industries. Antriksh staff have zero access to customer workloads without your explicit written authorisation.</div>
+                <button class="faq-q" onclick="faq(this)">Is my data safe? Who can access it?<span class="faq-ch">▾</span></button>
+                <div class="faq-a">Your data never leaves India. Full tenant isolation, encryption at rest and in transit, dedicated air-gapped zones for regulated industries. Antriksh staff have zero access to customer workloads without your explicit written authorisation.</div>
             </div>
             <div class="faq-item">
-                <button class="faq-q" onclick="toggleFaq(this)">Can I trial the platform before committing?<span class="faq-chev">▾</span></button>
+                <button class="faq-q" onclick="faq(this)">Can I trial the platform before committing?<span class="faq-ch">▾</span></button>
                 <div class="faq-a">Yes. Early access customers receive a trial allocation to benchmark their workloads before signing any reserved-capacity agreement. We want you to verify the numbers yourself first.</div>
             </div>
         </div>
@@ -560,17 +757,17 @@ endpoint = client.inference.<span class="cf">deploy</span>(
 <!-- WAITLIST -->
 <section id="waitlist">
     <div class="container">
-        <div class="wl-label">Early Access</div>
+        <div class="wl-lbl">Early Access</div>
         <h2>Be first on India's<br>sovereign AI cloud.</h2>
-        <p style="max-width:480px;margin-top:.75rem">Early access customers get priority allocation, locked-in pricing, and direct access to our infrastructure team.</p>
+        <p style="max-width:480px;margin-top:.75rem">Priority allocation, locked-in pricing, and direct access to our infrastructure team.</p>
         <div class="wl-layout">
             <div>
-                <form class="wl-form" id="waitlistForm" onsubmit="submitWaitlist(event)">
-                    <input class="wl-input" type="text" id="wName" placeholder="Your name" required>
-                    <input class="wl-input" type="email" id="wEmail" placeholder="Work email" required>
+                <form class="wl-form" id="wForm" onsubmit="submitWl(event)">
+                    <input class="wl-in" type="text" id="wN" placeholder="Your name" required>
+                    <input class="wl-in" type="email" id="wE" placeholder="Work email" required>
                     <div class="wl-row">
-                        <input class="wl-input" type="text" id="wCompany" placeholder="Company / Startup">
-                        <select class="wl-select" id="wType">
+                        <input class="wl-in" type="text" id="wC" placeholder="Company / Startup">
+                        <select class="wl-sel" id="wT">
                             <option value="">I am a ...</option>
                             <option value="startup">AI Startup</option>
                             <option value="enterprise">Enterprise</option>
@@ -579,39 +776,27 @@ endpoint = client.inference.<span class="cf">deploy</span>(
                             <option value="developer">Independent Developer</option>
                         </select>
                     </div>
-                    <input class="wl-input" type="text" id="wGpu" placeholder="Estimated GPU-hours / month (optional)">
+                    <input class="wl-in" type="text" id="wG" placeholder="Estimated GPU-hours / month (optional)">
                     <button type="submit" class="wl-submit">
                         Request Early Access
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </button>
                 </form>
-                <div class="wl-success" id="wlSuccess">✓ You're on the list. We'll be in touch within 48 hours.</div>
+                <div class="wl-ok" id="wOk">✓ You're on the list. We'll be in touch within 48 hours.</div>
                 <p class="wl-note" style="margin-top:.5rem">No spam. We'll only contact you about access and updates.</p>
             </div>
             <div class="wl-stats">
-                <div>
-                    <div class="wl-stat-val">~6 months</div>
-                    <div class="wl-stat-label">to first customer access — 3 MW PoC, 1,728 GPUs</div>
-                </div>
+                <div><div class="wl-sv">~6 months</div><div class="wl-sl">to first customer access — 3 MW PoC, 1,728 GPUs</div></div>
                 <hr class="wl-hr">
-                <div>
-                    <div class="wl-stat-val">H100 · H200 · GB</div>
-                    <div class="wl-stat-label">GPU mix at launch</div>
-                </div>
+                <div><div class="wl-sv">GB200 · GB300</div><div class="wl-sl">GPU mix at launch</div></div>
                 <hr class="wl-hr">
-                <div>
-                    <div class="wl-stat-val">From $2.50 / hr</div>
-                    <div class="wl-stat-label">per GPU · pay-per-second · INR billing</div>
-                </div>
+                <div><div class="wl-sv">From $2.50 / hr</div><div class="wl-sl">per GPU · pay-per-second · INR billing</div></div>
                 <hr class="wl-hr">
-                <div>
-                    <div class="wl-stat-val">Delhi NCR</div>
-                    <div class="wl-stat-label">data centre · data never leaves India</div>
-                </div>
+                <div><div class="wl-sv">Delhi NCR</div><div class="wl-sl">data centre · data never leaves India</div></div>
                 <hr class="wl-hr">
                 <div class="wl-btns">
                     <a href="https://calendly.com/antrikshcloud" target="_blank" class="btn btn-white">Schedule a call</a>
-                    <a href="mailto:ceo@antriksh.cloud" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff">Email us</a>
+                    <a href="mailto:sales@antriksh.cloud" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff">Talk to Sales</a>
                 </div>
             </div>
         </div>
@@ -621,10 +806,10 @@ endpoint = client.inference.<span class="cf">deploy</span>(
 <!-- FOOTER -->
 <footer>
     <div class="container">
-        <div class="footer-inner">
+        <div class="ft-inner">
             <div>
-                <div class="footer-logo" style="margin-bottom:1rem">
-                    <div class="footer-logo-mark">
+                <div class="ft-logo" style="margin-bottom:1rem">
+                    <div class="ft-mark">
                         <svg width="16" height="16" viewBox="56 48 58 48" fill="white">
                             <path d="M83.58 78.95v-.57l-1.06.32-1.03-3.41 6.86-2.08 1.03 3.41-1.63.5v2.02l9.28 17.65h-2.33l-7.16-13.33 4.36 13.33h-2.32l-4.76-14.44-8.27 14.44h-2.33L83.58 78.95z"/>
                             <path d="M76.58 72.97l-9.23 2.69-2.69-9.29 9.23-2.69 2.69 9.29z"/>
@@ -638,62 +823,64 @@ endpoint = client.inference.<span class="cf">deploy</span>(
                 </div>
                 <p style="font-size:.8125rem;color:rgba(255,255,255,.3);max-width:200px;line-height:1.65">Building India's sovereign AI infrastructure. Delhi NCR · San Francisco.</p>
             </div>
-            <div class="footer-col">
+            <div class="ft-col">
                 <h5>Platform</h5>
                 <a href="#value">About</a>
                 <a href="#tech">Technology</a>
                 <a href="#venture">For Builders</a>
+                <a href="#revenue">Pricing</a>
             </div>
-            <div class="footer-col">
+            <div class="ft-col">
                 <h5>Company</h5>
+                <a href="#traction">Milestones</a>
                 <a href="#careers">Careers</a>
                 <a href="#faq">FAQ</a>
                 <a href="Market analysis/Index.html">Market Analysis</a>
             </div>
-            <div class="footer-col">
+            <div class="ft-col">
                 <h5>Contact</h5>
-                <a href="https://calendly.com/antrikshcloud" target="_blank">Schedule a Call</a>
-                <a href="mailto:ceo@antriksh.cloud">ceo@antriksh.cloud</a>
+                <a href="mailto:info@antriksh.cloud">info@antriksh.cloud</a>
+                <a href="mailto:sales@antriksh.cloud">sales@antriksh.cloud</a>
                 <a href="mailto:careers@antriksh.cloud">careers@antriksh.cloud</a>
+                <a href="https://calendly.com/antrikshcloud" target="_blank">Schedule a Call</a>
+                <a href="tel:+917090152557">IN +91 70901 52557</a>
+                <a href="tel:+12066650905">US +1 (206) 665-0905</a>
             </div>
         </div>
-        <div class="footer-copy">
-            © 2025 Antriksh Cloud Private Limited · US +1 (206) 665-0905 · IN +91 86829 40765
+        <div class="ft-copy">
+            © 2025 Antriksh Cloud Private Limited · info@antriksh.cloud · IN +91 70901 52557 · US +1 (206) 665-0905
         </div>
     </div>
 </footer>
 
 <script>
+// Intersection observer
 const io = new IntersectionObserver(e => {
-    e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible') });
-}, {threshold:.1, rootMargin:'0px 0px -30px 0px'});
+    e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); });
+}, {threshold:.1, rootMargin:'0px 0px -28px 0px'});
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
 
-function toggleFaq(btn) {
+// FAQ
+function faq(btn) {
     const a = btn.nextElementSibling, open = a.classList.contains('open');
-    document.querySelectorAll('.faq-a.open').forEach(x => {
-        x.classList.remove('open'); x.previousElementSibling.classList.remove('open');
-    });
+    document.querySelectorAll('.faq-a.open').forEach(x => { x.classList.remove('open'); x.previousElementSibling.classList.remove('open'); });
     if(!open) { a.classList.add('open'); btn.classList.add('open'); }
 }
 
-function submitWaitlist(e) {
+// Waitlist
+function submitWl(e) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
     btn.textContent = 'Submitting…'; btn.disabled = true;
-    const n  = document.getElementById('wName').value;
-    const em = document.getElementById('wEmail').value;
-    const co = document.getElementById('wCompany').value;
-    const ty = document.getElementById('wType').value;
-    const gp = document.getElementById('wGpu').value;
-    const body = `Name: ${n}%0AEmail: ${em}%0ACompany: ${co}%0AType: ${ty}%0AGPU hrs/month: ${gp}`;
-    window.open(`mailto:ceo@antriksh.cloud?subject=Early Access — ${encodeURIComponent(n)}&body=${body}`, '_blank');
+    const body = `Name: ${document.getElementById('wN').value}%0AEmail: ${document.getElementById('wE').value}%0ACompany: ${document.getElementById('wC').value}%0AType: ${document.getElementById('wT').value}%0AGPU hrs/month: ${document.getElementById('wG').value}`;
+    window.open(`mailto:info@antriksh.cloud?subject=Early Access Request&body=${body}`, '_blank');
     setTimeout(() => {
-        document.getElementById('waitlistForm').style.display = 'none';
-        document.getElementById('wlSuccess').style.display = 'block';
+        document.getElementById('wForm').style.display = 'none';
+        document.getElementById('wOk').style.display = 'block';
     }, 500);
 }
 
+// Mobile nav close
 document.querySelectorAll('#navLinks a').forEach(a =>
     a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
 );
