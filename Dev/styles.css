@@ -518,3 +518,202 @@ footer { background: #020617; padding: 3rem 0; }
 .ft-col a  { display: block; font-size: .8125rem; color: rgba(255,255,255,.38); margin-bottom: .5rem; transition: color .15s; }
 .ft-col a:hover { color: rgba(255,255,255,.8); }
 .ft-copy { font-size: .72rem; color: rgba(255,255,255,.15); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.06); }
+
+/* ─────────────────────────────────────────
+   PARTNER STRIP
+   ───────────────────────────────────────── */
+.partner-strip {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+.ps-label {
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: .875rem;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.ps-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.ps-logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--ink-mid);
+  white-space: nowrap;
+}
+.ps-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+@media (max-width: 680px) {
+  .ps-logos { gap: .875rem; }
+  .ps-sep   { display: none; }
+}
+
+/* ─────────────────────────────────────────
+   COMPETITOR COMPARISON TABLE
+   ───────────────────────────────────────── */
+.comp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  min-width: 620px;
+}
+.comp-table th,
+.comp-table td {
+  padding: .75rem 1rem;
+  font-size: .8125rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+}
+.comp-table th:last-child,
+.comp-table td:last-child { border-right: none; }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table thead th {
+  font-size: .7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  background: var(--bg-sub);
+  color: var(--ink-soft);
+  padding: 1rem;
+  line-height: 1.45;
+}
+.comp-table thead th span {
+  display: block;
+  font-size: .65rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-top: .15rem;
+}
+.comp-feature-col {
+  text-align: left !important;
+  min-width: 200px;
+  font-weight: 600 !important;
+  background: var(--bg-sub) !important;
+  color: var(--ink) !important;
+}
+.comp-feat {
+  text-align: left !important;
+  font-weight: 500;
+  color: var(--ink-mid);
+  background: var(--bg-sub);
+}
+/* Antriksh column */
+.comp-us {
+  background: #eff6ff !important;
+  font-weight: 700;
+  color: var(--blue) !important;
+}
+.comp-table thead .comp-us {
+  background: var(--blue) !important;
+  color: #fff !important;
+}
+.comp-table thead .comp-us span { color: rgba(255,255,255,.7) !important; }
+/* Cell states */
+.comp-yes  { color: var(--green);  font-weight: 600; }
+.comp-no   { color: #dc2626; font-weight: 500; }
+.comp-part { color: var(--amber);  font-weight: 500; }
+/* Hover rows */
+.comp-table tbody tr:hover td { background: var(--bg-sub); }
+.comp-table tbody tr:hover .comp-us { background: #dbeafe !important; }
+.comp-table tbody tr:hover .comp-feat { background: var(--bg-tint); }
+
+/* ─────────────────────────────────────────
+   PRICING CALCULATOR SLIDER
+   ───────────────────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255,255,255,.12);
+  border-radius: 100px;
+  height: 5px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 6px rgba(59,130,246,.4);
+  transition: transform .15s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+input[type="range"]::-moz-range-thumb {
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--blue);
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+/* ─────────────────────────────────────────
+   HOW IT WORKS — terminal typewriter
+   ───────────────────────────────────────── */
+.term-line {
+  min-height: 1.2em;
+  white-space: pre;
+}
+.term-line.typed::after {
+  content: '▌';
+  animation: blink .7s step-end infinite;
+  color: #4ade80;
+  margin-left: 1px;
+}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+/* ─────────────────────────────────────────
+   ACTIVE NAV LINK
+   ───────────────────────────────────────── */
+.nav-links a.active-nav {
+  color: var(--blue) !important;
+  background: var(--blue-lt) !important;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE FIXES FOR NEW SECTIONS
+   ───────────────────────────────────────── */
+@media (max-width: 780px) {
+  /* How It Works */
+  #how .container > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+  /* Ecosystem grid */
+  #ecosystem > .container > div:nth-child(3) {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* Compare table scroll hint */
+  #compare > .container > div[style*="overflow-x"] {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+@media (max-width: 540px) {
+  #ecosystem > .container > div:nth-child(3) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   FAQ EXPANDED (more items)
+   ───────────────────────────────────────── */
+.faq-a.open { max-height: 400px; }
