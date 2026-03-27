@@ -218,3 +218,108 @@ document.querySelectorAll('#navLinks a').forEach(a =>
     document.getElementById('navLinks').classList.remove('open')
   )
 );
+
+/* ── PRICING CALCULATOR ── */
+(function () {
+  const slider = document.getElementById('gpu-slider');
+  if (!slider) return;
+
+  const ANT_RATE = 2.50;   // $ per GPU per hr
+  const AWS_RATE = 7.00;   // $ per GPU per hr (H100 equivalent)
+
+  function fmt(n) {
+    if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + 'M';
+    if (n >= 1e3) return '$' + Math.round(n).toLocaleString();
+    return '$' + Math.round(n);
+  }
+
+  function update() {
+    const gpus   = parseInt(slider.value, 10);
+    const antHr  = gpus * ANT_RATE;
+    const awsHr  = gpus * AWS_RATE;
+    const saveHr = awsHr - antHr;
+    const pct    = Math.round((saveHr / awsHr) * 100);
+    const monthly = saveHr * 24 * 30;
+    const annual  = saveHr * 24 * 365;
+
+    document.getElementById('gpu-count-label').textContent = gpus.toLocaleString() + ' GPUs';
+    document.getElementById('calc-ant').textContent  = fmt(antHr) + '/hr';
+    document.getElementById('calc-aws').textContent  = fmt(awsHr) + '/hr';
+    document.getElementById('calc-save').textContent = fmt(saveHr) + '/hr';
+    document.getElementById('calc-pct').textContent  = pct + '% cheaper than AWS/GCP';
+    document.getElementById('calc-monthly').textContent = fmt(monthly) + '/mo';
+    document.getElementById('calc-annual').textContent  = fmt(annual) + '/yr';
+  }
+
+  slider.addEventListener('input', update);
+  update(); // initialise on load
+})();
+
+/* ── TERMINAL TYPEWRITER ── */
+(function () {
+  const terms = document.querySelectorAll('.term-line[data-text]');
+  if (!terms.length) return;
+
+  let lineIdx = 0;
+
+  function typeLine(el, text, cb) {
+    el.textContent = '';
+    let i = 0;
+    const iv = setInterval(() => {
+      el.textContent += text[i++];
+      if (i >= text.length) { clearInterval(iv); setTimeout(cb, 420); }
+    }, 28);
+  }
+
+  function runLines() {
+    if (lineIdx >= terms.length) {
+      // restart after pause
+      setTimeout(() => {
+        terms.forEach(t => { t.textContent = ''; t.classList.remove('typed'); });
+        lineIdx = 0;
+        runLines();
+      }, 3500);
+      return;
+    }
+    const el = terms[lineIdx];
+    el.classList.add('typed');
+    typeLine(el, el.dataset.text, () => { lineIdx++; runLines(); });
+  }
+
+  // Only start when terminal scrolls into view
+  const termWrap = document.getElementById('terminal-wrap');
+  if (!termWrap) return;
+  const tio = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) { runLines(); tio.disconnect(); }
+  }, { threshold: 0.3 });
+  tio.observe(termWrap);
+})();
+
+/* ── SCROLL-TO-TOP BUTTON ── */
+(function () {
+  const btn = document.getElementById('back-top');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    btn.style.opacity = window.scrollY > 600 ? '1' : '0';
+    btn.style.pointerEvents = window.scrollY > 600 ? 'auto' : 'none';
+  });
+  btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+/* ── ACTIVE NAV LINK HIGHLIGHT ── */
+(function () {
+  const sections = document.querySelectorAll('section[id]');
+  const links    = document.querySelectorAll('.nav-links a[href^="#"]');
+  if (!sections.length || !links.length) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      links.forEach(l => l.classList.remove('active-nav'));
+      const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active-nav');
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+})();
