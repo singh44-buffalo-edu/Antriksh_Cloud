@@ -136,8 +136,8 @@
 </section>
 
 <!-- ════════════════════════════════════════════════════
-     HOW ANTRIKSH CLOUD WORKS — Interactive Stack Infographic
-     NEW in v3.1 — inserted between #why and #sovereign
+     HOW ANTRIKSH CLOUD WORKS — Isometric Stack Infographic
+     Updated in v3.2
 ════════════════════════════════════════════════════ -->
 <section id="how-it-works" style="position:relative;overflow:hidden">
   <canvas class="section-net" id="net-stack"></canvas>
@@ -146,125 +146,111 @@
     <h2 class="reveal d1">How Antriksh Cloud Works.</h2>
     <p class="reveal d2">Three fully integrated layers — from bare-metal Blackwell GPUs to frontier AI workloads running on your sovereign cloud.</p>
 
-    <!--
-      .stack-diagram uses column-reverse so the bottom layer
-      (Datacenter) is visually at the bottom of the page.
-      On desktop (≥1024px), a 3-D perspective tilt is applied
-      via .stack-layers-3d to create the isometric stack look.
-    -->
-    <div class="stack-diagram reveal d3">
+    <div class="reveal d3" style="display:flex;justify-content:center;align-items:center;margin-top:2rem">
+      <div style="position:relative;width:min(660px,100%);aspect-ratio:660/900">
+        <svg viewBox="0 0 660 900" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;overflow:visible">
+          <defs>
+            <linearGradient id="nucTop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#0f4c75"/><stop offset="50%" stop-color="#0b3a5c"/><stop offset="100%" stop-color="#082d4a"/>
+            </linearGradient>
+            <linearGradient id="nucLeft" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1b6fa0"/><stop offset="100%" stop-color="#0f5580"/>
+            </linearGradient>
+            <linearGradient id="nucRight" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0a3050"/><stop offset="100%" stop-color="#072540"/>
+            </linearGradient>
+            <linearGradient id="superTop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#4cc5c0"/><stop offset="40%" stop-color="#2ba0a5"/><stop offset="100%" stop-color="#1a7a82"/>
+            </linearGradient>
+            <linearGradient id="superLeft" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3abcc0"/><stop offset="100%" stop-color="#1a8a90"/>
+            </linearGradient>
+            <linearGradient id="superRight" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#105a65"/><stop offset="100%" stop-color="#0d4550"/>
+            </linearGradient>
+            <linearGradient id="dcTop" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#4aace0"/><stop offset="50%" stop-color="#2a8ac5"/><stop offset="100%" stop-color="#1a70aa"/>
+            </linearGradient>
+            <linearGradient id="dcLeft" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#50b8e8"/><stop offset="100%" stop-color="#2a90c5"/>
+            </linearGradient>
+            <linearGradient id="dcRight" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0f4a70"/><stop offset="100%" stop-color="#0a3555"/>
+            </linearGradient>
+            <linearGradient id="di1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1a8a95"/><stop offset="50%" stop-color="#136a75"/><stop offset="100%" stop-color="#0d5560"/>
+            </linearGradient>
+            <linearGradient id="di2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1a8590"/><stop offset="100%" stop-color="#0f6570"/>
+            </linearGradient>
+            <filter id="lsh">
+              <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0a2a40" flood-opacity="0.15"/>
+            </filter>
+          </defs>
 
-      <!-- Desktop 3-D wrapper (JS adds class .stack-layers-3d at ≥1024px) -->
-      <div id="stack3d">
+          <!-- Left arrows -->
+          <g opacity="0.55">
+            <polygon points="55,340 65,360 75,340" fill="#6ab5d8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="2s" repeatCount="indefinite"/></polygon>
+            <polygon points="55,370 65,390 75,370" fill="#6ab5d8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.3s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="2s" begin="0.3s" repeatCount="indefinite"/></polygon>
+            <polygon points="55,400 65,420 75,400" fill="#6ab5d8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.6s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="2s" begin="0.6s" repeatCount="indefinite"/></polygon>
+          </g>
+          <!-- Right arrows -->
+          <g opacity="0.55">
+            <polygon points="585,340 595,360 605,340" fill="#6ab5d8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.1s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="2s" begin="0.1s" repeatCount="indefinite"/></polygon>
+            <polygon points="585,370 595,390 605,370" fill="#6ab5d8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.4s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="2s" begin="0.4s" repeatCount="indefinite"/></polygon>
+            <polygon points="585,400 595,420 605,400" fill="#6ab5d8"><animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" begin="0.7s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="2s" begin="0.7s" repeatCount="indefinite"/></polygon>
+          </g>
 
-        <!-- ── LAYER 3 · NUCLEATON™ (top) ── -->
-        <div class="stack-layer" id="layer-nucleaton" onclick="toggleStackLayer(this)">
-          <div class="layer-card layer-top">
-            <div class="layer-card-inner">
-              <div class="layer-label">
-                <div class="layer-name">NUCLEATON™</div>
-                <div class="layer-sublabel">AI Application Layer</div>
-              </div>
-              <div class="layer-chips">
-                <span class="layer-chip">Training</span>
-                <span class="layer-chip">Inference</span>
-              </div>
-            </div>
-            <div class="layer-expand-icon" aria-hidden="true">+</div>
-          </div>
-          <!-- Expandable detail (shown on click) -->
-          <div class="layer-detail">
-            <div class="layer-detail-inner">
-              <p>NUCLEATON™ is the AI workload tier — the surface developers interact with. It abstracts away all infrastructure and exposes a clean API for training runs and inference endpoints.</p>
-              <div class="layer-detail-grid">
-                <div class="detail-item">LLM Training</div>
-                <div class="detail-item">Real-time Inference</div>
-                <div class="detail-item">Fine-tuning Jobs</div>
-                <div class="detail-item">Model Serving</div>
-                <div class="detail-item">Batch Processing</div>
-                <div class="detail-item">Agentic Pipelines</div>
-              </div>
-            </div>
-          </div>
-        </div>
+          <!-- NUCLEATON™ -->
+          <g filter="url(#lsh)">
+            <text x="330" y="60" text-anchor="middle" font-family="'Exo 2',sans-serif" font-size="36" font-weight="800" fill="#0a3d6b" letter-spacing="5">NUCLEATON™</text>
+            <polygon points="330,100 520,175 330,250 140,175" fill="url(#nucTop)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <polygon points="140,175 330,250 330,285 140,210" fill="url(#nucLeft)"/>
+            <polygon points="520,175 330,250 330,285 520,210" fill="url(#nucRight)"/>
+            <polygon points="140,210 330,285 520,210" fill="#061e30" opacity="0.3"/>
+            <text x="245" y="182" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="16" font-weight="700" fill="#fff" letter-spacing="3">TRAINING</text>
+            <text x="415" y="182" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="16" font-weight="700" fill="#fff" letter-spacing="3">INFERENCE</text>
+          </g>
 
-        <!-- Arrow between Supercomputer → Nucleaton -->
-        <div class="stack-arrow" aria-hidden="true">↑</div>
+          <!-- SUPERCOMPUTER -->
+          <g filter="url(#lsh)">
+            <polygon points="330,330 540,420 330,510 120,420" fill="url(#superTop)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <polygon points="120,420 330,510 330,580 120,490" fill="url(#superLeft)"/>
+            <polygon points="540,420 330,510 330,580 540,490" fill="url(#superRight)"/>
+            <polygon points="120,490 330,580 540,490" fill="#082530" opacity="0.25"/>
+            <text x="330" y="400" text-anchor="middle" font-family="'Exo 2',sans-serif" font-size="13" fill="#fff" letter-spacing="2" opacity="0.9">☁</text>
+            <text x="330" y="418" text-anchor="middle" font-family="'Exo 2',sans-serif" font-size="14" fill="#fff" letter-spacing="2" opacity="0.9">C-Gen.AI</text>
+            <text x="330" y="440" text-anchor="middle" font-family="'Exo 2',sans-serif" font-size="19" font-weight="700" fill="#fff" letter-spacing="4">SUPERCOMPUTER</text>
+            <!-- Diamond chips -->
+            <polygon points="210,465 265,488 210,511 155,488" fill="url(#di1)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="210" y="486" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">USER</text>
+            <text x="210" y="497" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">MANAGEMENT</text>
+            <polygon points="450,465 505,488 450,511 395,488" fill="url(#di1)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="450" y="486" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">NETWORK</text>
+            <text x="450" y="497" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">CONFIG</text>
+            <polygon points="270,495 325,518 270,541 215,518" fill="url(#di2)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="270" y="521" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">STORAGE</text>
+            <polygon points="390,495 445,518 390,541 335,518" fill="url(#di2)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="390" y="515" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">JOB</text>
+            <text x="390" y="526" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">ORCHESTRATION</text>
+            <polygon points="330,530 385,553 330,576 275,553" fill="url(#di1)" stroke="rgba(255,255,255,0.12)" stroke-width="0.5"/>
+            <text x="330" y="556" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="10" font-weight="600" fill="#fff">MONITORING</text>
+          </g>
 
-        <!-- ── LAYER 2 · SUPERCOMPUTER / C-Gen.AI (middle) ── -->
-        <div class="stack-layer" id="layer-supercomputer" onclick="toggleStackLayer(this)">
-          <div class="layer-card layer-mid">
-            <div class="layer-card-inner">
-              <div class="layer-label">
-                <div class="layer-badge">C-Gen.AI</div>
-                <div class="layer-name">SUPERCOMPUTER</div>
-                <div class="layer-sublabel">Orchestration &amp; Management</div>
-              </div>
-              <div class="layer-chips">
-                <span class="layer-chip">User Management</span>
-                <span class="layer-chip">Storage</span>
-                <span class="layer-chip">Job Orchestration</span>
-                <span class="layer-chip">Monitoring</span>
-                <span class="layer-chip">Network Config</span>
-              </div>
-            </div>
-            <div class="layer-expand-icon" aria-hidden="true">+</div>
-          </div>
-          <div class="layer-detail">
-            <div class="layer-detail-inner">
-              <p>The orchestration brain. C-Gen.AI handles all cluster management so you never touch hardware directly — from user authentication and storage provisioning to real-time monitoring and NVLink fabric configuration.</p>
-              <div class="layer-detail-grid">
-                <div class="detail-item">Tenant isolation</div>
-                <div class="detail-item">NVLink config</div>
-                <div class="detail-item">Object storage</div>
-                <div class="detail-item">Job scheduling</div>
-                <div class="detail-item">GPU telemetry</div>
-                <div class="detail-item">API gateway</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Arrow between Datacenter → Supercomputer -->
-        <div class="stack-arrow" aria-hidden="true">↑</div>
-
-        <!-- ── LAYER 1 · DATACENTER (bottom) ── -->
-        <div class="stack-layer" id="layer-datacenter" onclick="toggleStackLayer(this)">
-          <div class="layer-card layer-bot">
-            <div class="layer-card-inner">
-              <div class="layer-label">
-                <div class="layer-name">DATACENTER</div>
-                <div class="layer-sublabel">Physical Infrastructure · Delhi NCR</div>
-              </div>
-              <div class="layer-chips">
-                <span class="layer-chip">GB200 &amp; GB300 GPUs</span>
-                <span class="layer-chip">Networking</span>
-                <span class="layer-chip">VM / OS</span>
-              </div>
-            </div>
-            <div class="layer-expand-icon" aria-hidden="true">+</div>
-          </div>
-          <div class="layer-detail">
-            <div class="layer-detail-inner">
-              <p>500 MW of liquid-cooled Blackwell GPU compute in Delhi NCR — powered by renewable hydropower. Direct-to-chip cooling achieves PUE &lt;1.10, 40% below hyperscaler energy waste.</p>
-              <div class="layer-detail-grid">
-                <div class="detail-item">GB200 &amp; GB300</div>
-                <div class="detail-item">Direct liquid cooling</div>
-                <div class="detail-item">400 Gb/s InfiniBand</div>
-                <div class="detail-item">NVLink fabric</div>
-                <div class="detail-item">PUE &lt;1.10</div>
-                <div class="detail-item">500 MW capacity</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /#stack3d -->
-    </div><!-- /.stack-diagram -->
-
-    <p class="stack-hint">
-      <span>&#128065;&#65039; Click any layer to explore what's inside</span>
-    </p>
+          <!-- DATACENTER -->
+          <g filter="url(#lsh)">
+            <polygon points="330,640 540,730 330,820 120,730" fill="url(#dcTop)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <polygon points="120,730 330,820 330,870 120,780" fill="url(#dcLeft)"/>
+            <polygon points="540,730 330,820 330,870 540,780" fill="url(#dcRight)"/>
+            <polygon points="120,780 330,870 540,780" fill="#061830" opacity="0.25"/>
+            <text x="330" y="745" text-anchor="middle" font-family="'Exo 2',sans-serif" font-size="26" font-weight="800" fill="#fff" letter-spacing="5">DATACENTER</text>
+            <text x="240" y="790" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="16" font-weight="600" fill="#fff" letter-spacing="2">GPUs</text>
+            <text x="420" y="790" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="16" font-weight="600" fill="#fff" letter-spacing="2">VM/OS</text>
+            <text x="330" y="830" text-anchor="middle" font-family="'Rajdhani',sans-serif" font-size="16" font-weight="600" fill="#fff" letter-spacing="2">NETWORKING</text>
+          </g>
+        </svg>
+      </div>
+    </div>
 
   </div>
 </section>
