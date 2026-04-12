@@ -61,8 +61,21 @@ h1,h2,h3 {
 }
 h1 { font-size:clamp(2.5rem,7vw,5.75rem);  font-weight:800; }
 h2 { font-size:clamp(2rem,4vw,3.5rem);     font-weight:700; }
-h3 { font-size:1.375rem;                    font-weight:700; }  /* ↑ 1.25rem → 1.375rem */
-p  { color:var(--muted); line-height:1.8;   font-size:1rem;  }  /* ↑ .9375rem → 1rem     */
+h3 { font-size:clamp(1.25rem,2.5vw,1.375rem); font-weight:700; }
+p  { color:var(--muted); line-height:1.8;     font-size:1.0625rem; }
+
+/* ── MOBILE FONT SCALE ── */
+@media (max-width: 640px) {
+  body        { font-size: 1.0625rem; }           /* 17px base — feels comfortable on phone */
+  h1          { font-size: clamp(2.25rem, 9vw, 4rem); }
+  h2          { font-size: clamp(1.875rem, 7vw, 3rem); }
+  .hero-sub   { font-size: 1.125rem; }
+  .why-desc   { font-size: 1.0625rem; }
+  .hstat-lbl  { font-size: .875rem; }
+  .eyebrow    { font-size: .8125rem; }
+  .nav-links.open a { font-size: 1.0625rem; }
+  .btn        { font-size: 1.0625rem; }
+}
 
 /* Shimmer gradient used on hero headline */
 .grad-shimmer {
@@ -114,15 +127,15 @@ section    { padding:4.5rem 0; }
 #hero .btn-ghost { color:#fff; background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.22); }
 #hero .btn-ghost:hover { background:rgba(255,255,255,.2); }
 
-/* Contact / Book a Meeting button — matches ghost style */
+/* Contact / Book a Meeting button — matches ghost style + same size as .btn */
 .btn-contact {
   display:inline-flex; align-items:center; gap:.45rem;
   background:rgba(255,255,255,.08);
   color:#fff;
   border:1px solid rgba(255,255,255,.22);
   border-radius:8px;
-  padding:.625rem 1.375rem;
-  font-size:.875rem; font-weight:500;
+  padding:.875rem 1.875rem;
+  font-size:1rem; font-weight:600;
   letter-spacing:.005em;
   transition:color .2s, border-color .2s, background .2s;
   white-space:nowrap;
@@ -703,7 +716,14 @@ section > .why-inner { position:relative; z-index:1; }
 .tb-dot { width:11px; height:11px; border-radius:50%; }
 .tb-r{background:#ef4444;} .tb-y{background:#f59e0b;} .tb-g{background:#22c55e;}
 .tb-name { margin-left:.5rem; font-size:.75rem; color:rgba(255,255,255,.22); font-family:'DM Mono',monospace; }
-.terminal-body { padding:1.5rem; font-family:'DM Mono',monospace; font-size:.8125rem; line-height:2.1; }
+.terminal-body {
+  padding:1.5rem;
+  font-family:'DM Mono',monospace;
+  font-size:.8125rem;
+  line-height:2.1;
+  height:400px;          /* fixed — 14 lines × 2.1 line-height, with padding room */
+  overflow:hidden;
+}
 .t-c{color:#6b7280;} .t-l{color:#e2e8f0;} .t-s{color:#a78bfa;} .t-k{color:#4ade80;} .t-o{color:#fbbf24;}
 .term-line { display:block; min-height:1.6em; }
 .t-cursor::after { content:'▌'; animation:blink .7s step-end infinite; color:#4ade80; }
