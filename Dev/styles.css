@@ -114,26 +114,26 @@ section    { padding:4.5rem 0; }
 #hero .btn-ghost { color:#fff; background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.22); }
 #hero .btn-ghost:hover { background:rgba(255,255,255,.2); }
 
-/* Contact / Book a Meeting button */
+/* Contact / Book a Meeting button — matches ghost style */
 .btn-contact {
   display:inline-flex; align-items:center; gap:.45rem;
-  background:rgba(40,212,212,.12);
-  color:#e0f7f7;
-  border:1px solid rgba(40,212,212,.45);
-  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:8px;
   padding:.625rem 1.375rem;
-  font-size:.875rem; font-weight:600;
-  letter-spacing:.01em;
-  transition:color .2s, border-color .2s, background .2s, box-shadow .2s;
+  font-size:.875rem; font-weight:500;
+  letter-spacing:.005em;
+  transition:color .2s, border-color .2s, background .2s;
   white-space:nowrap;
+  backdrop-filter:blur(8px);
 }
 .btn-contact:hover {
+  background:rgba(255,255,255,.18);
+  border-color:rgba(255,255,255,.38);
   color:#fff;
-  border-color:rgba(40,212,212,.9);
-  background:rgba(40,212,212,.22);
-  box-shadow:0 0 24px rgba(40,212,212,.28);
 }
-.btn-contact svg { color:#28d4d4; flex-shrink:0; }
+.btn-contact svg { opacity:.65; flex-shrink:0; }
 
 .btn-sm { padding:.5625rem 1.25rem; font-size:.9rem; }
 
@@ -286,7 +286,7 @@ section > .why-inner { position:relative; z-index:1; }
     rgba(7,9,15,.88)  78%,
     rgba(7,9,15,1)   100%);
 }
-.hero-inner { position:relative; z-index:1; padding-bottom:3.5rem; }
+.hero-inner { position:relative; z-index:1; padding-bottom:3.5rem; padding-top:2rem; }
 /* Hero headings stay white over the dark photo */
 #hero h1, #hero h2 { color:#fff; }
 
@@ -751,12 +751,19 @@ section > .why-inner { position:relative; z-index:1; }
 
 
 /* ══════════════════════════════════════════════════════════
-   WAITLIST  (STAYS BLUE — the only saturated section)
+   WAITLIST
 ══════════════════════════════════════════════════════════ */
-#waitlist { background:#1d4ed8; position:relative; overflow:hidden; }
+#waitlist {
+  background: #080d1a;
+  position:relative; overflow:hidden;
+}
+/* Layered aurora — blue from top-left, violet from bottom-right */
 #waitlist::before {
   content:''; position:absolute; inset:0;
-  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(59,130,246,.4),transparent);
+  background:
+    radial-gradient(ellipse 75% 65% at -5% 10%,  rgba(37,99,235,.22),  transparent 65%),
+    radial-gradient(ellipse 55% 55% at 105% 95%, rgba(109,40,217,.16),  transparent 60%),
+    radial-gradient(ellipse 40% 40% at 55%  0%,  rgba(59,130,246,.08),  transparent 55%);
   pointer-events:none;
 }
 .wl-inner {
@@ -770,13 +777,17 @@ section > .why-inner { position:relative; z-index:1; }
 .wl-left > p { color:rgba(255,255,255,.62); font-size:1.0625rem; margin-bottom:2.25rem; }
 .wl-benefits   { display:flex; flex-direction:column; gap:.875rem; margin-bottom:2.25rem; }
 .wl-b          { display:flex; align-items:center; gap:.875rem; }
-.wl-b-icon     { font-size:1.125rem; width:40px; height:40px; background:rgba(255,255,255,.12); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-.wl-b-text     { font-size:1rem; font-weight:500; color:rgba(255,255,255,.88); }  /* ↑ .9375rem */
-.wl-btns       { display:flex; gap:.75rem; flex-wrap:wrap; }
-.btn-wl-white  { background:#fff; color:#1d4ed8; font-weight:700; }
-.btn-wl-white:hover { background:#dbeafe; }
-.btn-wl-ghost  { background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.20); }
-.btn-wl-ghost:hover { background:rgba(255,255,255,.20); }
+.wl-b-icon     { font-size:1.125rem; width:40px; height:40px; background:rgba(59,130,246,.14); border:1px solid rgba(59,130,246,.22); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.wl-b-text     { font-size:1rem; font-weight:500; color:rgba(255,255,255,.80); }
+.wl-btns       { display:flex; gap:.75rem; flex-wrap:wrap; align-items:center; }
+.btn-wl-white  { background:var(--blue); color:#fff; font-weight:700; border:1px solid var(--blue); }
+.btn-wl-white:hover { background:var(--blue-dk); border-color:var(--blue-dk); }
+.btn-wl-ghost  { background:rgba(255,255,255,.07); color:rgba(255,255,255,.75); border:1px solid rgba(255,255,255,.15); }
+.btn-wl-ghost:hover { background:rgba(255,255,255,.13); color:#fff; }
+.btn-wl-plat   { display:inline-flex; align-items:center; gap:.4rem; color:rgba(255,255,255,.45); font-size:.875rem; font-weight:500; transition:color .2s; border:none; background:none; padding:0; }
+.btn-wl-plat:hover { color:rgba(255,255,255,.85); }
+.btn-wl-plat svg { opacity:.6; transition:opacity .2s, transform .2s; }
+.btn-wl-plat:hover svg { opacity:1; transform:translateX(3px); }
 .wl-right iframe { border-radius:var(--radius); }
 
 
@@ -1204,29 +1215,53 @@ input[type="range"]::-webkit-slider-thumb {
   transform: translateY(0);
 }
 
+/* Soft radial dark halo — behind text, no box */
+.gpu-seq-txt::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(4,6,16,.72) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.gpu-seq-txt .gst-inner {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: min(540px, 90vw);
+  background: none;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
 .gst-eyebrow {
-  font-size: .72rem;
+  font-size: .7rem;
   font-weight: 700;
-  letter-spacing: .2em;
+  letter-spacing: .22em;
   text-transform: uppercase;
-  color: #28d4d4;
-  margin-bottom: .875rem;
+  color: rgba(180, 200, 255, 0.7);
+  margin-bottom: .75rem;
 }
 .gst-h {
   font-family: 'Manrope', sans-serif;
-  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-size: clamp(2rem, 5.5vw, 4rem);
   font-weight: 800;
   color: #fff;
   letter-spacing: -.03em;
   line-height: 1.05;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 32px rgba(0,0,0,.6);
+  margin-bottom: .875rem;
+  text-shadow: 0 2px 24px rgba(0,0,0,.8), 0 0 60px rgba(0,0,0,.5);
 }
 .gst-p {
-  font-size: clamp(.9rem, 1.5vw, 1.125rem);
-  color: rgba(200,220,255,.72);
+  font-size: clamp(.875rem, 1.4vw, 1.0625rem);
+  color: rgba(200,215,255,.68);
   line-height: 1.7;
-  max-width: 44ch;
+  max-width: 38ch;
   margin: 0;
 }
 

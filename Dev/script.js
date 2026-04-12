@@ -441,7 +441,7 @@ window.faq = faq;
           for (let j = i + 1; j < dots.length; j++) {
             const d = Math.hypot(dots[i].x - dots[j].x, dots[i].y - dots[j].y);
             if (d < LINK) {
-              ctx.strokeStyle = `rgba(59,130,246,${(1 - d / LINK) * 0.10})`;
+              ctx.strokeStyle = `rgba(59,130,246,${(1 - d / LINK) * 0.20})`;
               ctx.lineWidth = 0.5;
               ctx.beginPath();
               ctx.moveTo(dots[i].x, dots[i].y);
@@ -466,8 +466,8 @@ window.faq = faq;
         d.x += d.vx; d.y += d.vy;
         const disp  = Math.hypot(d.x - d.ox, d.y - d.oy);
         const pulse = 0.5 + 0.5 * Math.sin(t * 1.8 + d.ph);
-        const alpha = 0.11 + Math.min(disp / 8, 1) * 0.4 + pulse * 0.07;
-        const r     = R + (dist < REACH ? (REACH - dist) / REACH * 1.4 : 0);
+        const alpha = 0.22 + Math.min(disp / 8, 1) * 0.45 + pulse * 0.13;
+        const r     = R + (dist < REACH ? (REACH - dist) / REACH * 1.6 : 0);
         ctx.beginPath();
         ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(${d.col[0]},${d.col[1]},${d.col[2]},${alpha})`;
@@ -475,7 +475,7 @@ window.faq = faq;
         if (dist < REACH) {
           ctx.beginPath();
           ctx.arc(d.x, d.y, r * 3.5, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(${d.col[0]},${d.col[1]},${d.col[2]},${0.022 * (REACH - dist) / REACH})`;
+          ctx.fillStyle = `rgba(${d.col[0]},${d.col[1]},${d.col[2]},${0.05 * (REACH - dist) / REACH})`;
           ctx.fill();
         }
       });
