@@ -13,7 +13,7 @@
 <body>
 
 <nav id="nav">
-  <div class="container">
+  <div class="container" id="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-mark">
         <svg width="16" height="16" viewBox="56 48 58 48" fill="white">
@@ -54,6 +54,10 @@
     <div class="hero-actions reveal d3">
       <a href="#waitlist" class="btn btn-primary">Get Early Access</a>
       <a href="platform.html" class="btn btn-ghost">See Full Platform</a>
+      <a href="https://calendly.com/antrikshcloud" target="_blank" rel="noopener" class="btn btn-contact">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Call
+      </a>
     </div>
     <div class="hero-stats reveal d4">
       <div class="hstat">
@@ -198,14 +202,22 @@
 
     <div class="reveal d3" style="display:flex;justify-content:center;margin-top:2.5rem">
       <!-- Architecture card — self-contained dark theme -->
+      <!-- gradient border wrapper -->
       <div style="
         position:relative;
         width:min(760px,100%);
+        padding:2px;
+        border-radius:22px;
+        background:linear-gradient(135deg,rgba(40,212,212,0.55) 0%,rgba(59,130,246,0.35) 40%,rgba(167,139,250,0.25) 70%,rgba(40,212,212,0.08) 100%);
+        box-shadow:0 24px 64px rgba(0,0,0,0.45), 0 0 80px rgba(40,212,212,0.08);
+      ">
+      <!-- inner card -->
+      <div style="
+        position:relative;
+        width:100%;
         background:#080c14;
         border-radius:20px;
         overflow:hidden;
-        border:1px solid rgba(40,212,212,0.15);
-        box-shadow:0 24px 64px rgba(0,0,0,0.35);
       ">
         <!-- Grid overlay -->
         <div style="
@@ -383,7 +395,8 @@
           </div>
 
         </div><!-- /scene wrapper -->
-      </div><!-- /architecture card -->
+      </div><!-- /inner card -->
+      </div><!-- /gradient border wrapper -->
     </div>
 
   </div>

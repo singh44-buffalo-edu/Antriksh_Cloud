@@ -168,16 +168,23 @@
   }, { passive: true });
 })();
 
-/* ── 1. NAV SCROLL HIDE/SHOW ── */
+/* ── 1. NAV SCROLL — full-width → floating pill ── */
 (function () {
   const nav = document.getElementById('nav');
   if (!nav) return;
   let last = 0;
+  const FLOAT_THRESHOLD = 120;
+
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
-    nav.classList.toggle('scrolled', y > 60);
-    if (y > last + 8 && y > 120) nav.classList.add('hidden');
-    else if (y < last - 6) nav.classList.remove('hidden');
+
+    /* Floating pill once past threshold */
+    nav.classList.toggle('floating', y > FLOAT_THRESHOLD);
+
+    /* Hide on scroll down, show on scroll up */
+    if (y > last + 8 && y > FLOAT_THRESHOLD) nav.classList.add('hidden');
+    else if (y < last - 6)                    nav.classList.remove('hidden');
+
     last = y;
   }, { passive: true });
 })();
@@ -319,14 +326,15 @@ if (window.location.hash) {
   let idx = 0;
   function typeLine(el, text, done) {
     el.textContent = ''; let i = 0;
+    if (!text.length) { setTimeout(done, 20); return; }
     const iv = setInterval(() => {
       el.textContent += text[i++];
-      if (i >= text.length) { clearInterval(iv); setTimeout(done, 80); } /* pause between lines: 350→80ms */
-    }, 10); /* per-character speed: 24ms→10ms */
+      if (i >= text.length) { clearInterval(iv); setTimeout(done, 35); }
+    }, 5); /* 5ms per char — ~3× faster */
   }
   function run() {
     if (idx >= lines.length) {
-      setTimeout(() => { lines.forEach(l => { l.textContent = ''; }); idx = 0; run(); }, 1200); /* loop pause: 2500→1200ms */
+      setTimeout(() => { lines.forEach(l => { l.textContent = ''; }); idx = 0; run(); }, 800);
       return;
     }
     typeLine(lines[idx], lines[idx].dataset.text, () => { idx++; run(); });
