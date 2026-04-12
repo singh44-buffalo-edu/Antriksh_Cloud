@@ -114,24 +114,26 @@ section    { padding:4.5rem 0; }
 #hero .btn-ghost { color:#fff; background:rgba(255,255,255,.1); border-color:rgba(255,255,255,.22); }
 #hero .btn-ghost:hover { background:rgba(255,255,255,.2); }
 
-/* Contact / Book a Call button */
+/* Contact / Book a Meeting button */
 .btn-contact {
   display:inline-flex; align-items:center; gap:.45rem;
-  background:transparent; color:rgba(255,255,255,.75);
-  border:1px solid rgba(255,255,255,.18);
+  background:rgba(40,212,212,.12);
+  color:#e0f7f7;
+  border:1px solid rgba(40,212,212,.45);
   border-radius:999px;
-  padding:.6rem 1.25rem;
+  padding:.625rem 1.375rem;
   font-size:.875rem; font-weight:600;
+  letter-spacing:.01em;
   transition:color .2s, border-color .2s, background .2s, box-shadow .2s;
+  white-space:nowrap;
 }
 .btn-contact:hover {
   color:#fff;
-  border-color:rgba(40,212,212,.7);
-  background:rgba(40,212,212,.08);
-  box-shadow:0 0 18px rgba(40,212,212,.2);
+  border-color:rgba(40,212,212,.9);
+  background:rgba(40,212,212,.22);
+  box-shadow:0 0 24px rgba(40,212,212,.28);
 }
-.btn-contact svg { opacity:.7; transition:opacity .2s; }
-.btn-contact:hover svg { opacity:1; }
+.btn-contact svg { color:#28d4d4; flex-shrink:0; }
 
 .btn-sm { padding:.5625rem 1.25rem; font-size:.9rem; }
 
@@ -198,7 +200,10 @@ section > .why-inner { position:relative; z-index:1; }
     0 0 0 1px rgba(255,255,255,.09);
 }
 #nav.floating #nav-inner { padding:0 1.25rem; }
-#nav.hidden   { transform:translateY(-120%) !important; }
+
+/* Hidden states — must include BOTH axes for floating */
+#nav.hidden               { transform:translateY(-120%); }
+#nav.floating.hidden      { transform:translateX(-50%) translateY(-200%); }
 
 #nav-inner { /* inner flex row — padding changes on float */
   display:flex; align-items:center; justify-content:space-between;
@@ -896,6 +901,17 @@ footer {
   border-radius:var(--radius); padding:2rem; overflow-x:auto; margin-top:2.5rem;
 }
 
+/* Platform two-column sections — traction, careers */
+.plat-two-col {
+  display: grid;
+  grid-template-columns: 1fr;   /* mobile: stack */
+  gap: 1.5rem;
+  align-items: start;
+}
+@media(min-width: 680px) {
+  .plat-two-col { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+}
+
 /* Platform efficiency section: inline grid → single col on mobile */
 @media(max-width:767px) {
   #efficiency > .container > div[style*="grid-template-columns:1fr 1fr"],
@@ -1516,7 +1532,8 @@ input[type="range"]::-webkit-slider-thumb {
 .gs-q-foot { font-size: .72rem; color: var(--dim); line-height: 1.6; }
 
 /* Latency boxes */
-.gs-lat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; height: 100%; }
+.gs-lat-grid { display: grid; grid-template-columns: 1fr; gap: .75rem; }
+@media(min-width: 480px) { .gs-lat-grid { grid-template-columns: 1fr 1fr; } }
 .gs-lat-box {
   border-radius: var(--radius);
   padding: 1.25rem;

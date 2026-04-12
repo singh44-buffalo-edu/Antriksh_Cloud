@@ -14,7 +14,7 @@
 <body>
 
 <nav id="nav">
-  <div class="container">
+  <div class="container" id="nav-inner">
     <a href="index.html" class="nav-logo">
       <div class="nav-mark">
         <svg width="16" height="16" viewBox="56 48 58 48" fill="white">
@@ -30,13 +30,11 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">&#8592; Home</a></li>
-      <li><a href="#efficiency">Efficiency</a></li>
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#compare">Compare</a></li>
       <li><a href="#gpu-sizing">GPU Sizing</a></li>
       <li><a href="#roadmap">Roadmap</a></li>
-      <li><a href="#careers">Careers</a></li>
       <li><a href="index.html#waitlist" class="nav-cta">Get Early Access</a></li>
     </ul>
     <button class="nav-btn" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
@@ -473,7 +471,7 @@
   <div class="container">
     <div class="eyebrow reveal">Execution</div>
     <h2 class="reveal d1">Everything in place to build.</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem">
+    <div class="plat-two-col" style="margin-top:3rem">
       <div class="milestone-list reveal">
         <div class="milestone"><div class="m-check done">&#10003;</div><div class="m-content"><div class="m-title">500 MW Power Allocation Secured</div><div class="m-desc">Canal-adjacent · dual power feeds</div></div><span class="m-status s-done">Done</span></div>
         <div class="milestone"><div class="m-check prog">&#8943;</div><div class="m-content"><div class="m-title">Government MoU in Final Stages</div><div class="m-desc">State backing · infrastructure status</div></div><span class="m-status s-rev">In review</span></div>
@@ -542,7 +540,7 @@
   <div class="container">
     <div class="eyebrow reveal">We're hiring</div>
     <h2 class="reveal d1">Build India's AI backbone.</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3rem">
+    <div class="plat-two-col" style="margin-top:3rem">
       <div class="job-list reveal">
         <div class="job"><div class="job-info"><div class="job-dept jd-e">Engineering · SF / Delhi</div><div class="job-title">Cloud Infrastructure Architect</div><div class="job-loc">Kubernetes, GPU orchestration</div></div><span class="job-arrow">&#8594;</span></div>
         <div class="job"><div class="job-info"><div class="job-dept jd-e">Engineering · Delhi</div><div class="job-title">GPU Cluster Engineer</div><div class="job-loc">NVIDIA, InfiniBand, NCCL</div></div><span class="job-arrow">&#8594;</span></div>
