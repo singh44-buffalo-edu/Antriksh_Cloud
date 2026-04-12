@@ -389,7 +389,7 @@ section > .why-inner { position:relative; z-index:1; }
   transition:background .25s;
 }
 .why-item:hover { background:rgba(20,26,42,.88); }
-.why-num   { font-family:'Manrope',sans-serif; font-size:2.5rem; font-weight:800; color:transparent; -webkit-text-stroke:1px rgba(59,130,246,.30); line-height:1; margin-bottom:1.25rem; }
+.why-num   { font-family:'Manrope',sans-serif; font-size:2.5rem; font-weight:800; line-height:1; margin-bottom:1.25rem; color:rgba(96,165,250,.55); }
 .why-title { font-family:'Manrope',sans-serif; font-size:1.375rem; font-weight:800; color:#fff; margin-bottom:.625rem; letter-spacing:-.025em; }
 .why-desc  { font-size:1rem; color:rgba(255,255,255,.50); line-height:1.75; }
 
