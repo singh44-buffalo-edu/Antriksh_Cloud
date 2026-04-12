@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js" defer></script>
 </head>
 <body>
 
@@ -33,6 +34,7 @@
       <li><a href="#architecture">Architecture</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#compare">Compare</a></li>
+      <li><a href="#gpu-sizing">GPU Sizing</a></li>
       <li><a href="#roadmap">Roadmap</a></li>
       <li><a href="#careers">Careers</a></li>
       <li><a href="index.html#waitlist" class="nav-cta">Get Early Access</a></li>
@@ -284,6 +286,187 @@
   </div>
 </section>
 
+<!-- GPU SIZING GUIDE -->
+<section id="gpu-sizing" class="plat-section alt" style="position:relative;overflow:hidden">
+  <canvas class="section-net" id="net-gpu"></canvas>
+  <div class="container">
+    <div class="eyebrow reveal">GPU Sizing Guide</div>
+    <h2 class="reveal d1">How many GPUs does your model need?</h2>
+    <p class="reveal d2">Training needs 9× more memory than inference. Reasoning models fall in between. Here's the quick math.</p>
+
+    <!-- FORMULAS -->
+    <div class="gs-blk reveal d2">
+      <div class="gs-label">The formulas</div>
+      <div class="gs-formulas">
+        <div class="gs-fcard gs-tr">
+          <div class="gs-fname">Training</div>
+          <div class="gs-feq">Params × <strong>18</strong> × 1.25 ÷ VRAM</div>
+          <div class="gs-fwhy">Weights + gradients + optimizer = ~18 bytes/param</div>
+        </div>
+        <div class="gs-fcard gs-inf">
+          <div class="gs-fname">Inference</div>
+          <div class="gs-feq">Params × <strong>2</strong> × 1.25 ÷ VRAM</div>
+          <div class="gs-fwhy">Weights only = 2 bytes/param in FP16</div>
+        </div>
+        <div class="gs-fcard gs-thk">
+          <div class="gs-fname">Extended Thinking</div>
+          <div class="gs-feq">Params × <strong>~4</strong> × 1.25 ÷ VRAM</div>
+          <div class="gs-fwhy">Weights + large KV cache from thinking tokens</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GPU CHIPS -->
+    <div class="gs-blk reveal d3">
+      <div class="gs-label">GPU memory by chip</div>
+      <div class="gs-chips">
+        <div class="gs-chip"><div class="gs-chip-gen">Ampere</div><div class="gs-chip-name">A100</div><div class="gs-chip-vram gs-v-dim">80<span class="gs-chip-unit"> GB</span></div><div class="gs-chip-bw">2.0 TB/s</div></div>
+        <div class="gs-chip"><div class="gs-chip-gen">Hopper</div><div class="gs-chip-name">H100</div><div class="gs-chip-vram gs-v-blu">80<span class="gs-chip-unit"> GB</span></div><div class="gs-chip-bw">3.35 TB/s</div></div>
+        <div class="gs-chip"><div class="gs-chip-gen">Hopper</div><div class="gs-chip-name">H200</div><div class="gs-chip-vram gs-v-tea">141<span class="gs-chip-unit"> GB</span></div><div class="gs-chip-bw">4.8 TB/s</div></div>
+        <div class="gs-chip"><div class="gs-chip-gen">Blackwell</div><div class="gs-chip-name">B200</div><div class="gs-chip-vram gs-v-grn">192<span class="gs-chip-unit"> GB</span></div><div class="gs-chip-bw">8.0 TB/s</div></div>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="gs-blk reveal">
+      <div class="gs-label">GPU count &amp; performance on H100</div>
+      <div class="gs-card gs-tbl-wrap">
+        <table class="gs-tbl">
+          <thead><tr>
+            <th>Model</th><th>Params</th>
+            <th class="gs-tr-c">Train</th>
+            <th class="gs-inf-c">Infer</th>
+            <th class="gs-thk-c">Think</th>
+            <th>Config</th><th>Speed</th>
+          </tr></thead>
+          <tbody>
+            <tr><td><span class="gs-mn">Llama 3.1 8B</span></td><td><span class="gs-mono">8B</span></td><td><span class="gs-v gs-tr-c">3</span></td><td><span class="gs-v gs-inf-c">1</span></td><td><span class="gs-v gs-thk-c">1</span></td><td><span class="gs-mono">1×H100 FP8</span></td><td><span class="gs-tps">~500–800 t/s</span></td></tr>
+            <tr><td><span class="gs-mn">Llama 3.1 70B</span></td><td><span class="gs-mono">70B</span></td><td><span class="gs-v gs-tr-c">20</span></td><td><span class="gs-v gs-inf-c">3</span></td><td><span class="gs-v gs-thk-c">5</span></td><td><span class="gs-mono">4×H100 TP4</span></td><td><span class="gs-tps">~250–300 t/s</span></td></tr>
+            <tr><td><span class="gs-mn">Llama 3.1 405B</span></td><td><span class="gs-mono">405B</span></td><td><span class="gs-v gs-tr-c">114</span></td><td><span class="gs-v gs-inf-c">13</span></td><td><span class="gs-v gs-thk-c">26</span></td><td><span class="gs-mono">8×H100 FP8</span></td><td><span class="gs-tps">~100–150 t/s</span></td></tr>
+            <tr><td><span class="gs-mn">Llama 4 Scout</span></td><td><span class="gs-mono">109B</span><span class="gs-moe">MoE</span></td><td><span class="gs-v gs-tr-c">31</span></td><td><span class="gs-v gs-inf-c">4</span></td><td><span class="gs-v gs-thk-c">7</span></td><td><span class="gs-mono">1×H100 INT4</span></td><td><span class="gs-tps">~300–500 t/s</span></td></tr>
+            <tr><td><span class="gs-mn">Llama 4 Maverick</span></td><td><span class="gs-mono">400B</span><span class="gs-moe">MoE</span></td><td><span class="gs-v gs-tr-c">113</span></td><td><span class="gs-v gs-inf-c">13</span></td><td><span class="gs-v gs-thk-c">25</span></td><td><span class="gs-mono">8×H100 DGX</span></td><td><span class="gs-tps">~100–200 t/s</span></td></tr>
+            <tr><td><span class="gs-mn">DeepSeek-R1</span></td><td><span class="gs-mono">671B</span><span class="gs-moe">MoE</span></td><td><span class="gs-v gs-tr-c">189</span></td><td><span class="gs-v gs-inf-c">21</span></td><td><span class="gs-v gs-thk-c">42</span></td><td><span class="gs-mono">8×H100 SXM</span></td><td><span class="gs-tps">~50–100 t/s</span></td></tr>
+          </tbody>
+        </table>
+        <div class="gs-tbl-note">Speed = tokens/sec per request, single user. MoE models use total params for memory but activate only a fraction per token. Extended thinking estimates apply to batch serving with concurrent reasoning requests.</div>
+      </div>
+    </div>
+
+    <!-- EXTENDED THINKING + QUANTIZATION row -->
+    <div class="gs-two-col reveal d1">
+
+      <!-- Extended Thinking -->
+      <div>
+        <div class="gs-label">Why extended thinking changes everything</div>
+        <div class="gs-card" style="padding:1.25rem">
+          <div class="gs-et-stats">
+            <div class="gs-et-stat"><div class="gs-et-n">~26×</div><div class="gs-et-l">More tokens per query<br><span>DeepSeek-R1 vs GPT-4o</span></div></div>
+            <div class="gs-et-stat"><div class="gs-et-n">~3.9 GB</div><div class="gs-et-l">KV cache per request<br><span>12K thinking tokens, 70B</span></div></div>
+            <div class="gs-et-stat"><div class="gs-et-n">5+ sec</div><div class="gs-et-l">Wait before first word<br><span>10K tokens at 2K tok/s</span></div></div>
+          </div>
+          <div class="gs-et-bar">
+            <div class="gs-et-side gs-et-a"><div class="gs-et-side-lbl">Standard query</div><div class="gs-et-val">~150 tokens</div><div class="gs-et-detail">KV cache: ~50 MB</div></div>
+            <div class="gs-et-vs">vs</div>
+            <div class="gs-et-side gs-et-b"><div class="gs-et-side-lbl">Reasoning query</div><div class="gs-et-val">4K–12K tokens</div><div class="gs-et-detail">KV cache: 1.3–3.9 GB</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quantization -->
+      <div>
+        <div class="gs-label">Quantization — same model, fewer GPUs</div>
+        <div class="gs-card" style="padding:1.25rem">
+          <div class="gs-q-note">Llama 70B weights on H100 (80 GB)</div>
+          <div class="gs-q-bars">
+            <div class="gs-q-row"><span class="gs-q-lbl">FP16</span><div class="gs-q-bar" style="width:100%;background:#6d28d9">140 GB — needs 2+ GPUs</div></div>
+            <div class="gs-q-row"><span class="gs-q-lbl">FP8</span><div class="gs-q-bar" style="width:50%;background:#0d9488">70 GB — fits 1 GPU</div></div>
+            <div class="gs-q-row"><span class="gs-q-lbl">FP4</span><div class="gs-q-bar" style="width:25%;background:#059669">35 GB — fits easily</div></div>
+          </div>
+          <div class="gs-q-foot">GB200 has native FP4 support at ~9,000 TFLOPS — roughly 4.5× the throughput of H100 at FP8. Same model, fewer GPUs, faster output.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LATENCY + CHART row -->
+    <div class="gs-two-col reveal d2">
+
+      <!-- Latency -->
+      <div>
+        <div class="gs-label">Latency — why location matters</div>
+        <div class="gs-lat-grid">
+          <div class="gs-lat-box gs-lat-bad">
+            <div class="gs-lat-lbl">US hyperscaler → India</div>
+            <div class="gs-lat-big">200ms+</div>
+            <div class="gs-lat-sub">Network round-trip alone<br>Reasoning TTFT: 6–15+ sec<br>Data leaves India</div>
+          </div>
+          <div class="gs-lat-box gs-lat-good">
+            <div class="gs-lat-lbl">Antriksh Cloud — Delhi NCR</div>
+            <div class="gs-lat-big">&lt;30ms</div>
+            <div class="gs-lat-sub">Minimal network overhead<br>Reasoning TTFT: 5–10 sec<br>Data stays in India</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart -->
+      <div>
+        <div class="gs-label">Min. GPUs by workload — H100 (80 GB)</div>
+        <div class="gs-card" style="padding:1.25rem">
+          <div class="gs-ch-leg">
+            <span><span class="gs-leg-dot" style="background:#6d28d9"></span>Train</span>
+            <span><span class="gs-leg-dot" style="background:#059669"></span>Infer</span>
+            <span><span class="gs-leg-dot" style="background:#d97706"></span>Think</span>
+          </div>
+          <div style="height:220px;position:relative"><canvas id="gsGpuChart" aria-label="Min GPU counts by model and workload"></canvas></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CALCULATOR -->
+    <div class="gs-blk reveal d1">
+      <div class="gs-label">Size your cluster</div>
+      <div class="gs-card gs-calc">
+        <div class="gs-calc-title">GPU Calculator</div>
+        <div class="gs-calc-desc">Rule-of-thumb minimums. Real deployments often use more for throughput and redundancy.</div>
+        <div class="gs-calc-inputs">
+          <div><label>Parameters (B)</label><input type="number" id="gsP" value="70" min="1" max="10000"></div>
+          <div><label>GPU</label>
+            <select id="gsG">
+              <option value="80">A100 — 80 GB</option>
+              <option value="80" selected>H100 — 80 GB</option>
+              <option value="141">H200 — 141 GB</option>
+              <option value="192">B200 — 192 GB</option>
+            </select>
+          </div>
+          <div><label>Precision</label>
+            <select id="gsX">
+              <option value="2" selected>FP16 / BF16</option>
+              <option value="1">FP8</option>
+              <option value="0.5">FP4 / INT4</option>
+            </select>
+          </div>
+        </div>
+        <div class="gs-calc-results">
+          <div class="gs-cb gs-cb-tr"><div class="gs-cb-tag">Training</div><span class="gs-cb-n" id="gsRT">20</span><span class="gs-cb-u">GPUs</span></div>
+          <div class="gs-cb gs-cb-inf"><div class="gs-cb-tag">Inference</div><span class="gs-cb-n" id="gsRI">3</span><span class="gs-cb-u">GPUs</span></div>
+          <div class="gs-cb gs-cb-thk"><div class="gs-cb-tag">Ext. Thinking</div><span class="gs-cb-n" id="gsRK">5</span><span class="gs-cb-u">GPUs</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSIGHT STRIP -->
+    <div class="gs-insight reveal d2">
+      <div class="gs-ins-stats">
+        <div><div class="gs-ins-n">9×</div><div class="gs-ins-l">Train vs. infer memory gap</div></div>
+        <div><div class="gs-ins-n">40–50%</div><div class="gs-ins-l">Savings vs. hyperscalers</div></div>
+        <div><div class="gs-ins-n">&lt;30ms</div><div class="gs-ins-l">Latency from India</div></div>
+      </div>
+      <p><strong>Antriksh Cloud is built for this.</strong> Sovereign GB200 &amp; GB300 clusters in Delhi NCR — burst between training, inference, and reasoning workloads, with data that never leaves India.</p>
+    </div>
+
+    <div class="gs-src">Formulas: Dr. Walid Soula. Extended thinking: Spheron (2026), DeepSeek-R1 benchmarks. GPU specs: NVIDIA datasheets. Throughput: SilexData, Snowflake AI Research, Cerebras. All figures are rule-of-thumb estimates; real deployments vary.</div>
+  </div>
+</section>
+
 <!-- TRACTION -->
 <section id="traction" class="plat-section" style="position:relative;overflow:hidden">
   <canvas class="section-net" id="net-trac"></canvas>
@@ -452,6 +635,65 @@
 </footer>
 
 <button id="back-top" aria-label="Back to top">&#8593;</button>
+<script>
+/* ── GPU Sizing: Chart + Calculator ── */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* Chart */
+  function initGsChart() {
+    var el = document.getElementById('gsGpuChart');
+    if (!el || typeof Chart === 'undefined') return;
+    var models = ['Llama 8B', 'Llama 70B', 'Llama 405B', 'L4 Scout', 'L4 Maverick', 'DS-R1'];
+    new Chart(el, {
+      type: 'bar',
+      data: {
+        labels: models,
+        datasets: [
+          { label: 'Train',  data: [3,20,114,31,113,189], backgroundColor: 'rgba(124,58,237,.75)', borderRadius: 4 },
+          { label: 'Infer',  data: [1,3,13,4,13,21],      backgroundColor: 'rgba(5,150,105,.75)',  borderRadius: 4 },
+          { label: 'Think',  data: [1,5,26,7,25,42],      backgroundColor: 'rgba(217,119,6,.75)',  borderRadius: 4 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: '#8496b0', font: { size: 10 } } },
+          y: { grid: { color: 'rgba(0,0,0,.06)' }, ticks: { color: '#8496b0', font: { size: 10 } }, beginAtZero: true }
+        }
+      }
+    });
+  }
+
+  /* Wait for Chart.js if deferred */
+  if (typeof Chart !== 'undefined') {
+    initGsChart();
+  } else {
+    window.addEventListener('load', initGsChart);
+  }
+
+  /* Calculator */
+  function gsCalc() {
+    var p  = parseFloat(document.getElementById('gsP').value) || 0;
+    var g  = parseFloat(document.getElementById('gsG').value) || 80;
+    var x  = parseFloat(document.getElementById('gsX').value) || 2;
+    var bpp = x;                          /* bytes per param based on precision */
+    var overhead = 1.25;
+    var tr  = Math.ceil(p * 18  * overhead / g);
+    var inf = Math.ceil(p * bpp * overhead / g);
+    var thk = Math.ceil(p * (bpp * 2) * overhead / g);
+    document.getElementById('gsRT').textContent = tr;
+    document.getElementById('gsRI').textContent = inf;
+    document.getElementById('gsRK').textContent = thk;
+  }
+
+  ['gsP','gsG','gsX'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('input', gsCalc);
+  });
+  gsCalc(); /* initial render */
+});
+</script>
 <script src="script.js"></script>
 </body>
 </html>

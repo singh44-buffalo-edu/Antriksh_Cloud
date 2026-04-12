@@ -3,6 +3,171 @@
    Single clean file. No duplicates.
 ══════════════════════════════════════════════════ */
 
+/* ── 0. GPU SCROLL SEQUENCE — frame canvas ── */
+(function () {
+  var wrap     = document.getElementById('gpu-seq-wrap');
+  var canvas   = document.getElementById('gpu-seq-canvas');
+  var bar      = document.getElementById('gpu-seq-bar');
+  var loadBar  = document.getElementById('gpu-seq-load-bar');
+  var loadWrap = document.getElementById('gpu-seq-load');
+  var hint     = document.getElementById('gpu-seq-hint');
+  var stages   = [
+    document.getElementById('gst-1'),
+    document.getElementById('gst-2'),
+    document.getElementById('gst-3'),
+  ];
+
+  if (!wrap || !canvas) return;
+
+  var ctx        = canvas.getContext('2d');
+  var TOTAL      = 302;        /* total frames */
+  var FRAME_PATH = 'frames/frame-%04d.jpg';
+  var images     = new Array(TOTAL);
+  var loaded     = 0;
+  var currentFrame = 0;
+  var targetFrame  = 0;
+  var rafId        = null;
+
+  /* Stage thresholds (fraction 0→1) */
+  var THRESHOLDS = [
+    [0,    0.38],
+    [0.33, 0.72],
+    [0.65, 1.0 ],
+  ];
+
+  /* ── Helpers ── */
+  function pad4(n) {
+    return ('0000' + n).slice(-4);
+  }
+
+  function vh() {
+    return window.innerHeight || document.documentElement.clientHeight || 800;
+  }
+
+  function ensureHeight() {
+    var h = vh();
+    if (wrap.offsetHeight < h) wrap.style.height = (h * 3.5) + 'px';
+  }
+
+  function sizeCanvas() {
+    var dpr = window.devicePixelRatio || 1;
+    var w   = canvas.offsetWidth  || canvas.parentElement.offsetWidth  || window.innerWidth  || 1280;
+    var h   = canvas.offsetHeight || canvas.parentElement.offsetHeight || window.innerHeight || 720;
+    canvas.width  = w * dpr;
+    canvas.height = h * dpr;
+  }
+
+  function drawFrame(idx) {
+    var img = images[idx];
+    if (!img || !img.complete || !img.naturalWidth) return;
+    var cw = canvas.width, ch = canvas.height;
+    /* Cover-fit: maintain aspect ratio */
+    var ir = img.naturalWidth / img.naturalHeight;
+    var cr = cw / ch;
+    var sw, sh, sx, sy;
+    if (ir > cr) {
+      sh = ch; sw = sh * ir;
+      sx = (cw - sw) / 2; sy = 0;
+    } else {
+      sw = cw; sh = sw / ir;
+      sx = 0; sy = (ch - sh) / 2;
+    }
+    ctx.clearRect(0, 0, cw, ch);
+    ctx.drawImage(img, sx, sy, sw, sh);
+  }
+
+  /* ── Smooth lerp loop ── */
+  function animLoop() {
+    rafId = requestAnimationFrame(animLoop);
+    /* Ease current toward target */
+    if (Math.abs(targetFrame - currentFrame) < 0.4) {
+      if (currentFrame !== targetFrame) {
+        currentFrame = targetFrame;
+        drawFrame(Math.round(currentFrame));
+      }
+    } else {
+      currentFrame += (targetFrame - currentFrame) * 0.18;
+      drawFrame(Math.round(currentFrame));
+    }
+  }
+
+  /* ── Scroll handler ── */
+  var ticking = false;
+  function onScroll() {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }
+
+  function update() {
+    ticking = false;
+    var h      = vh();
+    var rect   = wrap.getBoundingClientRect();
+    var travel = Math.max(1, wrap.offsetHeight - h);
+    var progress = Math.max(0, Math.min(1, -rect.top / travel));
+
+    /* Frame index */
+    targetFrame = Math.round(progress * (TOTAL - 1));
+
+    /* Progress bar */
+    if (bar) bar.style.width = (progress * 100) + '%';
+
+    /* Scroll hint */
+    if (hint) hint.classList.toggle('hidden', progress > 0.05);
+
+    /* Stage text */
+    stages.forEach(function(el, i) {
+      if (!el) return;
+      var s = THRESHOLDS[i][0], e = THRESHOLDS[i][1];
+      el.classList.toggle('active', progress >= s && progress < e);
+    });
+  }
+
+  /* ── Frame loading — priority load first + last frames, then fill in ── */
+  function loadImage(idx, onDone) {
+    var img = new Image();
+    img.onload = function() {
+      images[idx] = img;
+      loaded++;
+      /* Update load bar */
+      if (loadBar) loadBar.style.width = Math.round(loaded / TOTAL * 100) + '%';
+      if (loaded === TOTAL && loadWrap) {
+        loadWrap.classList.add('done');
+      }
+      if (onDone) onDone(idx);
+    };
+    img.onerror = function() {
+      loaded++;
+    };
+    img.src = FRAME_PATH.replace('%04d', pad4(idx + 1)); /* frames are 1-indexed */
+    images[idx] = img;
+  }
+
+  function startLoading() {
+    /* Load frame 0 first so something shows immediately */
+    loadImage(0, function() {
+      sizeCanvas();
+      drawFrame(0);
+    });
+
+    /* Then load all remaining frames in order */
+    for (var i = 1; i < TOTAL; i++) {
+      (function(idx) { loadImage(idx, null); })(i);
+    }
+  }
+
+  /* ── Init ── */
+  ensureHeight();
+  sizeCanvas();
+  startLoading();
+  animLoop();
+
+  window.addEventListener('scroll',  onScroll,     { passive: true });
+  window.addEventListener('resize',  function() {
+    ensureHeight();
+    sizeCanvas();
+    drawFrame(Math.round(currentFrame));
+  }, { passive: true });
+})();
+
 /* ── 1. NAV SCROLL HIDE/SHOW ── */
 (function () {
   const nav = document.getElementById('nav');
