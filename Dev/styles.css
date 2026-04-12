@@ -721,7 +721,7 @@ section > .why-inner { position:relative; z-index:1; }
   font-family:'DM Mono',monospace;
   font-size:.8125rem;
   line-height:2.1;
-  height:400px;          /* fixed — 14 lines × 2.1 line-height, with padding room */
+  height:450px;          /* fixed — 14 lines × 2.1 line-height, with padding room */
   overflow:hidden;
 }
 .t-c{color:#6b7280;} .t-l{color:#e2e8f0;} .t-s{color:#a78bfa;} .t-k{color:#4ade80;} .t-o{color:#fbbf24;}
